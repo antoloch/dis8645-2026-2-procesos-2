@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -70.35,
+      "left": -130.8,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 56.3, "left": -19.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -39.7, "left": -19.4, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 73.4,
+      "left": -230.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 6.2,
+      "left": -230.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -179.26,
+      "left": -143.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 24,
+      "left": -278.95,
+      "rotate": 270,
+      "attrs": { "value": "10000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 91.2,
+      "left": -278.95,
+      "rotate": 270,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "btn1:1.l", "pico:3V3", "red", [] ],
+    [ "btn1:2.r", "pico:GP15", "violet", [ "h9.8", "v19.4" ] ],
+    [ "btn2:2.r", "pico:GP14", "cyan", [ "h9.8", "v57.8", "h9.6", "v19.2" ] ],
+    [ "btn2:1.l", "pico:3V3", "red", [] ],
+    [ "pot1:GND", "pico:GND.5", "black", [ "v19.2", "h-48", "v-9.6" ] ],
+    [ "pot1:SIG", "pico:GP26", "blue", [ "v28.8", "h-67.6", "v-124.8" ] ],
+    [ "pot1:VCC", "oled1:VCC", "red", [ "v38.4", "h-58.4", "v-364.8", "h-67.2" ] ],
+    [ "pot2:VCC", "pico:3V3", "red", [ "v19.2", "h-58.4", "v-67.2" ] ],
+    [ "pot2:GND", "pico:GND.7", "black", [ "v9.6", "h-48", "v-28.8" ] ],
+    [ "oled1:GND", "pico:GND.1", "black", [ "v-19.2", "h-48", "v153.6" ] ],
+    [ "oled1:SCL", "pico:GP5", "gold", [ "v-9.6", "h-86.1", "v172.8" ] ],
+    [ "oled1:SDA", "pico:GP4", "limegreen", [ "v-38.4", "h-115.13", "v57.6" ] ],
+    [ "pot2:SIG", "pico:GP27", "violet", [ "v9.6", "h-58", "v-19.2" ] ],
+    [ "oled1:VCC", "pico:3V3", "red", [] ],
+    [ "r1:1", "pico:GP14", "cyan", [] ],
+    [ "r1:2", "pico:GND.3", "black", [] ],
+    [ "r2:1", "pico:GP15", "violet", [] ],
+    [ "r2:2", "pico:GND.4", "black", [] ]
+  ],
+  "dependencies": {}
+}
