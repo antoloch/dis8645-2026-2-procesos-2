@@ -45,7 +45,7 @@ El proyecto consiste en un dispositivo sonoro inspirado en las configuraciones y
 
 Otro aspecto interesante reside en las opciones de personalización. Sharp X68000 se puede ampliar gracias a sus puertos, permitiendo añadir cosas como un sintetizador MIDI Roland MT32 para mejorar las melodías del chip Yamaha YM2151 que trae de serie
 
-la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
+la Sharp X68000 lanzado en 1987 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
 
 > Links relevantes
 >
@@ -428,6 +428,8 @@ Por lo mismo utilizamos `#include AudioN.h`
 ##### ¿Por qué 5 sonidos?
 
 La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+
+[Carpeta Sonidos](./audio/audios-finales/)
 
 - Sonido0
 
