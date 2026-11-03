@@ -12,7 +12,6 @@
 
 ## Licencia
 
-
 Este código es obra de Bianka Vilchez, Camila Ramirez y Dayana Pañitrur (2026).
 Se distribuye bajo la licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](http://creativecommons.org/licenses/by-sa/4.0/).
 
@@ -67,6 +66,7 @@ Se va a tomar la decisión de mantener al Sharp X68000 como referente central de
 
 Para esto, se buscarán sonidos a los que les haremos una abstracción, modificándolos, pero manteniendo su sonido característico, originado por las especificaciones técnicas de cada época.
 
+Este corresponde
 2. Dos referentes anteriores Computadores de 8 bits: sonidos de generaciones previas, caracterizados por ondas simples, canales limitados y melodías electrónicas.
 
 Sonido0: 
@@ -91,7 +91,7 @@ Sonido4:
 
 ![bleep-drum](./imagenes/bleep-drum01.jpg)
 
-2. 
+2.
 
 <br>
 
@@ -148,7 +148,7 @@ El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el ocea
 
 Este proyecto se presentará en formato de prototipo funcional en protoboard y con carcasa.
 
-La interacción principal y la salida de audio I2S se demostrarán directamente sobre la Raspberry Pi Pico 2W y los componentes montados en protoboard. Ademas se integrará una carcasa impresa en 3D.
+La interacción principal y la salida de audio I2S se demostrarán directamente sobre la Raspberry Pi Pico 2W y los componentes montados en protoboard. Ademas se integrará una carcasa impresa en 3.
 
 La idea de presentar la solución en protoboard con una carcasa permite verificar directamente el protocolo de comunicación **I2S** utilizado entre la Raspberry Pi Pico 2 W y el amplificador MAX98357A, así como la lectura analógica por ADC (potenciómetro) y digital (encoder KY-040 y pulsadores).
 
@@ -221,7 +221,6 @@ El encoder rotatorio cumple dos funciones en un solo componente: funciona como *
 7. Si se presiona botónSelector se reproduce el sonido en el que se encuentre 
 
 8. si se gira la perillaVolumen, el valor asociado cambiará el volumen
-
 
 <br>
 
@@ -311,6 +310,24 @@ Todas comienzan con la pregunta ¿que pasa si...
 
 <br>
 
+## Fotos Procesos
+
+|           |           |           |           |
+| --------- | --------- | --------- | --------- |
+| Imagen 01 | Imagen 02 | Imagen 03 | Imagen 04 |
+| ![01](./imagenes/carcasa1.jpg) | ![02](./imagenes/carcasa2.jpg) | ![03](./imagenes/carcasa3.jpg) | ![04](./imagenes/carcasa4.jpg) | 
+| Imagen 05 | Imagen 06 | Imagen 07 | Imagen 08 |
+| ![05](./imagenes/carcasa6.png) | ![06](./imagenes/carcasa7.jpg) | ![07](./imagenes/carcasa8.jpg) | ![08](./imagenes/carcasa9.jpg) |
+| Imagen 09 | Imagen 10 | Imagen 11 | Imagen 12 |
+| ![09](./imagenes/carcasa10.jpg) | ![10](./imagenes/carcasa11.jpg) | ![11](./imagenes/carcasa12.jpg) | ![12](./imagenes/carcasa13.jpg) |
+| Imagen 13 | Imagen 14 | Imagen 15 | Imagen 16 |
+| ![13](./imagenes/carcasa13.jpg) | ![14](./imagenes/carcasa14.jpg) | ![15](./imagenes/carcasa15.jpg) | ![16](./imagenes/carcasa16.jpg) | 
+| Imagen 17 | Imagen 18 | Imagen 19 | Imagen 20 |
+| ![17](./imagenes/carcasa17.png) | ![18](./imagenes/carcasa18.jpg) | ![19](./imagenes/carcasa19.png) | [![Ver el video](./imagenes/test00.png)](https://youtube.com/shorts/KGOoIZoSN1o) |
+| [![Ver el video](./imagenes/test00.png)](https://youtu.be/gKS3x0eWUlA) | [![Ver el video](./imagenes/test00.png)](https://youtu.be/3ZkmGP23_4A) | [![Ver el video](./imagenes/test00.png)](https://youtube.com/shorts/kHsovLrT-w8?feature=share)
+
+<br>
+
 ## clases
 
 ### class Boton
@@ -321,7 +338,7 @@ Como grupo nos corresponde realizar la clase Boton, el cuál debe funcionar tant
 
 En el archivo .h definimos todo, declaramos todo, prometemos las cosas que hará el botón, el cómo lo hará lo escribiremos en el archivo .cpp
 
-El nombre de nuestra clases es **BotonGrupo1** 
+El nombre de nuestra clases es **BotonGrupo1**
 
 Algo importante que debemos integrar en nuestro archivo.h son:
 
@@ -389,9 +406,9 @@ Método constructor Lucecita():
 - Cambiar el estado de la luz a apagada.
 - Desactivar el pin para apagar la luz.
 
-#### Metodo parpadeo() 
+#### parpadeo()
 
-- para no ocupar sleep_ms(500) agregar el metodo parpadeo(): 
+- para no ocupar sleep_ms(500) agregar el metodo parpadeo():
 
 <br>
 
@@ -414,6 +431,8 @@ Para lograr introducir cualquier sonido para reproducir en nuestra Raspi
 ![class audio](./imagenes/sc-22.png)
 
 ![class audio](./imagenes/sc-24.png)
+
+##### 
 
 - nombrar el formato que debe tener el archivo
 - como cargarlo
