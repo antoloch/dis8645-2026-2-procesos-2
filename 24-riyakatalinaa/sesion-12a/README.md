@@ -2,6 +2,11 @@
 
 ## apuntes sesión
 
+martes 2026-11-03
+
+
+presentación proyecto-2
+
 ## encargos
 
 ## lectura
