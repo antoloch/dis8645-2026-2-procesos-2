@@ -14,7 +14,7 @@
 
 ☆ Isidora Pérez / <https://github.com/isipm08>
 
-☆ Narely Riquelme /
+☆ Narely Riquelme / <https://github.com/Narelyriquelme>
 
 ☆ Angel Sabogal / <https://github.com/angel-udp>
 
