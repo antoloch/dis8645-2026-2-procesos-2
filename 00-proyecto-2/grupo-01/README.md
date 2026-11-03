@@ -76,19 +76,24 @@ Este corresponde
 
 ### Referentes
 
-#### Bleep-Drum
+### Bleep-Drum
 
 ![bleep-drum](./imagenes/bleep-drum.jpg)
 
 ![bleep-drum](./imagenes/bleep-drum01.jpg)
 
-#### Hanan Cumbia (HTR-1)
+2. 
+
+### Hanan Cumbia (HTR-1)
 
 una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrones.
 
+
+ 
 https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/
 
-#### All Macintosh Startup Sounds 1980-2022
+
+### All Macintosh Startup Sounds 1980-2022
 
 https://www.youtube.com/watch?v=UtGKKUWXOaI
 
@@ -96,16 +101,14 @@ Sonido como respuesta de la máquina: al encender el computador, este emite un s
 Evolución sonora: los sonidos cambian entre generaciones, desde tonos electrónicos simples hasta acordes más complejos.
 Identidad sonora: un sonido breve puede asociarse a una marca y convertirse en una característica reconocible del computador.
 
-#### ALL SOUNDS OF WINDOWS 95
+https://www.youtube.com/watch?v=UtGKKUWXOaI
+
+### ALL SOUNDS OF WINDOWS 95
 
 sonidos de Windows 95: El video recopila los sonidos del sistema operativo Windows 95, lanzado en 1995. Reúne distintos sonidos asociados a las acciones, notificaciones y estados del sistema, mostrando cómo el computador se comunica con el usuario a través del audio.
 
 https://www.youtube.com/watch?v=w0xIUuH6Mck
 
-<br>
-
-<details>
-<summary> EXTRAS </summary>
 
 <br>
 

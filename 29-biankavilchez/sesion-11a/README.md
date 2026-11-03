@@ -158,4 +158,24 @@ Audio:
 ## repo para estudiar 
 
 https://github.com/yuuqilin/RetroJapSound?utm
+
 ## lectura
+
+Caos y fractales (Apéndice A, págs 205-215)
+
+
+Hoy leí el Apéndice A y por fin entendí por qué todo el libro usa fórmulas a saltos $x_{n+1} = f(x_n)$.
+
+1.  **Hay cosas que son discretas.** Como el banco que te paga interés una vez al año, o las plantas que ponen una hoja a la vez.
+2.  **Las plantas son inteligentes.** Si simulas que pone cada hoja donde hay menos veneno, al final siempre queda un ángulo de 137,5° entre hojas. Es el ángulo áureo. Así ninguna tapa a la otra. Por eso las piñas tienen 5, 8, 13 espirales (Fibonacci).
+3.  **Lo continuo también se puede medir a saltos.** Como contar salmones una vez al año, o medir un latido del corazón. Al graficar $x_{n+1}$ vs $x_n$ te sale una parábola.
+4.  **El truco del corte de Poincaré.** Le pones un vidrio a una trayectoria 3D (como la de Lorenz del clima) y anotas donde cruza. De 3D pasas a 1D. Con eso el Bruselador y la reacción química de Belousov-Zhabotinsky también se vuelven una parábola.
+5.  **Hasta se puede llegar al mapa de Hénon.** Si tienes una rueda con roce y le das patadas periódicas, integrando a mano te sale el mapa de Hénon, que es un fractal famoso.
+
+**Conclusión:** Todo se puede escribir como $x_{n+1} = f(x_n)$. Por eso el libro lo usa.
+
+## Citas textuales
+
+> "Lo sorprendente es que el atractor 'reconstruido' de esta manera (con valores apropiados de $\\tau$ y $j$ suficientemente grandes) tiene las mismas propiedades globales que un atractor proveniente de coordenadas experimentales independientes."
+
+> "Existen sistemas para los que las ecuaciones diferenciales se pueden integrar analíticamente, de modo que se pueden obtener ecuaciones iterativas."
