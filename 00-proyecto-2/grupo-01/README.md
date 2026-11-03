@@ -157,54 +157,6 @@ El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el ocea
 
 <br>
 
-### ¿Por qué 5 sonidos?
-
-- Un tono simple.
-- Una secuencia rítmica.
-- Una melodía sintetizada.
-- Un sonido percusivo.
-- Una muestra de audio digital.
-
-La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
-
-### Sonido0
-
-<audio controls>
-  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido1
-
-<audio controls>
-  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido2
-
-<audio controls>
-  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido3
-
-<audio controls>
-  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido4
-
-fecha:
-
-### SonidoSistema
-
-<audio controls>
-  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
-</audio>
-
-#### Aviso de Uso Legítimo (Fair Use)
-
-Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
-
 ## **Implementación física**
 
 Este proyecto se presentará en formato de prototipo funcional en protoboard y con carcasa.
@@ -474,6 +426,53 @@ Por lo mismo utilizamos `#include AudioN.h`
 > siendo `N` el número del audio
 
 #### Audios
+
+##### ¿Por qué 5 sonidos?
+
+
+La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+
+- Sonido0
+
+<audio controls>
+  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido1
+
+<audio controls>
+  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido2
+
+<audio controls>
+  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido3
+
+<audio controls>
+  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido4
+
+<audio controls>
+  <source src="./audio/sonido-04-modificado.wav" type="audio/wav">
+</audio>
+
+- SonidoSistema
+
+<audio controls>
+  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
+</audio>
+
+##### Aviso de Uso Legítimo (Fair Use)
+
+Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
+
+#### Cargar sonidos
 
 Para lograr introducir cualquier sonido para reproducir en nuestra Raspi  
 
