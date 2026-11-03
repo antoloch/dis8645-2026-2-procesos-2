@@ -332,7 +332,9 @@ Sí bien rescatamos similitud entre la primera idea de nuestros proyectos, como 
 
 Aprendimos que el trabajo colaborativo va más allá de compartir avances o asumir que funcionaria al tener proyectos similares, validar y comprobar es lo fundamental. Al tener funcionalidades similares es totalmente enorgullecedor y llamativo que logramos generar proyectos totalmente diferentes
 
+# Fin, al fin - remanencia
 
+[Wokwi remanencia](https://wokwi.com/projects/479622119288091649)
 
 ## Bibliografía
 
