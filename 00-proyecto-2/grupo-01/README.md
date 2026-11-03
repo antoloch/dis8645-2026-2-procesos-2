@@ -35,7 +35,7 @@ Era del CD-ROM y 32 bits (Mediados de los 90): Con la llegada de soportes como l
 
 Era moderna y el sonido interactivo (Siglo XXI - Presente): La música y los efectos dejaron de ser simples archivos lineales para volverse adaptativos y dinámicos, reaccionando en tiempo real a las acciones del jugador, la exploración o el combate. Además, géneros como el jazz, la música electrónica y fusiones culturales pasaron a ser sellos distintivos en sagas como Persona o Sonic the Hedgehog
 
-
+<br>
 
 ### Inspiración - Sharp X68000
 
@@ -45,7 +45,7 @@ El proyecto consiste en un dispositivo sonoro inspirado en las configuraciones y
 
 Otro aspecto interesante reside en las opciones de personalización. Sharp X68000 se puede ampliar gracias a sus puertos, permitiendo añadir cosas como un sintetizador MIDI Roland MT32 para mejorar las melodías del chip Yamaha YM2151 que trae de serie
 
-la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas. 
+la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
 
 > Links relevantes
 >
@@ -69,29 +69,43 @@ Para esto, se buscarán sonidos a los que les haremos una abstracción, modific�
 Este corresponde
 2. Dos referentes anteriores Computadores de 8 bits: sonidos de generaciones previas, caracterizados por ondas simples, canales limitados y melodías electrónicas.
 
-Sonido0: 
-
-Sonido1: 
-
 1. Referente central Sharp X68000: sonidos característicos de sus videojuegos, combinando síntesis FM y audio ADPCM.
-
-Sonido2: 
 
 3. Dos referentes posteriores  Computadores y plataformas más actuales: sonidos que incorporan audio digital, muestras grabadas, mayor complejidad musical y procesamiento de audio en tiempo real.
 
-Sonido3:
-
-Sonido4:
 
 ### Referentes
 
-1. Bleep-Drum
+#### Bleep-Drum
 
 ![bleep-drum](./imagenes/bleep-drum.jpg)
 
 ![bleep-drum](./imagenes/bleep-drum01.jpg)
 
-2.
+#### Hanan Cumbia (HTR-1)
+
+una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrones.
+
+https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/
+
+#### All Macintosh Startup Sounds 1980-2022
+
+https://www.youtube.com/watch?v=UtGKKUWXOaI
+
+Sonido como respuesta de la máquina: al encender el computador, este emite un sonido que comunica que ha comenzado su funcionamiento.
+Evolución sonora: los sonidos cambian entre generaciones, desde tonos electrónicos simples hasta acordes más complejos.
+Identidad sonora: un sonido breve puede asociarse a una marca y convertirse en una característica reconocible del computador.
+
+#### ALL SOUNDS OF WINDOWS 95
+
+sonidos de Windows 95: El video recopila los sonidos del sistema operativo Windows 95, lanzado en 1995. Reúne distintos sonidos asociados a las acciones, notificaciones y estados del sistema, mostrando cómo el computador se comunica con el usuario a través del audio.
+
+https://www.youtube.com/watch?v=w0xIUuH6Mck
+
+<br>
+
+<details>
+<summary> EXTRAS </summary>
 
 <br>
 
@@ -111,9 +125,7 @@ Compilado de proyectos de Allison, muchos de ellos trabajan con el IC 2040. Reco
 
 - [Sam Lavigne](https://lav.io/) 
 
-Recuerdo que aaron me enseño esta web portafolio y más específicamente https://lav.io/projects/new-york-apartment/. Acá Sam recopila **todos** los datos de arriendo y estructura una lógica de visualización de datos interactiva, pudiendo "fusionar" todos los departamentos en uno, calculando cuando te demorarias en pagar cada uno, etc...
-
-Este portafolio lo tengo constantemente en mi memoria, ya que es un gran referente de las cosas que se pueden llegar a lograr con el código
+https://lav.io/projects/new-york-apartment/. Acá Sam recopila **todos** los datos de arriendo y estructura una lógica de visualización de datos interactiva, pudiendo "fusionar" todos los departamentos en uno, calculando cuando te demorarias en pagar cada uno, etc...
 
 <br>
 
@@ -133,7 +145,7 @@ Utiliza un microcontrolador ATM, más exactamente el que utilizaban los Arduino 
 
 - [oficina del sonido](https://www.oficinadesonido.org/)
 
-Referente similar al anterior, no profundizo aún en este. Lo dejo para un futuro
+Referente similar al anterior
 
 <br>
 
@@ -141,14 +153,63 @@ Referente similar al anterior, no profundizo aún en este. Lo dejo para un futur
 
 El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el oceano de infinidades que pueden ocurrir en pocos segundos. De esto, además consideramos el como la sonoridad evolucionó con la computación
 
+</details>
+
 <br>
-### SonidoInicio
+
+### ¿Por qué 5 sonidos?
+
+- Un tono simple.
+- Una secuencia rítmica.
+- Una melodía sintetizada.
+- Un sonido percusivo.
+- Una muestra de audio digital.
+
+La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+
+### Sonido0
+
+<audio controls>
+  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
+</audio>
+
+### Sonido1
+
+<audio controls>
+  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
+</audio>
+
+### Sonido2
+
+<audio controls>
+  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
+</audio>
+
+### Sonido3
+
+<audio controls>
+  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
+</audio>
+
+### Sonido4
+
+fecha:
+
+### SonidoSistema
+
+<audio controls>
+  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
+</audio>
+
+#### Aviso de Uso Legítimo (Fair Use)
+
+Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
 
 ## **Implementación física**
 
 Este proyecto se presentará en formato de prototipo funcional en protoboard y con carcasa.
 
-La interacción principal y la salida de audio I2S se demostrarán directamente sobre la Raspberry Pi Pico 2W y los componentes montados en protoboard. Ademas se integrará una carcasa impresa en 3.
+La interacción principal y la salida de audio I2S se demostrarán directamente sobre la Raspberry Pi Pico 2W y los componentes montados en protoboard. Ademas se integrará una carcasa impresa en 3D.
 
 La idea de presentar la solución en protoboard con una carcasa permite verificar directamente el protocolo de comunicación **I2S** utilizado entre la Raspberry Pi Pico 2 W y el amplificador MAX98357A, así como la lectura analógica por ADC (potenciómetro) y digital (encoder KY-040 y pulsadores).
 
@@ -233,6 +294,10 @@ El encoder rotatorio cumple dos funciones en un solo componente: funciona como *
 - botonLoop es un pushbutton que está enlazado con la variable `bool estadoPresionarSwitch`, si este es falso, el estado loop es falso
 
 - volumen es un potenciometro, ubicado en el GPIO26 y funciona con valores de 0 a 100
+
+### Esquemático
+
+![esquemático](./imagenes/proyecto-2-grupo01.jpg)
 
 <br>
 
@@ -349,21 +414,6 @@ Hacer el código `public` hará que cualquier persona pueda ver, usar o modifica
 
 `int nuevoPin` Le indica a la clase en qué pin de la Raspberry Pi Pico está conectado ese botón
 
-modoSwitch
-
-| anterior | actual | resultado |
-| :------: | :----: | :-------: |
-| 0        | 0      | 0         |
-| 1        | 0      | 1         |
-| 1        | 1      | 0         |
-| 0        | 1      | 1         |
-
-XOR
-
-Una u otra, pero no ambos
-
-Cuando el anterior **o** el actual cambien de estado, el `modoSwitch` lo hará
-
 #### Boton.cpp
 
 Se adjunta diversos diagramas de flujo que explican el funcionamiento de cada método de la clase
@@ -409,6 +459,7 @@ Método constructor Lucecita():
 #### parpadeo()
 
 - para no ocupar sleep_ms(500) agregar el metodo parpadeo():
+- utiliza una función que calcula el tiempo desde que inicia la raspi, hasta que se encienda un led, utiliza este tiempo como referencia
 
 <br>
 
@@ -418,9 +469,9 @@ Esta clase ayuda a esconder la complejidad que existe al momento de seleccionar 
 
 Si la definimos en una frase: _"Es nuestro DJ"_
 
-Por lo mismo utilizamos `#include Audio_n.h`
+Por lo mismo utilizamos `#include AudioN.h`
 
-> siendo n el número del audio
+> siendo `N` el número del audio
 
 #### Audios
 
@@ -428,25 +479,37 @@ Para lograr introducir cualquier sonido para reproducir en nuestra Raspi
 
 ![class audio](./imagenes/sc-23.png)
 
+1. Lo primero que realizamos teniendo los archivos de audio, es abrirlos en Audacity, un programa de edición de audio. En este los exportamos con la siguiente configuración
+
+2. Es importante que se considere la siguiente lógica al seleccionar los nombres `SonidoN.wav`. La `N` debe ser reemplazada por el número de audio correspondiente, además de esto, **el conteo inicia en 0**
+
 ![class audio](./imagenes/sc-22.png)
+
+>[!WARNING]
+> Fe de erratas
+>> En codificación debe utilizarse `16-bit PCM` 
+
+3. Una vez que tenemos el audio exportado con las caracteristicas lo pasamos a la web
+
+[File to C style array converter](https://notisrac.github.io/FileToCArray/)
 
 ![class audio](./imagenes/sc-24.png)
 
-##### 
 
-- nombrar el formato que debe tener el archivo
-- como cargarlo
-- como funciona
-
-- como exportar y que web usar
-
-[File to C style array converter](https://notisrac.github.io/FileToCArray/)
+> [!NOTE]
+>Por problemas con la utilización exportación de `.WAV` a `.h`, se le solicito ayuda a Claude con la conversión y se desarrollo una herramienta en Python que transforma los `.WAV`, siempre y cuando estén en `11025Hz` y `16-bit PCM`
+>
+> Esta herramienta está ubicada en [script](./script/), con su respectivo README.md que explica su uso
+>
+>> ![git](./imagenes/sc-25.png)
 
 <br>
 
 ### class Ampli
 
 Se preparó una clase enfocada en el uso de la amplificación de audio con el IC MAX98357A
+
+![ampli](./imagenes/max.avif)
 
 ```cpp
 

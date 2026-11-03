@@ -70,3 +70,66 @@ II. G-E-S-T-A-L-T
 III. I-N-T-E-R-F-A-C-E
 
 El autor plantea las bases de lo que significa enseñar diseño gráfico hoy. Introduce la idea de que el diseño no se trata de "estilo" o decoración, sino de sistemas, reglas y tecnología aplicadas a la comunicación.
+
+Typography (pag. 61-69)
+
+BLOQUE 6: Typography, Muriel Cooper en el MIT (pp. 61-69)
+
+1. Tema central
+
+Continúa el recorrido por Muriel Cooper: el sótano del Media Lab, su etapa en MIT Press (sistema de producción, IBM Selectric, logo y libro Bauhaus) y el origen de su taller en el MIT.
+
+2. Análisis directo
+   
+- Su trabajo digital casi se pierde (LaserDisc), mientras que los afiches impresos sobrevivieron.
+  
+- Cooper modelaba reglas para que la máquina hiciera el trabajo repetitivo.
+  
+- En MIT Press diseñó el sistema de producción, no libro por libro. La IBM Selectric aceleró las correcciones y cambió la cara de los libros.
+  
+- El logo (libros como código de barras) y el libro Bauhaus muestran su idea de usar las limitaciones de producción como oportunidad de diseño.
+  
+- Terminó diseñando un taller donde se piensa y se produce a la vez, no solo objetos.
+  
+
+3. Glosario técnico
+
+| Término (Inglés) | Traducción (Español) | Explicación |
+|---|---|---|
+| Dead media | Medios muertos | Formatos que ya no se pueden reproducir. |
+| Expert system | Sistema experto | Programa que decide usando reglas humanas. |
+| Rule base | Base de reglas | Conjunto de reglas que guía una decisión. |
+| Colophon | Colofón | Página o marca que indica cómo se produjo un libro. |
+| Galley | Galerada | Texto compuesto, listo para revisar o pegar. |
+| IBM Selectric | IBM Selectric | Máquina de escribir eléctrica de bola intercambiable. |
+| Stop-frame animation | Animación cuadro por cuadro | Animar fotografiando imágenes fijas en secuencia. |
+| Grid | Retícula | Estructura invisible que ordena la página. |
+
+
+4. Citas textuales con análisis
+
+Cita 1 (p. 62)
+
+INGLÉS: “What we’ve begun to do is study ways in which rules can be modeled to the machine so that that machine will then begin to assume some of the responsibility for work which is repetitive or describable.”
+
+ESPAÑOL: “Lo que hemos empezado a hacer es estudiar formas en que las reglas pueden modelarse para la máquina, de modo que esa máquina empiece a asumir parte de la responsabilidad del trabajo que es repetitivo o describible.”
+
+Análisis: Cooper no ve la máquina como enemiga: le delega lo repetible para quedarse con lo que requiere criterio.
+
+
+Cita 2 (p. 66)
+
+INGLÉS: “The result looks like the process that made it and reveals a deep engagement with and symbiotic relation between the design and production of the book.”
+
+ESPAÑOL: “El resultado se ve como el proceso que lo hizo y revela un compromiso profundo y una relación simbiótica entre el diseño y la producción del libro.”
+
+Análisis: El libro muestra con qué se hizo: la tipografía de máquina de escribir no se disfraza.
+
+
+Cita 3 (p. 68)
+
+INGLÉS: “My design approach always emphasized process over product, and what better place to express this than in a tome on the Bauhaus, the seminal exploration of art and design in an industrial revolution.”
+
+ESPAÑOL: “Mi enfoque de diseño siempre enfatizó el proceso por sobre el producto, y qué mejor lugar para expresar esto que en un tomo sobre la Bauhaus, la exploración seminal del arte y el diseño en una revolución industrial.”
+
+Análisis: Para Cooper lo importante no es el objeto terminado sino el sistema que lo produce.
