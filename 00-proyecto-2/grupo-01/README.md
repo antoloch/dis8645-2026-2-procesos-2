@@ -45,7 +45,7 @@ El proyecto consiste en un dispositivo sonoro inspirado en las configuraciones y
 
 Otro aspecto interesante reside en las opciones de personalización. Sharp X68000 se puede ampliar gracias a sus puertos, permitiendo añadir cosas como un sintetizador MIDI Roland MT32 para mejorar las melodías del chip Yamaha YM2151 que trae de serie
 
-la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
+la Sharp X68000 lanzado en 1987 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
 
 > Links relevantes
 >
@@ -74,22 +74,11 @@ Este corresponde
 3. Dos referentes posteriores  Computadores y plataformas más actuales: sonidos que incorporan audio digital, muestras grabadas, mayor complejidad musical y procesamiento de audio en tiempo real.
 
 
-### Referentes
-
-### Bleep-Drum
-
-![bleep-drum](./imagenes/bleep-drum.jpg)
-
-![bleep-drum](./imagenes/bleep-drum01.jpg)
-
-2. 
+## Referentes
 
 ### Hanan Cumbia (HTR-1)
 
-una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrones.
-
-
- 
+una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrone
 https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/
 
 
@@ -109,6 +98,10 @@ sonidos de Windows 95: El video recopila los sonidos del sistema operativo Windo
 
 https://www.youtube.com/watch?v=w0xIUuH6Mck
 
+<br>
+
+<details>
+<summary> <h4> Ver más </h4> </summary>
 
 <br>
 
@@ -122,7 +115,7 @@ Esta matriz de led utiliza un multiplexor, es decir que mediante 2 canales se en
 
 Compilado de proyectos de Allison, muchos de ellos trabajan con el IC 2040. Recordando este microcontrolador corresponde al cerebro de la Raspberry Pi Pico
 
-> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) Me encantó, ya que mi cariño por el mundo de los videojuegos, pero más específicamente por el _modeo_ o la realización de elementos para _hackear_  hardware retro. Espero profundizar esto en algún momentp
+> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) 
 
 <br>
 
@@ -139,6 +132,8 @@ Este libro puede servir para entender la lógica detrás de lo que es y no es un
 <br>
 
 - [Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+
+![bleep](./imagenes/bleep-drum.jpg)
 
 Desarrollaron una máquina percusiva que utiliza 4 sonidos y 2 modificadores. Este referente es clave para lo que queremos lograr, igualmente nos acercamos a la versión que está en el LID para explorar y ver las posibilidades de lo que es posible
 
@@ -159,54 +154,6 @@ El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el ocea
 </details>
 
 <br>
-
-### ¿Por qué 5 sonidos?
-
-- Un tono simple.
-- Una secuencia rítmica.
-- Una melodía sintetizada.
-- Un sonido percusivo.
-- Una muestra de audio digital.
-
-La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
-
-### Sonido0
-
-<audio controls>
-  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido1
-
-<audio controls>
-  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido2
-
-<audio controls>
-  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido3
-
-<audio controls>
-  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
-</audio>
-
-### Sonido4
-
-fecha:
-
-### SonidoSistema
-
-<audio controls>
-  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
-</audio>
-
-#### Aviso de Uso Legítimo (Fair Use)
-
-Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
 
 ## **Implementación física**
 
@@ -477,6 +424,54 @@ Por lo mismo utilizamos `#include AudioN.h`
 > siendo `N` el número del audio
 
 #### Audios
+
+##### ¿Por qué 5 sonidos?
+
+La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+
+[Carpeta Sonidos](./audio/audios-finales/)
+
+- Sonido0
+
+<audio controls>
+  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido1
+
+<audio controls>
+  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido2
+
+<audio controls>
+  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido3
+
+<audio controls>
+  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido4
+
+<audio controls>
+  <source src="./audio/sonido-04-modificado.wav" type="audio/wav">
+</audio>
+
+- SonidoSistema
+
+<audio controls>
+  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
+</audio>
+
+##### Aviso de Uso Legítimo (Fair Use)
+
+Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
+
+#### Cargar sonidos
 
 Para lograr introducir cualquier sonido para reproducir en nuestra Raspi  
 
