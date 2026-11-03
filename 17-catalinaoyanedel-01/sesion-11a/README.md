@@ -1,5 +1,5 @@
 # sesion-11a
-lunes 26 de octubre
+martes 27 de octubre
 
 ## apuntes sesión
 ya teniendo todo organizado desde la sesión anterior, empezando a crear las clases `Perilla.h` y `Perilla.cpp`. para desarrollar el funcionamiento de la máquina comenzamos a organizar el código mediante clases, en lugar de concentrar todas las instrucciones en un único archivo. así, cada clase se encarga de una tarea específica y se comunica con las demás cuando es necesario. definimos un archivo principal que coordina la máquina y una clase para cada componente y modos: Perilla, Boton, Emociones, Mensajes y Juego. luego, escribí una maqueta de `main`, `Mensajes` y `Emociones`, la revisamos con ayuda de la ia y corregimos errores de sintaxis y de estructura.
