@@ -77,9 +77,17 @@ La elección de cinco sonidos responde a la intención de representar distintas 
 
 ### Sonido0
 
+<audio controls>
+  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
+</audio>
+
 fecha:
 
 ### Sonido1
+
+<audio controls>
+  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
+</audio>
 
 fecha:
 
@@ -96,6 +104,10 @@ fecha:
 fecha:
 
 ### SonidoInicio
+
+#### Aviso de Uso Legítimo (Fair Use)
+
+Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
 
 ## **Implementación física**
 
@@ -302,21 +314,6 @@ Hacer el código `public` hará que cualquier persona pueda ver, usar o modifica
 
 `int nuevoPin` Le indica a la clase en qué pin de la Raspberry Pi Pico está conectado ese botón
 
-modoSwitch
-
-| anterior | actual | resultado |
-| :------: | :----: | :-------: |
-| 0        | 0      | 0         |
-| 1        | 0      | 1         |
-| 1        | 1      | 0         |
-| 0        | 1      | 1         |
-
-XOR
-
-Una u otra, pero no ambos
-
-Cuando el anterior **o** el actual cambien de estado, el `modoSwitch` lo hará
-
 #### Boton.cpp
 
 Se adjunta diversos diagramas de flujo que explican el funcionamiento de cada método de la clase
@@ -362,6 +359,7 @@ Método constructor Lucecita():
 #### parpadeo()
 
 - para no ocupar sleep_ms(500) agregar el metodo parpadeo():
+- utiliza una función que calcula el tiempo desde que inicia la raspi, hasta que se encienda un led, utiliza este tiempo como referencia
 
 <br>
 
@@ -381,25 +379,23 @@ Para lograr introducir cualquier sonido para reproducir en nuestra Raspi
 
 ![class audio](./imagenes/sc-23.png)
 
+1. Lo primero que realizamos teniendo los archivos de audio, es abrirlos en Audacity, un programa de edición de audio. En este los exportamos con la siguiente configuración
+
 ![class audio](./imagenes/sc-22.png)
 
-![class audio](./imagenes/sc-24.png)
-
-##### 
-
-- nombrar el formato que debe tener el archivo
-- como cargarlo
-- como funciona
-
-- como exportar y que web usar
+Una vez que tenemos el audio exportado con las caracteristicas lo pasamos a la web
 
 [File to C style array converter](https://notisrac.github.io/FileToCArray/)
+
+![class audio](./imagenes/sc-24.png)
 
 <br>
 
 ### class Ampli
 
 Se preparó una clase enfocada en el uso de la amplificación de audio con el IC MAX98357A
+
+![ampli](./imagenes/max.avif)
 
 ```cpp
 
