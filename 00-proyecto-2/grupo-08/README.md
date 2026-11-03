@@ -312,7 +312,7 @@ AL DIBUJAR UNA ESCENA:
 ### Flujo del juego
 ![alt](./imagenes/juego.jpeg)
 ### Hardware
-![alt](./imagenes/hardware.png)
+![alt](./imagenes/hardwaree.png)
 ### Software
 ![alt](./imagenes/software.png)
 ## Esquemático
@@ -369,8 +369,16 @@ La carcasa la realizamos en impresión 3D, realizando bocetos previos, quisimos 
 
 ![imagen](imagenes/carcasa.png)
 
+## Wokwi
+[Versión-1](https://wokwi.com/projects/478640058007834625)
+
+[Versión-2](https://wokwi.com/projects/479061199676387329)
+
+[Final](https://wokwi.com/projects/479061199676387329)
+
 ## Documentación IA
 
+[PROMPTS](https://github.com/isipm08/dis8645-2026-2-procesos-2/blob/main/00-proyecto-2/grupo-08/codigos/dore8-registro-de-prompts-ia-wokwi-y-fisico.pdf)
 
 ## Bibliografía
 https://commodore.net/computer/ 
