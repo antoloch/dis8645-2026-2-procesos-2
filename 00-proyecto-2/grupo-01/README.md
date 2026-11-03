@@ -1168,7 +1168,7 @@ Leyendo el código, esto es lo que **hace hoy** el programa en cada caso. Si alg
 * AFEL. (s.f.). *Display 4 Matriz Led Verde 8x8 Max7219 SPI*. Recuperado de [https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi](https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi)
 * *ALL SOUNDS OF WINDOWS 95*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch](https://www.youtube.com/watch)
 * *All Macintosh Startup Sounds 1980-2022*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch?v=UtGKKUWXOaI](https://www.youtube.com/watch?v=UtGKKUWXOaI)
-* [Autor]. (s.f.). *Repositorio GitHub Piruetas*. [https://github.com/piruetasxyz](https://github.com/piruetasxyz).
+* *piruetas.xyz* (s.f.). *Repositorio GitHub Piruetas*. [https://github.com/piruetasxyz](https://github.com/piruetasxyz).
 * BleepLabs. (s.f.). *Bleep-Drum*. GitHub. Recuperado de [https://github.com/BleepLabs/Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
 * *Canal de YouTube relacionado con Sharp X68000*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw](https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw)
 * Creative Commons. (s.f.). *Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional*. Recuperado de [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
