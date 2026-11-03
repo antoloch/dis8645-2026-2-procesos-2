@@ -1164,3 +1164,23 @@ Leyendo el código, esto es lo que **hace hoy** el programa en cada caso. Si alg
 <br>
 
 ## Bibliografía
+
+* AFEL. (s.f.). *Display 4 Matriz Led Verde 8x8 Max7219 SPI*. Recuperado de [https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi](https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi)
+* *ALL SOUNDS OF WINDOWS 95*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch](https://www.youtube.com/watch)
+* *All Macintosh Startup Sounds 1980-2022*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch?v=UtGKKUWXOaI](https://www.youtube.com/watch?v=UtGKKUWXOaI)
+* *piruetas.xyz* (s.f.). *Repositorio GitHub Piruetas*. [https://github.com/piruetasxyz](https://github.com/piruetasxyz).
+* BleepLabs. (s.f.). *Bleep-Drum*. GitHub. Recuperado de [https://github.com/BleepLabs/Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+* *Canal de YouTube relacionado con Sharp X68000*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw](https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw)
+* Creative Commons. (s.f.). *Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional*. Recuperado de [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
+* Lavigne, S. (s.f.). *New York Apartment*. Recuperado de [https://lav.io/projects/new-york-apartment/](https://lav.io/projects/new-york-apartment/)
+* Lavigne, S. (s.f.). *Portafolio de Sam Lavigne*. Recuperado de [https://lav.io/](https://lav.io/)
+* *Libro: How to speak machine* [Archivo PDF en Google Drive]. (s.f.). Recuperado de [https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view](https://www.google.com/search?q=https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view)
+* Notisrac. (s.f.). *File to C style array converter*. GitHub Pages. Recuperado de [https://notisrac.github.io/FileToCArray/](https://notisrac.github.io/FileToCArray/)
+* Oficina de Sonido. (s.f.). *Hanan Cumbia (HTR-1)*. Recuperado de [https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/](https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/)
+* Oficina de Sonido. (s.f.). *Oficina de Sonido (Sitio Principal)*. Recuperado de [https://www.oficinadesonido.org/](https://www.oficinadesonido.org/)
+* Parrish, A. (s.f.). *Allison Parrish: Recent and Selected Work*. Recuperado de [https://portfolio.decontextualize.com/](https://portfolio.decontextualize.com/)
+* Parrish, A. (s.f.). *Allison’s Bootleg Cart*. Recuperado de [https://abc.decontextualize.com/](https://abc.decontextualize.com/)
+
+* *Windows 95*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch?v=I3Ak5VgyEoc](https://www.youtube.com/watch?v=I3Ak5VgyEoc)
+* XVGM Radio. (s.f.). *Episode 119: The Sounds of the Sharp X68000*. Recuperado de [https://xvgmradio.com/episode-119-the-sounds-of-the-sharp-x68000/](https://xvgmradio.com/episode-119-the-sounds-of-the-sharp-x68000/)
+* Yuuqilin. (s.f.). *RetroJapSound*. GitHub. Recuperado de [https://github.com/yuuqilin/RetroJapSound](https://github.com/yuuqilin/RetroJapSound)
