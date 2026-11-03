@@ -429,7 +429,6 @@ Por lo mismo utilizamos `#include AudioN.h`
 
 ##### ¿Por qué 5 sonidos?
 
-
 La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
 
 - Sonido0
