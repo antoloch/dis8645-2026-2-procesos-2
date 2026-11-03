@@ -456,7 +456,7 @@ void leer
  <details>
   
   
-![Esquematico](./imagenes/esquematico.png)
+![Esquematico](./imagenes/vista-previa.png)
 
 
  </details>
