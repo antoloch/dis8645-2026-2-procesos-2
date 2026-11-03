@@ -484,6 +484,14 @@ void leer
     
 </details>
 
+# Código oficial 
+
+<details>
+
+[aquí](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/codigos/codigo-oficial)
+
+</details>
+
 # Prompt y Cluade
 
 <details>
