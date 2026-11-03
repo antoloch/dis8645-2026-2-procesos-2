@@ -266,9 +266,6 @@ Adjunto en el mensaje: archivo Config.h (C++ para Raspberry Pi Pico) con include
 
 Respuesta (resumen): Claude explicó que es un archivo de cabecera solo con constantes; detalló el include guard, stdint.h, el namespace y constexpr; presentó tablas de pines y tiempos y un ejemplo de uso (Config::PIN_LED, Config::TIEMPO_ARRANQUE).
 
-# Esquemáticos
-
-![esquematicoconexiones](./imagenes/esquematicoconexiones.png)
 
 # Esquemático
 
