@@ -19,9 +19,11 @@ Se distribuye bajo la licencia [Creative Commons Atribución-CompartirIgual 4.0 
 
 ## Concepto
 
-Se plantea que el sonido de un computador está condicionado por la tecnología de su época, desde los chips de síntesis que generaban melodías y efectos electrónicos hasta la incorporación de audio digital y música grabada.
+Para elegir el computador, quisimos partir de una premisas: un sistema que permitiera ejecutar videojuegos. A partir de esto, decidimos centrarnos en el sonido y en cómo sus posibilidades de reproducción y volumen fueron evolucionando a lo largo del tiempo.
 
-A partir de esta exploración, surge la pregunta: ¿cómo ha evolucionado el sonido de los videojuegos a medida que cambian las capacidades tecnológicas de los computadores? El proyecto busca reconocer estas transformaciones y comprender cómo las características sonoras permiten identificar distintas etapas.
+Para delimitar la exploración, elegimos Japón como contexto de estudio, debido a su importante desarrollo en la industria de los videojuegos y la tecnología computacional. Dentro de este contexto, seleccionamos el Sharp X68000 como caso de estudio y punto de referencia central para analizar la evolución del sonido en los videojuegos.
+
+Asi surge la pregunta: ¿cómo ha evolucionado el sonido de los videojuegos a medida que cambian las capacidades tecnológicas de los computadores? El proyecto busca reconocer estas transformaciones y comprender cómo las características sonoras permiten identificar distintas etapas.
 
 La evolución del sonido y la música en los videojuegos japoneses ha transitado desde los simples tonos monofónicos de los arcades y consolas de 8 bits hasta complejas bandas sonoras dinámicas e integradas con tecnología binaural y orquestal.
 
@@ -33,9 +35,11 @@ Era del CD-ROM y 32 bits (Mediados de los 90): Con la llegada de soportes como l
 
 Era moderna y el sonido interactivo (Siglo XXI - Presente): La música y los efectos dejaron de ser simples archivos lineales para volverse adaptativos y dinámicos, reaccionando en tiempo real a las acciones del jugador, la exploración o el combate. Además, géneros como el jazz, la música electrónica y fusiones culturales pasaron a ser sellos distintivos en sagas como Persona o Sonic the Hedgehog
 
-<br>
+
 
 ### Inspiración - Sharp X68000
+
+![bleep-drum](./imagenes/sharp-x68000.jpg)
 
 El proyecto consiste en un dispositivo sonoro inspirado en las configuraciones y el sistema del computador Sharp X68000. La interacción se realizará mediante dos botones y dos perillas, cada uno con una función específica para seleccionar, reproducir y controlar los sonidos.
 
@@ -51,17 +55,91 @@ la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, fina
 
 <br>
 
+### sonidos 
+
+Se va a tomar la decisión de mantener al Sharp X68000 como referente central del proyecto, utilizando los sonidos de sus videojuegos como base para la exploración sonora. Esta elección considera sus capacidades de audio, principalmente la síntesis FM mediante el chip Yamaha YM2151 y la reproducción de muestras digitales ADPCM mediante el OKI MSM6258.
+
+ tomando el Sharp X68000 como punto central de comparación, aparecen dos preguntas:
+
+¿Cómo eran los sonidos de los videojuegos antes del Sharp X68000?
+¿Cómo evolucionó el sonido de los videojuegos después del Sharp X68000?
+
+Para esto, se buscarán sonidos a los que les haremos una abstracción, modificándolos, pero manteniendo su sonido característico, originado por las especificaciones técnicas de cada época.
+
+Este corresponde
+2. Dos referentes anteriores Computadores de 8 bits: sonidos de generaciones previas, caracterizados por ondas simples, canales limitados y melodías electrónicas.
+
+Sonido0: 
+
+Sonido1: 
+
+1. Referente central Sharp X68000: sonidos característicos de sus videojuegos, combinando síntesis FM y audio ADPCM.
+
+Sonido2: 
+
+3. Dos referentes posteriores  Computadores y plataformas más actuales: sonidos que incorporan audio digital, muestras grabadas, mayor complejidad musical y procesamiento de audio en tiempo real.
+
+Sonido3:
+
+Sonido4:
+
 ### Referentes
 
 1. Bleep-Drum
-
-Este corresponde
 
 ![bleep-drum](./imagenes/bleep-drum.jpg)
 
 ![bleep-drum](./imagenes/bleep-drum01.jpg)
 
 2.
+
+<br>
+
+- [Display 4 Matriz Led Verde 8x8 Max7219 SPI](https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi)
+
+Esta matriz de led utiliza un multiplexor, es decir que mediante 2 canales se envia información para controlar cada led, de esta manera no debemos tener 256 canales (total de leds)
+
+<br>
+
+- [Allison Parrish: Recent and Selected Work](https://portfolio.decontextualize.com/)
+
+Compilado de proyectos de Allison, muchos de ellos trabajan con el IC 2040. Recordando este microcontrolador corresponde al cerebro de la Raspberry Pi Pico
+
+> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) Me encantó, ya que mi cariño por el mundo de los videojuegos, pero más específicamente por el _modeo_ o la realización de elementos para _hackear_  hardware retro. Espero profundizar esto en algún momentp
+
+<br>
+
+- [Sam Lavigne](https://lav.io/) 
+
+Recuerdo que aaron me enseño esta web portafolio y más específicamente https://lav.io/projects/new-york-apartment/. Acá Sam recopila **todos** los datos de arriendo y estructura una lógica de visualización de datos interactiva, pudiendo "fusionar" todos los departamentos en uno, calculando cuando te demorarias en pagar cada uno, etc...
+
+Este portafolio lo tengo constantemente en mi memoria, ya que es un gran referente de las cosas que se pueden llegar a lograr con el código
+
+<br>
+
+- [How to speak machine](https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view)
+
+Este libro puede servir para entender la lógica detrás de lo que es y no es un computador personal, concepto clave del proyecto-02
+
+<br>
+
+- [Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+
+Desarrollaron una máquina percusiva que utiliza 4 sonidos y 2 modificadores. Este referente es clave para lo que queremos lograr, igualmente nos acercamos a la versión que está en el LID para explorar y ver las posibilidades de lo que es posible
+
+Utiliza un microcontrolador ATM, más exactamente el que utilizaban los Arduino Uno R3
+
+<br>
+
+- [oficina del sonido](https://www.oficinadesonido.org/)
+
+Referente similar al anterior, no profundizo aún en este. Lo dejo para un futuro
+
+<br>
+
+- [Windows 95](https://www.youtube.com/watch?v=I3Ak5VgyEoc)
+
+El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el oceano de infinidades que pueden ocurrir en pocos segundos. De esto, además consideramos el como la sonoridad evolucionó con la computación
 
 <br>
 

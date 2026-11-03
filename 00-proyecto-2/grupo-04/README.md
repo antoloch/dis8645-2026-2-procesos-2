@@ -6,7 +6,7 @@ Fecha de entrega: 2026-11-03
 
 ## Integrantes
 
-Emilia Contreras / [hazzaily](https://github.com/hazzaily) / Diagrama de flujo, esquemático, documentación.
+Emilia Contreras / [hazzaily](https://github.com/hazzaily) / Diagrama de flujo, esquemático, documentación, carcasa.
 
 Kristel Ladrón de Guevara / [kristelagj](https://github.com/kristelagj) / Esquemático, registro, documentación.
 
@@ -142,6 +142,9 @@ Cada clase vive en sus propios archivos: el `.h` declara, el `.cpp` implementa y
 | Botón borrar | GP20 (a GND, con pull-up interno) |
 | Botón selector | GP21 (a GND, con pull-up interno) |
 
+Foto de las conexiones en físico.
+
+![foto de las conexiones en físico](./imagenes/conexiones-proyecto2.jpeg)
 
 #### *seleccionar*
 
@@ -177,6 +180,12 @@ Cada clase vive en sus propios archivos: el `.h` declara, el `.cpp` implementa y
 | Pantalla         | SS1, SS2   |   2 | LCD 1602 I2C | $4633  | https://www.mercadolibre.cl/modulo-lcd-20x4-con-interfaz-2004-para-display/p/MLC2035293542 |
 | Perilla          | P1, P2     |   2 | B10k         | $500   | https://afel.cl/products/potenciometro-10k-ohm                                             |
 | Resistor         | R1, R2     |   2 | 10k          | $20    | https://afel.cl/products/kit-500-resistencias-1-2w-50-valores                              |
+
+## Carcasa
+
+Intentamos traer la estética de los objetos que seleccionamos para el render de la carcasa hecho en rhino y posteriormente pasado por chatgpt y photoroom.
+
+![render de la carcasa](./imagenes/carcasa-proyecto2.png)
 
 ## Bibliografía
 

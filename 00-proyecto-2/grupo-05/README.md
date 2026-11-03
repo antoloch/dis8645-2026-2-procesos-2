@@ -1,4 +1,4 @@
-![tittle](./imagenes/altiro-hero-loop.gif)
+ ![tittle](./imagenes/altiro-hero-loop.gif)
 
 **Realizado por:**  
 *Francisca Jesús Palma Cuevas (frannciscapalma)*
@@ -17,8 +17,8 @@
  - *Prototipo físico tangible de altiro hero*
 
 **Descargables**
-- Carcasa
-- Esquemático en Kicad 
+- Carcasa [modelos 3d](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/modelos-3d)
+- Kicad [esquemático](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/esquematicos/altiro-hero)
 
 **Indice:**   
 - Génesis del proyecto
@@ -72,21 +72,15 @@ El juego cuenta con tres niveles, que se eligen desde el menú con el segundo bo
 
 </details>
 
-## El nacimiento
+## La idea
 
 <details>
 
 ![génesis](./imagenes/genesis.jpeg)
-![niveles](./imagenes/niveles.gif)
-![pierde](./imagenes/pierde.gif)
     
 </details>
-
-## Feedback
-
-<details>
 </details>
-</details>
+
 
 # Diagramas de flujo 
 <details> 
@@ -366,7 +360,7 @@ Nuestro proyecto será un juego de ritmo el cual tendrá los siguientes componen
 
 | Fecha | Día | Tiempo trabajado |
 |-------|-----|------------------|
-| 2026-10-17 | Sáb | 10 min |
+| 2026-10-17 | Sáb | 1 h |
 | 2026-10-18 | Dom | 0 |
 | 2026-10-19 | Lun | 2 h |
 | 2026-10-20 | Mar | 4 h |
@@ -382,8 +376,8 @@ Nuestro proyecto será un juego de ritmo el cual tendrá los siguientes componen
 | 2026-10-30 | Vie | 6 h |
 | 2026-10-31 | Sáb | 13 h |
 | 2026-11-01 | Dom | 5 h 30 min |
-| 2026-11-02 | Lun | 0 |
-| **Total** | | **74 h 10 min** |
+| 2026-11-02 | Lun | 11 h |
+| **Total** | | **86 h** |
 
 </details>
 </details>
@@ -459,7 +453,11 @@ void leer
 # Esquemático 
     
  <details>
-![Esquematico](.esquematicos/altiro-hero/vista-previa.png)
+  
+  
+![Esquematico](./imagenes/esquematico.png)
+
+
  </details>
  
 # Simulación digital en wokwi
@@ -482,6 +480,7 @@ void leer
 ![altiro hero funcionando](./imagenes/pierde.gif)   
 ![desarmado](./imagenes/desarmado.jpeg)
 ![desarmado2](./imagenes/desarmado2.jpeg)
+![funcionando](./imagenes/altiro-hero-funcionando.gif)
 
 ---
     
@@ -613,6 +612,7 @@ Ya para el toque final, le pedimos a ChatGPT que añadiera sonido en los pines a
 - Camila Ramírez: Porque en medio de una conversación nos ayudo a aterrizar la idea del proyecto, y por regalarnos el Max98357A para el audio de nuestro proyecto.
 - Camila Parada: Por prestarnos el filamento de impresión **trans**parente 
 - Vania Paredes (sleye) y Caro alegria: Por donarnos filamentos para pruebas.
+- Emilia Guerra: por atendernos y tambien ayudarnos a imprimir en las bambu lab. 
 - El LID: Por las impresoras 3D, el wifi, los cautines, el espacio, la comodidad, y las herramientas necesarias para la creación tangible de nuestro proyecto.
 
 </details>

@@ -332,7 +332,8 @@ A partir de estas referencias decidimos desarrollar una carcasa compacta, con un
 
 ### 10.2. Bocetos y propuestas
 
-<img src="./imagenes/boceto.png" alt="Boceto de la carcasa" width="300">
+
+<img src="./imagenes/boceto.jpeg" alt="Boceto de la carcasa" width="300"> <img src="./imagenes/boceto2.jpeg" alt="Boceto de la carcasa" width="300">
 
 A partir de la investigación comenzamos a explorar distintas formas para la carcasa. Queríamos evitar una caja rectangular tradicional y conseguir una forma que se sintiera más cercana a un pequeño instrumento de escritorio.
 
