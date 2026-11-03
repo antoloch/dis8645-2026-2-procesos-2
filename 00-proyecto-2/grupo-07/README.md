@@ -5,7 +5,7 @@
 ### Integrantes
 
 - Isidora Díaz [@isiidoraadiiaz](https://github.com/isiidoraadiiaz)
-- Natalia Gutierrez [@blosssom-n](https://github.com/blosssom-n)
+- Natalia Gutiérrez [@blosssom-n](https://github.com/blosssom-n)
 - Carlo Martínez [@zaaaiko](https://github.com/zaaaiko)
 - Natalia Pilar [@sz-mada](https://github.com/sz-mada)
 
