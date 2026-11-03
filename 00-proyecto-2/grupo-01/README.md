@@ -74,22 +74,11 @@ Este corresponde
 3. Dos referentes posteriores  Computadores y plataformas más actuales: sonidos que incorporan audio digital, muestras grabadas, mayor complejidad musical y procesamiento de audio en tiempo real.
 
 
-### Referentes
-
-### Bleep-Drum
-
-![bleep-drum](./imagenes/bleep-drum.jpg)
-
-![bleep-drum](./imagenes/bleep-drum01.jpg)
-
-2. 
+## Referentes
 
 ### Hanan Cumbia (HTR-1)
 
-una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrones.
-
-
- 
+una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrone
 https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/
 
 
@@ -109,6 +98,10 @@ sonidos de Windows 95: El video recopila los sonidos del sistema operativo Windo
 
 https://www.youtube.com/watch?v=w0xIUuH6Mck
 
+<br>
+
+<details>
+<summary> <h4> Ver más </h4> </summary>
 
 <br>
 
@@ -122,7 +115,7 @@ Esta matriz de led utiliza un multiplexor, es decir que mediante 2 canales se en
 
 Compilado de proyectos de Allison, muchos de ellos trabajan con el IC 2040. Recordando este microcontrolador corresponde al cerebro de la Raspberry Pi Pico
 
-> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) Me encantó, ya que mi cariño por el mundo de los videojuegos, pero más específicamente por el _modeo_ o la realización de elementos para _hackear_  hardware retro. Espero profundizar esto en algún momentp
+> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) 
 
 <br>
 
@@ -139,6 +132,8 @@ Este libro puede servir para entender la lógica detrás de lo que es y no es un
 <br>
 
 - [Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+
+![bleep](./imagenes/bleep-drum.jpg)
 
 Desarrollaron una máquina percusiva que utiliza 4 sonidos y 2 modificadores. Este referente es clave para lo que queremos lograr, igualmente nos acercamos a la versión que está en el LID para explorar y ver las posibilidades de lo que es posible
 
