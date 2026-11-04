@@ -19,6 +19,8 @@
 - posicionamiento en un marco teórico extraído de un lado del mundo informático
 - sus ideas han contribuido al aprendizaje (aspectos epistemológicos)
 - proceso de aprendizaje adquiriendo visión más profunda de lo que se está aprendiendo
+- trabajo mediante computadoras puede hacer más evidente que los niños construyen sus propios micromundos personales
+- epistemología -- teoría conocimiento, describir estudio de la validez del conocimiento 
 
 ### IA
 - uso de IA: ampliar capacidades de las máquinas para realizar funciones, las cuales se considerarían "inteligentes" si son realizadas por las personas
