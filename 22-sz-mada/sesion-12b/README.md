@@ -10,6 +10,12 @@ Misaa recomienda usar [Zotero](https://www.zotero.org/) para facilitar el uso de
 
 Mi *software* es mucho mejor que mi *hardware* (Serrano, 2026) &larr; boo tomato tomato boo
 
-Leímos las respuestas a la encuesta de noviembre para el taller. **My** concerns were touched on
+Leímos las respuestas de la encuesta de noviembre para el taller. **My** concerns were touched on
 
-[Brand New Noise](https://www.brandnewnoise.com/): Lo-fi recorder with playback (?) and pitch/speed control
+- [Brand New Noise](https://www.brandnewnoise.com/): Lo-fi recorder with playback (?) and pitch/speed control
+
+- [Sonic Liberation Devices](https://sonicliberationdevices.com/)
+
+- [Bleep Drum](https://bleeplabs.com/the-bleep-drum/)
+
+- [The Sonification handbook](https://sonification.de/handbook/)
