@@ -19,3 +19,25 @@ Leímos las respuestas de la encuesta de noviembre para el taller. **My** concer
 - [Bleep Drum](https://bleeplabs.com/the-bleep-drum/)
 
 - [The Sonification handbook](https://sonification.de/handbook/)
+
+- [KORG OK GO](https://www.korg.com/us/products/dj/volca_sample_okgo_edition/)
+
+- [Christine Sun Kim](https://christinesunkim.com/)
+
+- [Tristan Perich](https://www.tristanperich.com/): 1-Bit Symphony
+
+- [Pierre Schaeffer](https://ressources.ircam.fr/en/pierre-schaeffer)
+
+- Tratado de los objetos musicales de Pierre Schaeffer en [Internet Archive](https://archive.org/details/schaeffer-pierre-tratado-de-los-objetos-musicales)
+
+- [Nunca vi un sonido](https://estefaniasoundscape.wordpress.com/wp-content/uploads/2017/10/nunca-vi-un-sonido_r-murray-schafer.pdf) de R. Murray Schafer
+
+- [KOALA sampler](https://www.elf-audio.com/koala/how-it-was-made.php)
+
+- El paisaje sonoro y la afinación del mundo de R. Murray Schafer en [Internet Archive](https://archive.org/details/murray-schafer-r.-el-paisaje-sonoro-y-la-afinacion-del-mundo-ocr-2013)
+
+- [Museo del sonido](https://www.museodelsonido.cl/)
+
+## encargo
+
+Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar como aparece, intentar describir como suena, y su relación cultural
