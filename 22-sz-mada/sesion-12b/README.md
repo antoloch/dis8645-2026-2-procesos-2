@@ -44,8 +44,8 @@ Somebody wants to read about finance rather than microcontrollers :skull: to eac
 
 ## encargo
 
-Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar cómo aparece, intentar describir cómo suena, y sus aspectos culturales
+1. Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar cómo aparece, intentar describir cómo suena, y sus aspectos culturales
 
-Revisar una obra de Tristan Perich y una de Christine Sun Kim
+1. Revisar una obra de Tristan Perich y una de Christine Sun Kim
 
-Revisar repo de grupo-01 proyecto 2 para ver cómo resolvieron el aspecto del amplificador y parlante
+1. Revisar repo de grupo-01 proyecto 2 para ver cómo resolvieron el aspecto del amplificador y parlante
