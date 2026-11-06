@@ -38,6 +38,10 @@ Leímos las respuestas de la encuesta de noviembre para el taller. **My** concer
 
 - [Museo del sonido](https://www.museodelsonido.cl/)
 
+---
+
+Somebody wants to read about finance rather than microcontrollers :skull: to each their own I guess
+
 ## encargo
 
 Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar como aparece, intentar describir como suena, y su relación cultural
