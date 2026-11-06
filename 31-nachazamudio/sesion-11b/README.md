@@ -20,9 +20,31 @@ Bibliografias por sección, tenerle cariño a la investigación.
 
 Entrega 3 no es simulación, siosi físico, carcasa, código...
 
-yyyy un parlante, en serio. Puede llevar mas cosas, pantalla, micrófono, pueden grabar y reproducir el audio, pero es opcional. 
+Yyyy un parlante, en serio. Puede llevar mas cosas, pantalla, micrófono, pueden grabar y reproducir el audio, pero es opcional. 
 
+Podría no se interactivo
 
+Requisitos: parlante y código
+
+-------
+Datos y cosas que investigar: 
+
+SONIC IBERATION DEVICES
+
+sampleps
+
+módulo resproductor
+
+amplificador 5 x 3 lukitas, makerhawk max98357 i2s / MAX98357A 
+
+https://es.aliexpress.com/item/1005006823938000.html 
+
+THE SONIFICATION HANDBOOK 
+https://sonification.de/handbook/download/TheSonificationHandbook-HermannHuntNeuhoff-2011.pdf
+
+Christine Sun Kim
+
+REPO grupo 1
 
 ## encargos
 
