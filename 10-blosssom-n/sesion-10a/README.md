@@ -233,3 +233,15 @@ El recorrido sería:
 ## encargos
 
 ## lectura
+
+### PAG 104-115
+
+En estas páginas aparecen poemas donde las letras forman imágenes o están repartidas por la página. Entonces no importa solamente lo que dicen las palabras, sino también cómo se ven.
+
+Después habla de poemas que se mueven y se van transformando en la pantalla. Me llamó la atención que el movimiento también pueda ser parte de lo que dice el poema, porque cambia cómo vamos leyendo las palabras.
+
+>Citas
+>
+> “The space on the screen concretely represents a physical action.” (p. 113)
+>
+> “Mutation (instead of permutation) is the operative principle in most dynamic works” (p. 111).

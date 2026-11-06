@@ -1,5 +1,0 @@
-# Estas rutas son para usar en Wokwi el programa que compilamos localmente.
-[wokwi]
-version = 1
-firmware = "build/trazo.uf2"
-elf = "build/trazo.elf"

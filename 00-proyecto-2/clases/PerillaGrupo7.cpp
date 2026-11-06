@@ -1,4 +1,4 @@
-#include "Perilla.h"
+#include "PerillaGrupo7.h 
 #include "hardware/adc.h"
 #include "hardware/gpio.h"
 

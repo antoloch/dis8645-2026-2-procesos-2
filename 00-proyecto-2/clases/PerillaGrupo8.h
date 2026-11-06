@@ -1,47 +1,24 @@
-#ifndef PERILLA_H
-#define PERILLA_H
+#pragma once
+#include <cstdint>
 
-#include <stdint.h>
-
-// Vamos a tener dos perillas.
-//
-// Ambas funcionan de la misma manera,
-// pero cada una tendra su propio pin.
-//
-// Esta clase solo lee la perilla
-// y convierte su lectura a otro rango.
-//
-// Mas adelante usaremos esos valores
-// para controlar el lapiz de la pantalla.
-
+// Clase reutilizable para controles analogicos del RP2040 (Pico SDK).
 class Perilla {
 public:
-    // ATRIBUTOS
-    // Son datos que guarda cada objeto.
+// Determina la dirección del giro de la perilla respecto a su posición central.
+// Retorna:
+// -1 = giro hacia un lado.
+//  0 = posición central.
+// +1 = giro hacia el otro lado.
+    explicit Perilla(unsigned int pin);
+    void iniciar() const;
+    uint16_t leer() const; // ADC 0 a 4095.
+    int direccion() const; // -1, 0, +1: giro relativo a la zona central.
+    
+// Variable privada que almacena el número del pin donde está conectada la perilla.
+private:
+    unsigned int pin_;
+};
 
-    // GPIO donde conectamos la senal.
-    unsigned int pin;
-
-    // Ultima lectura obtenida del ADC.
-    uint16_t lectura;
-
-    // CONSTRUCTOR
-    // Recibe el GPIO que usara esta perilla.
-    Perilla(unsigned int pinADC);
-
-    // METODOS
-    // Son acciones que puede realizar el objeto.
-
-    // Prepara el GPIO para una lectura analogica.
-    void iniciar();
-
-    // Lee la perilla y guarda el resultado.
-    // Devuelve un numero entre 0 y 4095.
-    uint16_t leer();
-
-    // Convierte la ultima lectura guardada
-    // al rango que necesitemos.
-    int convertir(int minimo, int maximo);
 };
 
 #endif

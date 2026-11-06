@@ -6,13 +6,15 @@ Fecha de entrega: 2026-11-03
 
 ## Integrantes
 
-Emilia Contreras / [hazzaily](https://github.com/hazzaily) / 
+Emilia Contreras / [hazzaily](https://github.com/hazzaily) / Diagrama de flujo, esquemático, documentación, carcasa.
 
-Kristel Ladrón de Guevara / [kristelagj](https://github.com/kristelagj) /
+Kristel Ladrón de Guevara / [kristelagj](https://github.com/kristelagj) / Esquemático, registro, documentación.
 
-Monserrat Paredes / [Monserrat-Paredes](https://github.com/Monserrat-Paredes) / 
+Monserrat Paredes / [Monserrat-Paredes](https://github.com/Monserrat-Paredes) / Código, documentación.
 
-Katalina Riquelme / [riyakatalinaa](https://github.com/riyakatalinaa) / 
+Katalina Riquelme / [riyakatalinaa](https://github.com/riyakatalinaa) / Diagrama de flujo, documentación.
+
+---
 
 ## Importante 
 
@@ -22,7 +24,9 @@ Todos los gifs e imágenes se encuentran subidos en la carpeta de "imagenes".
 
 Códigos subidos por fecha en la carpeta "codigos".
 
-Wokwi <https://wokwi.com/projects/478683034244407297>
+Conversaciones con Claude al final del ReadMe.
+
+Visualizar proyecto [Wokwi proyecto-02](https://wokwi.com/projects/478683034244407297)
 
 ---
 
@@ -49,6 +53,8 @@ Bajo esta idea, queremos generar una máquina en donde en una pantalla se pueden
 Funciona a través de un selector de caracteres (perilla), que nos permite escoger las letras para formar palabras o no y finalmente seleccionarlas con un botón que puede ser presionado 1 o 2 veces.
 
 También podemos editar el texto que imprimimos en una segunda pantalla con una segunda perilla que puede recorrer el texto para añadir un carácter, borrarlo, o borrar todo lo digitado si se mantiene presionado.
+
+---
 
 ## Proceso
 
@@ -86,11 +92,100 @@ Perilla 1: elegir la letra
 
 Perilla 2: recorrer el texto
 
-## Código y clases
+---
+
+## Clases y código del proyecto
+
+Cada clase está en sus propios archivos: el `.h` dice qué tiene y el `.cpp` dice cómo lo hace.
+
+En clase Boton encontramos:
+
+- **Botón genérico:** lo usan ambos grupos.
+- **04:** solo el Grupo 04 (máquina multitap).
+- **03:** solo el Grupo 03 (máquina de emociones).
+
+| Clase | Qué es | Qué hace en el proyecto | Archivos |
+|---|---|---|---|
+| **Botón genérico** (parte común) | Un botón físico, para los dos grupos | Detecta si está apretado, y si fue clic simple, doble, triple o pulsación larga. Se puede cambiar el cableado y los tiempos | `Boton.h`, `Boton.cpp` (carpeta `boton_proyecto02`) |
+| **Botón Grupo 04** (multitap) | El botón de nuestro proyecto | Agrega `permitirDoble`: el botón de borrar no espera un segundo clic. Instancias: `botonSelector` (1 clic = minúscula, 2 clics = MAYÚSCULA) y `botonBorrar` (1 clic borra un carácter, mantenerlo borra todo) | Misma clase `Boton` |
+| **Botón Grupo 03** (emociones) | El botón de la máquina de emociones | Agrega `pin`, `estado` y `funcion`, y los métodos `esta_presionado()` y `fue_presionado()`. Puede alternar entre encendido y apagado. Instancias: `boton_encendido` y `boton_salto` | Misma clase `Boton` |
+| `Perilla` | Un potenciómetro | Dice en qué tramo está la perilla, para elegir un carácter o mover el cursor | `Perilla.h`, `Perilla.cpp` |
+| `Pantalla` | Una pantalla LCD 20x4 | Escribe líneas de texto y mueve el cursor | `Pantalla.h`, `Pantalla.cpp` |
+| `Selector` | La lista de caracteres | Guarda las 37 opciones (letras, símbolos, TAB y ENTER) y cuál está elegida | `Selector.h`, `Selector.cpp` |
+| `Editor` | El texto digitado | Guarda el texto y el cursor, inserta y borra caracteres, y los reparte en 4 filas de 20 | `Editor.h`, `Editor.cpp` |
+
+---
+
+### Qué hace cada archivo
+
+Cada clase vive en sus propios archivos: el `.h` declara, el `.cpp` implementa y el main no es una clase, pero es el programa principal que junta todo y hace que funcione.
+
+| Archivos | Qué contienen |
+|---|---|
+| `main.cpp` | El programa principal, que conecta todas las clases |
+| `Boton.h` · `Boton.cpp` | El botón: clic simple, doble y pulsación larga |
+| `Perilla.h` · `Perilla.cpp` | El potenciómetro: lee su posición |
+| `Pantalla.h` · `Pantalla.cpp` | El LCD 20x4: escribe en la pantalla |
+| `Selector.h` · `Selector.cpp` | La lista de caracteres y el elegido |
+| `Editor.h` · `Editor.cpp` | El texto digitado y el cursor |
+| `diagram.json` | El cableado de Wokwi |
+
+
+## Conexiones
+
+| Componente | Pines Raspberry |
+|---|---|
+| Pantalla de texto (I2C0) | SDA GP4, SCL GP5 |
+| Pantalla del selector (I2C1) | SDA GP6, SCL GP7 |
+| Potenciómetro selector | SIG GP26 |
+| Potenciómetro cursor | SIG GP27 |
+| Botón borrar | GP20 (a GND, con pull-up interno) |
+| Botón selector | GP21 (a GND, con pull-up interno) |
+
+Foto de las conexiones en físico.
+
+![foto de las conexiones en físico](./imagenes/conexiones-proyecto2.jpeg)
+
+#### *seleccionar*
+
+![seleccionar](./videos/seleccionar.gif)
+
+#### *escribir*
+![escribir](./videos/escribir.gif)
+
+#### *borrar*
+![borrar](./videos/borrar.gif)
+
+#### *buscar*
+![buscar](./videos/buscar.gif) 
+
+#### *ejemplo*
+![grupo](./videos/grupo.gif)
+
 
 ## Diagramas de flujo
 
+![imagen del diagrama de flujo de proyecto 2](./imagenes/diagramadeflujo-proyecto02-grupo04.jpg)
+
 ## Esquemáticos
+
+![imagen esquemático proyecto 2](./imagenes/esquematico-proyecto2-grupo4.jpg)
+
+**Bill Of Materials**
+
+| Componente       | Referencia | Qty | Valor        | Precio | Link                                                                                       |
+|------------------|------------|-----|--------------|--------|--------------------------------------------------------------------------------------------|
+| RaspberryPi_Pico | A1         |   1 |              | $11290 | https://raspberrypi.cl/products/raspberry-pi-pico-w-con-conexion-wifi                      |
+| Botón Pulsador   | B1, B2     |   2 |              | $100   | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades                     |
+| Pantalla         | SS1, SS2   |   2 | LCD 1602 I2C | $4633  | https://www.mercadolibre.cl/modulo-lcd-20x4-con-interfaz-2004-para-display/p/MLC2035293542 |
+| Perilla          | P1, P2     |   2 | B10k         | $500   | https://afel.cl/products/potenciometro-10k-ohm                                             |
+| Resistor         | R1, R2     |   2 | 10k          | $20    | https://afel.cl/products/kit-500-resistencias-1-2w-50-valores                              |
+
+## Carcasa
+
+Intentamos traer la estética de los objetos que seleccionamos para el render de la carcasa hecho en rhino y posteriormente pasado por chatgpt y photoroom.
+
+![render de la carcasa](./imagenes/carcasa-proyecto2.png)
 
 ## Bibliografía
 
@@ -102,7 +197,6 @@ Perilla 2: recorrer el texto
 
 [Wikipedia - Dual Analog](https://es.wikipedia.org/wiki/DualAnalog)
 
-
 **Imágenes:**
 
 [Nokia 9000](https://www.elmundo.es/tecnologia/2026/08/15/6a8014c6e4d4d85a078b458d.html)
@@ -111,6 +205,10 @@ Perilla 2: recorrer el texto
 
 [Play Station 1](https://www.fullcompras.cl/Sony-Playstation-PS-One---Consola-de-videojuegos-renovada?srsltid=AYCX9vL8oIILWeRBE8-nlHRv45sFf17SLITUHpGW-0kN0Bel9h7SiZZu)
 
+**Conversor de tablas excel a markdown:** 
+
+[Tables Generator](https://www.tablesgenerator.com/markdown_tables)
+
 ## Prompts usados
 
-
+[Chats con Claude](https://github.com/disenoUDP/dis8645-2026-2-procesos-2/blob/main/00-proyecto-2/grupo-04/codigos/promptproyecto-02.pdf)

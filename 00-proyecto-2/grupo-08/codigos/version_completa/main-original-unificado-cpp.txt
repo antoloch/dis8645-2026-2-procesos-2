@@ -1,0 +1,1753 @@
+// DORE 8 - VIDEOJUEGO RETRO - VERSION FISICA SIN AUDIO
+// Raspberry Pi Pico 2 W (RP2350), C++17 + Pico SDK. SIN Arduino.
+// Pantalla GMT020-02-8P / ST7789V, 320x240 horizontal.
+// Este unico archivo reúne la última version de PantallaUI, gráficos ST7789,
+// FuenteRetro, Perilla, Boton2 y la lógica del juego.
+// Buzzer GP13 desconectado: NO se inicializa PWM ni se produce sonido.
+// Boton de musica GP10 queda reservado sin acción. Boton continuar GP11 funciona.
+// Para compilar, en CMakeLists.txt deja SOLO main.cpp en add_executable(Dore8 ...).
+// La fuente tipografica tiene datos raster 5x7, pero NO hay bitmaps de escenas.
+
+// 01 · BIBLIOTECAS Y TIPOS DE DATOS
+// Las cabeceras de C++ ofrecen tipos enteros, operaciones matemáticas y escritura por consola.
+#include <cstddef>
+#include <cstdint>
+#include <stdint.h>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+// Pico SDK: ADC lee las perillas; SPI envía datos a la pantalla; stdlib maneja GPIO y tiempo.
+// No se utiliza Arduino ni sus funciones setup()/loop().
+#include "hardware/adc.h"
+#include "hardware/spi.h"
+#include "pico/stdlib.h"
+
+
+// ========================================================================
+// Fuente retro 5x7
+// ========================================================================
+
+// No se utilizan bitmaps para escenarios, personajes ni vehiculos.
+// 02 · TIPOGRAFÍA RETRO
+// Cada entrada guarda 7 filas de 5 píxeles para un carácter.
+// Esta tabla sí contiene glifos de texto; los escenarios y personajes se dibujan con figuras.
+static const uint8_t FUENTE_RETRO[256][7] = {
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 0
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 1
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 2
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 3
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 4
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 5
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 6
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 7
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 8
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 9
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // 10
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 11
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 12
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 13
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 14
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 15
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 16
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 17
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 18
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 19
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 20
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 21
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 22
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 23
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 24
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 25
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 26
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 27
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 28
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 29
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 30
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 31
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // 32
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x00, 0x04}, // 33
+  {0x0A, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00}, // 34
+  {0x05, 0x05, 0x1F, 0x0A, 0x1F, 0x0A, 0x0C}, // 35
+  {0x04, 0x0F, 0x0C, 0x0C, 0x07, 0x05, 0x0F}, // 36
+  {0x1C, 0x14, 0x1D, 0x06, 0x1B, 0x05, 0x03}, // 37
+  {0x0E, 0x08, 0x08, 0x0C, 0x17, 0x1B, 0x0F}, // 38
+  {0x04, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00}, // 39
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x02}, // 40
+  {0x04, 0x06, 0x06, 0x06, 0x06, 0x04, 0x04}, // 41
+  {0x0D, 0x0E, 0x0E, 0x0D, 0x00, 0x00, 0x00}, // 42
+  {0x00, 0x00, 0x04, 0x04, 0x1F, 0x04, 0x04}, // 43
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04}, // 44
+  {0x00, 0x00, 0x00, 0x00, 0x0E, 0x00, 0x00}, // 45
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x04}, // 46
+  {0x03, 0x02, 0x06, 0x04, 0x0C, 0x08, 0x08}, // 47
+  {0x0E, 0x0B, 0x19, 0x1D, 0x19, 0x0B, 0x0E}, // 48
+  {0x0E, 0x06, 0x06, 0x06, 0x06, 0x06, 0x0F}, // 49
+  {0x0E, 0x0B, 0x03, 0x02, 0x04, 0x08, 0x1F}, // 50
+  {0x0E, 0x0B, 0x03, 0x06, 0x03, 0x13, 0x0E}, // 51
+  {0x02, 0x06, 0x06, 0x0A, 0x0A, 0x1F, 0x02}, // 52
+  {0x0E, 0x08, 0x08, 0x0E, 0x03, 0x03, 0x1E}, // 53
+  {0x0F, 0x08, 0x18, 0x1E, 0x19, 0x09, 0x0E}, // 54
+  {0x1F, 0x03, 0x02, 0x02, 0x04, 0x04, 0x0C}, // 55
+  {0x0E, 0x0B, 0x0B, 0x0E, 0x09, 0x19, 0x0E}, // 56
+  {0x0E, 0x1B, 0x1B, 0x0F, 0x01, 0x03, 0x0E}, // 57
+  {0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04}, // 58
+  {0x00, 0x00, 0x04, 0x00, 0x00, 0x00, 0x04}, // 59
+  {0x00, 0x00, 0x03, 0x0C, 0x0C, 0x03, 0x00}, // 60
+  {0x00, 0x00, 0x00, 0x1F, 0x00, 0x1F, 0x00}, // 61
+  {0x00, 0x00, 0x18, 0x07, 0x07, 0x18, 0x00}, // 62
+  {0x0E, 0x03, 0x02, 0x04, 0x04, 0x00, 0x04}, // 63
+  {0x00, 0x0F, 0x19, 0x17, 0x15, 0x17, 0x08}, // 64
+  {0x06, 0x06, 0x0E, 0x0A, 0x0B, 0x1F, 0x19}, // 65
+  {0x0E, 0x09, 0x0B, 0x0E, 0x09, 0x09, 0x0F}, // 66
+  {0x07, 0x08, 0x08, 0x18, 0x08, 0x08, 0x07}, // 67
+  {0x1E, 0x1B, 0x19, 0x19, 0x19, 0x1B, 0x1E}, // 68
+  {0x0F, 0x08, 0x08, 0x0F, 0x08, 0x08, 0x0F}, // 69
+  {0x0F, 0x08, 0x08, 0x0F, 0x08, 0x08, 0x08}, // 70
+  {0x0F, 0x08, 0x18, 0x1B, 0x19, 0x09, 0x0F}, // 71
+  {0x19, 0x19, 0x19, 0x1F, 0x19, 0x19, 0x19}, // 72
+  {0x0F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x0F}, // 73
+  {0x0E, 0x02, 0x02, 0x02, 0x02, 0x02, 0x1E}, // 74
+  {0x19, 0x1A, 0x1C, 0x1C, 0x1A, 0x1B, 0x19}, // 75
+  {0x08, 0x08, 0x08, 0x08, 0x08, 0x08, 0x0F}, // 76
+  {0x19, 0x1B, 0x1B, 0x17, 0x15, 0x11, 0x11}, // 77
+  {0x19, 0x19, 0x1D, 0x1D, 0x1B, 0x1B, 0x1B}, // 78
+  {0x0E, 0x0B, 0x19, 0x19, 0x19, 0x0B, 0x0E}, // 79
+  {0x0F, 0x09, 0x09, 0x0F, 0x08, 0x08, 0x08}, // 80
+  {0x0E, 0x0B, 0x19, 0x19, 0x19, 0x0B, 0x0E}, // 81
+  {0x1E, 0x1B, 0x1B, 0x1E, 0x1A, 0x19, 0x19}, // 82
+  {0x0E, 0x09, 0x08, 0x0E, 0x01, 0x09, 0x0E}, // 83
+  {0x1F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04}, // 84
+  {0x19, 0x19, 0x19, 0x19, 0x19, 0x0B, 0x0E}, // 85
+  {0x11, 0x19, 0x0B, 0x0A, 0x0A, 0x06, 0x06}, // 86
+  {0x11, 0x11, 0x15, 0x1F, 0x1F, 0x0B, 0x0B}, // 87
+  {0x19, 0x0A, 0x06, 0x06, 0x0E, 0x0B, 0x19}, // 88
+  {0x19, 0x0B, 0x0E, 0x06, 0x04, 0x04, 0x04}, // 89
+  {0x0F, 0x01, 0x02, 0x04, 0x04, 0x08, 0x0F}, // 90
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x06}, // 91
+  {0x08, 0x08, 0x0C, 0x04, 0x06, 0x02, 0x03}, // 92
+  {0x06, 0x06, 0x06, 0x06, 0x06, 0x06, 0x0E}, // 93
+  {0x06, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00}, // 94
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // 95
+  {0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // 96
+  {0x00, 0x00, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 97
+  {0x08, 0x08, 0x0E, 0x09, 0x09, 0x09, 0x0E}, // 98
+  {0x00, 0x00, 0x07, 0x08, 0x08, 0x08, 0x07}, // 99
+  {0x01, 0x01, 0x0F, 0x0B, 0x19, 0x0B, 0x0F}, // 100
+  {0x00, 0x00, 0x0E, 0x09, 0x1F, 0x08, 0x0F}, // 101
+  {0x04, 0x04, 0x0F, 0x04, 0x04, 0x04, 0x04}, // 102
+  {0x00, 0x00, 0x0F, 0x0B, 0x19, 0x0B, 0x0F}, // 103
+  {0x08, 0x08, 0x0E, 0x0B, 0x09, 0x09, 0x09}, // 104
+  {0x00, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0F}, // 105
+  {0x00, 0x00, 0x0E, 0x06, 0x06, 0x06, 0x06}, // 106
+  {0x08, 0x08, 0x0B, 0x0E, 0x0E, 0x0A, 0x09}, // 107
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x07}, // 108
+  {0x00, 0x00, 0x1F, 0x1D, 0x15, 0x15, 0x15}, // 109
+  {0x00, 0x00, 0x0E, 0x0B, 0x09, 0x09, 0x09}, // 110
+  {0x00, 0x00, 0x0E, 0x0B, 0x19, 0x0B, 0x0E}, // 111
+  {0x00, 0x00, 0x0E, 0x09, 0x09, 0x09, 0x0E}, // 112
+  {0x00, 0x00, 0x0F, 0x0B, 0x19, 0x0B, 0x0F}, // 113
+  {0x00, 0x00, 0x0F, 0x0C, 0x0C, 0x0C, 0x0C}, // 114
+  {0x00, 0x00, 0x0E, 0x08, 0x0E, 0x03, 0x0E}, // 115
+  {0x00, 0x04, 0x1F, 0x04, 0x04, 0x04, 0x07}, // 116
+  {0x00, 0x00, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 117
+  {0x00, 0x00, 0x19, 0x0B, 0x0A, 0x0E, 0x06}, // 118
+  {0x00, 0x00, 0x11, 0x15, 0x1F, 0x0B, 0x0B}, // 119
+  {0x00, 0x00, 0x0B, 0x0E, 0x06, 0x0E, 0x09}, // 120
+  {0x00, 0x00, 0x19, 0x0B, 0x0A, 0x06, 0x06}, // 121
+  {0x00, 0x00, 0x0F, 0x02, 0x04, 0x08, 0x0F}, // 122
+  {0x04, 0x04, 0x0C, 0x04, 0x04, 0x04, 0x03}, // 123
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04}, // 124
+  {0x04, 0x04, 0x07, 0x06, 0x04, 0x04, 0x0C}, // 125
+  {0x00, 0x00, 0x00, 0x0D, 0x17, 0x00, 0x00}, // 126
+  {0x00, 0x1F, 0x11, 0x11, 0x11, 0x11, 0x11}, // 127
+  {0x07, 0x08, 0x08, 0x18, 0x08, 0x08, 0x07}, // 128
+  {0x0A, 0x00, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 129
+  {0x04, 0x00, 0x0E, 0x09, 0x1F, 0x08, 0x0F}, // 130
+  {0x04, 0x0A, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 131
+  {0x0A, 0x00, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 132
+  {0x04, 0x00, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 133
+  {0x0A, 0x06, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 134
+  {0x00, 0x00, 0x07, 0x08, 0x08, 0x08, 0x07}, // 135
+  {0x06, 0x0A, 0x0E, 0x09, 0x1F, 0x08, 0x0F}, // 136
+  {0x0E, 0x00, 0x0E, 0x09, 0x1F, 0x08, 0x0F}, // 137
+  {0x04, 0x00, 0x0E, 0x09, 0x1F, 0x08, 0x0F}, // 138
+  {0x0E, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0F}, // 139
+  {0x04, 0x0A, 0x0C, 0x04, 0x04, 0x04, 0x0F}, // 140
+  {0x04, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0F}, // 141
+  {0x06, 0x06, 0x0E, 0x0A, 0x0B, 0x1F, 0x19}, // 142
+  {0x06, 0x06, 0x0E, 0x0A, 0x0B, 0x1F, 0x19}, // 143
+  {0x0F, 0x08, 0x08, 0x0F, 0x08, 0x08, 0x0F}, // 144
+  {0x00, 0x00, 0x1F, 0x05, 0x1F, 0x14, 0x1F}, // 145
+  {0x0F, 0x0E, 0x0A, 0x0B, 0x1A, 0x1E, 0x13}, // 146
+  {0x04, 0x0A, 0x0E, 0x0B, 0x19, 0x0B, 0x0E}, // 147
+  {0x0A, 0x00, 0x0E, 0x0B, 0x19, 0x0B, 0x0E}, // 148
+  {0x04, 0x00, 0x0E, 0x0B, 0x19, 0x0B, 0x0E}, // 149
+  {0x04, 0x0A, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 150
+  {0x04, 0x00, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 151
+  {0x0A, 0x00, 0x19, 0x0B, 0x0A, 0x06, 0x06}, // 152
+  {0x0E, 0x0B, 0x19, 0x19, 0x19, 0x0B, 0x0E}, // 153
+  {0x19, 0x19, 0x19, 0x19, 0x19, 0x0B, 0x0E}, // 154
+  {0x00, 0x02, 0x07, 0x0A, 0x0A, 0x0A, 0x07}, // 155
+  {0x07, 0x05, 0x0C, 0x0E, 0x0C, 0x0C, 0x1F}, // 156
+  {0x19, 0x0A, 0x1F, 0x04, 0x1F, 0x04, 0x04}, // 157
+  {0x18, 0x1C, 0x1F, 0x1E, 0x15, 0x14, 0x17}, // 158
+  {0x07, 0x04, 0x0F, 0x04, 0x04, 0x04, 0x04}, // 159
+  {0x04, 0x00, 0x0E, 0x03, 0x0F, 0x1B, 0x0F}, // 160
+  {0x04, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0F}, // 161
+  {0x04, 0x00, 0x0E, 0x0B, 0x19, 0x0B, 0x0E}, // 162
+  {0x04, 0x00, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 163
+  {0x0E, 0x0E, 0x0E, 0x0B, 0x09, 0x09, 0x09}, // 164
+  {0x19, 0x19, 0x1D, 0x1D, 0x1B, 0x1B, 0x1B}, // 165
+  {0x0E, 0x02, 0x0E, 0x0E, 0x00, 0x0E, 0x00}, // 166
+  {0x0E, 0x0A, 0x0A, 0x0E, 0x00, 0x0E, 0x00}, // 167
+  {0x00, 0x00, 0x04, 0x00, 0x04, 0x04, 0x0C}, // 168
+  {0x00, 0x00, 0x00, 0x1F, 0x10, 0x00, 0x00}, // 169
+  {0x00, 0x00, 0x00, 0x1F, 0x01, 0x00, 0x00}, // 170
+  {0x08, 0x08, 0x1C, 0x07, 0x1F, 0x01, 0x02}, // 171
+  {0x08, 0x08, 0x1C, 0x07, 0x1F, 0x02, 0x07}, // 172
+  {0x00, 0x00, 0x04, 0x00, 0x04, 0x04, 0x04}, // 173
+  {0x00, 0x00, 0x05, 0x0A, 0x0A, 0x05, 0x00}, // 174
+  {0x00, 0x00, 0x0A, 0x0F, 0x0F, 0x0A, 0x00}, // 175
+  {0x09, 0x10, 0x00, 0x09, 0x12, 0x09, 0x00}, // 176
+  {0x0F, 0x17, 0x0F, 0x17, 0x0B, 0x17, 0x0B}, // 177
+  {0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F}, // 178
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04}, // 179
+  {0x04, 0x04, 0x04, 0x1C, 0x04, 0x04, 0x04}, // 180
+  {0x04, 0x04, 0x04, 0x1C, 0x1C, 0x04, 0x04}, // 181
+  {0x0E, 0x0E, 0x0E, 0x1E, 0x0E, 0x0E, 0x0E}, // 182
+  {0x00, 0x00, 0x00, 0x1E, 0x0E, 0x0E, 0x0E}, // 183
+  {0x00, 0x00, 0x00, 0x1C, 0x1C, 0x04, 0x04}, // 184
+  {0x0E, 0x0E, 0x0E, 0x1A, 0x1A, 0x0E, 0x0E}, // 185
+  {0x0E, 0x0E, 0x0E, 0x0E, 0x0E, 0x0E, 0x0E}, // 186
+  {0x00, 0x00, 0x00, 0x1E, 0x1A, 0x0E, 0x0E}, // 187
+  {0x0E, 0x0E, 0x0E, 0x1A, 0x1E, 0x00, 0x00}, // 188
+  {0x0E, 0x0E, 0x0E, 0x1E, 0x00, 0x00, 0x00}, // 189
+  {0x04, 0x04, 0x04, 0x1C, 0x1C, 0x00, 0x00}, // 190
+  {0x00, 0x00, 0x00, 0x1C, 0x04, 0x04, 0x04}, // 191
+  {0x04, 0x04, 0x04, 0x07, 0x00, 0x00, 0x00}, // 192
+  {0x04, 0x04, 0x04, 0x1F, 0x00, 0x00, 0x00}, // 193
+  {0x00, 0x00, 0x00, 0x1F, 0x06, 0x04, 0x04}, // 194
+  {0x04, 0x04, 0x04, 0x07, 0x06, 0x04, 0x04}, // 195
+  {0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00}, // 196
+  {0x04, 0x04, 0x04, 0x1F, 0x06, 0x04, 0x04}, // 197
+  {0x04, 0x04, 0x04, 0x07, 0x07, 0x04, 0x04}, // 198
+  {0x0E, 0x0E, 0x0E, 0x0F, 0x0E, 0x0E, 0x0E}, // 199
+  {0x0E, 0x0E, 0x0E, 0x0F, 0x0F, 0x00, 0x00}, // 200
+  {0x00, 0x00, 0x00, 0x0F, 0x0F, 0x0E, 0x0E}, // 201
+  {0x0E, 0x0E, 0x0E, 0x1B, 0x1F, 0x00, 0x00}, // 202
+  {0x00, 0x00, 0x00, 0x1F, 0x1B, 0x0E, 0x0E}, // 203
+  {0x0E, 0x0E, 0x0E, 0x0F, 0x0F, 0x0E, 0x0E}, // 204
+  {0x00, 0x00, 0x00, 0x1F, 0x1F, 0x00, 0x00}, // 205
+  {0x0E, 0x0E, 0x0E, 0x1B, 0x1B, 0x0E, 0x0E}, // 206
+  {0x04, 0x04, 0x04, 0x1F, 0x1F, 0x00, 0x00}, // 207
+  {0x0E, 0x0E, 0x0E, 0x1F, 0x00, 0x00, 0x00}, // 208
+  {0x00, 0x00, 0x00, 0x1F, 0x1F, 0x04, 0x04}, // 209
+  {0x00, 0x00, 0x00, 0x1F, 0x0E, 0x0E, 0x0E}, // 210
+  {0x0E, 0x0E, 0x0E, 0x0F, 0x00, 0x00, 0x00}, // 211
+  {0x04, 0x04, 0x04, 0x07, 0x07, 0x00, 0x00}, // 212
+  {0x00, 0x00, 0x00, 0x07, 0x07, 0x04, 0x04}, // 213
+  {0x00, 0x00, 0x00, 0x07, 0x0E, 0x0E, 0x0E}, // 214
+  {0x0E, 0x0E, 0x0E, 0x1F, 0x0E, 0x0E, 0x0E}, // 215
+  {0x04, 0x04, 0x04, 0x1F, 0x1F, 0x04, 0x04}, // 216
+  {0x04, 0x04, 0x04, 0x1C, 0x00, 0x00, 0x00}, // 217
+  {0x00, 0x00, 0x00, 0x03, 0x06, 0x04, 0x04}, // 218
+  {0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F}, // 219
+  {0x00, 0x00, 0x00, 0x00, 0x1F, 0x1F, 0x1F}, // 220
+  {0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C}, // 221
+  {0x03, 0x03, 0x03, 0x03, 0x03, 0x03, 0x03}, // 222
+  {0x1F, 0x1F, 0x1F, 0x1F, 0x00, 0x00, 0x00}, // 223
+  {0x00, 0x00, 0x0F, 0x1B, 0x12, 0x12, 0x0F}, // 224
+  {0x0B, 0x0A, 0x0C, 0x0E, 0x09, 0x09, 0x0F}, // 225
+  {0x0F, 0x08, 0x08, 0x08, 0x08, 0x08, 0x08}, // 226
+  {0x00, 0x00, 0x1F, 0x0B, 0x0B, 0x0B, 0x09}, // 227
+  {0x1F, 0x08, 0x04, 0x04, 0x04, 0x08, 0x1F}, // 228
+  {0x00, 0x00, 0x0F, 0x0B, 0x19, 0x0B, 0x0E}, // 229
+  {0x00, 0x00, 0x09, 0x09, 0x09, 0x0B, 0x0F}, // 230
+  {0x00, 0x00, 0x0F, 0x04, 0x04, 0x04, 0x06}, // 231
+  {0x0E, 0x04, 0x0F, 0x1F, 0x0F, 0x04, 0x0E}, // 232
+  {0x0E, 0x0B, 0x19, 0x1F, 0x19, 0x0B, 0x0E}, // 233
+  {0x00, 0x0E, 0x19, 0x11, 0x19, 0x0B, 0x1F}, // 234
+  {0x0E, 0x08, 0x0E, 0x09, 0x19, 0x09, 0x0E}, // 235
+  {0x00, 0x00, 0x00, 0x1F, 0x17, 0x1F, 0x00}, // 236
+  {0x00, 0x00, 0x0F, 0x1D, 0x15, 0x1D, 0x0E}, // 237
+  {0x00, 0x00, 0x0F, 0x08, 0x0E, 0x08, 0x0F}, // 238
+  {0x00, 0x00, 0x0E, 0x09, 0x09, 0x09, 0x09}, // 239
+  {0x00, 0x00, 0x1F, 0x00, 0x1F, 0x1F, 0x00}, // 240
+  {0x00, 0x00, 0x04, 0x1F, 0x04, 0x00, 0x1F}, // 241
+  {0x00, 0x00, 0x18, 0x07, 0x07, 0x18, 0x1F}, // 242
+  {0x00, 0x00, 0x03, 0x0E, 0x0E, 0x03, 0x1F}, // 243
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04}, // 244
+  {0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04}, // 245
+  {0x00, 0x00, 0x04, 0x00, 0x1F, 0x00, 0x04}, // 246
+  {0x00, 0x00, 0x0D, 0x17, 0x0D, 0x17, 0x00}, // 247
+  {0x06, 0x0A, 0x06, 0x00, 0x00, 0x00, 0x00}, // 248
+  {0x00, 0x00, 0x06, 0x0E, 0x06, 0x00, 0x00}, // 249
+  {0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00}, // 250
+  {0x01, 0x01, 0x02, 0x1A, 0x0A, 0x04, 0x04}, // 251
+  {0x00, 0x0E, 0x0A, 0x0A, 0x00, 0x00, 0x00}, // 252
+  {0x0E, 0x02, 0x04, 0x0E, 0x00, 0x00, 0x00}, // 253
+  {0x00, 0x00, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F}, // 254
+  {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, // 255
+};
+
+// ========================================================================
+// Controlador de pantalla: declaracion
+// ========================================================================
+
+// utilizado por DORE 8. NO es la biblioteca Adafruit original sin modificar.
+// Backend: ST7789V fisico (por defecto) o ILI9341 en Wokwi.
+// SPI0: SCK GP18, MOSI GP19, CS GP17, DC GP16; RST GP20 solo fisico.
+// Para compilar modo Wokwi definir DORE8_PANTALLA_ILI9341.
+// Sin Arduino, sin framebuffer, sin bitmaps de escenas.
+// 03 · CLASE GRÁFICA: DECLARACIÓN
+// Esta interfaz reúne las operaciones que necesitan los escenarios (texto, líneas y figuras).
+// Su API recuerda a Adafruit GFX, pero la implementación es propia para Pico SDK.
+class AdafruitGFX_Pico {
+public:
+    // El constructor recibe los GPIO del selector CS, datos/comandos DC y reinicio RST.
+    AdafruitGFX_Pico(uint8_t cs = 17, uint8_t dc = 16, int8_t rst = 20);
+    // Inicializa SPI, los pines y el controlador de pantalla.
+    void begin();
+    // Modifica el giro de la imagen para jugar con la pantalla en horizontal.
+    void setRotation(uint8_t r);
+    void setCP437(bool activo) { cp437_ = activo; }
+    void setTextWrap(bool activo) { wrap_ = activo; }
+    void setTextSize(uint8_t tam) { tam_ = tam ? tam : 1; }
+    void setTextColor(uint16_t color) { textoColor_ = color; }
+    void setCursor(int16_t x, int16_t y) { cursorX_ = x; cursorY_ = y; }
+    std::size_t print(const char *txt);
+    std::size_t print(int valor);
+    void getTextBounds(const char *txt, int16_t x, int16_t y,
+                       int16_t *x1, int16_t *y1, uint16_t *w, uint16_t *h) const;
+    // Primitivas de dibujo que forman paredes, vehículos, personajes y marcos.
+    void drawPixel(int16_t x, int16_t y, uint16_t color);
+    void drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color);
+    void drawFastHLine(int16_t x, int16_t y, int16_t ancho, uint16_t color);
+    void drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+    void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+    void fillScreen(uint16_t color);
+    void drawCircle(int16_t cx, int16_t cy, int16_t radio, uint16_t color);
+    void fillCircle(int16_t cx, int16_t cy, int16_t radio, uint16_t color);
+    void drawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t radio, uint16_t color);
+    void fillRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t radio, uint16_t color);
+    // Triángulos utilizados para pequeños detalles e indicadores de la interfaz.
+    void fillTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
+                      int16_t x2, int16_t y2, uint16_t color);
+
+private:
+    uint8_t cs_, dc_;
+    int8_t rst_;  // -1 desactiva el reinicio fisico.
+    uint8_t tam_ = 1;
+    uint8_t rotacion_ = 1;
+    bool cp437_ = false;
+    bool wrap_ = false;
+    int16_t cursorX_ = 0, cursorY_ = 0;
+    uint16_t textoColor_ = 0xFFFF;
+    int16_t ancho_ = 320, alto_ = 240;
+    void comando(uint8_t valor);
+    void datos(const uint8_t *valores, std::size_t n);
+    void ventana(int16_t x0, int16_t y0, int16_t x1, int16_t y1);
+    void circuloPuntos(int16_t cx, int16_t cy, int16_t x, int16_t y, uint16_t color);
+    void dibujarCaracter(uint8_t caracter, int16_t x, int16_t y);
+};
+
+// Colores RGB565 compatibles con constantes usadas por Adafruit ST77xx.
+// 04 · COLORES
+// Se identifican con valores RGB565 de 16 bits, que entiende el controlador TFT.
+constexpr uint16_t ST77XX_BLACK   = 0x0000;
+constexpr uint16_t ST77XX_WHITE   = 0xFFFF;
+constexpr uint16_t ST77XX_RED     = 0xF800;
+constexpr uint16_t ST77XX_GREEN   = 0x07E0;
+constexpr uint16_t ST77XX_BLUE    = 0x001F;
+constexpr uint16_t ST77XX_CYAN    = 0x07FF;
+constexpr uint16_t ST77XX_MAGENTA = 0xF81F;
+constexpr uint16_t ST77XX_YELLOW  = 0xFFE0;
+constexpr uint16_t ST77XX_ORANGE  = 0xFD20;
+
+// ========================================================================
+// Controlador pantalla: ST7789V y funciones graficas
+// ========================================================================
+
+// 05 · IMPLEMENTACIÓN DEL CONTROLADOR TFT
+// Se guardan los GPIO que manejarán la comunicación con la pantalla.
+AdafruitGFX_Pico::AdafruitGFX_Pico(uint8_t cs, uint8_t dc, int8_t rst)
+    : cs_(cs), dc_(dc), rst_(rst) {}
+
+// Envía un comando al controlador: DC en 0 y CS activo durante el envío SPI.
+void AdafruitGFX_Pico::comando(uint8_t valor) {
+    gpio_put(dc_, false);
+    gpio_put(cs_, false);
+    spi_write_blocking(spi0, &valor, 1);
+    gpio_put(cs_, true);
+}
+// Envía datos asociados a un comando (coordenadas, colores o configuración).
+void AdafruitGFX_Pico::datos(const uint8_t *buffer, std::size_t n) {
+    if (!n) return;
+    gpio_put(dc_, true);
+    gpio_put(cs_, false);
+    spi_write_blocking(spi0, buffer, n);
+    gpio_put(cs_, true);
+}
+// Esta clase conserva las primitivas de dibujo ya usadas por DORE 8.
+// Solo cambia la inicializacion/orientacion segun el controlador.
+// NO utiliza las bibliotecas de Arduino.
+// Inicialización del bus y del panel; el modo físico usa ST7789V y Wokwi puede usar ILI9341.
+void AdafruitGFX_Pico::begin() {
+    // 12 MHz es un punto de partida prudente con cables Dupont/protoboard.
+    // Se puede aumentar tras verificar el funcionamiento fisico.
+    // Se inicia SPI0 a 12 MHz, velocidad conservadora para cables del prototipo.
+    spi_init(spi0, 12000000);
+    // GP18 y GP19 se reservan para el reloj y los datos de pantalla.
+    gpio_set_function(18, GPIO_FUNC_SPI); // SCK
+    gpio_set_function(19, GPIO_FUNC_SPI); // MOSI
+    // Se configuran CS y DC como salidas, sin seleccionar aún la pantalla.
+    gpio_init(cs_); gpio_set_dir(cs_, GPIO_OUT); gpio_put(cs_, true);
+    gpio_init(dc_); gpio_set_dir(dc_, GPIO_OUT); gpio_put(dc_, true);
+
+// En hardware físico se usa RST (GP20) para reiniciar el controlador ST7789V.
+#if !defined(DORE8_PANTALLA_ILI9341)
+    // El GMT020-02-8P fisico tiene RST independiente, conectado a GP20.
+    if (rst_ >= 0) {
+        gpio_init(static_cast<uint>(rst_));
+        gpio_set_dir(static_cast<uint>(rst_), GPIO_OUT);
+        gpio_put(static_cast<uint>(rst_), true);
+        sleep_ms(10);
+        gpio_put(static_cast<uint>(rst_), false);
+        sleep_ms(20);
+        gpio_put(static_cast<uint>(rst_), true);
+        sleep_ms(150);
+    }
+#endif
+
+    // Después del reinicio físico (si corresponde), se reinicia el controlador por software.
+    comando(0x01); sleep_ms(150); // SWRESET (ambos controladores).
+
+// Si la compilación define DORE8_PANTALLA_ILI9341, se elige la secuencia de Wokwi.
+#if defined(DORE8_PANTALLA_ILI9341)
+    // Mantener comportamiento de la pantalla ILI9341 simulada en Wokwi.
+    comando(0x28);               // DISPOFF
+    comando(0x3A);               // COLMOD: RGB565
+    const uint8_t formato = 0x55; datos(&formato, 1);
+    setRotation(1);
+    comando(0x11); sleep_ms(150);
+    comando(0x29); sleep_ms(30);
+#else
+    // ST7789V del panel fisico GMT020-02-8P (240 x 320).
+    // En la ruta física ST7789V, se sale del modo reposo antes de dibujar.
+    comando(0x11); sleep_ms(120);  // SLPOUT
+    comando(0x3A);                 // COLMOD: 16 bits por pixel
+    const uint8_t formato = 0x55; datos(&formato, 1);
+    comando(0x21);                 // INVON: suele ser necesario en ST7789
+    comando(0x13);                 // NORON: modo normal
+    setRotation(1);                // Horizontal: 320 x 240
+    comando(0x29); sleep_ms(80);   // DISPON
+#endif
+}
+
+// Configura la orientación mediante MADCTL y actualiza ancho/alto en memoria.
+void AdafruitGFX_Pico::setRotation(uint8_t r) {
+    rotacion_ = r & 3;
+// Si la compilación define DORE8_PANTALLA_ILI9341, se elige la secuencia de Wokwi.
+#if defined(DORE8_PANTALLA_ILI9341)
+    constexpr uint8_t direcciones[4] = {0x48, 0x28, 0x88, 0xE8};
+#else
+    // ST7789: MY, MX, MV. Si la imagen aparece girada o reflejada,
+    // ajustar esta tabla despues de la primera prueba fisica.
+    constexpr uint8_t direcciones[4] = {0xC0, 0xA0, 0x00, 0x60};
+#endif
+    comando(0x36); datos(&direcciones[rotacion_], 1); // MADCTL
+    ancho_ = (rotacion_ & 1) ? 320 : 240;
+    alto_ = (rotacion_ & 1) ? 240 : 320;
+}
+// Delimita el rectángulo de píxeles que recibirá la pantalla mediante comandos SPI.
+void AdafruitGFX_Pico::ventana(int16_t x0, int16_t y0, int16_t x1, int16_t y1) {
+    comando(0x2A);
+    const uint8_t xs[] = {uint8_t(x0 >> 8), uint8_t(x0), uint8_t(x1 >> 8), uint8_t(x1)};
+    datos(xs, 4);
+    comando(0x2B);
+    const uint8_t ys[] = {uint8_t(y0 >> 8), uint8_t(y0), uint8_t(y1 >> 8), uint8_t(y1)};
+    datos(ys, 4);
+    comando(0x2C);
+}
+// Dibuja rectángulos rellenos; recorta lo que quede fuera de la pantalla.
+void AdafruitGFX_Pico::fillRect(int16_t x, int16_t y, int16_t w, int16_t h,
+                               uint16_t color) {
+    if (w <= 0 || h <= 0 || x >= ancho_ || y >= alto_ || x + w <= 0 || y + h <= 0) return;
+    int x0 = std::max<int>(0,x), y0 = std::max<int>(0,y);
+    int x1 = std::min<int>(ancho_,x+w), y1 = std::min<int>(alto_,y+h);
+    if (x1 <= x0 || y1 <= y0) return;
+    ventana(x0,y0,x1-1,y1-1);
+    // Se utiliza un bloque pequeño de 128 bytes en lugar de guardar la pantalla completa en RAM.
+    uint8_t bloque[128];
+    for (int i=0;i<128;i+=2) { bloque[i]=uint8_t(color>>8); bloque[i+1]=uint8_t(color); }
+    uint32_t pixeles = static_cast<uint32_t>(x1-x0)*(y1-y0);
+    gpio_put(dc_,true); gpio_put(cs_,false);
+    while (pixeles) {
+        uint32_t n=std::min<uint32_t>(64,pixeles);
+        spi_write_blocking(spi0,bloque,n*2);
+        pixeles-=n;
+    }
+    gpio_put(cs_,true);
+}
+// Limpia la pantalla llamando al dibujo de un rectángulo del tamaño completo.
+void AdafruitGFX_Pico::fillScreen(uint16_t color) { fillRect(0,0,ancho_,alto_,color); }
+void AdafruitGFX_Pico::drawPixel(int16_t x,int16_t y,uint16_t c) { fillRect(x,y,1,1,c); }
+void AdafruitGFX_Pico::drawFastHLine(int16_t x,int16_t y,int16_t w,uint16_t c) { fillRect(x,y,w,1,c); }
+void AdafruitGFX_Pico::drawRect(int16_t x,int16_t y,int16_t w,int16_t h,uint16_t c) {
+    if (w <= 0 || h <= 0) return;
+    fillRect(x,y,w,1,c);fillRect(x,y+h-1,w,1,c);
+    fillRect(x,y,1,h,c);fillRect(x+w-1,y,1,h,c);
+}
+// Traza líneas; optimiza las horizontales/verticales y calcula los píxeles de diagonales.
+void AdafruitGFX_Pico::drawLine(int16_t x0,int16_t y0,int16_t x1,int16_t y1,uint16_t c) {
+    if(y0==y1){fillRect(std::min(x0,x1),y0,std::abs(x1-x0)+1,1,c);return;}
+    if(x0==x1){fillRect(x0,std::min(y0,y1),1,std::abs(y1-y0)+1,c);return;}
+    int dx=std::abs(x1-x0),sx=x0<x1?1:-1;
+    int dy=-std::abs(y1-y0),sy=y0<y1?1:-1;
+    int error=dx+dy;
+    while(true){
+        drawPixel(x0,y0,c);
+        if(x0==x1 && y0==y1)break;
+        const int doble=2*error;
+        if(doble>=dy){error+=dy;x0+=sx;}
+        if(doble<=dx){error+=dx;y0+=sy;}
+    }
+}
+void AdafruitGFX_Pico::circuloPuntos(int16_t cx,int16_t cy,int16_t x,int16_t y,uint16_t c) {
+    drawPixel(cx+x,cy+y,c);drawPixel(cx-x,cy+y,c);drawPixel(cx+x,cy-y,c);drawPixel(cx-x,cy-y,c);
+    drawPixel(cx+y,cy+x,c);drawPixel(cx-y,cy+x,c);drawPixel(cx+y,cy-x,c);drawPixel(cx-y,cy-x,c);
+}
+// Dibuja círculos con simetría; se usan en cabezas y ruedas.
+void AdafruitGFX_Pico::drawCircle(int16_t cx,int16_t cy,int16_t r,uint16_t c) {
+    if(r<0)return;
+    int x=0,y=r,d=1-r;
+    while(x<=y){circuloPuntos(cx,cy,x,y,c);if(d<0)d+=2*x+3;else{d+=2*(x-y)+5;--y;}++x;}
+}
+// Rellena círculos para detalles sólidos sin emplear un bitmap.
+void AdafruitGFX_Pico::fillCircle(int16_t cx,int16_t cy,int16_t r,uint16_t c) {
+    if(r<0)return;
+    int x=0,y=r,d=1-r;
+    while(x<=y){
+        fillRect(cx-x,cy+y,2*x+1,1,c);fillRect(cx-x,cy-y,2*x+1,1,c);
+        fillRect(cx-y,cy+x,2*y+1,1,c);fillRect(cx-y,cy-x,2*y+1,1,c);
+        if(d<0)d+=2*x+3;else{d+=2*(x-y)+5;--y;}++x;
+    }
+}
+// Dibuja marcos con esquinas redondeadas como parte de la estética retro.
+void AdafruitGFX_Pico::drawRoundRect(int16_t x,int16_t y,int16_t w,int16_t h,int16_t r,uint16_t c) {
+    if(w<=0||h<=0)return;
+    r=std::max<int>(0,std::min<int>(r,std::min(w,h)/2));
+    drawFastHLine(x+r,y,w-2*r,c);drawFastHLine(x+r,y+h-1,w-2*r,c);
+    fillRect(x,y+r,1,h-2*r,c);fillRect(x+w-1,y+r,1,h-2*r,c);
+    for(int i=0;i<=r;i++){
+        // Esquina usando circulo discretizado con radio r.
+        int j=0;
+        while(j<r && i*i+j*j<r*r)++j;
+        drawPixel(x+r-j,y+r-i,c);drawPixel(x+w-r-1+j,y+r-i,c);
+        drawPixel(x+r-j,y+h-r-1+i,c);drawPixel(x+w-r-1+j,y+h-r-1+i,c);
+    }
+}
+// Rellena las carrocerías de los vehículos usando geometría.
+void AdafruitGFX_Pico::fillRoundRect(int16_t x,int16_t y,int16_t w,int16_t h,int16_t r,uint16_t c) {
+    if(w<=0||h<=0)return;
+    r=std::max<int>(0,std::min<int>(r,std::min(w,h)/2));
+    fillRect(x+r,y,w-2*r,h,c);
+    for(int i=0;i<r;i++){
+        int j=0;
+        while(j<r && i*i+j*j<r*r)++j;
+        int xx=r-j;
+        fillRect(x+xx,y+r-i,w-2*xx,1,c);
+        fillRect(x+xx,y+h-r-1+i,w-2*xx,1,c);
+    }
+}
+// Rasteriza triángulos mediante franjas horizontales, útil para flechas e indicadores.
+void AdafruitGFX_Pico::fillTriangle(int16_t x0,int16_t y0,int16_t x1,int16_t y1,
+                                   int16_t x2,int16_t y2,uint16_t c) {
+    const int minY=std::min<int>({y0,y1,y2}),maxY=std::max<int>({y0,y1,y2});
+    const int xs[]={x0,x1,x2},ys[]={y0,y1,y2};
+    for(int y=minY;y<=maxY;++y){
+        int interceptos[6],num=0;
+        for(int i=0;i<3;++i){
+            const int j=(i+1)%3;
+            if(ys[i]==ys[j])continue;
+            if(y>=std::min(ys[i],ys[j]) && y<=std::max(ys[i],ys[j]))
+                interceptos[num++]=xs[i]+(y-ys[i])*(xs[j]-xs[i])/(ys[j]-ys[i]);
+        }
+        if(num>=2){
+            int a=interceptos[0],b=interceptos[1];
+            for(int k=2;k<num;k++){a=std::min(a,interceptos[k]);b=std::max(b,interceptos[k]);}
+            fillRect(a,y,b-a+1,1,c);
+        }
+    }
+}
+
+// Convierte la matriz 5x7 de una letra en pequeños rectángulos de píxeles.
+void AdafruitGFX_Pico::dibujarCaracter(uint8_t codigo,int16_t x,int16_t y){
+    if(x>=ancho_||y>=alto_||x+6*tam_<=0||y+8*tam_<=0)return;
+    const uint8_t *bits=FUENTE_RETRO[codigo];
+    for(int row=0;row<7;++row){
+        int run=-1;
+        for(int col=0;col<=5;++col){
+            const bool on=(col<5) && ((bits[row]>>(4-col))&1);
+            if(on && run<0)run=col;
+            if(!on && run>=0){fillRect(x+run*tam_,y+row*tam_,(col-run)*tam_,tam_,textoColor_);run=-1;}
+        }
+    }
+}
+// Escribe el texto carácter a carácter; también respeta salto de línea y salto automático.
+std::size_t AdafruitGFX_Pico::print(const char *txt){
+    if(!txt)return 0;
+    std::size_t count=0;
+    for(const uint8_t *p=reinterpret_cast<const uint8_t*>(txt);*p;++p){
+        if(*p=='\n'){cursorX_=0;cursorY_+=8*tam_;continue;}
+        if(wrap_ && cursorX_+6*tam_>ancho_){cursorX_=0;cursorY_+=8*tam_;}
+        dibujarCaracter(*p,cursorX_,cursorY_);cursorX_+=6*tam_;++count;
+    }
+    return count;
+}
+std::size_t AdafruitGFX_Pico::print(int valor){char buffer[20];std::snprintf(buffer,sizeof(buffer),"%d",valor);return print(buffer);}
+// Calcula el espacio de un texto para poder centrarlo en la pantalla.
+void AdafruitGFX_Pico::getTextBounds(const char *txt,int16_t x,int16_t y,
+                                     int16_t *x1,int16_t *y1,uint16_t *w,uint16_t *h) const {
+    if(x1)*x1=x;
+    if(y1)*y1=y;
+    uint16_t cantidad=0;
+    if(txt)for(const char *p=txt;*p;p++)if(*p!='\n')++cantidad;
+    if(w)*w=cantidad*6*tam_;
+    if(h)*h=8*tam_;
+}
+
+// ========================================================================
+// Interfaz DORE 8: declaracion
+// ========================================================================
+
+/**
+ * PantallaUI.h
+ * ---------------------------------------------------------------------------
+ * Clase 4: PantallaUI - Capa de interfaz gráfica del juego arcade.
+ * Hardware : Raspberry Pi Pico + TFT LCD 2.0" ST7789V (240x320)
+ * Gráficos: interfaz tipo Adafruit GFX adaptada a Pico SDK (sin Arduino)
+ *
+ * Todos los gráficos son VECTORIALES (líneas, rectángulos, círculos):
+ * no se usan bitmaps ni framebuffer, por lo que el consumo de RAM es mínimo.
+ *
+ * Orientación: landscape (setRotation(1)) -> lienzo útil 320 x 240 px.
+ * ---------------------------------------------------------------------------
+ */
+// No requiere Arduino. Para Wokwi usamos el controlador ILI9341.
+// 06 · INTERFAZ DEL JUEGO: DIMENSIONES Y OBJETOS
+// PantallaUI usa el controlador adaptado para construir ocho escenas.
+using TFTDriver = AdafruitGFX_Pico;
+
+// ============================================================================
+//  DIMENSIONES DEL LIENZO (modo landscape)
+// ============================================================================
+// Define el lienzo horizontal de 320x240 y el espacio reservado al juego bajo el contador.
+namespace Pantalla {
+constexpr int ANCHO = 320;
+constexpr int ALTO  = 240;
+
+// Resolución física nativa del panel (para tft.init)
+constexpr uint16_t PANEL_ANCHO = 240;
+constexpr uint16_t PANEL_ALTO  = 320;
+
+// Márgenes y marcos
+constexpr int MARGEN = 6;
+
+// Zona de juego (debajo del HUD de tiempo)
+constexpr int JUEGO_X = 6;
+constexpr int JUEGO_Y = 22;
+constexpr int JUEGO_W = ANCHO - 2 * 6;      // 308
+constexpr int JUEGO_H = ALTO - 22 - 6;      // 212
+}  // namespace Pantalla
+
+// ============================================================================
+//  TAMAÑO DE LOS SPRITES VECTORIALES
+// ============================================================================
+// Define las dimensiones que se usarán tanto al dibujar como al detectar colisiones.
+namespace Sprite {
+constexpr int ESTUDIANTE_W = 20;
+constexpr int ESTUDIANTE_H = 20;
+constexpr int AUTOBUS_W    = 36;
+constexpr int AUTOBUS_H    = 20;
+constexpr int AUTO_W       = 28;
+constexpr int AUTO_H       = 18;
+}  // namespace Sprite
+
+// ============================================================================
+//  CARRETERA (Slide 4): 3 carriles horizontales
+// ============================================================================
+// La carretera se distribuye en tres carriles; cada auto tendrá un carril.
+namespace Carretera {
+constexpr int NUM_CARRILES = 3;
+constexpr int CARRIL_ALTO  = Pantalla::JUEGO_H / NUM_CARRILES;  // 70 px
+constexpr int CARRIL_Y0    = Pantalla::JUEGO_Y;                 // 22
+}  // namespace Carretera
+
+// ============================================================================
+//  PALETA DE COLORES (RGB565, alto contraste sobre fondo negro)
+// ============================================================================
+// Paleta RGB565 compartida por textos, personajes y escenarios.
+namespace Colores {
+constexpr uint16_t NEGRO       = ST77XX_BLACK;
+constexpr uint16_t BLANCO      = ST77XX_WHITE;
+constexpr uint16_t AMARILLO    = ST77XX_YELLOW;
+constexpr uint16_t AZUL        = ST77XX_BLUE;
+constexpr uint16_t ROJO        = ST77XX_RED;
+constexpr uint16_t VERDE       = ST77XX_GREEN;
+constexpr uint16_t CIAN        = ST77XX_CYAN;
+constexpr uint16_t MAGENTA     = ST77XX_MAGENTA;
+constexpr uint16_t NARANJA     = ST77XX_ORANGE;
+constexpr uint16_t GRIS        = 0x7BEF;
+constexpr uint16_t GRIS_OSCURO = 0x4208;
+constexpr uint16_t MARRON      = 0x8A22;  // RGB(139,69,19)
+constexpr uint16_t AZUL_CLARO  = 0x5D1F;
+
+// Colores por defecto de la interfaz
+constexpr uint16_t FONDO       = NEGRO;
+constexpr uint16_t TEXTO       = BLANCO;
+constexpr uint16_t MARCO       = BLANCO;
+}  // namespace Colores
+
+// ============================================================================
+//  CLASE PantallaUI
+// ============================================================================
+// 07 · CLASE PantallaUI
+// Agrupa el dibujo de las escenas y las utilidades de texto, sprites y colisiones.
+class PantallaUI {
+public:
+    // El juego se organiza en ocho pantallas, entre introducción, niveles y cierre.
+    static constexpr int TOTAL_SLIDES = 8;
+
+    // Slides (estados de pantalla)
+    // Cada estado recibe un nombre para evitar confundir números de pantalla.
+    enum Slide : int {
+        SLIDE_INICIO        = 0,
+        SLIDE_INSTRUCCIONES = 1,
+        SLIDE_DESAFIO       = 2,
+        SLIDE_LABERINTO     = 3,
+        SLIDE_CARRETERA     = 4,
+        SLIDE_SALA          = 5,
+        SLIDE_VICTORIA      = 6,
+        SLIDE_REFLEXION     = 7
+    };
+
+    /** Inyección de dependencia: recibe la referencia al controlador TFT. */
+    // La interfaz recibe una referencia a la pantalla: no crea una pantalla nueva.
+    explicit PantallaUI(TFTDriver &tft);
+
+    /** Inicializa el panel, orientación horizontal y fondo negro. */
+    // Inicializa SPI, los pines y el controlador de pantalla.
+    void begin();
+
+    /** Limpia toda la pantalla con el color de fondo. */
+    void limpiar(uint16_t color = Colores::FONDO);
+
+    // ---------------- Sprites vectoriales (x,y = esquina superior izquierda)
+    void dibujarEstudiante(int x, int y);
+    void dibujarAutobus(int x, int y);
+    void dibujarAuto(int x, int y, uint16_t color);
+
+    // ---------------- HUD
+    void dibujarTiempo(int segundos);
+    void mensajeEstado(const char *texto, uint16_t color = Colores::AMARILLO);
+    void redibujarLineasCarretera();
+    bool colisionLaberinto(int x, int y, int ancho = Sprite::ESTUDIANTE_W,
+                          int alto = Sprite::ESTUDIANTE_H) const;
+
+    // ---------------- Pantallas completas (0..7)
+    void dibujarSlide(int numeroSlide);
+
+    // ---------------- Utilidades para la lógica del juego
+    /** Coordenada Y (esquina sup.) para centrar un auto en el carril 0..2. */
+    static int yCarril(int carril);
+
+private:
+    TFTDriver &_tft;
+
+    // Helpers de dibujo
+    void textoCentrado(const char *txt, int y, uint8_t tam, uint16_t color);
+    void marcoDoble(int x, int y, int w, int h, uint16_t color, int radio = 0);
+    void lineaGruesa(int x0, int y0, int x1, int y1, uint16_t color);
+
+    // Slides individuales
+    void slideInicio();
+    void slideInstrucciones();
+    void slideDesafio();
+    void slideLaberinto();
+    void slideCarretera();
+    void slideSala();
+    void slideVictoria();
+    void slideReflexion();
+};
+
+// ========================================================================
+// Interfaz DORE 8: implementacion
+// ========================================================================
+
+/**
+ * PantallaUI.cpp
+ * ---------------------------------------------------------------------------
+ * Implementación de la clase PantallaUI (gráficos 100% vectoriales).
+ *
+ * NOTA SOBRE ACENTOS:
+ *   La fuente por defecto de Adafruit_GFX usa la tabla CP437. Por eso los
+ *   caracteres especiales se escriben con códigos CP437 (macros de abajo) y
+ *   se activa tft.setCP437(true) en begin().
+ *   Cada macro va en su propio literal ("..." CP_X "...") para evitar que
+ *   un escape hexadecimal "\xA2" absorba letras siguientes (a-f).
+ * ---------------------------------------------------------------------------
+ */
+#define CP_A_AGUDA "\xA0"   // á
+#define CP_E_AGUDA "\x82"   // é
+#define CP_I_AGUDA "\xA1"   // í
+#define CP_O_AGUDA "\xA2"   // ó
+#define CP_U_AGUDA "\xA3"   // ú
+#define CP_N_TILDE "\xA4"   // ñ
+#define CP_EXCL_INV "\xAD"  // ¡
+#define CP_INTER_INV "\xA8" // ¿
+
+using namespace Colores;
+
+// ============================================================================
+//  DATOS DEL LABERINTO (Slide 3)
+//  Segmentos de pared (solo horizontales/verticales) transcritos del boceto.
+//  Coordenadas en el sistema del boceto; se escalan a la pantalla en runtime.
+//  Origen del boceto: (249,1277)  |  tamaño: 456 x 283
+// ============================================================================
+namespace {
+
+struct Muro {
+    int16_t x1, y1, x2, y2;
+};
+
+constexpr int SRC_X0 = 249;
+constexpr int SRC_Y0 = 1277;
+constexpr int SRC_W  = 456;
+constexpr int SRC_H  = 283;
+
+// Área del laberinto en pantalla
+constexpr int MAZE_X = 10;
+constexpr int MAZE_Y = 20;
+constexpr int MAZE_W = 300;
+constexpr int MAZE_H = 212;
+constexpr int GROSOR = 2;
+
+const Muro MUROS[] = {
+    // --- zona superior ---
+    {303, 1277, 303, 1335},
+    {303, 1335, 433, 1335},
+    {433, 1310, 433, 1335},
+    {433, 1310, 530, 1310},
+    {530, 1310, 530, 1370},
+    {530, 1370, 573, 1370},
+    {573, 1277, 573, 1370},
+    {615, 1277, 615, 1360},
+    {660, 1330, 700, 1330},
+    {660, 1365, 660, 1435},
+    {660, 1435, 700, 1435},
+    // --- zona izquierda ---
+    {303, 1335, 303, 1457},
+    {283, 1457, 303, 1457},
+    // --- zona central ---
+    {483, 1345, 483, 1372},
+    {343, 1372, 483, 1372},
+    {343, 1372, 343, 1448},
+    {343, 1448, 368, 1448},
+    {368, 1407, 417, 1407},
+    {417, 1407, 417, 1497},
+    {343, 1497, 417, 1497},
+    {337, 1497, 337, 1528},
+    {249, 1528, 337, 1528},
+    // --- zona inferior ---
+    {449, 1407, 573, 1407},
+    {449, 1407, 449, 1528},
+    {483, 1448, 573, 1448},
+    {483, 1448, 483, 1528},
+    {530, 1448, 530, 1528},
+    {483, 1528, 573, 1528},
+    {573, 1407, 573, 1558},
+};
+
+inline int escX(int x) { return MAZE_X + ((x - SRC_X0) * MAZE_W) / SRC_W; }
+inline int escY(int y) { return MAZE_Y + ((y - SRC_Y0) * MAZE_H) / SRC_H; }
+
+}  // namespace
+
+// ============================================================================
+//  CONSTRUCTOR / INICIALIZACIÓN
+// ============================================================================
+PantallaUI::PantallaUI(TFTDriver &tft) : _tft(tft) {}
+
+// 08 · IMPLEMENTACIÓN DE PantallaUI
+// Prepara horizontalidad, codificación de caracteres y fondo oscuro.
+void PantallaUI::begin() {
+    _tft.begin();  // ST7789V físico o ILI9341 en Wokwi según configuración de compilación
+    _tft.setRotation(1);                                     // landscape 320x240
+    _tft.setCP437(true);                                     // acentos / ¡ ¿
+    _tft.setTextWrap(false);
+    _tft.fillScreen(Colores::FONDO);
+}
+
+// Borra la escena antes de cambiar de pantalla.
+void PantallaUI::limpiar(uint16_t color) {
+    _tft.fillScreen(color);
+}
+
+// ============================================================================
+//  HELPERS
+// ============================================================================
+// Mide un texto, calcula su posición horizontal y lo dibuja centrado.
+void PantallaUI::textoCentrado(const char *txt, int y, uint8_t tam, uint16_t color) {
+    int16_t x1, y1;
+    uint16_t w, h;
+    _tft.setTextSize(tam);
+    _tft.setTextColor(color);
+    _tft.getTextBounds(txt, 0, 0, &x1, &y1, &w, &h);
+    _tft.setCursor((Pantalla::ANCHO - (int)w) / 2 - x1, y);
+    _tft.print(txt);
+}
+
+// Dibuja dos bordes paralelos para dar profundidad a los cuadros de diálogo.
+void PantallaUI::marcoDoble(int x, int y, int w, int h, uint16_t color, int radio) {
+    if (radio > 0) {
+        _tft.drawRoundRect(x, y, w, h, radio, color);
+        _tft.drawRoundRect(x + 1, y + 1, w - 2, h - 2, radio, color);
+    } else {
+        _tft.drawRect(x, y, w, h, color);
+        _tft.drawRect(x + 1, y + 1, w - 2, h - 2, color);
+    }
+}
+
+// Superpone dos líneas casi iguales para dar mayor grosor al personaje.
+void PantallaUI::lineaGruesa(int x0, int y0, int x1, int y1, uint16_t color) {
+    _tft.drawLine(x0, y0, x1, y1, color);
+    _tft.drawLine(x0 + 1, y0, x1 + 1, y1, color);
+}
+
+// Calcula la coordenada vertical de un vehículo y evita índices fuera de los carriles.
+int PantallaUI::yCarril(int carril) {
+    if (carril < 0) carril = 0;
+    if (carril >= Carretera::NUM_CARRILES) carril = Carretera::NUM_CARRILES - 1;
+    return Carretera::CARRIL_Y0 + carril * Carretera::CARRIL_ALTO +
+           (Carretera::CARRIL_ALTO - Sprite::AUTO_H) / 2;
+}
+
+// ============================================================================
+//  SPRITES VECTORIALES
+// ============================================================================
+
+/** Monigote corriendo (20x20 px): cabeza circular + tronco + extremidades. */
+// 09 · PERSONAJES Y OBJETOS
+// El estudiante es una figura hecha con cabeza circular, tronco, brazos y piernas.
+void PantallaUI::dibujarEstudiante(int x, int y) {
+    const uint16_t c = BLANCO;
+
+    _tft.drawCircle(x + 10, y + 4, 4, c);              // cabeza
+    lineaGruesa(x + 10, y + 8, x + 10, y + 14, c);     // tronco
+
+    lineaGruesa(x + 10, y + 10, x + 3, y + 8, c);      // brazo atrás
+    lineaGruesa(x + 10, y + 10, x + 17, y + 13, c);    // brazo adelante
+
+    lineaGruesa(x + 10, y + 14, x + 4, y + 19, c);     // pierna atrás
+    lineaGruesa(x + 10, y + 14, x + 15, y + 16, c);    // pierna adelante (muslo)
+    lineaGruesa(x + 15, y + 16, x + 14, y + 19, c);    // pierna adelante (pantorrilla)
+}
+
+/** Autobús compacto (36x20 px): carrocería, ventanas, franja y ruedas. */
+// La micro se construye con carrocería, ventanas, franja y dos ruedas.
+void PantallaUI::dibujarAutobus(int x, int y) {
+    _tft.fillRoundRect(x, y, Sprite::AUTOBUS_W, 15, 2, AMARILLO);   // carrocería
+    _tft.drawRoundRect(x, y, Sprite::AUTOBUS_W, 15, 2, NEGRO);      // contorno
+
+    for (int i = 0; i < 4; i++) {                                    // ventanas
+        _tft.fillRect(x + 3 + i * 8, y + 3, 6, 5, CIAN);
+    }
+    _tft.drawFastHLine(x + 1, y + 10, Sprite::AUTOBUS_W - 2, NEGRO); // franja
+
+    // Ruedas
+    _tft.fillCircle(x + 8, y + 16, 3, NEGRO);
+    _tft.drawCircle(x + 8, y + 16, 3, BLANCO);
+    _tft.fillCircle(x + Sprite::AUTOBUS_W - 9, y + 16, 3, NEGRO);
+    _tft.drawCircle(x + Sprite::AUTOBUS_W - 9, y + 16, 3, BLANCO);
+}
+
+/** Auto compacto (28x18 px) del color indicado. */
+// Cada automóvil usa la misma forma; el color permite diferenciarlos.
+void PantallaUI::dibujarAuto(int x, int y, uint16_t color) {
+    _tft.fillRoundRect(x, y + 6, Sprite::AUTO_W, 8, 2, color);       // carrocería
+    _tft.fillRoundRect(x + 6, y, 16, 8, 3, color);                   // cabina
+    _tft.fillRect(x + 8, y + 2, 5, 4, CIAN);                         // ventana 1
+    _tft.fillRect(x + 15, y + 2, 5, 4, CIAN);                        // ventana 2
+
+    // Ruedas
+    _tft.fillCircle(x + 7, y + 14, 3, NEGRO);
+    _tft.drawCircle(x + 7, y + 14, 3, BLANCO);
+    _tft.fillCircle(x + 21, y + 14, 3, NEGRO);
+    _tft.drawCircle(x + 21, y + 14, 3, BLANCO);
+}
+
+// ============================================================================
+//  HUD
+// ============================================================================
+// 10 · INDICADORES Y ESCENAS
+// Actualiza únicamente el área del contador para no redibujar toda la pantalla.
+void PantallaUI::dibujarTiempo(int segundos) {
+    char buf[20];
+    snprintf(buf, sizeof(buf), "Tiempo: %ds", segundos);
+
+    _tft.fillRect(0, 0, 90, 13, FONDO);   // borra el valor anterior
+    _tft.setTextSize(1);
+    _tft.setTextColor(TEXTO);
+    _tft.setCursor(3, 3);
+    _tft.print(buf);
+}
+
+// ============================================================================
+//  SLIDES
+// ============================================================================
+// Despacha el dibujo al método correspondiente según la pantalla actual.
+void PantallaUI::dibujarSlide(int numeroSlide) {
+    limpiar();
+    switch (numeroSlide) {
+        case SLIDE_INICIO:        slideInicio();        break;
+        case SLIDE_INSTRUCCIONES: slideInstrucciones(); break;
+        case SLIDE_DESAFIO:       slideDesafio();       break;
+        case SLIDE_LABERINTO:     slideLaberinto();     break;
+        case SLIDE_CARRETERA:     slideCarretera();     break;
+        case SLIDE_SALA:          slideSala();          break;
+        case SLIDE_VICTORIA:      slideVictoria();      break;
+        case SLIDE_REFLEXION:     slideReflexion();     break;
+        default: break;
+    }
+}
+
+// ---- Slide 0: Inicio -------------------------------------------------------
+// Pantalla 0: saludo inicial y aviso para presionar el botón.
+void PantallaUI::slideInicio() {
+    marcoDoble(4, 4, Pantalla::ANCHO - 8, Pantalla::ALTO - 8, MARCO, 6);
+
+    textoCentrado("Hola!", 50, 4, AMARILLO);
+    textoCentrado("Comencemos...", 100, 2, BLANCO);
+
+    // Botón "Presiona el botón" (recuadro inferior)
+    const int bx = 84, by = 160, bw = 220, bh = 36;
+    _tft.drawRect(bx, by, bw, bh, BLANCO);
+    _tft.drawRect(bx + 1, by + 1, bw - 2, bh - 2, BLANCO);
+    _tft.setTextSize(2);
+    _tft.setTextColor(VERDE);
+    _tft.setCursor(bx + 8, by + 11);
+    _tft.print("Presiona el bot" CP_O_AGUDA "n");
+
+    // Flecha apuntando al botón
+    const int ay = by + bh / 2;
+    lineaGruesa(26, ay, 74, ay, BLANCO);
+    _tft.fillTriangle(12, ay, 28, ay - 8, 28, ay + 8, BLANCO);
+}
+
+// ---- Slide 1: Instrucciones ------------------------------------------------
+// Pantalla 1: muestra los controles del prototipo y su función prevista.
+void PantallaUI::slideInstrucciones() {
+    marcoDoble(4, 4, Pantalla::ANCHO - 8, Pantalla::ALTO - 8, MARCO, 6);
+    textoCentrado("Instrucciones", 14, 2, CIAN);
+    _tft.drawFastHLine(20, 36, Pantalla::ANCHO - 40, GRIS);
+
+    struct Item {
+        const char *etiqueta;
+        const char *detalle;
+        uint16_t color;
+        bool relleno;
+    };
+    const Item items[] = {
+        {"Bot" CP_O_AGUDA "n amarillo:", "continuar",                   AMARILLO, true},
+        {"Bot" CP_O_AGUDA "n azul:",     "cambiar canci" CP_O_AGUDA "n", AZUL_CLARO, true},
+        {"Perilla izquierda:",           "vertical",                    BLANCO,   false},
+        {"Perilla derecha:",             "horizontal",                  BLANCO,   false},
+    };
+
+    int y = 46;
+    for (const Item &it : items) {
+        // Icono del control
+        if (it.relleno) {
+            _tft.fillCircle(24, y + 14, 8, it.color);
+            _tft.drawCircle(24, y + 14, 8, BLANCO);
+        } else {
+            _tft.drawCircle(24, y + 14, 8, it.color);
+            _tft.fillCircle(24, y + 14, 3, it.color);
+        }
+        _tft.setTextSize(2);
+        _tft.setTextColor(it.color);
+        _tft.setCursor(42, y);
+        _tft.print(it.etiqueta);
+        _tft.setTextColor(BLANCO);
+        _tft.setCursor(54, y + 18);
+        _tft.print(it.detalle);
+        y += 46;
+    }
+}
+
+// ---- Slide 2: Intro desafío ------------------------------------------------
+// Pantalla 2: presenta el reto de llegar a la universidad.
+void PantallaUI::slideDesafio() {
+    marcoDoble(4, 4, Pantalla::ANCHO - 8, Pantalla::ALTO - 8, MARCO, 6);
+    textoCentrado("Desaf" CP_I_AGUDA "o", 60, 3, AMARILLO);
+    textoCentrado("Llega a la universidad", 125, 2, BLANCO);
+
+    // Decoración: estudiante hacia el autobús
+    dibujarEstudiante(110, 180);
+    _tft.drawFastHLine(136, 190, 24, GRIS);
+    dibujarAutobus(168, 180);
+}
+
+// ---- Slide 3: Juego - Laberinto -------------------------------------------
+// Pantalla 3: dibuja los límites y paredes; la micro es la meta.
+void PantallaUI::slideLaberinto() {
+    // Marco exterior (grosor 2)
+    _tft.drawRect(MAZE_X, MAZE_Y, MAZE_W, MAZE_H, BLANCO);
+    _tft.drawRect(MAZE_X + 1, MAZE_Y + 1, MAZE_W - 2, MAZE_H - 2, BLANCO);
+
+    // Paredes interiores
+    const size_t n = sizeof(MUROS) / sizeof(MUROS[0]);
+    for (size_t i = 0; i < n; i++) {
+        const int x1 = escX(MUROS[i].x1), y1 = escY(MUROS[i].y1);
+        const int x2 = escX(MUROS[i].x2), y2 = escY(MUROS[i].y2);
+        if (y1 == y2) {                       // horizontal
+            _tft.fillRect(std::min(x1, x2), y1, abs(x2 - x1) + GROSOR, GROSOR, BLANCO);
+        } else {                              // vertical
+            _tft.fillRect(x1, std::min(y1, y2), GROSOR, abs(y2 - y1) + GROSOR, BLANCO);
+        }
+    }
+
+    // Punto de partida (arriba-izquierda) y meta (abajo-derecha)
+    // El estudiante movil se dibuja desde main.cpp segun las perillas.
+    dibujarAutobus(MAZE_X + MAZE_W - Sprite::AUTOBUS_W - 8,
+                   MAZE_Y + MAZE_H - Sprite::AUTOBUS_H - 8);
+}
+
+// ---- Slide 4: Juego - Carretera -------------------------------------------
+// Pantalla 4: prepara tres carriles y sus líneas divisorias.
+void PantallaUI::slideCarretera() {
+    using namespace Pantalla;
+    // Borde de la calle
+    _tft.drawRect(JUEGO_X, JUEGO_Y, JUEGO_W, JUEGO_H, BLANCO);
+
+    // Líneas divisorias de carriles (discontinuas)
+    for (int c = 1; c < Carretera::NUM_CARRILES; c++) {
+        const int y = Carretera::CARRIL_Y0 + c * Carretera::CARRIL_ALTO;
+        for (int x = JUEGO_X + 4; x < JUEGO_X + JUEGO_W - 16; x += 22) {
+            _tft.drawFastHLine(x, y, 14, BLANCO);
+            _tft.drawFastHLine(x, y + 1, 14, BLANCO);
+        }
+    }
+}
+
+// ---- Slide 5: Juego - Pasillo / Sala --------------------------------------
+// Pantalla 5: muestra el espacio de llegada y la puerta de la sala 304.
+void PantallaUI::slideSala() {
+    using namespace Pantalla;
+    // Marco de la sala
+    _tft.drawRect(JUEGO_X, JUEGO_Y, JUEGO_W, JUEGO_H, BLANCO);
+    _tft.drawRect(JUEGO_X + 1, JUEGO_Y + 1, JUEGO_W - 2, JUEGO_H - 2, BLANCO);
+
+    // Puerta en la esquina inferior derecha
+    const int pw = 40, ph = 52;
+    const int px = JUEGO_X + JUEGO_W - pw - 2;
+    const int py = JUEGO_Y + JUEGO_H - ph - 2;
+
+    _tft.fillRect(px, py, pw, ph, MARRON);
+    _tft.drawRect(px, py, pw, ph, BLANCO);
+    _tft.drawRect(px + 1, py + 1, pw - 2, ph - 2, BLANCO);
+
+    // Cartel "SALA" sobre la puerta y "304" en la hoja
+    _tft.setTextSize(1);
+    _tft.setTextColor(AMARILLO);
+    _tft.setCursor(px + (pw - 24) / 2, py - 12);
+    _tft.print("SALA");
+
+    _tft.setTextSize(2);
+    _tft.setTextColor(BLANCO);
+    _tft.setCursor(px + (pw - 36) / 2, py + 8);
+    _tft.print("304");
+
+    // Perilla
+    _tft.fillCircle(px + pw - 9, py + 36, 2, AMARILLO);
+}
+
+// ---- Slide 6: Victoria -----------------------------------------------------
+// Pantalla 6: confirma la victoria y agrega elementos de celebración.
+void PantallaUI::slideVictoria() {
+    marcoDoble(4, 4, Pantalla::ANCHO - 8, Pantalla::ALTO - 8, VERDE, 6);
+
+    textoCentrado(CP_EXCL_INV "Lo lograste!", 70, 3, AMARILLO);
+
+    // Confeti vectorial
+    const int cx[] = {30, 60, 270, 295, 45, 280};
+    const int cy[] = {40, 90, 50, 100, 150, 160};
+    const uint16_t cc[] = {ROJO, CIAN, MAGENTA, VERDE, NARANJA, AMARILLO};
+    for (int i = 0; i < 6; i++) {
+        _tft.fillCircle(cx[i], cy[i], 3, cc[i]);
+        _tft.drawLine(cx[i] - 6, cy[i] - 6, cx[i] - 3, cy[i] - 3, cc[i]);
+    }
+
+    // Estudiante junto al autobús
+    dibujarEstudiante(120, 170);
+    dibujarAutobus(160, 170);
+}
+
+// ---- Slide 7: Reflexión ----------------------------------------------------
+// Pantalla 7: presenta la frase de reflexión provisional al finalizar.
+void PantallaUI::slideReflexion() {
+    marcoDoble(4, 4, Pantalla::ANCHO - 8, Pantalla::ALTO - 8, MARCO, 6);
+    textoCentrado("Reflexi" CP_O_AGUDA "n", 14, 3, CIAN);
+
+    // Recuadro del mensaje
+    const int bx = 24, by = 62, bw = Pantalla::ANCHO - 48, bh = 110;
+    _tft.drawRect(bx, by, bw, bh, GRIS);
+    _tft.drawRect(bx + 1, by + 1, bw - 2, bh - 2, GRIS);
+
+    textoCentrado("Cada meta se logra", by + 18, 2, BLANCO);
+    textoCentrado("paso a paso y con",   by + 44, 2, BLANCO);
+    textoCentrado("mucha constancia.",   by + 70, 2, BLANCO);
+
+    textoCentrado(CP_EXCL_INV "Gracias por jugar!", 190, 2, VERDE);
+}
+
+// El mensaje ocupa la franja inferior de la escena; solo se muestra al ganar/perder.
+// Muestra una indicación al finalizar una etapa, sin borrar toda la escena.
+void PantallaUI::mensajeEstado(const char *texto, uint16_t color) {
+    _tft.fillRect(8, 210, 304, 22, Colores::NEGRO);
+    _tft.drawRect(8, 210, 304, 22, Colores::BLANCO);
+    _tft.setTextSize(1);
+    _tft.setTextColor(color);
+    _tft.setCursor(16, 218);
+    _tft.print(texto);
+}
+
+// Collision AABB de estudiante contra muros geométricos del boceto original.
+// Comprueba si la caja del estudiante cruza el borde o toca alguna pared del laberinto.
+bool PantallaUI::colisionLaberinto(int x, int y, int w, int h) const {
+    if (x < MAZE_X + 2 || y < MAZE_Y + 2 ||
+        x + w > MAZE_X + MAZE_W - 2 ||
+        y + h > MAZE_Y + MAZE_H - 2) return true;
+
+    for (const Muro &muro : MUROS) {
+        int x0 = std::min(escX(muro.x1), escX(muro.x2));
+        int x1 = std::max(escX(muro.x1), escX(muro.x2)) + GROSOR;
+        int y0 = std::min(escY(muro.y1), escY(muro.y2));
+        int y1 = std::max(escY(muro.y1), escY(muro.y2)) + GROSOR;
+        if (x < x1 && x+w > x0 && y < y1 && y+h > y0) return true;
+    }
+    return false;
+}
+
+// Restaura el camino cuando los vehículos en movimiento borran parcialmente las marcas.
+void PantallaUI::redibujarLineasCarretera() { slideCarretera(); }
+
+// ========================================================================
+// Perilla: declaracion
+// ========================================================================
+
+// 11 · CLASE Perilla (reutilizada del proyecto anterior)
+// Convierte la señal analógica del potenciómetro en movimientos discretos.
+class Perilla {
+public:
+    explicit Perilla(unsigned int pin);
+    void iniciar() const;
+    uint16_t leer() const; // ADC 0 a 4095.
+    int direccion() const; // -1, 0, +1: giro relativo a la zona central.
+private:
+    unsigned int pin_;
+};
+
+// ========================================================================
+// Perilla: implementacion
+// ========================================================================
+
+// Al crear cada objeto Perilla se guarda su GPIO de lectura.
+Perilla::Perilla(unsigned int pin) : pin_(pin) {}
+// Habilita el pin para que el conversor ADC pueda leer la tensión.
+void Perilla::iniciar() const { adc_gpio_init(pin_); }
+// Selecciona ADC0 para GP26 o ADC1 para GP27 y devuelve el valor de 12 bits (0..4095).
+uint16_t Perilla::leer() const {
+    adc_select_input(pin_ - 26); // GPIO26 => ADC0; GPIO27 => ADC1.
+    return adc_read();
+}
+// Usa una zona neutra central: devuelve -1, 0 o 1 según la posición del potenciómetro.
+int Perilla::direccion() const {
+    const uint16_t valor = leer();
+    if(valor < 1660) return -1;
+    if(valor > 2450) return 1;
+    return 0;
+}
+
+// ========================================================================
+// Boton2: declaracion
+// ========================================================================
+
+// 12 · CLASE Boton2 (recibida de otro grupo y adaptada)
+// Su máquina de estados permite reconocer pulsaciones sin bloquear el programa.
+enum class EstadoBoton {
+    REPOSO,
+    PRESIONADO,
+    ESPERANDO_PRESION
+};
+
+// Se definen clic sencillo, doble, triple y dos duraciones de pulsación larga.
+enum class Gesto {
+    NADA,
+    PULSADO1VEZ,
+    PULSADO2VECES,
+    PULSADO3VECES,
+    PULSACIONLARGA,
+    PULSACIONMUYLARGA
+};
+
+// El constructor prepara un GPIO; leer() analiza cambios; leerGesto() entrega el evento.
+class Boton2 {
+public:
+    // El número es GPIO, no número físico de la placa.
+    explicit Boton2(int pin);
+    void leer();
+    Gesto leerGesto();
+
+    // Parámetros ajustables para el proyecto que reutiliza esta clase.
+    uint32_t tiempoLargo = 1000;
+    uint32_t tiempoMuyLargo = 5000;
+    uint32_t tiempoEntrePresionado = 400;
+    uint32_t tiempoAntirrebote = 25;
+
+private:
+    int pin;
+    EstadoBoton estado = EstadoBoton::REPOSO;
+    Gesto gestoPendiente = Gesto::NADA;
+    bool presionado = false;
+    int numeroPresiones = 0;
+    uint32_t instanteCambio = 0;
+    uint32_t instanteUltimaLiberacion = 0;
+    bool lecturaBrutaAnterior = false;
+    uint32_t instanteCambioBruto = 0;
+};
+
+// ========================================================================
+// Boton2: implementacion
+// ========================================================================
+
+// conserva sus gestos y su API, añade antirrebote y tiempos de liberación
+// independientes para identificar pulsaciones múltiples correctamente.
+// Configura el pin como entrada con pull-up; un botón presionado entrega nivel bajo.
+Boton2::Boton2(int pin) : pin(pin) {
+    gpio_init(pin);
+    gpio_set_dir(pin, GPIO_IN);
+    gpio_pull_up(pin); // Cablear entre GPIO y GND: pulsado = nivel 0.
+    presionado = !gpio_get(pin);
+    lecturaBrutaAnterior = presionado;
+    instanteCambioBruto = to_ms_since_boot(get_absolute_time());
+}
+
+// Actualiza el estado del botón en cada vuelta del juego, sin esperas bloqueantes.
+void Boton2::leer() {
+    const uint32_t ahora = to_ms_since_boot(get_absolute_time());
+    // Se invierte la lectura porque el pulsador conecta el GPIO a GND.
+    const bool bruto = !gpio_get(pin);
+
+    // Guarda el momento del cambio eléctrico bruto para filtrar los rebotes del contacto.
+    if (bruto != lecturaBrutaAnterior) {
+        lecturaBrutaAnterior = bruto;
+        instanteCambioBruto = ahora;
+    }
+
+    bool apretaron = false;
+    bool soltaron = false;
+    // Solo se acepta el cambio si se mantuvo estable por tiempoAntirrebote.
+    if (bruto != presionado &&
+        static_cast<uint32_t>(ahora - instanteCambioBruto) >= tiempoAntirrebote) {
+        apretaron = !presionado && bruto;
+        soltaron = presionado && !bruto;
+        presionado = bruto;
+    }
+
+    switch (estado) {
+        // REPOSO: espera el inicio de una pulsación.
+        case EstadoBoton::REPOSO:
+            if (apretaron) {
+                numeroPresiones = 0;
+                instanteCambio = ahora;
+                estado = EstadoBoton::PRESIONADO;
+            }
+            break;
+
+        // PRESIONADO: mide cuánto duró y decide si fue corta, larga o muy larga.
+        case EstadoBoton::PRESIONADO:
+            if (soltaron) {
+                const uint32_t duracion = ahora - instanteCambio;
+                if (duracion >= tiempoMuyLargo) {
+                    gestoPendiente = Gesto::PULSACIONMUYLARGA;
+                    numeroPresiones = 0;
+                    estado = EstadoBoton::REPOSO;
+                } else if (duracion >= tiempoLargo) {
+                    gestoPendiente = Gesto::PULSACIONLARGA;
+                    numeroPresiones = 0;
+                    estado = EstadoBoton::REPOSO;
+                } else {
+                    ++numeroPresiones;
+                    instanteUltimaLiberacion = ahora;
+                    estado = EstadoBoton::ESPERANDO_PRESION;
+                }
+            } else if (presionado &&
+                       static_cast<uint32_t>(ahora - instanteCambio) >= tiempoMuyLargo) {
+                gestoPendiente = Gesto::PULSACIONMUYLARGA;
+                numeroPresiones = 0;
+                estado = EstadoBoton::REPOSO;
+            }
+            break;
+
+        // ESPERANDO_PRESION: espera un segundo/tercer clic durante la ventana configurada.
+        case EstadoBoton::ESPERANDO_PRESION:
+            if (apretaron) {
+                instanteCambio = ahora;
+                estado = EstadoBoton::PRESIONADO;
+            } else if (static_cast<uint32_t>(ahora - instanteUltimaLiberacion) >=
+                       tiempoEntrePresionado) {
+                switch (numeroPresiones) {
+                    case 1: gestoPendiente = Gesto::PULSADO1VEZ; break;
+                    case 2: gestoPendiente = Gesto::PULSADO2VECES; break;
+                    case 3: gestoPendiente = Gesto::PULSADO3VECES; break;
+                    default: break;
+                }
+                numeroPresiones = 0;
+                estado = EstadoBoton::REPOSO;
+            }
+            break;
+    }
+}
+
+// Devuelve el gesto acumulado y lo borra para que no se ejecute dos veces.
+Gesto Boton2::leerGesto() {
+    const Gesto gesto = gestoPendiente;
+    gestoPendiente = Gesto::NADA;
+    return gesto;
+}
+
+// ========================================================================
+// Programa principal - DORE 8 sin audio
+// ========================================================================
+
+// DORE 8 - prototipo integrado, Raspberry Pi Pico 2 W + Pico SDK C++.
+// SIN ARDUINO. Mantiene el diagram.json que ya funciona en Wokwi.
+// Textos, personajes, laberinto y escenarios: PantallaUI original adaptada al montaje físico.
+
+// 13 · CONFIGURACIÓN GENERAL DEL JUEGO
+// Las constantes indican GPIO, no posición física de la placa.
+// No se asigna salida PWM a GP13 porque esta versión no incluye audio.
+namespace {
+constexpr unsigned int PIN_PERILLA_IZQUIERDA = 26; // Segun textos: VERTICAL.
+constexpr unsigned int PIN_PERILLA_DERECHA   = 27; // Segun textos: HORIZONTAL.
+constexpr unsigned int PIN_BOTON_MUSICA = 10;
+constexpr unsigned int PIN_BOTON_AVANZAR = 11;
+// GP13 reservado: sin parlante ni buzzer en esta version.
+constexpr unsigned int PIN_LED = 7;
+
+// Laberinto: 20 s. Carretera: 15 s para esta versión de prueba.
+// Temporizadores de cada desafío: 20 segundos para el laberinto y 15 para la micro.
+constexpr int TIEMPO_LABERINTO = 20;
+constexpr int TIEMPO_CARRETERA = 15;
+// Intervalos mínimos entre actualizaciones para evitar redibujar más veces de lo necesario.
+constexpr uint32_t INTERVALO_DIBUJO_MS = 85;
+constexpr uint32_t INTERVALO_CARRETERA_MS = 65; // Carretera mas fluida.
+// La micro avanza con pasos mayores para dar una sensación de desplazamiento más rápida.
+constexpr int PASO_MICRO = 9;  // Velocidad especial del autobus.
+constexpr int PASO_MICRO_VERTICAL = 9;
+
+// Cada nivel puede estar en curso, superado o fallido; solo Superado habilita el avance.
+enum class Estado { EnCurso, Superado, Fallido };
+// Cada vehículo guarda posición, velocidad horizontal y color de la carrocería.
+struct Vehiculo {
+    int x, y, paso;
+    uint16_t color;
+};
+
+// Se crea el controlador TFT utilizando CS=GP17 y DC=GP16 (RST por defecto GP20).
+AdafruitGFX_Pico tft(17,16); // Mismos pines de la pantalla actual (GP17/GP16).
+PantallaUI pantalla(tft);
+// Se instancian las perillas y los botones con los GPIO del montaje físico.
+Perilla perillaVertical(PIN_PERILLA_IZQUIERDA);
+Perilla perillaHorizontal(PIN_PERILLA_DERECHA);
+Boton2 botonMusica(PIN_BOTON_MUSICA);
+Boton2 botonAvanzar(PIN_BOTON_AVANZAR);
+// Audio retirado temporalmente por seguridad del parlante 8 ohm / 1W.
+
+int slideActual = PantallaUI::SLIDE_INICIO;
+Estado estado = Estado::EnCurso;
+uint32_t inicioNivelMs = 0;
+uint32_t ultimoDibujoMs = 0;
+int segundosPrevios = -1;
+int jugadorX = 18;
+int jugadorY = 32;
+// Posiciones iniciales y velocidades de los tres automóviles enemigos.
+Vehiculo autos[] = {
+    {238, PantallaUI::yCarril(0), 3, Colores::ROJO},
+    {305, PantallaUI::yCarril(1), 4, Colores::CIAN},
+    {192, PantallaUI::yCarril(2), 2, Colores::NARANJA}
+};
+
+// 14 · FUNCIONES DE APOYO DEL JUEGO
+// Diferencia pantallas informativas de las tres etapas jugables.
+bool esNivel(int slide) {
+    return slide == PantallaUI::SLIDE_LABERINTO ||
+           slide == PantallaUI::SLIDE_CARRETERA ||
+           slide == PantallaUI::SLIDE_SALA;
+}
+// Devuelve el límite de tiempo del nivel actual; la sala no tiene temporizador.
+int limiteActual() {
+    return slideActual == PantallaUI::SLIDE_LABERINTO ? TIEMPO_LABERINTO :
+           slideActual == PantallaUI::SLIDE_CARRETERA ? TIEMPO_CARRETERA : 0;
+}
+// Obtiene milisegundos desde el arranque para mover objetos y contar segundos.
+uint32_t relojMs() {
+    return to_ms_since_boot(get_absolute_time());
+}
+// Detecta superposición de rectángulos (colisión AABB) entre personajes, autos y metas.
+bool interseccion(int x0,int y0,int w0,int h0,int x1,int y1,int w1,int h1) {
+    return x0 < x1+w1 && x0+w0 > x1 && y0 < y1+h1 && y0+h0 > y1;
+}
+
+// El mensaje aparece cuando la etapa se gana o se pierde. El avance SOLO
+// ocurre si el estado es Superado; si pierde, el mismo boton reinicia nivel.
+// 15 · RESULTADOS DE CADA ETAPA
+// Si se ganó, avisa que se puede continuar; si se perdió, avisa que se puede reintentar.
+void cambiarEstado(Estado nuevo) {
+    if (estado != Estado::EnCurso) return;
+    estado = nuevo;
+    if (nuevo == Estado::Superado) {
+        pantalla.mensajeEstado("LOGRADO! BOTON 2: CONTINUAR", Colores::VERDE);
+        // Efecto de victoria desactivado (sin audio).
+    } else if(nuevo == Estado::Fallido) {
+        pantalla.mensajeEstado("INTENTA OTRA VEZ - BOTON 2", Colores::ROJO);
+        // Efecto de error desactivado (sin audio).
+    }
+}
+
+// La meta está al extremo DERECHO de la carretera. La franja amarilla
+// se repinta porque los vehículos que pasan pueden taparla parcialmente.
+// 16 · META DE LA CARRETERA
+// Dibuja una franja amarilla con marcas negras al extremo derecho del camino.
+void dibujarMetaCarretera(bool incluirTexto) {
+    tft.fillRect(303, 26, 6, 204, Colores::AMARILLO);
+    // Cuadrados negros para que la línea de llegada sea reconocible.
+    for (int y = 26; y < 226; y += 32)
+        tft.fillRect(303, y, 6, 12, Colores::NEGRO);
+    if (incluirTexto) {
+        tft.setTextSize(1);
+        tft.setTextColor(Colores::AMARILLO);
+        tft.setCursor(279, 3);
+        tft.print("META");
+    }
+}
+
+// 17 · OBJETOS MÓVILES
+// Dibuja estudiante, micro y automóviles según el desafío activo.
+void dibujarMoviles() {
+    switch(slideActual) {
+    case PantallaUI::SLIDE_LABERINTO:
+    case PantallaUI::SLIDE_SALA:
+        pantalla.dibujarEstudiante(jugadorX,jugadorY);
+        break;
+    case PantallaUI::SLIDE_CARRETERA:
+        pantalla.dibujarAutobus(jugadorX,jugadorY);
+        for (const auto &autoMovil: autos)
+            pantalla.dibujarAuto(autoMovil.x,autoMovil.y,autoMovil.color);
+        break;
+    default: break;
+    }
+}
+// 18 · INICIALIZACIÓN DE CADA PANTALLA
+// Restablece estado, cronómetro y posiciones, y dibuja el escenario correspondiente.
+void iniciarSlide(int slide) {
+    slideActual=slide;
+    estado=Estado::EnCurso;
+    inicioNivelMs=relojMs();
+    ultimoDibujoMs=inicioNivelMs;
+    segundosPrevios=-1;
+
+    if (slide == PantallaUI::SLIDE_LABERINTO) {jugadorX=18; jugadorY=32;}
+    if (slide == PantallaUI::SLIDE_CARRETERA) {
+        jugadorX=18; jugadorY=PantallaUI::yCarril(1)-1;
+        autos[0].x=238; autos[1].x=305; autos[2].x=192;
+    }
+    if (slide == PantallaUI::SLIDE_SALA) {jugadorX=16; jugadorY=34;}
+
+    pantalla.dibujarSlide(slideActual);
+    if (slideActual == PantallaUI::SLIDE_CARRETERA) dibujarMetaCarretera(true);
+    dibujarMoviles();
+    if (limiteActual() > 0) pantalla.dibujarTiempo(limiteActual());
+    printf("DORE 8: pantalla %d\n", slideActual);
+}
+
+// 19 · REGLAS DEL BOTÓN DE CONTINUAR
+// En pantallas informativas avanza; en niveles exige victoria o permite reintentar una derrota.
+void controlarBotonContinuar() {
+    if (!esNivel(slideActual)) {
+        iniciarSlide((slideActual+1) % PantallaUI::TOTAL_SLIDES);
+        return;
+    }
+    if (estado == Estado::Superado) {
+        iniciarSlide((slideActual+1) % PantallaUI::TOTAL_SLIDES);
+    } else if (estado == Estado::Fallido) {
+        iniciarSlide(slideActual);
+    } else {
+        // En curso: no se permite saltar el desafio.
+        printf("Desafio pendiente: completa el nivel para continuar.\n");
+    }
+}
+
+// 20 · ACTUALIZACIÓN DE ANIMACIÓN
+// Borra el personaje anterior, restaura elementos del fondo y lo dibuja en la nueva posición.
+void dibujarMovimiento(int antesX,int antesY) {
+    // Restaurar solo el rectangulo anterior: no se borran escenas completas.
+    if(slideActual == PantallaUI::SLIDE_CARRETERA) {
+        tft.fillRect(antesX,antesY,Sprite::AUTOBUS_W,Sprite::AUTOBUS_H,Colores::NEGRO);
+        for(const auto &v:autos)
+            tft.fillRect(v.x+v.paso,v.y,Sprite::AUTO_W,Sprite::AUTO_H,Colores::NEGRO);
+        pantalla.redibujarLineasCarretera();
+        dibujarMetaCarretera(false);
+    } else {
+        tft.fillRect(antesX,antesY,Sprite::ESTUDIANTE_W,Sprite::ESTUDIANTE_H,Colores::NEGRO);
+    }
+    dibujarMoviles();
+}
+
+// 21 · LÓGICA PRINCIPAL DE LOS DESAFÍOS
+// Comprueba tiempo, lee dirección de perillas y resuelve movimiento, colisiones y metas.
+void actualizarNivel(uint32_t ahoraMs) {
+    if (!esNivel(slideActual) || estado != Estado::EnCurso) return;
+    const int limite = limiteActual();
+    // Los niveles cronometrados muestran el tiempo restante; la sala se juega sin límite.
+    if (limite > 0) {
+        const int transcurrido = static_cast<int>((ahoraMs-inicioNivelMs)/1000);
+        const int restante = std::max(0,limite-transcurrido);
+        if(restante != segundosPrevios) {
+            segundosPrevios=restante;
+            pantalla.dibujarTiempo(restante);
+        }
+        // El LED de GP7 parpadea en los últimos cinco segundos.
+        if(restante <= 5) {
+            gpio_put(PIN_LED, (ahoraMs / 250)%2 == 0);
+        } else gpio_put(PIN_LED,0);
+        if(restante == 0){cambiarEstado(Estado::Fallido);return;}
+    } else gpio_put(PIN_LED,0);
+
+    // La carretera utiliza una actualización más frecuente que las demás etapas.
+    const uint32_t intervalo = (slideActual == PantallaUI::SLIDE_CARRETERA)
+                               ? INTERVALO_CARRETERA_MS : INTERVALO_DIBUJO_MS;
+    if(ahoraMs-ultimoDibujoMs < intervalo)return;
+    ultimoDibujoMs=ahoraMs;
+
+    const int antesX=jugadorX,antesY=jugadorY;
+    // Se convierte cada posición de la perilla en desplazamientos horizontal y vertical.
+    const int dx=perillaHorizontal.direccion() *
+                 (slideActual == PantallaUI::SLIDE_CARRETERA ? PASO_MICRO : 6);
+    const int dy=perillaVertical.direccion() *
+                 (slideActual == PantallaUI::SLIDE_CARRETERA ? PASO_MICRO_VERTICAL : 6);
+
+    // DESAFÍO 1 · LABERINTO
+    // Mueve al estudiante sin atravesar paredes; llegar a la micro marca victoria.
+    if(slideActual == PantallaUI::SLIDE_LABERINTO) {
+        // Movimiento pixel a pixel: evita atravesar muros delgados (2 px).
+        for(int paso=0;paso<std::abs(dx);++paso) {
+            int proximoX=jugadorX+(dx>0 ? 1 : -1);
+            if(pantalla.colisionLaberinto(proximoX,jugadorY))break;
+            jugadorX=proximoX;
+        }
+        for(int paso=0;paso<std::abs(dy);++paso) {
+            int proximoY=jugadorY+(dy>0 ? 1 : -1);
+            if(pantalla.colisionLaberinto(jugadorX,proximoY))break;
+            jugadorY=proximoY;
+        }
+        if(interseccion(jugadorX,jugadorY,Sprite::ESTUDIANTE_W,Sprite::ESTUDIANTE_H,
+                        266,204,Sprite::AUTOBUS_W,Sprite::AUTOBUS_H)){
+            dibujarMovimiento(antesX,antesY);
+            cambiarEstado(Estado::Superado);return;
+        }
+    // DESAFÍO 2 · CARRETERA
+    // Mueve la micro, desplaza autos en sentido contrario y comprueba choques o meta.
+    } else if(slideActual == PantallaUI::SLIDE_CARRETERA) {
+        jugadorX=std::clamp(jugadorX+dx,10,268);
+        jugadorY=std::clamp(jugadorY+dy,24,211);
+        for(auto &v:autos){
+            v.x-=v.paso;
+            if(v.x < -Sprite::AUTO_W) v.x = 326 + (v.paso*10);
+            if(interseccion(jugadorX,jugadorY,Sprite::AUTOBUS_W,Sprite::AUTOBUS_H,
+                            v.x,v.y,Sprite::AUTO_W,Sprite::AUTO_H)){
+                // Redibujar despues de colision antes del mensaje.
+                pantalla.dibujarSlide(slideActual);
+                dibujarMetaCarretera(true);
+                dibujarMoviles();
+                cambiarEstado(Estado::Fallido);
+                return;
+            }
+        }
+        // La micro completa la etapa cuando su borde derecho toca la META.
+        if(jugadorX >= 268){
+            pantalla.dibujarSlide(slideActual);
+            dibujarMetaCarretera(true);
+            dibujarMoviles();
+            cambiarEstado(Estado::Superado);return;
+        }
+    // DESAFÍO 3 · SALA DE CLASES
+    // Mueve al estudiante hasta la puerta 304, sin cronómetro.
+    } else if(slideActual == PantallaUI::SLIDE_SALA) {
+        jugadorX=std::clamp(jugadorX+dx,9,291);
+        jugadorY=std::clamp(jugadorY+dy,24,209);
+        if(interseccion(jugadorX,jugadorY,Sprite::ESTUDIANTE_W,Sprite::ESTUDIANTE_H,
+                        266,174,40,52)){
+            dibujarMovimiento(antesX,antesY);
+            cambiarEstado(Estado::Superado);return;
+        }
+    }
+
+    if(antesX!=jugadorX || antesY!=jugadorY || slideActual==PantallaUI::SLIDE_CARRETERA)
+        dibujarMovimiento(antesX,antesY);
+}
+} // namespace
+
+// 22 · PUNTO DE ENTRADA Y BUCLE CONTINUO
+// Inicia la Pico 2 W, ADC, pantalla, controles y LED; no inicializa audio.
+int main() {
+    // Habilita la comunicación estándar (USB si está activada en CMake).
+    stdio_init_all();
+    // Inicializa el conversor analógico-digital para ambas perillas.
+    adc_init();
+    perillaVertical.iniciar();
+    perillaHorizontal.iniciar();
+    // Boton2 configura cada GPIO en el constructor.
+    // Prepara el LED como salida y lo mantiene apagado al arrancar.
+    gpio_init(PIN_LED);
+    gpio_set_dir(PIN_LED, GPIO_OUT);
+    gpio_put(PIN_LED,0);
+    // Sin inicializar PWM ni el pin GP13 (parlante desconectado).
+    // Inicia el controlador ST7789V y dibuja la pantalla de bienvenida.
+    pantalla.begin();
+    iniciarSlide(PantallaUI::SLIDE_INICIO);
+    printf("DORE 8 sin audio | GP10 reservado | GP11 continuar | GP26 vertical | GP27 horizontal\n");
+
+    // BUCLE PRINCIPAL
+    // Cada iteración lee botones, comprueba gestos, actualiza el nivel y espera 5 ms.
+    while(true) {
+        const uint32_t ahora=relojMs();
+        // Sin audio.
+        // Se lee GP10 pero sus gestos se descartan porque el audio quedó desactivado.
+        botonMusica.leer();
+        botonAvanzar.leer();
+        // Para DORE 8, solo un clic simple realiza acciones.
+        // Los gestos doble, triple y largo están disponibles para usos futuros.
+        // Botón GP10 reservado hasta instalar un amplificador de audio.
+        (void)botonMusica.leerGesto();
+        // Solo el clic sencillo en GP11 puede comenzar, avanzar o reiniciar una etapa.
+        if (botonAvanzar.leerGesto() == Gesto::PULSADO1VEZ)
+            controlarBotonContinuar();
+        // Actualiza cronómetro, posiciones, colisiones, LED y dibujo de la etapa.
+        actualizarNivel(ahora);
+        // Una espera breve limita el sondeo sin detener de forma visible el juego.
+        sleep_ms(5);
+    }
+}

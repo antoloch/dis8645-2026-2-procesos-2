@@ -7,7 +7,13 @@
 lo primero que realizamos fue definir de forma concreta el computador que escogeríamos como referente, en donde escogimos ```Commodore 64 ultimate```
 
 ### carcasa
-luego de esto fuimos viendo carcasa, diferentes formas, ya que queríamos llegar a realizar nuestro propio commodore
+luego de esto fuimos viendo carcasa, diferentes formas, ya que queríamos llegar a realizar nuestro propio commodore. en donde nos basamos de referencia principal en la forma del commodore, ya que nuestro proyecto en si es un tipo arcade, además asimilarlo a una máquina de videojuegos.
+
+![imagen](imagenes/commodore.jpeg)
+
+realizamos el modelado de nuestra carcasa en rhinoceros, la cual la queríamos luego imprimir en 3D
+
+![imagen](imagenes/modelado.png)
 
 ### clases
 luego a la par entre Narely y Angel empezaron a realizar clases, a su vez rellenando nuestro github grupal. Luego nos quedamos después de taller para seguir evaluando nuevamente en las clase, ya que según lo que queríamos lograr en nuestro proyecto eran muchos códigos trabajando a la vez de forma simultánea
@@ -17,6 +23,10 @@ luego a la par entre Narely y Angel empezaron a realizar clases, a su vez rellen
 ```botones```
 
 ```pantalla```
+
+<https://wokwi.com/projects/479061199676387329> 
+
+este wokwi fue el que realizamos el día de hoy, para poder realizar nuestro proyecto
 
 ## lectura
 ### Mindstorms: Children, Computers and Powerful Ideas - Seymour Papert

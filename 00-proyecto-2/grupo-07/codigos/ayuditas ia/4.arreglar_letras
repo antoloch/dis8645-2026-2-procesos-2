@@ -1,0 +1,171 @@
+chat gpt restaurar letras 
+
+
+You:
+moooooor me mande una cagadita NDNNDND la pantalla si deberia mostrar dibujar o mover correspondiente y mas encima eliminamos el font lol
+
+
+ChatGPT:
+MORRRR JAJAJAJ 😭 eliminamos toda la tipografía porque estábamos convencidas de que no necesitábamos texto, Y SÍ NECESITÁBAMOS.
+Pero tranqui, no tenemos que volver al Código 5 ni deshacer el Código 7. Podemos recuperar las funciones de texto y mantener la clase Pantallita que acabamos de crear.
+De hecho, ahora que tenemos esa clase, es más fácil ordenar todo.
+¿Qué debemos recuperar?
+
+font.h: recuperar las tipografías de la librería anterior.
+ssd1306.c y ssd1306.h: restaurar las funciones que permiten mostrar texto.
+Pantallita: agregar la visualización de MOVER/DIBUJAR, sin volver a llenar el main con código de pantalla.
+main.cpp: pasarle a Pantallita el estado actual de dibujo.
+
+Y ojo: como necesitamos mostrar texto, tendremos que reservar una pequeña zona de la OLED para el indicador, evitando que los trazos se superpongan con él.
+
+You:
+me ayudas a restaurar esoo yo por fis? se me acabo el free de claude
+
+
+ChatGPT:
+Siiii mor, te dejo el paso a paso para que puedas hacerlo tú misma en VS Code. Revisé los archivos del Código 7 original y te pongo las líneas exactas, qué borrar y qué reemplazar.
+Vamos a modificar solamente 5 archivos y recuperar uno. No tocaremos Perilla.h/.cpp ni BotonGrupo1.h/.cpp.
+1. Recuperar los archivos de la pantalla
+Primero abre la carpeta del Código 5 original y copia estos tres archivos:
+
+font.h
+ssd1306.c
+ssd1306.h
+
+Pégalos en la carpeta del Código 7, reemplazando los dos archivos ssd1306 que ya existen.
+Esto recupera las funciones de texto y la tipografía original. No tienes que modificar manualmente las funciones de la biblioteca.
+2. Modificar Pantallita.h
+Busca la línea 14, que actualmente dice:
+void mostrar(int x, int y);
+
+Reemplázala por:
+void mostrar(int x, int y, bool dibujando);
+
+¿Por qué? Porque ahora Pantallita necesita saber si estamos en MOVER o DIBUJAR para mostrar la palabra correcta.
+3. Modificar Pantallita.cpp
+Aquí cambiaremos la función que muestra la pantalla.
+Busca la función void Pantallita::mostrar(...), que empieza cerca de la línea 42.
+Reemplaza esa función completa, desde su declaración hasta su llave } final, por lo siguiente:
+
+void Pantallita::mostrar(int x, int y, bool dibujando) {
+    // Copiamos los trazos guardados a la pantalla.
+    memcpy(pantalla.buffer, lienzo.buffer, pantalla.bufsize);
+
+// Dejamos libre la franja superior para mostrar el modo.
+ssd1306_clear_square(&pantalla, 0, 0, 128, 8);
+
+// Mostramos el estado actual.
+ssd1306_draw_string(&pantalla, 0, 0, 1,
+                   dibujando ? "DIBUJAR" : "MOVER");
+
+// Dibujamos la cruz del cursor sin guardarla en el lienzo.
+ssd1306_draw_pixel(&pantalla, x, y);
+
+if (x > 0)
+    ssd1306_draw_pixel(&pantalla, x - 1, y);
+
+if (x < pantalla.width - 1)
+    ssd1306_draw_pixel(&pantalla, x + 1, y);
+
+if (y > 8)
+    ssd1306_draw_pixel(&pantalla, x, y - 1);
+
+if (y < pantalla.height - 1)
+    ssd1306_draw_pixel(&pantalla, x, y + 1);
+
+// Actualizamos la OLED.
+ssd1306_show(&pantalla);
+
+}
+Fíjate en dos detalles: la franja del texto ocupa las filas 0–7, y el cursor empieza desde la fila 8 para no tapar las letras.
+4. Modificar main.cpp
+Aquí son solamente cuatro cambios.
+
+  
+    **Cambio A — Línea 14**
+
+Busca:
+
+```cpp
+Perilla horizontal(26, 127), vertical(27, 63);
+```
+
+Reemplaza por:
+
+```cpp
+Perilla horizontal(26, 127), vertical(27, 55);
+```
+
+Ahora el recorrido vertical tendrá 56 posiciones, porque reservamos 8 filas para el texto.
+
+  
+  
+  
+    **Cambio B — Línea 27**
+
+Busca:
+
+```cpp
+int xAnterior = 0, yAnterior = 0;
+```
+
+Reemplaza por:
+
+```cpp
+int xAnterior = 0, yAnterior = 8;
+```
+
+  
+  
+  
+    **Cambio C — Línea 53**
+
+Busca:
+
+```cpp
+const int y = vertical.posicion;
+```
+
+Reemplaza por:
+
+```cpp
+const int y = 8 + vertical.posicion;
+```
+
+Este `+8` es importante, porque desplaza el cursor debajo de la franja superior.
+
+  
+  
+  
+    **Cambio D — Línea 60**
+
+Busca:
+
+```cpp
+pantalla.mostrar(x, y);
+```
+
+Reemplaza por:
+
+```cpp
+pantalla.mostrar(x, y, dibujando);
+```
+
+Ahora el `main` le entrega a Pantallita el estado que debe mostrar.
+
+  
+
+
+Un ajuste adicional para el monitor serial
+En la línea 66, donde está el printf, cambia el segundo argumento vertical.posicion por 8 + vertical.posicion, para que el monitor muestre la coordenada real de la OLED.
+No cambia el funcionamiento; solamente mantiene coherentes los valores que aparecen en pantalla y en el monitor.
+5. ¿Tenemos que modificar CMakeLists.txt?
+Nooo, mor. El Código 7 ya incluye Pantallita.cpp y ssd1306.c, así que no necesitas agregar nada.
+Solo asegúrate de que font.h esté en la misma carpeta que ssd1306.c.
+6. ¿Cómo comprobamos que quedó bien?
+{@body const checks = ["Al iniciar, la OLED muestra MOVER en la parte superior.","Al presionar TRAZO, aparece DIBUJAR.","Al mover las perillas en DIBUJAR, los trazos permanecen.","Al volver a MOVER, el cursor se desplaza sin dejar marcas nuevas.","Al presionar BORRAR, los trazos desaparecen y vuelve a MOVER.","El cursor alcanza los bordes del área de dibujo sin tapar el texto."]}{@body const [done,setDone] = DIL.useState([])}      Pruebas en Wokwi    {done.length} de {checks.length}        <box background="surface-inverted" height="100%" width={${done.length/checks.length*100}%} radius="full"/>    {#each checks as item,i}    <checkbox key={i} checked={done.includes(i)} onChange={v=>setDone(old=>v?[...old,i]:old.filter(x=>x!==i))}>{item}  {/each}
+Y listo, mor. Con esto queda recuperado el indicador MOVER/DIBUJAR sin deshacer la clase Pantallita.
+Además, puedes comparar tus cambios con el Código 7 corregido que te preparé.
+Importante: las líneas corresponden al ZIP original de Claude. Si agregaste comentarios o modificaste algo después, pueden haberse desplazado; en ese caso busca el texto exacto con Ctrl + F. Todavía es necesario compilar y probar la versión corregida en Wokwi.
+
+

@@ -4,7 +4,7 @@
 
 ## Avance proyecto 2
 
-Editamos el ReadMe del proyecto-02 con la información actualizada, además de distribuir mejor el orden.
+Editamos el ReadMe del proyecto-02 con la información actualizada, además de distribuir mejor el orden y comenzamos a trabajar el kicad.
 
 ## encargos
 
