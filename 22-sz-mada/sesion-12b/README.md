@@ -44,6 +44,6 @@ Somebody wants to read about finance rather than microcontrollers :skull: to eac
 
 ## encargo
 
-Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar cómo aparece, intentar describir cómo suena, y su relación cultural
+Leer el texto de Schafer y escribir un párrafo en la bítacora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar cómo aparece, intentar describir cómo suena, y sus aspectos culturales
 
 Revisar una obra de Tristan Perich y una de Christine Sun Kim
