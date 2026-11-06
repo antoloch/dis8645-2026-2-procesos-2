@@ -7,7 +7,7 @@
 #include "Perilla.h"
 #include "BotonGrupo1.h"
 extern "C" { // La biblioteca de pantalla está en C; así la podemos llamar desde nuestro C++.
-#include "ssd1306.h"
+#include "Ssd1306.h"
 }
 // Código 5: perillas + botones + dibujo.
 // Dos estados: MOVER (el punto se mueve sin dejar marca) y DIBUJAR (el punto deja una línea).
