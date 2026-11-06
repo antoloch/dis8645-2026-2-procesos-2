@@ -2,7 +2,7 @@
 
 ## apuntes sesión
 Las clases y la programación orientada a objetos nos puede no ser solo útil para programar cosas como ordenadores si no que nos puede ayudar mucho a hacer cosas cotidianas que se pueden automatizar y mecanizar.
-# Automatizar y mecanizar es una habilidad muy importante porque así no gastamos tiempo y no gastas tu energía en cosas aburridas o que te puedas olvidar.
+## Automatizar y mecanizar es una habilidad muy importante porque así no gastamos tiempo y no gastas tu energía en cosas aburridas o que te puedas olvidar.
 Las clases nos ayudan a automatizar cosas, les atribuimos métodos y atributos a objetos y ahí van cambiando.
 
 
