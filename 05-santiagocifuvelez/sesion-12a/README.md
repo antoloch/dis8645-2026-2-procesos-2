@@ -1,7 +1,2 @@
-# sesion-12a
-
-## apuntes sesión
-
-## encargos
-
-## lectura
+# sesion-12a  
+Entrega del proyecto 02
