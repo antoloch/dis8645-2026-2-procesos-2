@@ -2,7 +2,8 @@
 las clases: son planos 
 - zotero para citar
 - descargarlo
-- para diseño abierto siosi parlante, opcional pantalla 
+- para diseño abierto siosi parlante, opcional pantalla
+- isd1820
 ## apuntes sesión
 
 ## encargos
