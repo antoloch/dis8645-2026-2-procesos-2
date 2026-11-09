@@ -48,6 +48,17 @@ REPO grupo 1
 
 ## encargos
 
+Leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, elaborar como aparece, intentar describir como suena y sus aspectos culturales
+
+Sonido:
+
+
+Tristan perich:
+
+Christine sun kim: "Shit Hearing People Say To Me", 2019. En esta obra recolecta distintas frases/comentarios que ha recibido por parte de espectadores o seguidores de sus obras. Me gusta porque delata 
+
+Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante 
+
 ## lectura
 
 Tengo que retomar la lectura, no es que no me guste, pero el primer día que dejé de leer no hubo vuelta atrás y no supe retomar... me puse a leer otro libro en vez del libro de taller. 
