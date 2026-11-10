@@ -5,11 +5,15 @@ En clase tuvimos una gran sesión de referentes y planeación de sobre lo que qu
 ## apuntes sesión
 
 ## encargos  
-leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, elaborar como aparece, intentar describir como suena y sus aspectos culturales
+1. Leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención:
+   -  Nombrar el sonido.
+   -  Elaborar como aparece.
+   -  Intentar describir como suena.
+   -  Aspectos culturales
 
-revisar 1 obra de tristan perich y 1 de christine sun kim
+3. Revisar 1 obra de tristan perich y 1 de christine sun kim
 
-revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
+4. Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
 
 
 ## lectura
