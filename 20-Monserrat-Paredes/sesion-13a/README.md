@@ -58,21 +58,35 @@ referentes → <https://www.visual-paradigm.com/tutorials/flowchart-tutorial/>
 Ejemplo de discord:
 
 inicio → dormir? ─sí→ ¿estímulo? ─no→ seguir durmiendo
+
                          │sí→ despertar (sonido)
+                         
 leer sensores → ¿qué sensor?
+
    ├ panza → reír
+   
    ├ espalda → ronronear
+   
    ├ volteado → quejarse
+   
    └ oscuridad → bostezar → dormir
   
   → ¿tiempo sin estímulo? ─sí→ dormir
+  
 inicio → ¿tarjeta acercada? —no→ esperar
+
             │sí
+            
    ¿es bancaria? —sí→ ¿es bus Red? —sí→ rechazar (sonido error)
+   
             │no                    │no→ cobrar → sonido OK
-   ¿saldo suficiente? —sí→ cobrar → sonido OK → fin
+            
+   ¿saldo suficiente? —sí→ cobrar → sonido OK → fin}
+   
             │no
+            
    ¿es bus y hay saldo de emergencia? —sí→ cobrar → sonido OK
+   
             │no→ rechazar (sonido error)
 
           
