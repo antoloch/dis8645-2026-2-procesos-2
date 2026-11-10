@@ -50,7 +50,7 @@ REPO grupo 1
 
 Leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, elaborar como aparece, intentar describir como suena y sus aspectos culturales
 
-Sonido: Red de basketball al encestar. Al lanzar un balón y hacer un tiro limpio, sin tocar el aro, el balón golpea la red de cuerda. 
+Red de basketball al encestar: Al lanzar un balón y hacer un tiro limpio (sin tocar el aro), el balón golpea la red de cuerda con mucha velocidad. Esta acción acaba con el silencio que se forma mientras el balón está en el aire. Es un sonido seco y fluido, parecido a un látigo, pero más suave, que confirma que el tiro fue perfecto. El sonido de la red de hilo es propio de canchas de interior, a diferencia de las redes metálicas, que se asocian a canchas de parque. Ambas se relacionan a la cultura urbana, hip hop y lugar de encuentro entre deportistas.
 
 
 Tristan perich:
