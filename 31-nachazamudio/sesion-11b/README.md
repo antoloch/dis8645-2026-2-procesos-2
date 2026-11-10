@@ -61,6 +61,4 @@ Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amp
 
 ## lectura
 
-Tengo que retomar la lectura, no es que no me guste, pero el primer día que dejé de leer no hubo vuelta atrás y no supe retomar... me puse a leer otro libro en vez del libro de taller. 
-
-nacha pls lee.
+nacha lee  por favor
