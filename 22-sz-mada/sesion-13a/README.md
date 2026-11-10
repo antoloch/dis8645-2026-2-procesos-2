@@ -12,8 +12,8 @@ Con [Isi](https://www.github.com/isiidoraadiiaz) incialmente hicimos un brainsto
 
 1. **Herencia sonora**: Un dispositivo para registrar voces, anécdotas y sonidos familiares que pueden conservarse como archivo intergeneracional
 1. BeReal pero grabas un sonido en vez de tomar una foto (you also can go back and listen to it)
-1. **Compañero de bolsillo** Un dispositivo sonoro portátil que acompaña a niños en momentos de soledad o incertidumbre. Reproduce cuentos y música. Permite grabar mensajes de personas significativas. Tiene sonidos personalizados para momentos difíciles.
-1. **Fan Connect** Una máquina que permite intercambiar mensajes sonoros entre fans que no se conocen. Grabas un mensaje. Otra persona recibe una señal sonora. Puede responder con su propia grabación.
+1. **Compañero de bolsillo**: Un dispositivo sonoro portátil que acompaña a niños en momentos de soledad o incertidumbre. Reproduce cuentos y música. Permite grabar mensajes de personas significativas. Tiene sonidos personalizados para momentos difíciles.
+1. **Fan Connect**: Una máquina que permite intercambiar mensajes sonoros entre fans que no se conocen. Grabas un mensaje. Otra persona recibe una señal sonora. Puede responder con su propia grabación.
 1. Sampler recorder i.e. tú grabas todos los sonidos para el sampler
 
 ---
@@ -44,26 +44,40 @@ LA DIMENSIÓN SONORA DE LA REALIDAD
 
 Tutorial para [flowcharts](https://www.visual-paradigm.com/tutorials/flowchart-tutorial/)
 
+[Basic syntax](https://mermaid.ai/open-source/syntax/flowchart.html) de mermaid.js
+
 ```mermaid
 flowchart TD
 
-A([quiero completo])-->B(lista de ingredientes);
-B-->|por cada uno|C{tengo ing?};
-C--->|si|D(😊);
-C--->|no|E(Agrego a lista compra);
-E-->F(Compro)-->C;
+A@{shape: circ, label: "quiero<br>completo"}-->B(lista de<br>ingredientes);
+B--por cada uno-->C{tengo ing?};
+C--si--->D("😊");
+C--no-->E(agrego a<br>lista compra);
+E-->F(compro)-->C;
 D-->G{ing listo?};
-G--->|si|H(ensamblar);
-G--->|no|I{se pica?};
-I--->|si|M(picar)-->G;
-I--->|no|J{se cuece?};
-J--->|si|N(cocer)-->G;
-J--->|no|K{se muele?};
-K--->|si|O(moler)-->G;
-K--->|no|L{se tuesta?};
-L--->|si|P(tostar)-->G;
-H-->Q([comer 😊]);
+G--si--->H(abrir pan);
+G--no-->I{se pica?};
+I--si-->M(picar)-->G;
+I--no-->J{se cuece?};
+J--si-->N(cocer)-->G;
+J--no-->K{se muele?};
+K--si-->O(moler)-->G;
+K--no-->L{se tuesta?};
+L--si-->P(tostar)-->G;
+H-->Q(poner vienesa);
+Q-->R("agregar tomate<br>(o no)");
+R-->S(agregar palta);
+S-->T{mayo?};
+T--si-->X(mayonear)-->U;
+T--no-->U{mostaza?};
+U--si-->Y(mostazear)-->V;
+U--no-->V{ketchup?};
+V--si-->Z(ketchupear)-->W;
+V--no-->W(servir);
+W-->AA@{shape: dbl-circ, label: "comer 😊"};
 ```
+
+Para nuestro proyecto-03, decidimos quedarnos con la idea (3) **Compañero de bolsillo** y (4) **Fan Connect**
 
 ### Referentes para el viernes
 
@@ -80,5 +94,7 @@ H-->Q([comer 😊]);
 [The Magnetic Fields](https://en.wikipedia.org/wiki/The_Magnetic_Fields)
 
 [Summoning Salt](https://www.youtube.com/c/SummoningSalt)
+
+[Boss Fight Books](https://bossfightbooks.com/) &larr; there's an Outer Wilds one :]
 
 ## lectura
