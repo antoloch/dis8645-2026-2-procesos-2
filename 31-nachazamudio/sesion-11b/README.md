@@ -55,7 +55,7 @@ Sonido: Red de basketball al encestar. Al lanzar un balón y hacer un tiro limpi
 
 Tristan perich:
 
-Christine sun kim: "Shit Hearing People Say To Me", 2019. En esta obra recolecta distintas frases/comentarios que ha recibido por parte de espectadores o seguidores de sus obras. Me gusta porque delata 
+Christine sun kim: "Shit Hearing People Say To Me", 2019. En esta obra recolecta distintas frases/comentarios que ha recibido por parte de espectadores o seguidores de sus obras. 
 
 Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante 
 
