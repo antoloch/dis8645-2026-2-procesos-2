@@ -12,7 +12,6 @@
 
 ## Licencia
 
-
 Este código es obra de Bianka Vilchez, Camila Ramirez y Dayana Pañitrur (2026).
 Se distribuye bajo la licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](http://creativecommons.org/licenses/by-sa/4.0/).
 
@@ -20,9 +19,11 @@ Se distribuye bajo la licencia [Creative Commons Atribución-CompartirIgual 4.0 
 
 ## Concepto
 
-Se plantea que el sonido de un computador está condicionado por la tecnología de su época, desde los chips de síntesis que generaban melodías y efectos electrónicos hasta la incorporación de audio digital y música grabada.
+Para elegir el computador, quisimos partir de una premisas: un sistema que permitiera ejecutar videojuegos. A partir de esto, decidimos centrarnos en el sonido y en cómo sus posibilidades de reproducción y volumen fueron evolucionando a lo largo del tiempo.
 
-A partir de esta exploración, surge la pregunta: ¿cómo ha evolucionado el sonido de los videojuegos a medida que cambian las capacidades tecnológicas de los computadores? El proyecto busca reconocer estas transformaciones y comprender cómo las características sonoras permiten identificar distintas etapas.
+Para delimitar la exploración, elegimos Japón como contexto de estudio, debido a su importante desarrollo en la industria de los videojuegos y la tecnología computacional. Dentro de este contexto, seleccionamos el Sharp X68000 como caso de estudio y punto de referencia central para analizar la evolución del sonido en los videojuegos.
+
+Asi surge la pregunta: ¿cómo ha evolucionado el sonido de los videojuegos a medida que cambian las capacidades tecnológicas de los computadores? El proyecto busca reconocer estas transformaciones y comprender cómo las características sonoras permiten identificar distintas etapas.
 
 La evolución del sonido y la música en los videojuegos japoneses ha transitado desde los simples tonos monofónicos de los arcades y consolas de 8 bits hasta complejas bandas sonoras dinámicas e integradas con tecnología binaural y orquestal.
 
@@ -38,11 +39,13 @@ Era moderna y el sonido interactivo (Siglo XXI - Presente): La música y los efe
 
 ### Inspiración - Sharp X68000
 
+![bleep-drum](./imagenes/sharp-x68000.jpg)
+
 El proyecto consiste en un dispositivo sonoro inspirado en las configuraciones y el sistema del computador Sharp X68000. La interacción se realizará mediante dos botones y dos perillas, cada uno con una función específica para seleccionar, reproducir y controlar los sonidos.
 
 Otro aspecto interesante reside en las opciones de personalización. Sharp X68000 se puede ampliar gracias a sus puertos, permitiendo añadir cosas como un sintetizador MIDI Roland MT32 para mejorar las melodías del chip Yamaha YM2151 que trae de serie
 
-la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas. 
+la Sharp X68000 lanzado en 1987 lideró el mercado de los sistemas informáticos japoneses, finalizando su reinado alrededor de 1996. Gracias al chip de sonido Yamaha YM2151, la computadora pudo reproducir algunas de las mejores bandas sonoras de videojuegos (VGM) basadas en síntesis FM jamás lanzadas.
 
 > Links relevantes
 >
@@ -52,51 +55,105 @@ la Sharp X68000 lideró el mercado de los sistemas informáticos japoneses, fina
 
 <br>
 
-### Referentes
+### sonidos 
 
-1. Bleep-Drum
+Se va a tomar la decisión de mantener al Sharp X68000 como referente central del proyecto, utilizando los sonidos de sus videojuegos como base para la exploración sonora. Esta elección considera sus capacidades de audio, principalmente la síntesis FM mediante el chip Yamaha YM2151 y la reproducción de muestras digitales ADPCM mediante el OKI MSM6258.
+
+ tomando el Sharp X68000 como punto central de comparación, aparecen dos preguntas:
+
+¿Cómo eran los sonidos de los videojuegos antes del Sharp X68000?
+¿Cómo evolucionó el sonido de los videojuegos después del Sharp X68000?
+
+Para esto, se buscarán sonidos a los que les haremos una abstracción, modificándolos, pero manteniendo su sonido característico, originado por las especificaciones técnicas de cada época.
+
+Este corresponde
+2. Dos referentes anteriores Computadores de 8 bits: sonidos de generaciones previas, caracterizados por ondas simples, canales limitados y melodías electrónicas.
+
+1. Referente central Sharp X68000: sonidos característicos de sus videojuegos, combinando síntesis FM y audio ADPCM.
+
+3. Dos referentes posteriores  Computadores y plataformas más actuales: sonidos que incorporan audio digital, muestras grabadas, mayor complejidad musical y procesamiento de audio en tiempo real.
 
 
+## Referentes
 
-![bleep-drum](./imagenes/bleep-drum.jpg)
+### Hanan Cumbia (HTR-1)
 
-![bleep-drum](./imagenes/bleep-drum01.jpg)
+una caja de ritmos compacta inspirada en la cumbia latinoamericana, con secuenciación analógica y sonidos de percusión latina. Construida con un motor de muestreo lo-fi, con sincronización de tempo y memoria de patrone
+https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/
 
-2. 
+
+### All Macintosh Startup Sounds 1980-2022
+
+https://www.youtube.com/watch?v=UtGKKUWXOaI
+
+Sonido como respuesta de la máquina: al encender el computador, este emite un sonido que comunica que ha comenzado su funcionamiento.
+Evolución sonora: los sonidos cambian entre generaciones, desde tonos electrónicos simples hasta acordes más complejos.
+Identidad sonora: un sonido breve puede asociarse a una marca y convertirse en una característica reconocible del computador.
+
+https://www.youtube.com/watch?v=UtGKKUWXOaI
+
+### ALL SOUNDS OF WINDOWS 95
+
+sonidos de Windows 95: El video recopila los sonidos del sistema operativo Windows 95, lanzado en 1995. Reúne distintos sonidos asociados a las acciones, notificaciones y estados del sistema, mostrando cómo el computador se comunica con el usuario a través del audio.
+
+https://www.youtube.com/watch?v=w0xIUuH6Mck
 
 <br>
 
-### ¿Por qué 5 sonidos?
+<details>
+<summary> <h4> Ver más </h4> </summary>
 
-- Un tono simple.
-- Una secuencia rítmica.
-- Una melodía sintetizada.
-- Un sonido percusivo.
-- Una muestra de audio digital.
+<br>
 
-La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+- [Display 4 Matriz Led Verde 8x8 Max7219 SPI](https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi)
 
-### Sonido0
+Esta matriz de led utiliza un multiplexor, es decir que mediante 2 canales se envia información para controlar cada led, de esta manera no debemos tener 256 canales (total de leds)
 
-fecha:
+<br>
 
-### Sonido1
+- [Allison Parrish: Recent and Selected Work](https://portfolio.decontextualize.com/)
 
-fecha:
+Compilado de proyectos de Allison, muchos de ellos trabajan con el IC 2040. Recordando este microcontrolador corresponde al cerebro de la Raspberry Pi Pico
 
-### Sonido2
+> [Allison’s Bootleg Cart](https://abc.decontextualize.com/) 
 
-fecha:
+<br>
 
-### Sonido3
+- [Sam Lavigne](https://lav.io/) 
 
-fecha:
+https://lav.io/projects/new-york-apartment/. Acá Sam recopila **todos** los datos de arriendo y estructura una lógica de visualización de datos interactiva, pudiendo "fusionar" todos los departamentos en uno, calculando cuando te demorarias en pagar cada uno, etc...
 
-### Sonido4
+<br>
 
-fecha:
+- [How to speak machine](https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view)
 
-### SonidoInicio
+Este libro puede servir para entender la lógica detrás de lo que es y no es un computador personal, concepto clave del proyecto-02
+
+<br>
+
+- [Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+
+![bleep](./imagenes/bleep-drum.jpg)
+
+Desarrollaron una máquina percusiva que utiliza 4 sonidos y 2 modificadores. Este referente es clave para lo que queremos lograr, igualmente nos acercamos a la versión que está en el LID para explorar y ver las posibilidades de lo que es posible
+
+Utiliza un microcontrolador ATM, más exactamente el que utilizaban los Arduino Uno R3
+
+<br>
+
+- [oficina del sonido](https://www.oficinadesonido.org/)
+
+Referente similar al anterior
+
+<br>
+
+- [Windows 95](https://www.youtube.com/watch?v=I3Ak5VgyEoc)
+
+El sonido de inicio de Windows 95 desarrollado por Brian Eno nos plantea el oceano de infinidades que pueden ocurrir en pocos segundos. De esto, además consideramos el como la sonoridad evolucionó con la computación
+
+</details>
+
+<br>
 
 ## **Implementación física**
 
@@ -176,7 +233,6 @@ El encoder rotatorio cumple dos funciones en un solo componente: funciona como *
 
 8. si se gira la perillaVolumen, el valor asociado cambiará el volumen
 
-
 <br>
 
 ### relación interfaz y código
@@ -188,6 +244,10 @@ El encoder rotatorio cumple dos funciones en un solo componente: funciona como *
 - botonLoop es un pushbutton que está enlazado con la variable `bool estadoPresionarSwitch`, si este es falso, el estado loop es falso
 
 - volumen es un potenciometro, ubicado en el GPIO26 y funciona con valores de 0 a 100
+
+### Esquemático
+
+![esquemático](./imagenes/proyecto-2-grupo01.jpg)
 
 <br>
 
@@ -265,6 +325,24 @@ Todas comienzan con la pregunta ¿que pasa si...
 
 <br>
 
+## Fotos Procesos
+
+|           |           |           |           |
+| --------- | --------- | --------- | --------- |
+| Imagen 01 | Imagen 02 | Imagen 03 | Imagen 04 |
+| ![01](./imagenes/carcasa1.jpg) | ![02](./imagenes/carcasa2.jpg) | ![03](./imagenes/carcasa3.jpg) | ![04](./imagenes/carcasa4.jpg) | 
+| Imagen 05 | Imagen 06 | Imagen 07 | Imagen 08 |
+| ![05](./imagenes/carcasa6.png) | ![06](./imagenes/carcasa7.jpg) | ![07](./imagenes/carcasa8.jpg) | ![08](./imagenes/carcasa9.jpg) |
+| Imagen 09 | Imagen 10 | Imagen 11 | Imagen 12 |
+| ![09](./imagenes/carcasa10.jpg) | ![10](./imagenes/carcasa11.jpg) | ![11](./imagenes/carcasa12.jpg) | ![12](./imagenes/carcasa13.jpg) |
+| Imagen 13 | Imagen 14 | Imagen 15 | Imagen 16 |
+| ![13](./imagenes/carcasa13.jpg) | ![14](./imagenes/carcasa14.jpg) | ![15](./imagenes/carcasa15.jpg) | ![16](./imagenes/carcasa16.jpg) | 
+| Imagen 17 | Imagen 18 | Imagen 19 | Imagen 20 |
+| ![17](./imagenes/carcasa17.png) | ![18](./imagenes/carcasa18.jpg) | ![19](./imagenes/carcasa19.png) | [![Ver el video](./imagenes/test00.png)](https://youtube.com/shorts/KGOoIZoSN1o) |
+| [![Ver el video](./imagenes/test00.png)](https://youtu.be/gKS3x0eWUlA) | [![Ver el video](./imagenes/test00.png)](https://youtu.be/3ZkmGP23_4A) | [![Ver el video](./imagenes/test00.png)](https://youtube.com/shorts/kHsovLrT-w8?feature=share)
+
+<br>
+
 ## clases
 
 ### class Boton
@@ -275,7 +353,7 @@ Como grupo nos corresponde realizar la clase Boton, el cuál debe funcionar tant
 
 En el archivo .h definimos todo, declaramos todo, prometemos las cosas que hará el botón, el cómo lo hará lo escribiremos en el archivo .cpp
 
-El nombre de nuestra clases es **BotonGrupo1** 
+El nombre de nuestra clases es **BotonGrupo1**
 
 Algo importante que debemos integrar en nuestro archivo.h son:
 
@@ -285,21 +363,6 @@ Algo importante que debemos integrar en nuestro archivo.h son:
 Hacer el código `public` hará que cualquier persona pueda ver, usar o modificar nuestra clase Boton
 
 `int nuevoPin` Le indica a la clase en qué pin de la Raspberry Pi Pico está conectado ese botón
-
-modoSwitch
-
-| anterior | actual | resultado |
-| :------: | :----: | :-------: |
-| 0        | 0      | 0         |
-| 1        | 0      | 1         |
-| 1        | 1      | 0         |
-| 0        | 1      | 1         |
-
-XOR
-
-Una u otra, pero no ambos
-
-Cuando el anterior **o** el actual cambien de estado, el `modoSwitch` lo hará
 
 #### Boton.cpp
 
@@ -343,9 +406,10 @@ Método constructor Lucecita():
 - Cambiar el estado de la luz a apagada.
 - Desactivar el pin para apagar la luz.
 
-#### Metodo parpadeo() 
+#### parpadeo()
 
-- para no ocupar sleep_ms(500) agregar el metodo parpadeo(): 
+- para no ocupar sleep_ms(500) agregar el metodo parpadeo():
+- utiliza una función que calcula el tiempo desde que inicia la raspi, hasta que se encienda un led, utiliza este tiempo como referencia
 
 <br>
 
@@ -355,33 +419,95 @@ Esta clase ayuda a esconder la complejidad que existe al momento de seleccionar 
 
 Si la definimos en una frase: _"Es nuestro DJ"_
 
-Por lo mismo utilizamos `#include Audio_n.h`
+Por lo mismo utilizamos `#include AudioN.h`
 
-> siendo n el número del audio
+> siendo `N` el número del audio
 
 #### Audios
+
+##### ¿Por qué 5 sonidos?
+
+La elección de cinco sonidos responde a la intención de representar distintas transformaciones tecnológicas en la historia del audio de los videojuegos. Cada sonido corresponde a una etapa que permite reconocer cómo evolucionaron la generación, síntesis y reproducción del sonido, desde los primeros tonos electrónicos hasta el audio digital.
+
+[Carpeta Sonidos](./audio/audios-finales/)
+
+- Sonido0
+
+<audio controls>
+  <source src="./audio/sonido-00-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido1
+
+<audio controls>
+  <source src="./audio/sonido-01-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido2
+
+<audio controls>
+  <source src="./audio/sonido-02-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido3
+
+<audio controls>
+  <source src="./audio/sonido-03-modificado.wav" type="audio/wav">
+</audio>
+
+- Sonido4
+
+<audio controls>
+  <source src="./audio/sonido-04-modificado.wav" type="audio/wav">
+</audio>
+
+- SonidoSistema
+
+<audio controls>
+  <source src="./audio/audios-finales/SonidoSistema.wav" type="audio/wav">
+</audio>
+
+##### Aviso de Uso Legítimo (Fair Use)
+
+Este proyecto es estrictamente educativo y sin fines de lucro. Incluye breves extractos de audio modificados de diversas obras musicales, utilizados bajo la doctrina de "Uso Justo" (Fair Use) y excepciones legales de uso académico. Todos los derechos de los fonogramas originales pertenecen a sus respectivos titulares. Su inclusión se realiza de buena fe, sin intención de infringir los derechos de autor ni afectar el valor comercial de las obras originales.
+
+#### Cargar sonidos
 
 Para lograr introducir cualquier sonido para reproducir en nuestra Raspi  
 
 ![class audio](./imagenes/sc-23.png)
 
+1. Lo primero que realizamos teniendo los archivos de audio, es abrirlos en Audacity, un programa de edición de audio. En este los exportamos con la siguiente configuración
+
+2. Es importante que se considere la siguiente lógica al seleccionar los nombres `SonidoN.wav`. La `N` debe ser reemplazada por el número de audio correspondiente, además de esto, **el conteo inicia en 0**
+
 ![class audio](./imagenes/sc-22.png)
+
+>[!WARNING]
+> Fe de erratas
+>> En codificación debe utilizarse `16-bit PCM` 
+
+3. Una vez que tenemos el audio exportado con las caracteristicas lo pasamos a la web
+
+[File to C style array converter](https://notisrac.github.io/FileToCArray/)
 
 ![class audio](./imagenes/sc-24.png)
 
-- nombrar el formato que debe tener el archivo
-- como cargarlo
-- como funciona
 
-- como exportar y que web usar
-
-[File to C style array converter](https://notisrac.github.io/FileToCArray/)
+> [!NOTE]
+>Por problemas con la utilización exportación de `.WAV` a `.h`, se le solicito ayuda a Claude con la conversión y se desarrollo una herramienta en Python que transforma los `.WAV`, siempre y cuando estén en `11025Hz` y `16-bit PCM`
+>
+> Esta herramienta está ubicada en [script](./script/), con su respectivo README.md que explica su uso
+>
+>> ![git](./imagenes/sc-25.png)
 
 <br>
 
 ### class Ampli
 
 Se preparó una clase enfocada en el uso de la amplificación de audio con el IC MAX98357A
+
+![ampli](./imagenes/max.avif)
 
 ```cpp
 
@@ -1038,3 +1164,23 @@ Leyendo el código, esto es lo que **hace hoy** el programa en cada caso. Si alg
 <br>
 
 ## Bibliografía
+
+* AFEL. (s.f.). *Display 4 Matriz Led Verde 8x8 Max7219 SPI*. Recuperado de [https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi](https://afel.cl/products/display-4-matriz-led-verde-8x8-max7219-spi)
+* *ALL SOUNDS OF WINDOWS 95*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch](https://www.youtube.com/watch)
+* *All Macintosh Startup Sounds 1980-2022*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch?v=UtGKKUWXOaI](https://www.youtube.com/watch?v=UtGKKUWXOaI)
+* *piruetas.xyz* (s.f.). *Repositorio GitHub Piruetas*. [https://github.com/piruetasxyz](https://github.com/piruetasxyz).
+* BleepLabs. (s.f.). *Bleep-Drum*. GitHub. Recuperado de [https://github.com/BleepLabs/Bleep-Drum](https://github.com/BleepLabs/Bleep-Drum)
+* *Canal de YouTube relacionado con Sharp X68000*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw](https://www.youtube.com/channel/UC202eItEazdvnMRK09RTtaw)
+* Creative Commons. (s.f.). *Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional*. Recuperado de [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
+* Lavigne, S. (s.f.). *New York Apartment*. Recuperado de [https://lav.io/projects/new-york-apartment/](https://lav.io/projects/new-york-apartment/)
+* Lavigne, S. (s.f.). *Portafolio de Sam Lavigne*. Recuperado de [https://lav.io/](https://lav.io/)
+* *Libro: How to speak machine* [Archivo PDF en Google Drive]. (s.f.). Recuperado de [https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view](https://www.google.com/search?q=https://drive.google.com/file/d/1jdlTussK-nnjx7-pNHt1AHZHUXFPDMnk/view)
+* Notisrac. (s.f.). *File to C style array converter*. GitHub Pages. Recuperado de [https://notisrac.github.io/FileToCArray/](https://notisrac.github.io/FileToCArray/)
+* Oficina de Sonido. (s.f.). *Hanan Cumbia (HTR-1)*. Recuperado de [https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/](https://www.oficinadesonido.org/product/hanan-cumbia-tropical-drum-machine/)
+* Oficina de Sonido. (s.f.). *Oficina de Sonido (Sitio Principal)*. Recuperado de [https://www.oficinadesonido.org/](https://www.oficinadesonido.org/)
+* Parrish, A. (s.f.). *Allison Parrish: Recent and Selected Work*. Recuperado de [https://portfolio.decontextualize.com/](https://portfolio.decontextualize.com/)
+* Parrish, A. (s.f.). *Allison’s Bootleg Cart*. Recuperado de [https://abc.decontextualize.com/](https://abc.decontextualize.com/)
+
+* *Windows 95*. (s.f.). YouTube. Recuperado de [https://www.youtube.com/watch?v=I3Ak5VgyEoc](https://www.youtube.com/watch?v=I3Ak5VgyEoc)
+* XVGM Radio. (s.f.). *Episode 119: The Sounds of the Sharp X68000*. Recuperado de [https://xvgmradio.com/episode-119-the-sounds-of-the-sharp-x68000/](https://xvgmradio.com/episode-119-the-sounds-of-the-sharp-x68000/)
+* Yuuqilin. (s.f.). *RetroJapSound*. GitHub. Recuperado de [https://github.com/yuuqilin/RetroJapSound](https://github.com/yuuqilin/RetroJapSound)

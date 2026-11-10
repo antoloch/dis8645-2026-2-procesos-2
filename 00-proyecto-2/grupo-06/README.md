@@ -16,7 +16,7 @@
 
 # Space Float 
 
-Nuestro proyecto Space Float es un juego de nave, la cual hay que mantener volando la nave por el mayor tiempo que pueda sin chocar con obstáculos ni caer en el espacio. Tendrá 2 botones y 2 perillas para su uso, el primer botón es seleccionador de personajes, al mantenerse presionado durante 2 segundos, prende y apaga el juego, el segundo botón volador es el que sirve para mantener la nave volando, ya que al presionarlo la nave sube hasta que el botón se suelta y la nave comienza a caer, por lo que se debe intercalar el presionar y soltar para evitar que la nave caiga. Las perillas manejan dos aspectos distintos, la perilla derecha es una selección de diferentes naves para que el usuario escoja, son cuatro naves: 1-calabaza, 2-chango, 3-gato alien y 4-vaca. La perilla izquierda  regula la velocidad de juego, pudiendo subir o bajar la dificultad para ajustarla a sus capacidades. 
+Nuestro proyecto Space Float es un juego de nave, la cual hay que mantener volando la nave por el mayor tiempo que pueda sin chocar con obstáculos ni caer en el espacio. Tendrá 2 botones y 2 perillas para su uso, el primer botón es seleccionador de personajes, al mantenerse presionado durante 2 segundos, prende y apaga el juego, el segundo botón volador es el que sirve para mantener la nave volando, ya que al presionarlo la nave sube hasta que el botón se suelta y la nave comienza a caer, por lo que se debe intercalar el presionar y soltar para evitar que la nave caiga. Las perillas manejan dos aspectos distintos, la perilla derecha es una selección de diferentes naves para que el usuario escoja, son cuatro naves: 1-Vaca, 2-Calabaza, 3-Gato alien y 4-Chango. La perilla izquierda  regula la velocidad de juego, pudiendo subir o bajar la dificultad para ajustarla a sus capacidades. 
 
 ----
 
@@ -533,6 +533,231 @@ Al cambiar esto, se eliminaron las variables y funciones que manejaban el tiempo
 Al quitar estos archivos, se adaptó el main, quitando las condicionales if que trabajaban con variables de tiempo para leer los intervalos de tiempo entre clics y que distinguían entre una pulsación y dos pulsaciones. Reemplazándolas por una lectura de estados directa de los botones que simplifican las respuestas en el sistema. 
 
 # Declaración de IA
+## Uso de IA en el desarrollo
+
+En primer lugar se le explicó a Claude de qué trataría el juego y cómo funciona con todos sus componentes.
+
+<details>
+<summary><b>Prompt inicial: trabajar el archivo boton.h</b></summary>
+
+Esto se trabajó a lo pedido en la clase.
+
+> "Tenemos este archivo de boton.h creado con pseudocódigo a partir de comentarios de lo que queremos lograr, tiene que ver con el juego que estábamos conversando. Ayúdame a crear la formalidad del código, explícame que hiciste y por qué lo hiciste"
+
+Se adjuntan las promesas para este archivo:
+
+```cpp
+//promesas de lo que queremos que el botón haga
+#ifndef BOTON_H
+#define BOTON_H
+
+#include "pico/stdlib.h"
+//hay que incluir lo del gpio
+#include "hardware/gpio.h"
+
+
+//uno de los botones servirá como botón
+//encendido o apagado / mantener apretado
+//y seleccionador / un toque
+
+//el otro botón servirá para mantener al personaje volando
+
+
+
+class Boton
+{
+  public: 
+
+    // atributos
+    bool presionado = true;
+    // tiempo presionado
+    int tiempoPresionado;
+    bool encendido;
+    int patita; 
+    
+    // constructor
+    //Boton(int nuevaPatita);
+    //no se donde va definido en este caso
+
+    //metodos
+    void 
+    //siempre se ponia void?
+    //pa cualquiera?
+
+    //metodos
+
+    // botón1: dos variables
+    // if boton presionado >= 2sg
+    // la pantalla se inicia
+    // si se vuelve a apretar por 2sg
+    // la pantalla se apaga
+
+    // la segunda opción de este botón
+    // if boton presionado <= 2sg
+    // recorrer personajes con perilla2
+    // presionar botón <= 2sg
+
+    // botón2: una variable
+    // si presionado = true
+    // el personaje baja
+    // si presionado = false
+    // el personaje sube
+};
+
+#endif
+```
+
+</details>
+
+<details>
+<summary><b>Respuesta de Claude: dudas del pseudocódigo</b></summary>
+
+**¿Dónde se define el constructor?**
+Se declara en el .h (`Boton(uint patita, ...)`) y se escribe en el .cpp con `Boton::Boton(...)`. El .h es la promesa y el .cpp es el cumplimiento.
+
+**¿void siempre?**
+No. void significa "hace algo pero no devuelve nada". Si el método responde una pregunta, devuelve el tipo de esa respuesta: bool para sí/no, uint32_t para un número. Por eso `iniciar()` y `actualizar()` son void, pero `estaPresionado()` es bool.
+
+</details>
+
+<details>
+<summary><b>Decisiones que tomó Claude para esta petición</b></summary>
+
+- **Una sola clase para los dos botones.** En vez de hacer Boton1 y Boton2, la clase solo informa qué pasó y el juego decide qué hacer. Así instancias dos objetos y listo.
+- **Presionado parte en false.** Tenías true, pero al encender nadie está apretando nada.
+- **Pull-up interno (gpio_pull_up).** Conectas el botón entre el GPIO y GND, sin resistencia externa. Sin apretar lee 1, apretado lee 0, por eso en el código uso `!gpio_get(...)`. En Wokwi funciona igual.
+- **Anti-rebote de 20 ms.** Los botones reales "tiritan" al apretarlos y la Pico lo lee como mil toques. Solo acepto un cambio si se mantiene estable 20 ms.
+- **Eventos que se consumen.** `huboToque()` y `huboMantenido()` devuelven true una sola vez y después se apagan. Si no, el juego pensaría que apretaste 500 veces seguidas.
+- **El "mantenido" se dispara a los 2 s sin esperar a que sueltes.** Así la pantalla se enciende apenas se cumple el tiempo. Y si ya fue mantenido, al soltar no cuenta como toque (si no, se encendería y además seleccionaría un personaje).
+
+</details>
+
+<details>
+<summary><b>Frames de la animación del mapa</b></summary>
+
+Seguido a esto, compartimos los frames que se utilizarían para la animación del juego:
+
+> "Aquí tenemos los frames que queremos utilizar como animación del mapa del juego, se debe mover eternamente mientras se juega, cuando finalice la visualización del último frame se debe reproducir automáticamente el primer frame, se moviliza en el eje x y además tendrá una perilla que puede cambiar la velocidad con la que el mapa avanza en el eje x"
+
+Así se armaron los archivos `mapa.h`, `mapa.cpp` y `mapa_frames.h` con las indicaciones para pegar los bytes de los 5 frames. Y nos percatamos que los frames irían en otra carpeta distinta, la respuesta fue:
+
+**¿Por qué los frames van en otro archivo?**
+Se puede hacer de otra forma, pero así es mejor por dos razones:
+- El `mapa.h` es la promesa de la clase (qué métodos tiene). Si le pegas 5.120 bytes de números, se vuelve ilegible y no encuentras nada.
+- Los .h se incluyen en varios archivos. `mapa.h` lo va a incluir tu main, quizás el archivo del juego, etc. Si los datos estuvieran ahí, cada archivo se llevaría su propia copia de los 5 KB y se desperdiciaría memoria de la Pico. Con `mapa_frames.h` solo lo incluye `mapa.cpp`, así que los datos existen una sola vez.
+
+</details>
+
+<details>
+<summary><b>¿Se verá con cortes entre frames?</b></summary>
+
+> "¿se verá como un paso seguido de los frames o se verá un corte entre cada uno?"
+
+**Respuesta:** Con cortes, y la cantidad depende de cuánto cambia el dibujo entre un frame y otro. Mirando los bytes, las formas grandes se ven bastante distintas de un frame al siguiente (por ejemplo, el bloque grande de abajo en mapa_01 está en otra zona que el de mapa_02). Con solo 5 frames, eso va a verse como pasar diapositivas, no como un scroll continuo. Yo no puedo ver las imágenes, así que lo mejor es que lo pruebes en Wokwi.
+
+Lo que puedes ajustar:
+- **Velocidad:** con la perilla al máximo (40 ms por frame) el bucle completo dura 0,2 s y se siente más animado. En lento (400 ms) se va a notar el salto sí o sí.
+- **El salto del frame 5 al 1** solo será invisible si el dibujo del frame 5 "empalma" con el 1. Eso depende de cómo lo diseñaron.
+- **Más frames:** con más cuadros intermedios (cambios más chicos entre uno y otro) se ve más suave. Solo hay que agregarlos al arreglo FRAMES y subir TOTAL_FRAMES.
+- **Scroll real:** si el mapa fuera una sola imagen ancha, se podría desplazar un píxel a la vez, y ahí sí sería totalmente continuo. Es otro enfoque, pero se puede hacer si ves que el flipbook se nota mucho.
+
+</details>
+
+<details>
+<summary><b>Animación continua, sin cortes</b></summary>
+
+Frente a esto, entendimos que nuestra animación debe verse sin corte, de manera fluida, por lo que hicimos la siguiente petición:
+
+> "necesito que la animación se veía de corrido, sin cortes, como si fuesen una sola imagen avanzando, además no necesito que me coloques la velocidad con la que avanza porque la clase Perilla.h y Perilla.cpp la está haciendo otro grupo con las mismas indicaciones que te compartí"
+
+Se actualizaron los archivos `mapa.h`, `mapa.cpp` y `mapa_frames.h` cambiando los frames:
+
+1. **Ahora es una sola imagen larga.** Los 5 frames se tratan como una tira de 640 px (128 × 5), pegados en orden. La pantalla es una ventana de 128 px que se desliza por la tira de a 1 píxel, y por eso se ve continuo en vez de pasar diapositivas. Al llegar al píxel 639 vuelve al 0 con el %, así que el bucle es infinito.
+2. **Quité todo el cálculo de velocidad.** Ya no hay setVelocidad, porcentajes ni límites mínimo y máximo. Eso le toca a Perilla. Dejé un solo método, `setIntervaloMs(uint32_t ms)`, que no calcula nada: solo recibe "cuántos milisegundos tarda el mapa en avanzar 1 px". Alguien tiene que entregarle ese número a Mapa. Ahora el valor depende de lo que haga Perilla; cuando la otra clase esté lista, conectas ambas con una línea en el main, algo como `mapa.setIntervaloMs(perilla.algo())`.
+3. **El avance no se atrasa si la pantalla es lenta.** Enviar la imagen a la OLED por I2C toma unos 20-30 ms. Si el mapa avanzara un píxel por vuelta del loop, quedaría más lento de lo que pide la perilla. Por eso `actualizar()` calcula cuántos píxeles tocaba avanzar según el tiempo real y avanza todos de una vez.
+4. **La conversión a la OLED sigue igual**, pero ahora `dibujar()` recorre columna por columna, porque cada columna puede venir de un frame distinto.
+
+**Un detalle importante:** para que se vea totalmente continuo, el borde derecho de cada frame tiene que "empalmar" con el borde izquierdo del siguiente.
+
+</details>
+
+<details>
+<summary><b>Imagen completa y archivo mapa_imagen.h</b></summary>
+
+> "la imagen era una entera de 640x64 pero la corte para pasarlo al tamaño de la pantalla, debería sacarle el código a la versión completa?"
+
+**Respuesta:** Sí, usa la versión completa. Es lo más limpio, y además te ahorras el riesgo de las costuras. Y si cortaste la imagen en 5 pedazos exactos de 128 px, en orden y sin traslape, el resultado de lo que ya tienes es idéntico a la imagen entera. Por eso las costuras sólo aparecerían si algún corte quedó corrido, o si el orden de los frames no es el original. Con un solo arreglo eso no puede pasar, y el código se simplifica: desaparece la tabla de frames.
+
+Además nos explicó cómo exportar la imagen completa, sin cortar, con los ajustes que necesitábamos. Y nos explicó que los bytes de la imagen se pegan en un nuevo archivo llamado `mapa_imagen.h` que reemplaza `mapa_frames.h`, que ya no necesitamos para el proyecto, puesto que tenemos un arreglo del mapa completo con todos los bytes de la imagen entera.
+
+</details>
+
+<details>
+<summary><b>Dinámica del juego: juego.h</b></summary>
+
+Teniendo estos archivos listos, continuamos con la dinámica de juego para armar el archivo `juego.h` con todas las indicaciones de este:
+
+```cpp
+//dinamica del juego
+//uno de los personajes funciona como nave
+//hay 4 opciones disponibles
+//que debe ir pasando obstaculos
+//a lo largo del mapa
+
+//opciones para perder
+//chocar con un planeta
+//caer al suelo 
+
+//si pierde
+//vuelve al menu de selección
+//de personajes
+
+//si no pierde
+//avanza infinitamente
+
+//como funciona
+
+ //tiene dos botones 
+ //estan en Boton.h y Boton.cpp
+
+ //boton seleccionador
+ //tiene dos funciones
+ //encender y apagar 
+ //toque largo
+ //duracion de presionado > 2sg
+ //seleccionar personaje
+ //toque corto
+ //duración de presionado < 2sg
+
+ //boton volador
+ //su funcion es que el personaje
+ //suba
+ //mientras se presiona
+ //un toque
+ //probablemente 0.5 sg
+
+ //tiene dos perillas
+ //que estan en Perilla.h y Perilla.cpp
+ 
+ //perilla izq
+ //su funcion
+ //controlar la velocidad 
+ //en la que me mapa se mueve
+ //en el eje x
+
+ //perilla der
+ //su funcion
+ //marcar el personaje 
+ //que se quiere escoger
+ //recorrer entre las 4 opciones
+```
+
+En base a estas indicaciones Claude agregó a "mapa" un método para consultar píxeles y así poder detectar los choques de los personajes y los planetas del mapa. Luego armó `juego.h` y `juego.cpp` para la dinámica de juego con los personajes y las opciones para perder o seguir jugando.
+
+</details>
+
+# Wokwi
+https://wokwi.com/projects/479316734452548609
 
 # Bibliografia
 iMac G3. (s. f.). En Apple Wiki. Recuperado el 2 de noviembre de 2026, de https://apple.fandom.com/wiki/IMac_G3

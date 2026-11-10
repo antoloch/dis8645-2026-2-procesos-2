@@ -1,4 +1,6 @@
-# proyecto-02
+# Nanai: parar y seguir
+
+![Inicio de pantalla](./gifs/iniciopantalla.gif)
 
 ## Nombre del proyecto
 
@@ -371,7 +373,10 @@ codigo/
 
 ```
 
-### Wokwi
+### Wokwi 
+
+Utilizamos Wokwi para simular el funcionamiento de la máquina de emociones. Nos permitió probar los botones, las perillas, el LED y la pantalla OLED, tanto individualmente como conectados entre sí. También lo usamos para visualizar los rostros y mensajes en pantalla, comprobar las interacciones entre los componentes y revisar mediante la consola si las acciones realizadas respondían correctamente.  
+  
 https://wokwi.com/projects/479334243939894273
 
 ### Clases escritas por nosotras
@@ -556,10 +561,13 @@ Se relaciona con: `main.cpp` (le entrega el botón y la dificultad) y Pantalla (
 ------
 
 #### Metodología, proceso y uso de IA:
-Utilizamos Chat GPT y Claude para ayudarnos a realizar los códigos. Para esto, primero se realizó un documento donde se explicó lo que queríamos que hiciera la máquina, qué haría cada componente, y qué clases queríamos crear, con sus respectivos métodos y atributos que considerábamos necesarios. A partir de esto, creamos maquetas de los archivos `.h` con lo mínimo que necesitábamos [(2026-10-29)](https://github.com/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-03/codigos/2026-10-29) , acompañándonos de las sugerencias de Copilot de VS Code. Estas maquetas se las pasamos a la IA, y le fuimos pidiendo ayuda con la estructura del código y sintaxis para que funcionara de manera correcta. A partir de estas respuestas, íbamos corrigiendo de manera manual lo que fuera necesario, comentando, y también guiándonos con los códigos de nuestros compañeros de otros grupos. Fuimos probando constantemente en Wokwi, retroalimentando, y corrigiendo.
 
-Algunos de los prompts utilizados:
-
+La IA se utilizó como apoyo durante la programación y las pruebas del proyecto, principalmente para resolver dudas técnicas, entender errores y buscar soluciones a los problemas que fueron apareciendo. Para trabajar con ella, utilizamos como base lo que ya habíamos definido para la máquina de emociones: qué debía hacer cada componente, cómo debía conectarse y cuáles eran las condiciones para que funcionara dentro del sistema.   
+  
+**Orientación en programación C++**: apoyo para comprender la estructura de las clase y la relación entre los componentes.  
+**Resolución de errores**: identificación de posibles causas de errores de compilación, configuración de CMake y problemas de integración entre clases.  
+**Desarrollo de lógica:** apoyo para revisar la lógica de funcionamiento de los botones, la selección de modos, la activación del LED y la interacción entre los componentes.  
+**Depuración y pruebas:** orientación para crear pruebas individuales del funcionamiento de cada componente (main.cpp de testeo) y utilizar el monitor serial.
 
 ------
 

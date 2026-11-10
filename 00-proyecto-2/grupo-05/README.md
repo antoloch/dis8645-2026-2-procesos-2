@@ -1,4 +1,4 @@
-![tittle](./imagenes/altiro-hero-loop.gif)
+ ![tittle](./imagenes/altiro-hero-loop.gif)
 
 **Realizado por:**  
 *Francisca Jesús Palma Cuevas (frannciscapalma)*
@@ -17,8 +17,8 @@
  - *Prototipo físico tangible de altiro hero*
 
 **Descargables**
-- Carcasa
-- Esquemático en Kicad 
+- Carcasa [modelos 3d](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/modelos-3d)
+- Kicad [esquemático](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/esquematicos/altiro-hero)
 
 **Indice:**   
 - Génesis del proyecto
@@ -40,6 +40,7 @@
    - Circuito
    - Carcasa
    - Equipo de trabajo
+- Código oficial
 - Prompt y Cluade
 - Agradecimientos 
 - Referentes
@@ -453,7 +454,11 @@ void leer
 # Esquemático 
     
  <details>
+  
+  
 ![Esquematico](./imagenes/vista-previa.png)
+
+
  </details>
  
 # Simulación digital en wokwi
@@ -480,6 +485,14 @@ void leer
 
 ---
     
+</details>
+
+# Código oficial 
+
+<details>
+
+[aquí](https://github.com/santiagocifuvelez/dis8645-2026-2-procesos-2/tree/main/00-proyecto-2/grupo-05/codigos/codigo-oficial)
+
 </details>
 
 # Prompt y Cluade
