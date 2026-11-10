@@ -9,3 +9,11 @@ La Nati Pilar también empezó el diagrama de flujo. Separamos dos recorridos qu
 ## encargos
 
 ## lectura
+pag 116–126
+En esta parte aparecen varios poemas en que el movimiento cambia cómo se lee el texto. En Povo-Ovo, dos palabras se repiten y se mezclan con bloques negros para armar figuras. en el libro se ven las capturas al lado del código, pero en la pantalla original las imágenes se iban reemplazando.
+
+En Havoc, las palabras llenan la pantalla tan rápido que no da tiempo de leerlas todas. la velocidad está puesta a propósito para que el poema se sienta tan caótico como su título.
+
+“Presenting the poem and code together both documents the process and reflects the product of Pestana’s work” (p. 124).
+
+“The pace is intentional, precisely enabling the work to embody the quality pronounced by its title” (p. 126).
