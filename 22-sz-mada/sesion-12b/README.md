@@ -51,3 +51,9 @@ Somebody wants to read about finance rather than microcontrollers :skull: to eac
 1. Revisar repo de grupo-01 proyecto 2 para ver cómo resolvieron el aspecto del amplificador y parlante
 
 ---
+
+1.
+
+1.
+
+1.
