@@ -50,7 +50,7 @@ REPO grupo 1
 
 Leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, elaborar como aparece, intentar describir como suena y sus aspectos culturales
 
-Sonido:
+Sonido: Red de basketball al encestar. Al lanzar un balón y hacer un tiro limpio, sin tocar el aro, el balón golpea la red de cuerda. 
 
 
 Tristan perich:
