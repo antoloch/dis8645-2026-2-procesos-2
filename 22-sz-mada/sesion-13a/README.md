@@ -33,12 +33,52 @@ Barato              | Control de volumen
 Memoria             | -
 Parlante pequeño    | -
 
+---
+
+LA DIMENSIÓN SONORA DE LA REALIDAD
+
+- Sesión 13a (**hoy**) &rarr; bill of materials, diagrama de flujo, texto-descripción, máximos 2 propuestas
+- Sesión 13b &rarr; descripción total del proyecto, prototipos, pseudocoódigo, wokwi
+- Sesión 14a &rarr; ???
+- Sesión 14b &rarr; entrega proyecto-03, nota por preguntas cruzadas
+
+Tutorial para [flowcharts](https://www.visual-paradigm.com/tutorials/flowchart-tutorial/)
+
+```mermaid
+flowchart TD
+
+A([quiero completo])-->B(lista de ingredientes);
+B-->|por cada uno|C{tengo ing?};
+C--->|si|D(😊);
+C--->|no|E(Agrego a lista compra);
+E-->F(Compro)-->C;
+D-->G{ing listo?};
+G--->|si|H(ensamblar);
+G--->|no|I{se pica?};
+I--->|si|M(picar)-->G;
+I--->|no|J{se cuece?};
+J--->|si|N(cocer)-->G;
+J--->|no|K{se muele?};
+K--->|si|O(moler)-->G;
+K--->|no|L{se tuesta?};
+L--->|si|P(tostar)-->G;
+H-->Q([comer 😊]);
+```
+
+### Referentes para el viernes
+
+- david byrne, [playing the building](https://en.wikipedia.org/wiki/Playing_the_Building)
+
+- kelly dobsonn, [scream body](https://www.youtube.com/watch?v=Ta7rN5TeKzw)
+
+- [dato musical instruments](https://dato.mu/)
+
 ### Things mentioned in class
 
 [Dewanatron](http://www.dewanatron.com/info.php?page=about)
 
 [The Magnetic Fields](https://en.wikipedia.org/wiki/The_Magnetic_Fields)
 
-## encargos
+[Summoning Salt](https://www.youtube.com/c/SummoningSalt)
 
 ## lectura
