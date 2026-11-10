@@ -4,6 +4,19 @@
 
 martes 2026-11-10
 
+hoy llego tarde por culpa del tren
+
+sesión-13a (hoy):
+bill of materials (BOM)
+diagrama de flujo
+texto descriptivo del proyecto
+
+sesión-13b (viernes):
+descripción total del proyecto
+prototipos
+pseudocódigo
+esqueleto en wokwi
+
 ## encargos
 
 ## lectura
