@@ -71,7 +71,7 @@ Revisamos y hablamos de la solemne 2
     - Artista nacida sorda, busca visibilizar su experiencia al mundo, ya que constantemente se invisibiliza a la comundad sorda. Ella plantea que el texto es el primer punto de encuentro entre personas oyentes y sordas, por lo que es una manera de transmitir su sentir y como segundo punto está el uso de la lengua de señas estadounidense (ASL)
     
     - <a href="https://www.youtube.com/watch?v=4fNIPeu7bPA" target="_blank">
-  <img src="https://img.youtube.com/vi/4fNIPeu7bPA/maxresdefault.jpg" alt="Mira el video" width="600" />
+  <img src="./imagenes/youtube.png" alt="Mira el video" width="600" />
 </a>
 
 - [BONUS: Loud Objects - Noise Toys](https://loudobjects.bandcamp.com/album/noise-toys)
