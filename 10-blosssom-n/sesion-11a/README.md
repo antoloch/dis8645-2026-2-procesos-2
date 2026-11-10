@@ -14,6 +14,6 @@ En esta parte aparecen varios poemas en que el movimiento cambia cómo se lee el
 
 En Havoc, las palabras llenan la pantalla tan rápido que no da tiempo de leerlas todas. la velocidad está puesta a propósito para que el poema se sienta tan caótico como su título.
 
-“Presenting the poem and code together both documents the process and reflects the product of Pestana’s work” (p. 124).
-
-“The pace is intentional, precisely enabling the work to embody the quality pronounced by its title” (p. 126).
+>“Presenting the poem and code together both documents the process and reflects the product of Pestana’s work” (p. 124).
+>
+>“The pace is intentional, precisely enabling the work to embody the quality pronounced by its title” (p. 126).
