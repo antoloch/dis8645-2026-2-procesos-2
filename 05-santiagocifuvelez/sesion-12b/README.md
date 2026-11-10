@@ -13,7 +13,12 @@ En clase tuvimos una gran sesión de referentes y planeación de sobre lo que qu
 
 3. Revisar 1 obra de tristan perich y 1 de christine sun kim
 
-4. Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
+## Tristan Perich 
+[1 beat music tristan perich](https://youtu.be/fodArA6dIcs?si=Dcvwp_oBvC8OlHmm)
+
+## Christine sun kim
+
+5. Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
 
 
 ## lectura
