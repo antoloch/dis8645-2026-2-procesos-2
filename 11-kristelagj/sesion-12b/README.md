@@ -21,4 +21,6 @@ Escogí Tristan Perich: 1-Bit Symphony que está entre lo clásico y contemporá
 
 https\://www\.youtube.com/watch?v=2Euof4PnjDk
 
+https://kadist.org/work/pianoiss/
+
 ## lectura
