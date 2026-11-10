@@ -17,6 +17,7 @@ En clase tuvimos una gran sesión de referentes y planeación de sobre lo que qu
 [1 beat music tristan perich](https://youtu.be/fodArA6dIcs?si=Dcvwp_oBvC8OlHmm)
 
 ## Christine sun kim
+[How to Measure Quietness (2014)](https://whitney.org/media/61494)
 
 5. Revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
 
