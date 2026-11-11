@@ -101,6 +101,7 @@ Con una fórmula simple tipo `f = 220 + (T − 10) × 33`, que lleva 10°C a 220
 Si quieren, les armo la estructura de clases en C++ (`Sonido.h/.cpp`, `Datos.h`, etc.) con la conversión temperatura → frecuencia ya lista, para que prueben en Wokwi.
 
 </blockquote>
+
 ## encargos
 
 **Sonido que llama mi atención**
