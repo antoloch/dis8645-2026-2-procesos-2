@@ -56,7 +56,9 @@ Consulté con la IA la viabilidad del proyecto, es posible, pero confundí conce
 
 Creo que es la idea más completa que tenemos así que probablemente nos quedemos con ese, quien sabe. 
 
-> Sí, es totalmente posible, y además cumple lo del parlante obligatorio. Hay un detalle conceptual que conviene arreglar antes de empezar (lo de los "?????????" tenía razón de existir).
+<blockquote>
+ 
+Sí, es totalmente posible, y además cumple lo del parlante obligatorio. Hay un detalle conceptual que conviene arreglar antes de empezar (lo de los "?????????" tenía razón de existir).
 
 ## El problema: la temperatura no debería ser la amplitud
 
@@ -98,6 +100,7 @@ Con una fórmula simple tipo `f = 220 + (T − 10) × 33`, que lleva 10°C a 220
 
 Si quieren, les armo la estructura de clases en C++ (`Sonido.h/.cpp`, `Datos.h`, etc.) con la conversión temperatura → frecuencia ya lista, para que prueben en Wokwi.
 
+</blockquote>
 ## encargos
 
 **Sonido que llama mi atención**
