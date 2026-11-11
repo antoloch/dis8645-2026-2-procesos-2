@@ -58,7 +58,7 @@ ideas
 |Raspberry Pi Pico|1|$14.990|<https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>|
 |Pantalla LCD TFT |1|$3.554|<https://a.aliexpress.com/_mKfPMoB>|
 |Protoboard|1|$1.500|<https://afel.cl/products/mini-protoboard-400-puntos>|
-|Botón Táctil|2|$200|<https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=cf59c1e34&_ss=r>|
+|Botón Táctil|x|$100|<https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=cf59c1e34&_ss=r>|
 |Cables dupont pack 20|x|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-macho>|
 |Kit 10 Cables Caiman a Dupont Hembra|x|$2.500|<https://afel.cl/products/kit-10-cables-caiman-a-dupont-hembra?_pos=2&_sid=aec538813&_ss=r>|
 |Pack 20 Cables de Conexión Macho Hembra|x|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-hembra?_pos=1&_sid=bff72fae6&_ss=r>
@@ -76,7 +76,6 @@ cuadrado: operación
 
 rombo: decisiones
 
-## encargos
 3 referentes de estudio para viernes:
 - david byrne, playing the building <https://en.wikipedia.org/wiki/Playing_the_Building>
 - kelly dobsonn, scream body <https://www.youtube.com/watch?v=Ta7rN5TeKzw>
@@ -85,3 +84,7 @@ rombo: decisiones
 - <https://bossfightbooks.com/>
   
 ## lectura
+### Mindstorms: Children, Computers and Powerful Ideas - Seymour Papert
+- me encuentro aún en el capítulo 7 llamado "Logo´s Roots: Piaget and AI"
+
+*apuntes lectura*
