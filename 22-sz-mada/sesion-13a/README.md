@@ -18,7 +18,7 @@ Con [Isi](https://www.github.com/isiidoraadiiaz) incialmente hicimos un brainsto
 
 ---
 
-&darr; Non-negotionables for our project &darr;
+&darr; Non-negotiables for our project &darr;
 
 SI                  | NO
 ---                 | ---
