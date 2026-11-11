@@ -50,30 +50,30 @@ Tutorial para [flowcharts](https://www.visual-paradigm.com/tutorials/flowchart-t
 flowchart TD
 
 A@{shape: circ, label: "quiero<br>completo"}-->B(lista de<br>ingredientes);
-B--por cada uno-->C{tengo ing?};
+B--por cada uno -->C{tengo ing?};
 C--si--->D("😊");
-C--no-->E(agrego a<br>lista compra);
+C--no -->E(agrego a<br>lista compra);
 E-->F(compro)-->C;
 D-->G{ing listo?};
 G--si--->H(abrir pan);
-G--no-->I{se pica?};
+G--no -->I{se pica?};
 I--si-->M(picar)-->G;
-I--no-->J{se cuece?};
+I--no -->J{se cuece?};
 J--si-->N(cocer)-->G;
-J--no-->K{se muele?};
+J--no -->K{se muele?};
 K--si-->O(moler)-->G;
-K--no-->L{se tuesta?};
+K--no -->L{se tuesta?};
 L--si-->P(tostar)-->G;
 H-->Q(poner vienesa);
 Q-->R("agregar tomate<br>(o no)");
 R-->S(agregar palta);
 S-->T{mayo?};
 T--si-->X(mayonear)-->U;
-T--no-->U{mostaza?};
+T--no -->U{mostaza?};
 U--si-->Y(mostazear)-->V;
-U--no-->V{ketchup?};
+U--no -->V{ketchup?};
 V--si-->Z(ketchupear)-->W;
-V--no-->W(servir);
+V--no -->W(servir);
 W-->AA@{shape: dbl-circ, label: "comer 😊"};
 ```
 
