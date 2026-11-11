@@ -41,8 +41,11 @@ no
 
 ### calendarización
 13a: tabla materiales, texto descripción proyectos, diagrama flujo (más 2 propuestas)
+
 13b: descripción total proyecto, prototipos, pseudo, wokwi
+
 14a: 
+
 14b: entrega proyecto 03
 
 ### descripción proyecto
@@ -66,15 +69,18 @@ ideas
 |Cable USB-C|1| $1.800|<https://altronics.cl/cable-usb-tipo-c-datos-alimentacion>|
 
 ### diagrama flujo
-
-<https://www.visual-paradigm.com/tutorials/flowchart-tutorial/>
+- representación gráfica de pasos en forma secuencial
+- presentación información y apoyo al razonamiento
+- visualizar procesos complejos
 - todos puedan leer el trabajo de todos
   
-círculo/ovalos: start/stop
+círculo/ovalos: start/stop del sistema
 
-cuadrado: operación
+cuadrado: operación en particular
 
-rombo: decisiones
+rombo: decisiones o bifurcaación, puntas indican diferentes subprocesos
+
+<https://www.visual-paradigm.com/tutorials/flowchart-tutorial/>
 
 3 referentes de estudio para viernes:
 - david byrne, playing the building <https://en.wikipedia.org/wiki/Playing_the_Building>
@@ -85,6 +91,14 @@ rombo: decisiones
   
 ## lectura
 ### Mindstorms: Children, Computers and Powerful Ideas - Seymour Papert
-- me encuentro aún en el capítulo 7 llamado "Logo´s Roots: Piaget and AI"
+- me encuentro aún en el capítulo 7 llamado "Logo´s Roots: Piaget and AI", leí 6 planas debido a que me quedan pocas páginas, para dividirlas en las lecturas siguientes
 
 *apuntes lectura*
+- estudiar estructura conocimiento es entender a la persona
+- el conocimiento y la persona son dependientes entre sí
+- esta relación ha ido avanzando según el estudio de las máquinas y conocimiento que estas pueden encarnar
+- IA -- utilizar modelos computacionales para obtener información sobre la psicología humana, y utilizar esta como fuente de ideas sobre cómo hacer que los mecanismos emulen inteligencia humana
+- se habla de los tipos de razonamiento, lo cual se llega a la teoría de que las personas son capaces de pensar solo porque pueden recurrir a grupos más grandes de conocimientos
+- reglas de percepción
+- nueva entidad que surge y nace desde los sistemas de programación
+- capacidad de los niños para reflexionar sobre su propio pensamiento
