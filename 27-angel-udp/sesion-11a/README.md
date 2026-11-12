@@ -15,16 +15,3 @@ Después, se trabaja en un proyecto llamado Natación sincronizada, donde se apr
 Finalmente, se ve como programar las flechas del teclado para controlar los movimientos del personaje, hacerlo girar, avanzar y retroceder. También se utiliza la bandera verde para establecer su posición inicial.
 
 Esta sesión me enseñó a comprender mejor cómo combinar bloques de programación para crear animaciones y controlar personajes de manera sencilla.
-
-
-
-
-
-
-
-
-
-
-
-
-¿Te gusta esta personalidad?
