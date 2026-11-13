@@ -92,6 +92,7 @@ J--no -->K@{shape: dbl-circ, label: "Termina la<br>interacción"};
 ```
 
 **- Nido**
+
 ```mermaid
 flowchart TD
 
@@ -107,7 +108,7 @@ G-->H;
 H--sí-->I@{shape: dbl-circ, label: "Sigue con su día o descansa"};
 H--no -->J(Elige otra cosa);
 J-->D;
-
+´´´
 
 
 
