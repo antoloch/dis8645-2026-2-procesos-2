@@ -1,6 +1,6 @@
 # sesion-13a
 
-## apuntes sesión
+## apuntes sesión>
 
 La idea central consta de una antítesis de _autotune_, en este, existen los errores pero no el `CTRL Z`, es por ello que cada cambió que se guarda es duradero, si se quiere descartar algo, se hace con todo el conjunto.
 
@@ -10,7 +10,9 @@ En este sampler se ingresa, grabaciones mediante un micrófono, estas pueden ser
 
 	-¿Existe un botón para reproducir un audio sin poder alterarlo? similar a una previsualización
 
+<br>
 
+![diagrama](./imagenes/)
 
 Previa:
 
