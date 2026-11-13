@@ -101,7 +101,7 @@ Para nuestro proyecto-03, decidimos quedarnos con la idea (3) **Compañero de bo
 
 Decidimos repartirnos los "entregables" de la clase 13b; ya que ya están echos los textos descriptivos, quedó los B.O.M y los diagramas de flujo.
 
-Isi y Blosssom hacen los B.O.M, mientras que Carlo y yo hacemos los diagramas; elegí hacer el de Compañero de Bolsillo
+Isi y Blosssom hacen los B.O.M, mientras que Carlo y yo hacemos los diagramas; elegí hacer el de Compañero de Bolsillo (ahora llamado **NIDO**)
 
 ```mermaid
 flowchart TD
@@ -122,11 +122,24 @@ J-->D;
 
 Carlo realizó el suyo en Figma &darr;
 
+![Digrama de flujo - Fan Connect](./imagenes/flowchart-fanconnect.png)
+
 Así que lo pasé a código de mermaid.js
 
 ```mermaid
 flowchart TD
 
+A@{shape: circ, label: "Se enciende<br>el dispositivo"}-->B(Suena sonido de bienvenida);
+B-->C(Exploras la biblioteca musical);
+C-->D(Eliges una canción o fragmento);
+D-->E(Se envía a otra persona);
+E-->F(La otra persona lo escucha);
+F-->G(Responde con un emoji sonoro);
+G-->H(Recibes su reacción);
+H-->I(Descubren su afinidad musical);
+I-->J{¿Siguen conversando?};
+J--sí-->D;
+J--no -->K@{shape: dbl-circ, label: "Termina la<br>interacción"};
 ```
 
 ## lectura
