@@ -7,8 +7,10 @@
 - como hacer flujos de trabajo: https://www.visual-paradigm.com/tutorials/flowchart-tutorial/
 
 - brainstormin de grupo:
+  
   QUE SI
-  1. Interactivo, tocar cosas, botones, sensores
+  
+1. Interactivo, tocar cosas, botones, sensores
 2. Es tactil 
 3. Es sutil
 4. Buscamos revolver las emociones
