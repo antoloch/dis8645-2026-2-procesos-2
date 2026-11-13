@@ -64,4 +64,14 @@ se me hace absolutamente hermoso el hecho de que utilice como carcasa una caja p
 
 ### Christine Sun Kim
 
-3. revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
+The Sound of Temperature Rising (2019)
+
+![imagen rescatada de <https://www.moma.org/collection/works/426452>](./imagenes/temp.jpg)
+
+el concepto de esta obra nace cuando Christine estaba embarazada de su primer bebé, cuando sentía el cuerpo caliente en todo momento y no podía dormir muy bien. al mismo tiempo, estaba surgiendo Donald Trump y todo el clima político que esto conllevó, más las sequías, inundaciones, tormentas y efectos del calentamiento global.
+
+Christine dice que sintió como si todos estos tipos distintos de aumentos de temperaturas se mezclaran, por lo que utilizó una noción musical abierta para poder capturar y mostrar lo que sentía.
+
+en la obra mostró cuatro líneas del pentagrama en vez de las cinco habituales, esto para mostrar cómo se representarían las líneas del pentagrama en la lengua de señas americana (ASL) como si fueran cuatro dedos extendidos por la parte frontal del cuerpo.
+
+> <https://www.moma.org/collection/works/426452>
