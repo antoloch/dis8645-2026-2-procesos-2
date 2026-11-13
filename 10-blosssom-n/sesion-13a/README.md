@@ -74,8 +74,42 @@ Queda por probar si podemos grabar con el micrófono usb en la raspi que usemos 
 
 ### diagramas de flujo
 
-- Fan Connect 
-- Nido 
+**- Fan Connect**
+  ```mermaid
+flowchart TD
+
+A@{shape: circ, label: "Se enciende<br>el dispositivo"}-->B(Suena sonido de bienvenida);
+B-->C(Exploras la biblioteca musical);
+C-->D(Eliges una canción o fragmento);
+D-->E(Se envía a otra persona);
+E-->F(La otra persona lo escucha);
+F-->G(Responde con un emoji sonoro);
+G-->H(Recibes su reacción);
+H-->I(Descubren su afinidad musical);
+I-->J{¿Siguen conversando?};
+J--sí-->D;
+J--no -->K@{shape: dbl-circ, label: "Termina la<br>interacción"};
+```
+
+**- Nido**
+
+```mermaid
+flowchart TD
+
+A@{shape: circ, label: "Adulto prepara<br>el dispositivo"}-->B(Graba mensajes y sonidos);
+B-->C(El niño lo lleva consigo);
+C-->D{¿Qué necesita?};
+D-->E(Cuento o música);
+D-->F(Mensaje grabado);
+D-->G(Sonido calmante);
+E-->H{¿Se siente mejor?};
+F-->H;
+G-->H;
+H--sí-->I@{shape: dbl-circ, label: "Sigue con su día o descansa"};
+H--no -->J(Elige otra cosa);
+J-->D;
+```
+
 
 
 ## lectura
