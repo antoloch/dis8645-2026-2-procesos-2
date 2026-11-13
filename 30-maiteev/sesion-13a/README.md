@@ -35,14 +35,15 @@
 10. Luces
 
 
--texto descriptivo del proyecto: 
+# texto descriptivo del proyecto: 
 “Una vida en sonidos” es una máquina interactiva que recorre, a través del sonido, la vida promedio de una persona chilena, desde el llanto de una guagua hasta el final de la vejez. En un inicio,el usuario escoge un personaje entre 4 opciones: Giliano, Ana María, Nicole y Sofía mientras una pantalla muestra la etapa que está viviendo.  
 
 En cada ciclo, un conjunto de botones activa distintas capas sonoras (el hogar, la calle, la escuela o el trabajo y los hitos del país), de modo que cada persona construye su propia mezcla de recuerdos. Una segunda perilla controla la nitidez del recuerdo, que se vuelve más borrosa y distante a medida que pasa el tiempo. 
 
 El proyecto busca generar una experiencia de nostalgia y reflexión sobre el paso del tiempo, combinando programación, electrónica y diseño sonoro. 
 
-la vida de un chileno promedio 
+# la vida de un chileno promedio 
+
 1. Selección de personajes
 Los personajes fueron separados según las generaciones descritas en 
 
@@ -79,6 +80,7 @@ Para recuperar la “nitidez” de la etapa se puede presionar el botón de “r
 Ciclo de la vida: el latido se hace lento,piiiiiiiiiiiiiiiiiiiiiiiiiii, hay un silencio, y vuelve el llanto de guagua (otra vida empieza). araña la que te engaña.
 -Rangos de etapa para las perillas 
 Los rangos fueron definidos de acuerdo a cuando creíamos que ocurrían los cambios más importantes en la vida de una persona chilena y como era su interacción con el mundo y les demás.
+
 | Etapa | Edad | Qué cambia |
 | --- | --- | --- |
 | Lactante | 0–2 | Mundo centrado en el cuerpo y la familia |
@@ -90,45 +92,53 @@ Los rangos fueron definidos de acuerdo a cuando creíamos que ocurrían los camb
 | Vejez | 60–80 | Jubilación, cuerpo, memoria |
 
 según esto, los personajes: 
+
 Giliano (1956) Tiene todas las etapas
-Ana María (1972) 6 etapas, llega a la adultez                                                                                                          
+
+Ana María (1972) 6 etapas, llega a la adultez   
+
 Nicole (1987) 6 etapas, llega a la adultez
+
 Sofía (2004) 5 etapas, llega  a la juventud  
 
-- diagrama de flujo
-prender la pantalla/sistema BOTÓN 1 (mantener por 2 segundos)
-escoger el personaje PERILLA 1
-seleccionar BOTÓN 2
-avanzar y retroceder por etapas de vida PERILLA 1
-cambiar ambiente B3,B4,B5 Y B6 
-se baja la nitidez en casos de vejez BOTÓN 1(reinicio)
-reiniciar BOTÓN 2
+# diagrama de flujo
+- prender la pantalla/sistema BOTÓN 1 (mantener por 2 segundos)
+- escoger el personaje PERILLA 1
+- seleccionar BOTÓN 2
+- avanzar y retroceder por etapas de vida PERILLA 1
+- cambiar ambiente B3,B4,B5 Y B6 
+- se baja la nitidez en casos de vejez BOTÓN 1(reinicio)
+- reiniciar BOTÓN 2
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-Botones
--B1: recordar/inicio sistema
--B2: pausa y play/reinicio
--B3: casa
--B4: calle 
--B5: escuela/trabajo
--B6: país
-Perillas
--P1: Escoger personaje/avanzar o retroceder etapas
--P2: Nitidez
+# Botones
+
+- B1: recordar/inicio sistema
+- B2: pausa y play/reinicio
+- B3: casa
+- B4: calle 
+- B5: escuela/trabajo
+- B6: país
+  
+# Perillas
+- P1: Escoger personaje/avanzar o retroceder etapas
+- P2: Nitidez
 
 
 
+# Una vida en sonidos – Lista de materiales (BOM)
 
-lo que hay que entregar: 
-sesión-13a (hoy):
-bill of materials (BOM)
-diagrama de flujo
-texto descriptivo del proyecto
+| # | Componente | Cant. | Precio unitario | Subtotal | Enlace |
+|:-:|------------|:-----:|----------------:|---------:|--------|
+| 1 | Raspberry Pi Pico W | 1 | $14.990 | $14.990 | [raspberrypi.cl](https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers) |
+| 2 | Módulo reproductor MP3-TF-16P V3.0 (tipo DFPlayer Mini) | 1 | $2.990 | $2.990 | [afel.cl](https://afel.cl/products/modulo-reproductor-mp3-tf-16p-v3-0) |
+| 3 | Tarjeta microSD 2–32 GB (FAT32) | 1 | $3.500 | $3.500 | [mercadolibre.cl](https://www.mercadolibre.cl/tarjeta-de-memoria-maxell-micro-sd-32gb-clase-10-90mbs/p/MLC19813155) |
+| 4 | Mini parlante 3 W, 8 Ω | 1 | — | — | [afel.cl](https://afel.cl/products/mini-parlante-altavoz-de-3w) |
+| 5 | Potenciómetro rotatorio 10 kΩ lineal | 2 | $500 | $1.000 | [afel.cl](https://afel.cl/products/potenciometro-10k-ohm) |
+| 6 | Pulsador (botón táctil 12×12×7,3 mm) | 6 | $100 | $600 | [afel.cl](https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor) |
+| 7 | Pantalla OLED 2,42" 128×64 SPI (controlador SSD1309) | 1 | $23.000 | $23.000 | [afel.cl](https://afel.cl/products/pantalla-oled-2-42-128x64-spi-controlador-ssd1309) |
+| | **Total** | | | **$46.080** | |
 
-sesión-13b (viernes):
-descripción total del proyecto
-prototipos
-pseudocódigo
-esqueleto en wokwi
+> Precios en pesos chilenos (CLP). El total no incluye el mini parlante (precio por confirmar).
 
 ## encargos
 2026-11-10
