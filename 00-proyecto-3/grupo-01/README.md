@@ -1,8 +1,8 @@
-# grupo-02
+# grupo-01
 
-## Integrantes
+## integrantes
 
 - 
 
-## Sobre el proyecto
+## sobre el proyecto
 

@@ -1,8 +1,8 @@
 # grupo-06
 
-## Integrantes
+## integrantes
 
 - 
 
-## Sobre el proyecto
+## sobre el proyecto
 
