@@ -1,0 +1,1 @@
+Este archivo existe solo para que la carpeta se suba a GitHub. Bórralo cuando agregues contenido.
