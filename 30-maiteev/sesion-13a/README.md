@@ -1,6 +1,144 @@
 # sesion-13a
 
 ## apuntes sesión
+2026-11-10
+- partimos haciendo un brainstorming 
+- partimos definiendo el proyecto 03
+- como hacer flujos de trabajo: https://www.visual-paradigm.com/tutorials/flowchart-tutorial/
+
+- brainstormin de grupo:
+  
+  QUE SI
+  
+1. Interactivo, tocar cosas, botones, sensores
+2. Es tactil 
+3. Es sutil
+4. Buscamos revolver las emociones
+5. Un usuario para la interacción  
+6. Apoyado en una mesa 
+7. Carcasa
+8. Historias/relatos
+9. Aumentar y disminuir volumen del parlante
+10. Barato
+
+ QUE NO
+
+1. No es de madera
+2. No es ensordecedor
+3. No es estático¿¿¿
+4. Audífonos
+5. Sonido constante, solamente que se active por alguna acción 
+6. Juego
+7. Colgado en la pared
+8. Sonido artificial
+9. Costoso
+10. Luces
+
+
+# texto descriptivo del proyecto: 
+“Una vida en sonidos” es una máquina interactiva que recorre, a través del sonido, la vida promedio de una persona chilena, desde el llanto de una guagua hasta el final de la vejez. En un inicio,el usuario escoge un personaje entre 4 opciones: Giliano, Ana María, Nicole y Sofía mientras una pantalla muestra la etapa que está viviendo.  
+
+En cada ciclo, un conjunto de botones activa distintas capas sonoras (el hogar, la calle, la escuela o el trabajo y los hitos del país), de modo que cada persona construye su propia mezcla de recuerdos. Una segunda perilla controla la nitidez del recuerdo, que se vuelve más borrosa y distante a medida que pasa el tiempo. 
+
+El proyecto busca generar una experiencia de nostalgia y reflexión sobre el paso del tiempo, combinando programación, electrónica y diseño sonoro. 
+
+# la vida de un chileno promedio 
+
+1. Selección de personajes
+Los personajes fueron separados según las generaciones descritas en 
+
+Lampert, M. P. (2025). Baby Boomers, Generación X, Millennials y Generación Z: Caracterización generacional en trabajo, familia y tecnología. Biblioteca del Congreso Nacional de Chile, Asesoría Técnica Parlamentaria. obtienearchivo 
+
+Giliano (1956) 
+
+Ana María (1972)    
+
+Nicole (1987) 
+
+Sofía (2004) 
+
+2. La perilla es la línea de tiempo
+Girar la perilla avanza según rangos por edad definidos como grupo según cambios importantes en la interacción con el mundo.
+La pantalla muestra el rango de edad y el nombre de la etapa en la que se encuentra (primera infancia, infancia, adolescencia, juventud, adultez, vejez)
+El usuario puede ir hacia adelante y hacia atrás, como rebobinar un recuerdo. Eso lo hace mucho más interactivo que una pista que simplemente avanza.
+Dependiendo del personaje, la perilla podrá hacer todo su recorrido o no.
+
+3. Los botones son capas del recuerdo
+ Cada etapa tiene un paisaje sonoro armado con capas que el usuario activa o apaga:
+Casa: tele de fondo, olla a presión, radio, el “ya po, ven a comer”.
+Calle: micro, el pan amasado, el camión de la basura, el gas, ferias, perros.
+Escuela/trabajo: timbre, patio, recreo, oficina, metro.
+País: hitos colectivos, como un partido de la Roja, un terremoto, un 18 de septiembre, la pandemia.
+
+4.  Perilla volumen
+bajar y subir volumen del altavoz
+5. Botón Recordar
+Para Giliano y Ana María existe una intervención en el audio, el cual representa la nitidez de los recuerdos por el paso de los años, es decir, en la etapa de la vejez de ambos personajes es posible que el audio se distorsione, imitando un recuerdo borroso.   
+Para recuperar la “nitidez” de la etapa se puede presionar el botón de “recordar”. 
+
+6. El final (sólo con Giliano)
+Ciclo de la vida: el latido se hace lento,pii, hay un silencio, y vuelve el llanto de guagua (otra vida empieza).
+-Rangos de etapa para las perillas 
+Los rangos fueron definidos de acuerdo a cuando creíamos que ocurrían los cambios más importantes en la vida de una persona chilena y como era su interacción con el mundo y les demás.
+
+| Etapa | Edad | Qué cambia |
+| --- | --- | --- |
+| Lactante | 0–2 | Mundo centrado en el cuerpo y la familia |
+| Primera infancia | 3–5 | Entrada al jardín; primeros pares |
+| Infancia | 6–11 | Colegio; muchos más niños y adultos alrededor |
+| Adolescencia | 12–18 | Grupos de pares; círculos más allá de la familia |
+| Juventud | 19–29 | Universidad, trabajo, autonomía |
+| Adultez | 30–59 | Trabajo estable, familia, hijos |
+| Vejez | 60–80 | Jubilación, cuerpo, memoria |
+
+- según esto, los personajes: 
+
+Giliano (1956) Tiene todas las etapas
+
+Ana María (1972) 6 etapas, llega a la adultez   
+
+Nicole (1987) 6 etapas, llega a la adultez
+
+Sofía (2004) 5 etapas, llega  a la juventud  
+
+# diagrama de flujo
+- prender la pantalla/sistema BOTÓN 1 (mantener por 2 segundos)
+- escoger el personaje PERILLA 1
+- seleccionar BOTÓN 2
+- avanzar y retroceder por etapas de vida PERILLA 1
+- cambiar ambiente B3,B4,B5 Y B6 
+- se baja la nitidez en casos de vejez BOTÓN 1(reinicio)
+- reiniciar BOTÓN 2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# Botones
+
+- B1: recordar/inicio sistema
+- B2: pausa y play/reinicio
+- B3: casa
+- B4: calle 
+- B5: escuela/trabajo
+- B6: país
+  
+# Perillas
+- P1: Escoger personaje/avanzar o retroceder etapas
+- P2: Nitidez
+
+
+
+# Una vida en sonidos – Lista de materiales (BOM)
+
+| # | Componente | Cant. | Precio unitario | Subtotal | Enlace |
+|:-:|------------|:-----:|----------------:|---------:|--------|
+| 1 | Raspberry Pi Pico W | 1 | $14.990 | $14.990 | [raspberrypi.cl](https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers) |
+| 2 | Módulo reproductor MP3-TF-16P V3.0 (tipo DFPlayer Mini) | 1 | $2.990 | $2.990 | [afel.cl](https://afel.cl/products/modulo-reproductor-mp3-tf-16p-v3-0) |
+| 3 | Tarjeta microSD 2–32 GB (FAT32) | 1 | $3.500 | $3.500 | [mercadolibre.cl](https://www.mercadolibre.cl/tarjeta-de-memoria-maxell-micro-sd-32gb-clase-10-90mbs/p/MLC19813155) |
+| 4 | Mini parlante 3 W, 8 Ω | 1 | — | — | [afel.cl](https://afel.cl/products/mini-parlante-altavoz-de-3w) |
+| 5 | Potenciómetro rotatorio 10 kΩ lineal | 2 | $500 | $1.000 | [afel.cl](https://afel.cl/products/potenciometro-10k-ohm) |
+| 6 | Pulsador (botón táctil 12×12×7,3 mm) | 6 | $100 | $600 | [afel.cl](https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor) |
+| 7 | Pantalla OLED 2,42" 128×64 SPI (controlador SSD1309) | 1 | $23.000 | $23.000 | [afel.cl](https://afel.cl/products/pantalla-oled-2-42-128x64-spi-controlador-ssd1309) |
+| | **Total** | | | **$46.080** | |
+
+> Precios en pesos chilenos (CLP). El total no incluye el mini parlante (precio por confirmar).
 
 ## encargos
 2026-11-10
