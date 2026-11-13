@@ -34,7 +34,7 @@ Manuel Córdova
 
 + "Todo sonido se suicida y no vuelve. Los músicos lo saben. Ninguna
 frase musical puede repetirse de manera idéntica dos veces".
-+ "(...) todos los acontecimientos traumáticos conservan el sonido como su
++ "todos los acontecimientos traumáticos conservan el sonido como su
 medio expresivo: guerra, violencia, amor, locura. Sólo la enfermedad
 es silenciosa y no consiente el análisis".
 + "Es una forma distinta de
@@ -48,4 +48,30 @@ el aullido parte como una vibración similar a la que hace un motor de auto al a
 
 2. revisar 1 obra de Tristan Perich y 1 de Christine Sun Kim
 
-3. revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
+### Tristan Perich
+
+![1-bit symphony, imagen rescatada de <https://tristanperich.bandcamp.com/album/1-bit-symphony>](./imagenes/tristan-cd.jpg)
+
+la obra _1-Bit Symphony_ de Tristan me llamó la atención desde que lo mostraron en clases debido a la carcasa que tiene!! al inicio pensé que era solo algo estético, pero al ver el siguiente video: <https://www.youtube.com/watch?v=dBUVKNqdsEo> me sorprendió bastante el darme cuenta de que este circuito realmente funcionaba.
+
+se me hace absolutamente hermoso el hecho de que utilice como carcasa una caja para CD, ya que permite ver con perfeta claridad los componentes causantes de los sonidos que se logran emitir al momento de conectarse a este circuito. pensé que solo tenía esta obra que funcionaba de esta manera (hablando sobre carcasa), pero revisando en Google me apareció la obra _Composition for Three Small Speakers_, en donde hace lo mismo!! luego de leer me di cuenta de que también las obras _Noise Patterns_ y _1-Bit Music_ tienen la misma forma de presentarse al tener los componentes expuestos a la vista del usuario.
+
+![imagen rescatada de <https://tristanperich.bandcamp.com/album/composition-for-three-small-speakers>](./imagenes/tristan-speaker.jpg)
+
+![imagen rescatada de <https://tristanperich.bandcamp.com/album/noise-patterns>](./imagenes/noise-patterns.jpg)
+
+![imagen rescatada de <https://www.bitforms.art/artwork/1-bit-music>](./imagenes/bit-music.png)
+
+### Christine Sun Kim
+
+The Sound of Temperature Rising (2019)
+
+![imagen rescatada de <https://www.moma.org/collection/works/426452>](./imagenes/temp.jpg)
+
+el concepto de esta obra nace cuando Christine estaba embarazada de su primer bebé, cuando sentía el cuerpo caliente en todo momento y no podía dormir muy bien. al mismo tiempo, estaba surgiendo Donald Trump y todo el clima político que esto conllevó, más las sequías, inundaciones, tormentas y efectos del calentamiento global.
+
+Christine dice que sintió como si todos estos tipos distintos de aumentos de temperaturas se mezclaran, por lo que utilizó una noción musical abierta para poder capturar y mostrar lo que sentía.
+
+en la obra mostró cuatro líneas del pentagrama en vez de las cinco habituales, esto para mostrar cómo se representarían las líneas del pentagrama en la lengua de señas americana (ASL) como si fueran cuatro dedos extendidos por la parte frontal del cuerpo.
+
+> <https://www.moma.org/collection/works/426452>
