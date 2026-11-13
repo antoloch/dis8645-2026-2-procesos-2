@@ -77,7 +77,7 @@ Para Giliano y Ana María existe una intervención en el audio, el cual represen
 Para recuperar la “nitidez” de la etapa se puede presionar el botón de “recordar”. 
 
 6. El final (sólo con Giliano)
-Ciclo de la vida: el latido se hace lento,piiiiiiiiiiiiiiiiiiiiiiiiiii, hay un silencio, y vuelve el llanto de guagua (otra vida empieza). araña la que te engaña.
+Ciclo de la vida: el latido se hace lento,pii, hay un silencio, y vuelve el llanto de guagua (otra vida empieza).
 -Rangos de etapa para las perillas 
 Los rangos fueron definidos de acuerdo a cuando creíamos que ocurrían los cambios más importantes en la vida de una persona chilena y como era su interacción con el mundo y les demás.
 
@@ -91,7 +91,7 @@ Los rangos fueron definidos de acuerdo a cuando creíamos que ocurrían los camb
 | Adultez | 30–59 | Trabajo estable, familia, hijos |
 | Vejez | 60–80 | Jubilación, cuerpo, memoria |
 
-según esto, los personajes: 
+- según esto, los personajes: 
 
 Giliano (1956) Tiene todas las etapas
 
