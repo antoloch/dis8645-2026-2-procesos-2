@@ -1,6 +1,50 @@
 # sesion-13a
 
 ## apuntes sesión
+2026-11-10
+- partimos haciendo un brainstorming 
+- partimos definiendo el proyecto 03
+- como hacer flujos de trabajo: https://www.visual-paradigm.com/tutorials/flowchart-tutorial/
+
+- brainstormin de grupo:
+  QUE SI
+  1. Interactivo, tocar cosas, botones, sensores
+2. Es tactil 
+3. Es sutil
+4. Buscamos revolver las emociones
+5. Un usuario para la interacción  
+6. Apoyado en una mesa 
+7. Carcasa
+8. Historias/relatos
+9. Aumentar y disminuir volumen del parlante
+10. Barato
+
+ QUE NO
+
+1. No es de madera
+2. No es ensordecedor
+3. No es estático¿¿¿
+4. Audífonos
+5. Sonido constante, solamente que se active por alguna acción 
+6. Juego
+7. Colgado en la pared
+8. Sonido artificial
+9. Costoso
+10. Luces
+
+Vida en sonidos es una máquina interactiva que recorre, a través del sonido, la vida promedio de una persona chilena, desde el llanto de una guagua hasta el final de la vejez. En un inicio, el usuario elige su persona para luego, por medio de una perilla, avanzar o retroceder en las etapas de su vida, mientras una pantalla muestra la edad/etapa que está viviendo.  
+
+lo que hay que entregar: 
+sesión-13a (hoy):
+bill of materials (BOM)
+diagrama de flujo
+texto descriptivo del proyecto
+
+sesión-13b (viernes):
+descripción total del proyecto
+prototipos
+pseudocódigo
+esqueleto en wokwi
 
 ## encargos
 2026-11-10
