@@ -42,6 +42,9 @@ En esta lectura me llamó la atención la idea de que los sonidos también forma
 Creo que la tristeza podría sonar como la lluvia o el viento golpeando una ventana, una canción que se escucha a lo lejos o incluso el silencio de una pieza. Son sonidos suaves, lentos y un poco apagados. Aparecen principalmente en momentos en que uno está solo o pensando en cosas que han pasado. ¿Cómo un sonido tan cotidiano puede transmitir una emoción? Es algo que me parece muy raro, pero a la vez interesante. Culturalmente, la lluvia y las canciones lentas suelen relacionarse con la tristeza, la nostalgia y los recuerdos. También pienso que un mismo sonido puede sentirse distinto dependiendo de cómo estemos emocionalmente en ese momento.
 
 
+### revisar 1 obra de tristan perich y 1 de christine sun kim
+![fotossss](./imagenes/fotossss.png)
+
 ### Tristan Perich – Microtonal Wall (2011)
 
 Está formada por muchos parlantes pequeños que producen sonidos al mismo tiempo. Al escucharla, se siente como un zumbido que va cambiando dependiendo de dónde uno esté. Me parece curioso que algo tan simple pueda crear una experiencia sonora diferente. También me llamó la atención que el sonido no sea una melodía como la que estamos acostumbrados a escuchar, sino que sean muchos sonidos mezclados.
@@ -53,12 +56,6 @@ Esta obra me pareció interesante porque habla sobre la comunicación y las dist
 # Revisión: amplificador y parlante (grupo-01, proyecto 2)
 
  Amplificador
-
-Usan un **MAX98357A**, un amplificador clase D con DAC I2S integrado. El audio sale digital desde la Pico, sin DAC externo ni filtros analógicos.
-
-# Revisión: amplificador y parlante (grupo-01, proyecto 2)
-
-## Amplificador
 
 Usan un **MAX98357A**, un amplificador clase D con DAC I2S integrado. El audio sale digital desde la Pico, sin DAC externo ni filtros analógicos.
 
