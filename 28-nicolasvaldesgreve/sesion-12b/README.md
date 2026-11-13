@@ -34,7 +34,7 @@ Manuel Córdova
 
 + "Todo sonido se suicida y no vuelve. Los músicos lo saben. Ninguna
 frase musical puede repetirse de manera idéntica dos veces".
-+ "(...) todos los acontecimientos traumáticos conservan el sonido como su
++ "todos los acontecimientos traumáticos conservan el sonido como su
 medio expresivo: guerra, violencia, amor, locura. Sólo la enfermedad
 es silenciosa y no consiente el análisis".
 + "Es una forma distinta de
@@ -47,5 +47,21 @@ el sonido que he elegido es el aullido de mi hermano Mailo (es un perro). este a
 el aullido parte como una vibración similar a la que hace un motor de auto al arrancar, pero ésta tiene la diferencia de que cambia entre tonos graves y agudos de la misma manera en la que sube y baja una montaña rusa. este sonido lo asocio tanto yo como mi familia al llegar a casa, o que haya llegado otro integrante de la familia al hogar (mi madre o mi hermana menor).
 
 2. revisar 1 obra de Tristan Perich y 1 de Christine Sun Kim
+
+### Tristan Perich
+
+![1-bit symphony, imagen rescatada de <https://tristanperich.bandcamp.com/album/1-bit-symphony>](./imagenes/tristan-cd.jpg)
+
+la obra _1-Bit Symphony_ de Tristan me llamó la atención desde que lo mostraron en clases debido a la carcasa que tiene!! al inicio pensé que era solo algo estético, pero al ver el siguiente video: <https://www.youtube.com/watch?v=dBUVKNqdsEo> me sorprendió bastante el darme cuenta de que este circuito realmente funcionaba.
+
+se me hace absolutamente hermoso el hecho de que utilice como carcasa una caja para CD, ya que permite ver con perfeta claridad los componentes causantes de los sonidos que se logran emitir al momento de conectarse a este circuito. pensé que solo tenía esta obra que funcionaba de esta manera (hablando sobre carcasa), pero revisando en Google me apareció la obra _Composition for Three Small Speakers_, en donde hace lo mismo!! luego de leer me di cuenta de que también las obras _Noise Patterns_ y _1-Bit Music_ tienen la misma forma de presentarse al tener los componentes expuestos a la vista del usuario.
+
+![imagen rescatada de <https://tristanperich.bandcamp.com/album/composition-for-three-small-speakers>](./imagenes/tristan-speaker.jpg)
+
+![imagen rescatada de <https://tristanperich.bandcamp.com/album/noise-patterns>](./imagenes/noise-patterns.jpg)
+
+![imagen rescatada de <https://www.bitforms.art/artwork/1-bit-music>](./imagenes/bit-music.png)
+
+### Christine Sun Kim
 
 3. revisar repo de grupo-01 proyecto 2 para ver como resolvieron el aspecto del amplificador y el parlante
