@@ -23,28 +23,27 @@ Revisamos y hablamos de la solemne 2
 
 - El silencio no existe
 
-    - 
+    - conclusión que reafirmo en base a lo que explica Schafer, ya que el sónido existe en cada contexto, en cada experiencia y memoria
 
 - "En acústica, la suma es igual a una diferencia."
 
-    -
+    - Me parece curioso pero a la vez encuentro mucha razón, ya que si 2 voces se superponen, tenemos una nueva experiencia, una nueva _memoria aural_ 
 
 - "En una sociedad aural todos los sonidos son importantes, aún cuando <br> apenas se los alcance a oír casualmente."
 
-    -
+    - Esto le di vueltas, ya que cada aspecto de nuestra vida se encuentra relacionado con sónidos, hasta el de _pensar_, descubrimos el mundo mediante el sónido
 
 - " un hombre camina por la nieve. Se puede saber la <br> temperatura a partir del sonido de sus pasos. Es una forma distinta de <br> percibir el medio ambiente"
 
-    -
+    - Me voló la mente comprender que es cierto, en otro curso hablamos (_good joke xd_) del tacto y como este puede comprender algunos elementos que son percibidos por otros _sensores corporales_ o tambien llamados sentidos
 
 - "Algunos sonidos son tan únicos que una vez que uno los oye jamás <br> podrá olvidarlos: eI aullido de un lobo..."
 
-    -
+    - Nada que agregar la verdad, se entiende el punto y como la memoría esta muy enlazada al sónido la verdad
 
 - "EI ser humano visual tiene instrumentos para ayudar a retener las <br> memorias visuales (pinturas, libros, fotografias). ¿Cuál es eI <br> dispositivo para retener memorias aurales? <br> **La repetición.**"
 
-
-    -
+    - Y que hace un sampler? repiteeeeeeeee
 
 <br>
 
