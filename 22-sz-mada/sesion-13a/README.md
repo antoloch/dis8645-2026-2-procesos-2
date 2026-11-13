@@ -97,4 +97,36 @@ Para nuestro proyecto-03, decidimos quedarnos con la idea (3) **Compañero de bo
 
 [Boss Fight Books](https://bossfightbooks.com/) &larr; there's an Outer Wilds one :]
 
+---
+
+Decidimos repartirnos los "entregables" de la clase 13b; ya que ya están echos los textos descriptivos, quedó los B.O.M y los diagramas de flujo.
+
+Isi y Blosssom hacen los B.O.M, mientras que Carlo y yo hacemos los diagramas; elegí hacer el de Compañero de Bolsillo
+
+```mermaid
+flowchart TD
+
+A@{shape: circ, label: "Adulto prepara<br>el dispositivo"}-->B(Graba mensajes y sonidos);
+B-->C(El niño lo lleva consigo);
+C-->D{¿Qué necesita?};
+D-->E(Cuento o música);
+D-->F(Mensaje grabado);
+D-->G(Sonido calmante);
+E-->H{¿Se siente mejor?};
+F-->H;
+G-->H;
+H--sí-->I@{shape: dbl-circ, label: "Sigue con su día o descansa"};
+H--no -->J(Elige otra cosa);
+J-->D;
+```
+
+Carlo realizó el suyo en Figma &darr;
+
+Así que lo pasé a código de mermaid.js
+
+```mermaid
+flowchart TD
+
+```
+
 ## lectura
