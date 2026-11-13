@@ -2,6 +2,8 @@
 
 ## apuntes sesión
 
+## encargos
+
 ### calendarización
 13a: tabla materiales, texto descripción proyectos, diagrama flujo (más 2 propuestas)
 
@@ -57,6 +59,6 @@ rombo: decisiones o bifurcaación, puntas indican diferentes subprocesos
 - brian dewan
 - <https://bossfightbooks.com/>
 
-## encargos
+
 
 ## lectura
