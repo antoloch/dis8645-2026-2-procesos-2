@@ -93,7 +93,7 @@ J--no -->K@{shape: dbl-circ, label: "Termina la<br>interacción"};
 
 **- Nido**
 
-```mermaid
+´´´mermaid
 flowchart TD
 
 A@{shape: circ, label: "Adulto prepara<br>el dispositivo"}-->B(Graba mensajes y sonidos);
