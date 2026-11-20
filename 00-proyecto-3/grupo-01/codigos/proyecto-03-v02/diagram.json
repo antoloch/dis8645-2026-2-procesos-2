@@ -318,7 +318,7 @@
       "top": -333.61,
       "left": 291.45,
       "rotate": 90,
-      "attrs": {}
+      "attrs": { "digitalMux": "1" }
     },
     {
       "type": "wokwi-74hc595",
@@ -442,7 +442,8 @@
       "left": -180.6,
       "attrs": { "volume": "0.1" }
     },
-    { "type": "wokwi-microsd-card", "id": "sd1", "top": -450.97, "left": 316.87, "attrs": {} }
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": -450.97, "left": 316.87, "attrs": {} },
+    { "type": "chip-inmp441", "id": "chip2", "top": -603.78, "left": 244.8, "attrs": {} }
   ],
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
@@ -594,7 +595,6 @@
     [ "pico:GP8", "bb2:15t.a", "green", [ "h-76.8", "v144", "h355.2", "v153.6" ] ],
     [ "bb2:4b.j", "bb2:bp.3", "red", [ "h0" ] ],
     [ "bb2:6b.j", "bb2:bn.5", "black", [ "h0" ] ],
-    [ "bb2:5b.j", "pico:GP19", "white", [ "h-76.8", "v-153.6", "h-48" ] ],
     [ "dac1:VCC", "pico:VBUS", "red", [ "h-9.6", "v-28.8", "h278.4", "v153.6" ] ],
     [ "dac1:DIN", "pico:GP20", "cyan", [ "h-28.8", "v-57.6", "h336", "v278.4" ] ],
     [ "dac1:BCK", "pico:GP21", "blue", [ "h-19.2", "v-67.2", "h316.8", "v288" ] ],
@@ -606,7 +606,6 @@
     [ "jack_sw:2", "amp1:A+", "green", [ "v0" ] ],
     [ "amp1:A+", "r_pull:1", "green", [ "v0" ] ],
     [ "amp1:VIN", "pico:VBUS", "red", [ "h-19.2", "v-57.6", "h508.8", "v153.6" ] ],
-    [ "amp1:SD", "pico:GP27", "gray", [ "h-9.6", "v-96", "h489.6", "v249.6" ] ],
     [ "amp1:SPK+", "spk1:2", "red", [ "h78.61", "v-57.6" ] ],
     [ "sr1:Q1", "bb2:10b.f", "", [ "$bb" ] ],
     [ "sr1:Q2", "bb2:11b.f", "", [ "$bb" ] ],
@@ -666,7 +665,14 @@
       [ "h-28.8", "v-86.4", "h172.8", "v9.6", "v38.4", "h201.6", "v-38.31" ]
     ],
     [ "sd1:DO", "pico:GP16", "#8f4814", [ "h67.2", "v105.71", "h-297.6", "v153.6" ] ],
-    [ "sd1:CS", "pico:GP9", "violet", [ "h19.2", "v19.26", "h-345.6", "v115.2" ] ]
+    [ "sd1:CS", "pico:GP9", "violet", [ "h19.2", "v19.26", "h-345.6", "v115.2" ] ],
+    [ "bb2:5b.j", "mux1:I12", "gold", [ "h-67.2", "v-249.6", "h163.2" ] ],
+    [ "chip2:GND", "bb2:bn.1", "black", [ "h0" ] ],
+    [ "chip2:L/R", "bb2:bn.1", "black", [ "v0", "h21.01", "v19.2", "h-144" ] ],
+    [ "chip2:VDD", "bb2:bp.1", "red", [ "h-9.6", "v499.2" ] ],
+    [ "chip2:SD", "pico:GP19", "green", [ "h-48", "v48", "h-48", "v316.8" ] ],
+    [ "chip2:WS", "pico:GP28", "orange", [ "h21.01", "v38.4", "h-153.6", "v249.6" ] ],
+    [ "chip2:SCK", "pico:GP27", "white", [ "h30.61", "v57.6", "h-172.8", "v259.2" ] ]
   ],
   "dependencies": {}
 }
