@@ -271,7 +271,7 @@ funcionamientoMaquina = 1;}
 
 #### Conexiones
 
-[Esquematico](./esquematicos/v01/sin-nombre/sin-nombre.pdf)
+[Esquematico alpha](./esquematicos/v01/sin-nombre/sin-nombre.pdf)
 
 | class | Lugar      | Nombre |   |
 | ----- | ---------- | ------ | - |
