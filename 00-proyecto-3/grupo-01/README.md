@@ -151,24 +151,24 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 
 ### BOM
 
-| # | Item                 | Cant. | Valor   | Link | Imagen |
+| # | Item | Cant. | Valor | Link | Imagen |
 | - | -------------------- | ----- | ------- | ---- | ------ |
-| 1 | Raspberry Pi Pico 2W | 01     | $14.990 | <https://mcielectronics.cl/shop/product/raspberry-pi-pico-2-w-con-headers/> | <img src="./imagenes/pi-pico-2w.png" alt="" width="100%"> |
+| 1 | Raspberry Pi Pico 2W | 01 | $14.990 | <https://mcielectronics.cl/shop/product/raspberry-pi-pico-2-w-con-headers/> | <img src="./imagenes/pi-pico-2w.png" alt="" width="100%"> |
 | 2 | Micrófono I2S INMP441 | 01 | $5.890<sup><b>1</b> | <https://www.mechatronicstore.cl/modulo-microfono-i2s-inmp441/> | <img src="./imagenes/microfono.jpg" alt="" width="100%"> |
 | 3 | PCM5102A decodificador DAC | 01 | $1.122<sup><b>2</b> | <https://es.aliexpress.com/item/1005006104038963.html> | ![](./imagenes/pcm.avif) |
 | 4 | Módulo PAM8302 | 01 | $720<sup><b>2</b> | https://es.aliexpress.com/item/1005007274382818.html | ![](./imagenes/amp.avif) |
 | 5 | Pantalla LCD Oled Azul y Amarillo 0,96 | 01 | $4.500 | https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96 | ![](./imagenes/pantalla.jpg)
 | 6 | Módulo Multiplexor CD74HC4067 | 02 | $2.000 | https://afel.cl/products/modulo-multiplexor-cd74hc4067 | ![](./imagenes/multi.webp) |
-| 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/multi.webp) |
-| 8 | Potenciometros | 2 | $2.330 | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
-| 9 | Luces led | 9 | $1.138 |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
-| 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | |
-| 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | |
-| 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | |
-| 13 | Lector SD Card | 1 | $1.000 | https://afel.cl/products/modulo-lector-tarjetas-sd | |
-| 14 | Parlante | 1 | $3.000 | https://afel.cl/products/mini-parlante-altavoz-de-3w | |
-| 15 | PCB perforada | 4 | $3.153 | https://es.aliexpress.com/item/1005012773468288.html| |
-| 16 | Pin Header 1 x20 | 2 | $500 | https://afel.cl/products/regleta-macho-hembra-pin-header | |
+| 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/botones.png) |
+| 8 | Potenciometros | 2 | $2.330 | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/potenciometro.png) |
+| 9 | Luces led | 9 | $1.138 |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/led.png) |
+| 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | ![](./imagenes/slider.png) |
+| 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | ![](./imagenes/registro.png) |
+| 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | ![](./imagenes/multiplexor2.png) |
+| 13 | Lector SD Card | 1 | $1.000 | https://afel.cl/products/modulo-lector-tarjetas-sd | ![](./imagenes/lector.png) |
+| 14 | Parlante | 1 | $3.000 | https://afel.cl/products/mini-parlante-altavoz-de-3w | ![](./imagenes/parlante.png) |
+| 15 | PCB perforada | 4 | $3.153 | https://es.aliexpress.com/item/1005012773468288.html| ![](./imagenes/pcb.png) |
+| 16 | Pin Header 1 x20 | 2 | $500 | https://afel.cl/products/regleta-macho-hembra-pin-header | ![](./imagenes/header.png) |
 
 ### pseudo - código
 
@@ -433,12 +433,6 @@ Este es un pedal de efectos hechos con componentes analógicos. El efecto que pr
 
 <br>
 
-## Bibliografía
-
-- https://youtube.com/shorts/euH0vpYYxks
-
-- https://electropeak.com/learn/74hc595-with-arduino-how-it-works-how-to-use-full-guide/
-
 ## Comentarios Claude
 
 ### v01
@@ -545,3 +539,19 @@ Estos valores no están definidos en el README. Son constantes al inicio de `mai
 6. En la interfaz, la zona de edición dice "3 perillas", pero son sliders.
 7. En la tabla de conexiones dice `CD74HP4067`; el nombre del integrado es CD74HC4067.
 8. El pseudocódigo todavía dice que al reproducir "se inhabilita el modo grabar mientras dure la reproducción", lo que contradice la decisión 11.
+
+## Bibliografía
+
+* Analogue Media Technologies. (2025, 18 de marzo). *C-20 black audio cassettes*. https://www.duplication.com/c-20-black-audio-cassettes.html
+* chrisk. (2024, 29 de febrero). *Kaleidoloop returns!* [Publicación en foro]. Critter & Guitari Forum. https://forum.critterandguitari.com/t/kaleidoloop-returns/10321
+* @creative-stuff. (s.f.). *Inexpensive preamp with mic (updated)* [Video]. YouTube. https://youtube.com/shorts/euH0vpYYxks
+* Hologram Electronics. (s.f.). *Microcosm: Granular looper & glitch pedal*. https://www.hologramelectronics.com/pages/microcosm
+* The King of Gear. (s.f.). *TKOG Mini Glitch stutter/looper*. Electric Mojo Guitars. https://electricmojoguitars.com/products/tkog-mini-glitch
+* Mad Valley. (s.f.). *Staggered light performance on the OP-1 and Hologram Microcosm* [Video]. YouTube. https://www.youtube.com/watch?v=8vhdkyEW5As
+* Miyara, F. (2001, marzo-abril). El sonido, la música y el ruido. *Tecnopolitan*. https://www.fceia.unr.edu.ar/acustica/biblio/sonmurui.pdf
+* Real Academia Española. (s.f.). Audio. En *Diccionario de la lengua española* (23.ª ed., versión 23.8.1 en línea). Recuperado el 20 de noviembre de 2026, de https://dle.rae.es/audio
+* Schafer, R. M. (s.f.). *Nunca vi un sonido* [Documento PDF]. https://estefaniasoundscape.wordpress.com/wp-content/uploads/2017/10/nunca-vi-un-sonido_r-murray-schafer.pdf
+* Shojaei, A. M. (2023, 15 de abril). *74HC595 with Arduino: How it works & how to use [Full guide]*. ElectroPeak. https://electropeak.com/learn/74hc595-with-arduino-how-it-works-how-to-use-full-guide/
+* Sonido. (s.f.). En *Wikipedia*. Recuperado el 20 de noviembre de 2026, de https://es.wikipedia.org/wiki/Sonido
+* Techinn. (s.f.). *Teenage Engineering sintetizador OP-1 field*. Tradeinn. https://www.tradeinn.com/techinn/es/teenage-engineering-sintetizador-op-1-field/143706579/p
+* Turbulent Audio. (s.f.). *NYQUIST bitcrusher*. NotPedals. https://notpedals.com/products/nyquist
