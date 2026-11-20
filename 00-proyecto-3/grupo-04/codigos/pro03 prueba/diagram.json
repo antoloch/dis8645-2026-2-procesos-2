@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -3.25,
+      "left": 3.55,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_disparo",
+      "top": -12,
+      "left": 214,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_inicio",
+      "top": -12,
+      "left": -135,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw_power", "top": 79, "left": -259, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_vol", "top": 175, "left": -185, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu", "top": 112, "left": 234, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd",
+      "top": -281.6,
+      "left": 149.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz_izq", "top": 309.6, "left": -113.4, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "bz_der", "top": 312, "left": 128, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_izq",
+      "top": -13,
+      "left": -259.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_der",
+      "top": -13,
+      "left": 374.4,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GP2", "btn_disparo:1.l", "yellow", [ "h172.8", "v-37.4" ] ],
+    [ "btn_disparo:2.l", "pico:GND.1", "white", [ "v-0.8", "h-175.6", "v9.6" ] ],
+    [ "pico:GP3", "btn_inicio:1.l", "green", [ "h-163.2", "v-47" ] ],
+    [ "btn_inicio:2.l", "pico:GND.1", "white", [ "h-37.8", "v-48.8", "h153.6", "v57.6" ] ],
+    [ "pico:GP4", "sw_power:2", "orange", [ "h-19.2", "v67.2", "h-233.4" ] ],
+    [ "sw_power:1", "pico:GND.1", "black", [ "v21.4", "h194.9", "v-124.8", "h67.2" ] ],
+    [ "pico:GP26", "pot_vol:SIG", "magenta", [ "h19.51", "v192", "h-242" ] ],
+    [ "pot_vol:VCC", "pico:3V3", "red", [ "v25.3", "h203.2", "v-220.8" ] ],
+    [ "pot_vol:GND", "pico:GND.1", "black", [ "v15.7", "h127.2", "v-220.8", "h38.4" ] ],
+    [ "pico:GP6", "mpu:SDA", "blue", [ "h9.6", "v-19.2", "h260.4" ] ],
+    [ "pico:GP7", "mpu:SCL", "cyan", [ "v9.6", "h279.6" ] ],
+    [ "mpu:VCC", "pico:3V3", "red", [ "v-69.78", "h-222" ] ],
+    [ "mpu:GND", "pico:GND.8", "black", [ "v-60.18", "h-202.8", "v-28.8" ] ],
+    [ "pico:GP6", "lcd:SDA", "blue", [ "h124.8", "v-317" ] ],
+    [ "pico:GP7", "lcd:SCL", "cyan", [ "h-9.6", "v-19.2", "h124.8", "v-297.9" ] ],
+    [ "lcd:VCC", "pico:VBUS", "red", [] ],
+    [ "lcd:GND", "pico:GND.8", "black", [ "h-38.4", "v278.4", "h-38.71" ] ],
+    [ "pico:GP14", "bz_izq:2", "gold", [ "h-28.8", "v211.24" ] ],
+    [ "bz_izq:1", "pico:GND.4", "black", [ "v38.4", "h76.8", "v-259.24" ] ],
+    [ "pico:GP16", "bz_der:2", "violet", [ "h144.31", "v204.04" ] ],
+    [ "bz_der:1", "pico:GND.4", "black", [ "v36", "h-116.6", "v-259.2", "h-28.8" ] ],
+    [ "pico:GP12", "btn_izq:1.l", "red", [ "h-307.2", "v-153.56" ] ],
+    [ "btn_izq:2.l", "pico:GND.1", "black", [ "h-19.2", "v48.2", "h230.4", "v-48", "h57.6" ] ],
+    [ "pico:GP13", "btn_der:1.l", "blue", [ "h345.6", "v-163.16" ] ],
+    [ "btn_der:2.l", "pico:GND.1", "black", [ "h-48", "v-47.8", "h-307.2", "v57.6" ] ]
+  ],
+  "dependencies": {}
+}

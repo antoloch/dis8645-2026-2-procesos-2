@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "author": "zaiko",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-2w",
+      "id": "pico",
+      "top": 25.55,
+      "left": 13.15,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -273.5,
+      "left": 250.8,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 396,
+      "left": 136.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 44.6,
+      "left": -201.6,
+      "attrs": { "color": "green", "xray": "1", "label": "Cuentos" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 111.8,
+      "left": -201.6,
+      "attrs": { "color": "green", "xray": "1", "label": "Música" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 179,
+      "left": -201.6,
+      "attrs": { "color": "green", "xray": "1", "label": "Mensaje" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 236.6,
+      "left": -201.6,
+      "attrs": { "color": "green", "xray": "1", "label": "Grabar" }
+    },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": -76.57, "left": -115.13, "attrs": {} },
+    { "type": "chip-pam8403", "id": "chip1", "top": 289.02, "left": 120, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 265.2,
+      "left": -111.4,
+      "attrs": { "color": "red", "label": "Grabando" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 350.4,
+      "left": -173.35,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 192.5, "left": -258.9, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 125.3, "left": -258.9, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 58.1, "left": -258.9, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd4", "top": 250.1, "left": -249.3, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd5", "top": 298.1, "left": -201.3, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd6", "top": -66.3, "left": 8.5, "rotate": 270, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -43.4, "left": 32.84, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": -168, "left": 63.36, "rotate": 270, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd7", "top": -124.3, "left": 67.5, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc3", "top": 33.6, "left": 197.76, "rotate": 180, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd8", "top": 288.5, "left": 57.9, "rotate": 90, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc4", "top": 264, "left": 53.76, "rotate": 270, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd9", "top": 508.8, "left": 133.8, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "txt1",
+      "top": 262,
+      "left": 120,
+      "attrs": { "text": "Amplificador pam8403" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txt2",
+      "top": 384,
+      "left": 144,
+      "attrs": { "text": "Parlante (buzzer)" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "txt3",
+      "top": -105.6,
+      "left": -115.2,
+      "attrs": { "text": "MicroSD" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "r1:1", "gold", [ "v0" ] ],
+    [ "r1:2", "pico:GP6", "green", [ "h134.4", "v-10.8" ] ],
+    [ "btn4:1.r", "pico:GP5", "green", [ "v0", "h96.2", "v-124.8" ] ],
+    [ "btn3:1.r", "pico:GP4", "green", [ "v0", "h19.4", "v-57.6" ] ],
+    [ "btn2:1.r", "pico:GP3", "green", [ "v0", "h9.8", "v-19.2" ] ],
+    [ "btn1:1.r", "pico:GP2", "green", [ "v0", "h19.4", "v19.2" ] ],
+    [ "gnd1:GND", "btn3:2.l", "black", [ "v0" ] ],
+    [ "gnd3:GND", "btn1:2.l", "black", [ "v0" ] ],
+    [ "gnd2:GND", "btn2:2.l", "black", [ "v0" ] ],
+    [ "gnd4:GND", "btn4:2.l", "black", [ "v0" ] ],
+    [ "gnd5:GND", "led1:C", "black", [ "v0", "h19.2" ] ],
+    [ "sd1:DO", "pico:GP12", "blue", [ "h38.4", "v240.11" ] ],
+    [ "sd1:GND", "gnd6:GND", "black", [ "h0" ] ],
+    [ "sd1:SCK", "pico:GP10", "blue", [ "h48", "v201.59" ] ],
+    [ "sd1:VCC", "vcc1:VCC", "red", [ "h0" ] ],
+    [ "sd1:DI", "pico:GP11", "blue", [ "h28.8", "v182.31" ] ],
+    [ "sd1:CS", "pico:GP13", "blue", [ "h19.2", "v201.66" ] ],
+    [ "lcd1:VCC", "vcc2:VCC", "red", [ "h0" ] ],
+    [ "lcd1:GND", "gnd7:GND", "black", [ "h0" ] ],
+    [ "lcd1:CS", "pico:GP17", "violet", [ "h-57.6", "v316.8" ] ],
+    [ "lcd1:RST", "pico:GP21", "violet", [ "h-48", "v259.2" ] ],
+    [ "lcd1:D/C", "pico:GP20", "violet", [ "h-38.4", "v259.2" ] ],
+    [ "lcd1:MOSI", "pico:GP19", "violet", [ "h-28.8", "v-0.01" ] ],
+    [ "lcd1:SCK", "pico:GP18", "violet", [ "h-19.2", "v-0.01" ] ],
+    [ "lcd1:LED", "vcc3:VCC", "red", [ "h-19.2", "v95.99" ] ],
+    [ "lcd1:MISO", "pico:GP16", "violet", [ "h-67.2", "v278.39" ] ],
+    [ "chip1:OUT", "bz1:2", "orange", [ "h117.01", "v249.6", "h-86.4" ] ],
+    [ "pico:GP15", "chip1:IN", "orange", [ "h-19.2", "v153.64", "h249.6" ] ],
+    [ "chip1:GND", "gnd8:GND", "black", [ "h0" ] ],
+    [ "chip1:VCC", "vcc4:VCC", "red", [ "h-28.8", "v-9.6" ] ],
+    [ "bz1:1", "gnd9:GND", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "pam8403",
+  "author": "zaiko",
+  "pins": [
+    "VCC",
+    "GND",
+    "IN",
+    "OUT"
+  ],
+  "controls": []
+}
