@@ -153,9 +153,9 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 | 4 | Módulo PAM8302 | 01 | $720<sup><b>2</b> | https://es.aliexpress.com/item/1005007274382818.html | ![](./imagenes/amp.avif) |
 | 5 | Pantalla LCD Oled Azul y Amarillo 0,96 | 01 | $4.500 | https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96 | ![](./imagenes/pantalla.jpg)
 | 6 | Módulo Multiplexor CD74HC4067 | 02 | $2.000 | https://afel.cl/products/modulo-multiplexor-cd74hc4067 | ![](./imagenes/multi.webp) |
-| 7 | Botones | 12 |  |  |
-| 8 | Potenciometros | 2 |
-| 9 | Luces led | 9 |
+| 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/multi.webp) |
+| 8 | Potenciometros | 2 | $ | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
+| 9 | Luces led | 9 | $ |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
 | 10 | Slider | 3 |
 | 11 | 74HC595 | 2 | 
 | 12 | 74HC4051 | 1 |
