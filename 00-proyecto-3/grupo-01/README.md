@@ -86,6 +86,8 @@ Durante la edición, la pantalla mantiene visible la visualización de los píxe
 
 Una vez finalizada la intervención y presionado el botón *guardar*, se incorpora una nueva agrupación de píxeles a la visualización general, actualizando el contador de audios acumulados.
 
+![](./imagenes/pantalla.png)
+
 #### Audio 
 
 1. **Duración total**: el dispositivo cuenta con un ciclo de reproducción de 10 minutos, dividido en 60 segmentos de 10 segundos cada uno.
@@ -101,6 +103,8 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 6. **Reproducción**: el dispositivo recorre los 60 segmentos durante los 10 minutos, reproduciendo los audios según su distribución y respetando los espacios de silencio.
 
 7. **Loop**: al finalizar los 10 minutos, el ciclo vuelve a comenzar, conservando la distribución aleatoria de los audios almacenados.
+
+![](./imagenes/audio.png)
    
 #### Luces 
 
@@ -119,6 +123,8 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 7. **Selección de otro efecto:** al seleccionar otro botón, su luz comienza a parpadear, mientras las luces de los efectos anteriores permanecen encendidas de forma fija.
 
 8. **Finalización:** al terminar la edición, las luces encendidas permiten identificar los efectos que fueron aplicados al audio.
+
+![](./imagenes/luces.png)
    
 <br>
 
