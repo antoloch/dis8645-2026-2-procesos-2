@@ -8,9 +8,9 @@
 
 -y otros aspecto
 
--organizamos mas ordenadito el archivo de nuestra READ ME{
+-organizamos mas ordenadito el archivo de nuestra READ ME
 
-
+ajustamos nuestros personajes para que sean de etapas distintas, ya que teniamos dos de la misma.
 
 ## encargos
 
