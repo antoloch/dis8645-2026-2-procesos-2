@@ -4,6 +4,9 @@
 
 ## apuntes sesión
 
+> [!IMPORTANT]
+> [Ensayo sobre el tiempo](https://docs.google.com/document/d/1PVsXfFFHLyxAfKwcNztYfP-VJ-rFEZSV7pcdcqGPGXs/edit?usp=sharing)
+
 Hoy tuvimos la primera entrega del proyecto-03. Un feedback que recibimos fue que ya que los botones tardan 3 seg en registrar el input, deberíamos colocar en la pantalla (or just somewhere, really) un indicador que muestre esto para evitar creer que el dispositivo no está funcionando
 
 Feedback dado a otro grupo que también es relevante para nosotros: agregar EVERYTHING that may be needed al Wokwi (protoboard, batería, resistencias, etc.)
