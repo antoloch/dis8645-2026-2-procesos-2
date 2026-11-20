@@ -11,7 +11,7 @@
 
 ### Dispositivo sonoro para acompañar a infancias
 
-El proyecto consiste en un dispositivo sonoro pensado para acompañar a infancias de 3 a 4 años durante momentos específicos del día, especialmente cuando están en su habitación, descansando o preparándose para dormir. Esta primera versión no es portátil: el dispositivo está pensado para permanecer en un lugar fijo, como un velador.
+El proyecto consiste en un dispositivo sonoro pensado para acompañar a infancias de 3 a 4 años durante momentos específicos del día, especialmente cuando están en su habitación, descansando o preparándose para dormir. El dispositivo está pensado para permanecer en un lugar fijo, como un velador.
 
 El prototipo tiene tres botones físicos principales: uno para cuentos, otro para música y un tercero para el mensaje grabado por el cuidador. Al presionar uno de los botones en Wokwi, el sistema activa la categoría correspondiente. En cuentos y música, volver a presionar el mismo botón permite pasar al siguiente contenido en la simulación. Cuando se implemente el audio real, cada botón iniciará la reproducción de un audio de su categoría.
 
