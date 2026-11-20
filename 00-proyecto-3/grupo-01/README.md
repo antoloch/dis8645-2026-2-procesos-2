@@ -139,7 +139,7 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 
 ### Diagramas
 
-![](./imagenes/dis8645-2026-2-v02.png)
+![](./imagenes/dis8645-2026-2-esq.png)
 
 ![](./imagenes/dis8645-2026-2.png)
 
