@@ -5,15 +5,15 @@
 
 *Integrantes*
 
-☆ Vanessa García / <https://github.com/vanessagarciaM>
+☆ Vanessa García / [*vanessagarciaM*](https://github.com/vanessagarciaM)
 
-☆ Isidora Pérez / <https://github.com/isipm08>
+☆ Isidora Pérez / [*isipm08*](https://github.com/isipm08)
 
-☆ Narely Riquelme / <https://github.com/Narelyriquelme>
+☆ Narely Riquelme / [*Narelyriquelme*](https://github.com/Narelyriquelme)
 
-☆ Angel Sabogal / <https://github.com/angel-udp>
+☆ Angel Sabogal / [*angel-udp*](https://github.com/angel-udp)
 
-# 9dB
+# *9dB*
 
 ## sobre el proyecto
 
@@ -28,7 +28,7 @@ También se contempla una décima grabación sorpresa, integrada por el grupo, y
 ## funcionamiento
 
 | Control | Función definida |
-|---------|------------------|
+| --------- | ------------------ |
 | **Botón 1** | Reproduce las tres grabaciones de la categoría 1 en orden: 1, 2, 3 y 1. |
 | **Botón 2** | Reproduce las tres grabaciones de la categoría 2 con su propia secuencia. |
 | **Botón 3** | Reproduce las tres grabaciones de la categoría 3 con su propia secuencia. |
@@ -36,17 +36,21 @@ También se contempla una décima grabación sorpresa, integrada por el grupo, y
 | **Perilla de tono** | A la izquierda, más grave. Al centro, tono original. A la derecha, más agudo. Se puede ajustar antes de pulsar cualquier botón y el ajuste se aplica a la pista que empieza. |
 | **Tres botones juntos** | Reproducen la grabación sorpresa una vez, sin avanzar las secuencias. Para volver a activarla, se deben soltar los tres botones. |
 
-## ejemplo de sonidos a utilizar 
+## ejemplo de sonidos a utilizar
+
 - [lijadora](imagenes/lijadora.mp3)
 - [cierra-huincha](imagenes/cierra-huincha.mp3)
 
-## diagrama 
+## diagrama
+
 ![imagen](imagenes/diagramaa.jpeg)
 
 ## esquematico
+
 ![imagen](imagenes/esquematico-proyecto03.png)
 
 ## pseudo - código
+
 ```
 INICIO
 
@@ -99,16 +103,16 @@ FIN
 |Componente|Cantidad|Precio|Link|
 |---|---|---|---|
 |Raspberry Pi Pico|1|$14.990|<https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>|
-|Reproductor de Audio (DFPlayer Mini)| 1 |$2.990|<https://afel.cl/products/modulo-reproductor-mp3-tf-16p-v3-0>|
-|Salida de Audio (Altavoz 3W, 8 Ohm)| 1 |$3.000|<https://afel.cl/products/mini-parlante-altavoz-de-3w>|
+|Reproductor de Audio (DFPlayer Mini)|1|$2.990|<https://afel.cl/products/modulo-reproductor-mp3-tf-16p-v3-0>|
+|Salida de Audio (Altavoz 3W, 8 Ohm)|1|$3.000|<https://afel.cl/products/mini-parlante-altavoz-de-3w>|
 |Protoboard|1|$1.500|<https://afel.cl/products/mini-protoboard-400-puntos>|
 |Cables dupont pack 20|x|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-macho>|
 |Kit 10 Cables Caiman a Dupont Hembra|x|$2.500|<https://afel.cl/products/kit-10-cables-caiman-a-dupont-hembra?_pos=2&_sid=aec538813&_ss=r>|
 |Pack 20 Cables de Conexión Macho Hembra|x|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-hembra?_pos=1&_sid=bff72fae6&_ss=r>
 |Potenciómetro B100k|2|$500|<https://afel.cl/products/potenciometro-10k-ohm>|
-|Cable micro usb |1| $x|<https://www.masterg.cl/mgcamic/p?idsku=6>|
-|Almacenamiento (Tarjeta MicroSD) | 1 | $x | x |
-|Botones| 3 | $300 | <https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=2ce280b32&_ss=r> |
+|Cable micro usb|1|$x|<https://www.masterg.cl/mgcamic/p?idsku=6>|
+|Almacenamiento (Tarjeta MicroSD)|1|$x|[pendiente]|
+|Botones|3|$300|<https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=2ce280b32&_ss=r>|
 
 ## referentes
 
@@ -116,36 +120,86 @@ FIN
 
 Sound Diaries es un proyecto que se dedica a explorar y registrar los sonidos de la vida cotidiana, como objetos, acciones y espacios que muchas veces pasan desapercibidos. Busca reconocer el valor cultural y significativo de estos sonidos que pueden parecer insignificantes. Este referente nos inspira a explorar y grabar sonidos cotidianos para utilizarlos como material en la creación de nuestra propia colección sonora.
 
-Sound Diares. (s.f). About Sound Diares. https://www.sound-diaries.co.uk/
+Sound Diares. (s.f). About Sound Diares. <https://www.sound-diaries.co.uk/>
 
 **Freesound**
 
 Freesound es una plataforma colaborativa que funciona como una biblioteca de sonidos, donde las personas pueden compartir, buscar y descargar grabaciones de distintas fuentes. Los audios se organizan mediante etiquetas y descripciones que facilitan su búsqueda. Este referente nos entrega una idea de cómo organizar nuestros sonidos por categorías y construir una biblioteca sonora interactiva que permita descubrir e identificar cada grabación.
 
-Freesound. (s.f). Frequently asked questions. https://freesound.org/help/faq/#what-is-this-site-anyway
+Freesound. (s.f). Frequently asked questions. <https://freesound.org/help/faq/#what-is-this-site-anyway>
 
 **World Listening Project**
 
 World Listening Project es una iniciativa que promueve la escucha activa y la valoración del entorno sonoro. Busca generar conciencia sobre los sonidos que nos rodean y cómo estos forman parte de nuestra relación con los espacios y la vida cotidiana. Este referente nos inspira a invitar a las personas a descubrir sonidos ambientales y cotidianos, prestando atención a sus diferencias, variaciones y características a través de la escucha.
 
-World Listening Project. (s.f). About us. https://www.worldlisteningproject.org/
+World Listening Project. (s.f). About us. <https://www.worldlisteningproject.org/>
+
+**Adafruit Audio FX Sound Board**
+
+Adafruit Audio FX Sound Board es un dispositivo que permite reproducir sonidos mediante botones físicos. Incluye una función para cambiar al siguiente sonido con cada pulsación y volver al primero cuando termina la secuencia.
+
+Lady Ada. (2014, 23 de septiembre). Adafruit Audio FX Sound Board. Adafruit Learning System. <https://learn.adafruit.com/adafruit-audio-fx-sound-board>
+
+**Mixkit**
+
+Es una biblioteca de sonidos gratuitos, como pasos, puertas, campanas, ambientes escolares y lugares públicos. No requiere registro ni atribución para los efectos cubiertos por su licencia gratuita
+
+Mixkit. (s. f.). Free sound effects. <https://mixkit.co/free-sound-effects/>
 
 **Teenage Engineering PO-33 K.O!**
 
 El PO-33 K.O! es un micro sampler de bolsillo que asigna audios a botones individuales para dispararlos al instante e incorpora perillas para alterar su tono y volumen. Este referente nos sirve a nivel funcional como modelo de interacción directa, inspirándonos en la dinámica de presionar un botón para reproducir un sonido guardado y modificar su tono o volumen de forma inmediata.
 
-Teenage Engineering. (s.f.). PO-33 K.O! guide. https://teenage.engineering/guides/po-33/en
+Teenage Engineering. (s.f.). PO-33 K.O! guide. <https://teenage.engineering/guides/po-33/en>
 
 **Roland AIRA Compact P-6**
 
 El Roland AIRA Compact P-6 es un sampler compacto diseñado para organizar muestras precargadas en pads táctiles y manipular su reproducción mediante controles giratorios. Este referente aporta a la lógica funcional de nuestro proyecto, mostrándonos cómo estructurar un sistema donde los sonidos almacenados se activan por botones y se transforman sonoramente al instante con perillas.
 
-Roland. (s.f.). P-6 Creative Sampler. https://www.roland.com/es-es/products/p-6/
+Roland. (s.f.). P-6 Creative Sampler. <https://www.roland.com/es-es/products/p-6/>
 
 **Korg Volca Sample**
 
 El Korg Volca Sample es un reproductor de muestras compacto con memoria interna de sonidos precargados, botones para activar cada pista y perillas para controlar su tono y volumen. Este referente es clave porque pudimos tocarlo e interactuar con él en clases, comprobando en la práctica la respuesta táctil de un sistema que reproduce audios ya guardados sin necesidad de grabar en el momento.
 
-Korg. (s.f.). volca sample - Digital Sample Sequencer. https://www.korg.com/cl/products/dj/volca_sample/index.php
+Korg. (s.f.). volca sample - Digital Sample Sequencer. <https://www.korg.com/cl/products/dj/volca_sample/index.php>
 
-## bibliografía 
+**Adafruit Audio FX Sound Board**
+
+Adafruit Audio FX Sound Board es un dispositivo que permite reproducir sonidos mediante botones físicos. Incluye una función para cambiar al siguiente sonido con cada pulsación y volver al primero cuando termina la secuencia.
+
+Lady Ada. (2014, 23 de septiembre). Adafruit Audio FX Sound Board. Adafruit Learning System. <https://learn.adafruit.com/adafruit-audio-fx-sound-board>
+
+**Mixkit**
+
+Es una biblioteca de sonidos gratuitos, como pasos, puertas, campanas, ambientes escolares y lugares públicos. No requiere registro ni atribución para los efectos cubiertos por su licencia gratuita
+
+Mixkit. (s. f.). Free sound effects. <https://mixkit.co/free-sound-effects/>
+
+**Teenage Engineering PO-33 K.O!**
+
+El PO-33 K.O! es un micro sampler de bolsillo que asigna audios a botones individuales para dispararlos al instante e incorpora perillas para alterar su tono y volumen. Este referente nos sirve a nivel funcional como modelo de interacción directa, inspirándonos en la dinámica de presionar un botón para reproducir un sonido guardado y modificar su tono o volumen de forma inmediata.
+
+Teenage Engineering. (s.f.). PO-33 K.O! guide. <https://teenage.engineering/guides/po-33/en>
+
+**Roland AIRA Compact P-6**
+
+El Roland AIRA Compact P-6 es un sampler compacto diseñado para organizar muestras precargadas en pads táctiles y manipular su reproducción mediante controles giratorios. Este referente aporta a la lógica funcional de nuestro proyecto, mostrándonos cómo estructurar un sistema donde los sonidos almacenados se activan por botones y se transforman sonoramente al instante con perillas.
+
+Roland. (s.f.). P-6 Creative Sampler. <https://www.roland.com/es-es/products/p-6/>
+
+**Korg Volca Sample**
+
+El Korg Volca Sample es un reproductor de muestras compacto con memoria interna de sonidos precargados, botones para activar cada pista y perillas para controlar su tono y volumen. Este referente es clave porque pudimos tocarlo e interactuar con él en clases, comprobando en la práctica la respuesta táctil de un sistema que reproduce audios ya guardados sin necesidad de grabar en el momento.
+
+Korg. (s.f.). volca sample - Digital Sample Sequencer. <https://www.korg.com/cl/products/dj/volca_sample/index.php>
+
+**Rock-ola**
+Uno de nuestros referentes en el ámbito de carcasa serían las rockcolas, inspirarnos en su evolución en el tiempo y cómo estas se han mantenido a lo largo de los años, realizar una carcasa representativa para estas, colores, iluminación y botones. Donde sea intuitivo el toque de botones y perillas.
+
+Wikipedia contributors. (2026, 9 junio). Rock-Ola. Wikipedia. <https://en.wikipedia.org/wiki/Rock-Ola>
+
+**Máquina de arcade**
+Nuestro segundo referente en el ámbito de carcasa serían las máquinas de arcade, las cuales visualmente generan interactividad, esa sensación de presionar botones y descubrir lo que sucede, contar con perillas y botones reguladores dentro de nuestra interacción.
+
+colaboradores de Wikipedia. (2026b, septiembre 25). Máquina de arcade. Wikipedia, la Enciclopedia Libre. <https://es.wikipedia.org/wiki/M%C3%A1quina_de_arcade>
