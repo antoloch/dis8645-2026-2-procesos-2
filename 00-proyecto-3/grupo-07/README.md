@@ -55,7 +55,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa que la pantalla confirme lo que la infancia acaba de hacer. Si aprieta el botón de cuentos, queremos que aparezca el mismo símbolo del botón cuando comienza la narración.
 
-![Yoto Player](referentes_imagenes/01_yoto_player.png)
+![Yoto Player](./referentes_imagenes/01_yoto_player.png)
 
 *Yoto Newsroom, 2026. Imagen de prensa del Yoto Player 4th Gen y Yoto Mini 4th Gen.* [Yoto Newsroom](https://us.yotoplay.com/press/en-US/270385-yoto-launches-yoto-player-4th-gen-and-yoto-mini-4th-gen-its-biggest-hardware-upgrade-yet/).
 
@@ -65,7 +65,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La figura da una pista sobre lo que va a sonar antes de que empiece el audio. Queremos trasladar esa idea a los dibujos de los tres botones.
 
-![Toniebox con Pikachu](referentes_imagenes/02_toniebox_pikachu.png)
+![Toniebox con Pikachu](./referentes_imagenes/02_toniebox_pikachu.png)
 
 *tonies, s. f. Imagen de producto de Toniebox 2 con figura de Pikachu.* [tonies](https://us.tonies.com/products/pokemon-pikachu-tonie).
 
@@ -75,7 +75,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** El dibujo está justo donde ocurre la acción. Aplicamos esa idea al botón del mensaje, cuyo símbolo estará en la superficie que se aprieta.
 
-![BIGmack](referentes_imagenes/03_bigmack.jpg)
+![BIGmack](./referentes_imagenes/03_bigmack.jpg)
 
 *BoundlessAT, s. f. Fotografía de BIGmack, dispositivo de comunicación de un solo mensaje.* [BoundlessAT](https://www.boundlessat.com/Communication/Basic-Communicators/LITTLEmack-BIGmack-Communicators).
 
@@ -85,7 +85,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa que preparar un mensaje y encontrarlo puedan ocurrir en momentos distintos. Alguien cercano puede grabar un saludo antes de salir y la infancia puede volver a escucharlo después.
 
-![Lovebox Photo Messenger](referentes_imagenes/04_lovebox_photo_messenger.png)
+![Lovebox Photo Messenger](./referentes_imagenes/04_lovebox_photo_messenger.png)
 
 *Lovebox, s. f. Fotografía de Lovebox Photo Messenger.* [Lovebox](https://en.lovebox.love/products/lovebox-color-photo).
 
@@ -95,7 +95,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La obra sitúa la escucha en un lugar reconocible y la activa con un gesto físico. Eso nos hizo mirar el velador como parte del uso del dispositivo.
 
-![Whispering Table](referentes_imagenes/05_whispering_table.jpg)
+![Whispering Table](./referentes_imagenes/05_whispering_table.jpg)
 
 *TheGreenEyl, 2009. Fotografía de la instalación Whispering Table.* [TheGreenEyl](https://www.thegreeneyl.com/whispering-table).
 
@@ -105,7 +105,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Este referente nos ayudó a pensar qué grabar. Puede ser un saludo, una frase que se dicen siempre o parte de una canción, algo que la infancia pueda reconocer como propio de esa persona.
 
-![Under the Same Moon](referentes_imagenes/06_under_the_same_moon.jpg)
+![Under the Same Moon](./referentes_imagenes/06_under_the_same_moon.jpg)
 
 *Hallmark, s. f. Imagen de producto de Under the Same Moon, libro grabable.* [Hallmark](https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/under-the-same-moon-recordable-storybook-1KOB1228.html).
 
@@ -115,7 +115,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La luz permite ver que la máquina está captando la voz. En nuestro módulo, el LED encendido indicará que la grabación está en curso.
 
-![Voice Array](referentes_imagenes/07_voice_array.jpg)
+![Voice Array](./referentes_imagenes/07_voice_array.jpg)
 
 *Rafael Lozano-Hemmer, 2011. Imagen de la instalación Voice Array.* [Atelier Lozano-Hemmer](https://www.lozano-hemmer.com/voice_array.php).
 
@@ -125,7 +125,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Grabar y escuchar son acciones distintas y cada una tiene su propio control. La persona cuidadora mantiene apretado el botón para grabar y lo suelta al terminar.
 
-![I Like Big Buttons](referentes_imagenes/08_i_like_big_buttons.jpg)
+![I Like Big Buttons](./referentes_imagenes/08_i_like_big_buttons.jpg)
 
 *BrandNewNoise, s. f. Fotografía de I Like Big Buttons, grabadora de botones grandes.* [BrandNewNoise](https://www.brandnewnoise.com/products/i-like-big-buttons).
 
@@ -135,7 +135,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** El uso parte de un gesto concreto sobre el objeto. Para nuestros botones, eso se traduce en que la primera pulsación inicia un audio y la segunda permite pasar al siguiente.
 
-![Wall-mounted CD Player](referentes_imagenes/09_wall_mounted_cd_player.jpg)
+![Wall-mounted CD Player](./referentes_imagenes/09_wall_mounted_cd_player.jpg)
 
 *Cooper Hewitt, Smithsonian Design Museum, s. f. Fotografía del reproductor de CD mural diseñado por Naoto Fukasawa para MUJI en 1999.* [Smithsonian Institution](https://www.si.edu/object/wall-mounted-cd-player%3Achndm_2013-35-1).
 
@@ -145,9 +145,11 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa cómo construye una identidad visual con pocos elementos. Para nuestros íconos queremos probar primero siluetas simples y comprobar que se distingan al tamaño real de la pantalla.
 
-![Playdate](referentes_imagenes/10_playdate.png)
+![Playdate](./referentes_imagenes/10_playdate.png)
 
 *Panic, s. f. Fotografía de la consola Playdate.* [Panic](https://play.date/).
+
+
 
 ### Contenido y decisiones de diseño
 
@@ -281,7 +283,42 @@ P-->B;
 
 #### Diagrama de flujo técnico
 
-**Añadir** el diagrama de flujo del programa. NATALIA NATI
+```mermaid
+flowchart TD
+
+A@{shape: circ, label: "**Inicializar**<br>serial, botones<br>LED, pantalla"}-->B(Inicio de la vuelta);
+B-->C(<b>Leer botón grabar</b><br>aceptarPulsaciones);
+C-->D{¿no está grabando y<br>la pulsación de<br>grabar fue aceptada?};
+D--sí -->S(<b>iniciarGrabacion</b><br>detiene audio<br>LED on)-->H;
+D--no -->E{¿Está grabando y<br>soltaron el botón?};
+E--sí -->T(<b>terminarGrabacion</b><br>mensaje = true<br>LED off)-->H;
+E--no -->F{¿Está grabando y<br>llegó a 60s?};
+F--sí -->U(<b>Terminar grabación</b><br>avisoSoltar = true)-->H;
+F--no -->G{¿Sigue grabando?};
+G--sí -->V(actualizarConteo)-->H;
+G--no -->H{¿avisoSoltar y<br>el botón grabar<br>ya se soltó?};
+H--sí -->W(Quitar aviso)-->I;
+H--no -->I(<b>Leer pines crudos</b><br>cuentos, música<br>y mensaje);
+I-->J(Leer los 3 botones);
+J-->K{¿En reposo?};
+K--sí -->X{¿Algún botón<br>recién presionado?};
+X--sí -->Y(Despertar)-->R;
+X--no -->R;
+K--no -->L{¿Cuentos o música<br>fue aceptado?};
+L--sí -->Z("<b>cambiarA(categoria)</b>"<br>empieza, avanza,<br>o cambia)-->M;
+L--no -->M{¿Mensaje aceptado y<br>existe mensaje?};
+M--sí -->AA(Activar mensaje)-->N;
+M--no -->N{¿Mensaje aceptado y<br>no existe mensaje?};
+N--sí -->AB(<b>Carita triste</b><br>no cambia la<br>categoría)-->O;
+N--no -->O(pantalla.actualizar);
+O-->P{¿Pulsación aceptada,<br>grabando o<br>audio activo?};
+P--sí -->AC(ultimoUso = ahora<br>reinicia el contador<br>de reposo)-->Q;
+P--no -->Q{¿Pasaron 180 seg<br>sin uso?};
+Q--sí -->AD(<b>Entrar en reposo</b><br>dormido = true<br>apaga pantalla)-->R;
+Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
+```
+
+
 
 ### Materiales y simulación
 
