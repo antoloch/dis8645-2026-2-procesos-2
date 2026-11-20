@@ -2,6 +2,6 @@
 
 ## apuntes sesión
 
-## encargos
+presentaciones proyecto-03
 
-## lectura
+[ensayo tiempo](https://docs.google.com/document/d/1ldegBF9RuInPusXr5iVuPF36Hbv8sV4ZaqrlZWKM800/edit?usp=sharing)
