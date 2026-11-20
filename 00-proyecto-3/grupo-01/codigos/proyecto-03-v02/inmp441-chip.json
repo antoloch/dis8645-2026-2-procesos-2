@@ -1,0 +1,12 @@
+{
+  "name": "INMP441",
+  "author": "Custom",
+  "pins": [
+    "VDD",
+    "GND",
+    "SD",
+    "L/R",
+    "WS",
+    "SCK"
+  ]
+}
