@@ -1,6 +1,5 @@
 ## Imágenes de referentes
 
-Las imágenes se guardan en la carpeta `referentes_imagenes/`.
 
 ### 01. Yoto Player
 
