@@ -31,6 +31,7 @@ Schafer propone cuestionar el predominio de la visión sobre los demás sentidos
 A String of Echo Traps es una obra de la artista Christine Sun Kim que explora el sonido a través de recursos visuales, gráficos y lingüísticos. Mediante una animación digital, la artista trabaja con la idea del eco, tanto como fenómeno acústico como metáfora de la comunicación y la repetición. Su práctica combina elementos de notación musical, escritura, infografía y lengua de señas americana (ASL), cuestionando la manera en que la sociedad comprende y representa el sonido desde una perspectiva principalmente auditiva.
 
 
+![IMG1](./imagenes/03.jpg)
 
 
 ## lectura
