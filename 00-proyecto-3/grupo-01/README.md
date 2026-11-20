@@ -271,6 +271,8 @@ funcionamientoMaquina = 1;}
 
 #### Conexiones
 
+[Esquematico alpha](./esquematicos/v01/sin-nombre/sin-nombre.pdf)
+
 | class | Lugar      | Nombre |   |
 | ----- | ---------- | ------ | - |
 | Boton | CD74HP4067 C0  | `fxAttack` | - |
@@ -412,6 +414,8 @@ En esta versión nos acercamos a la relación que existen entre los diversos led
 https://wokwi.com/projects/481142445555191809
 
 Finalmente tenemos una versión donde vemos conexiones y funcionamientos, por la imposibilidad de representar la lógica pensada para el sónido se utilizará el `Serial Monitor` para representar lo que ocurre en cada sección y proceso, es importante mencionar que se tuvieron que realizar algunos IC para poder representar funcionamientos, tales como el INMP441, que corresponde a un micrófono
+
+![](./imagenes/image.png)
 
 <br>
 
