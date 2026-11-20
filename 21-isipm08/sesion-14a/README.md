@@ -40,5 +40,54 @@ Como extra, estamos barajando la opción de incorporar una perilla para modifica
 ![imagen](imagenes/diagrama-proyecto03.png)
 
 ### pseudocódigo 
+```
+INICIO
+
+  El soundboard reproduce nueve grabaciones propias.
+
+  Hay tres botones y cada botón corresponde a una categoría con tres grabaciones.
+
+  Cada grabación tiene tres versiones: grave, original y aguda.
+  Una perilla regula el volumen y la otra elige la versión del sonido.
+
+  Guardar el número de grabación que esté y avanzar al siguiente en la categoría.
+  Al encender, las tres categorías empiezan en la grabación 1.
+  Mantener el parlante en silencio hasta recibir una pulsación.
+
+  REPETIR MIENTRAS LA CONSOLA ESTÁ ENCENDIDA
+
+    Leer la perilla de volumen y ajustar la salida.
+    El mínimo deja el parlante en silencio, incluso durante una pista.
+
+    Detectar nuevas pulsaciones de los botones.
+
+    SI se presionan los tres botones juntos
+      Interrumpir la pista actual, si hay una en reproducción.
+      Reproducir la grabación sorpresa.
+      Conservar el número de la próxima grabación de cada categoría.
+      Esperar a que se suelten los tres botones para aceptar otra pulsación.
+
+    SI se registra una pulsación de un solo botón
+      Identificar la categoría de ese botón.
+      Consultar qué grabación sigue en esa categoría.
+      Leer la perilla de tono y elegir grave, original o aguda.
+      Interrumpir la pista actual, si hay una en reproducción.
+      Dejar una pausa breve e iniciar la grabación elegida desde el comienzo.
+      Avanzar la secuencia de esa categoría: 1, 2, 3 y nuevamente 1.
+
+    SI termina la reproducción
+      Volver a la espera silenciosa.
+
+  FIN REPETIR
+
+FIN
+```
+## encargos
+
+[ensayo tiempo](https://docs.google.com/document/d/1ldegBF9RuInPusXr5iVuPF36Hbv8sV4ZaqrlZWKM800/edit?usp=sharing)
 
 ## lectura
+### Mindstorms: Children, Computers and Powerful Ideas - Seymour Papert
+- me encuentro aún en el capítulo 7 llamado "Logo´s Roots: Piaget and AI", terminé este capítulo.
+
+*apuntes lectura*
