@@ -7,7 +7,7 @@
 
 ## Integrantes
 + ***Antonia Loch*** @antoloch
-+ ***Anaís Marchausen*** @anaisbmg
++ ***Anaís Marschhausen*** @anaisbmg
 + ***Carla Nuñez*** @ccarlabelenn
 + ***Hugo Montoya*** @hugomontoya
 
@@ -166,7 +166,7 @@ se borrar la figura
 
 **Logrables**
 
-+ Crear nuestra propia biblioteca o librería de tonos y sonidos
++ Tener nuestros propios tonos y sonidos
 + Carcasa del producto
 + Lograr una interacción real
 
