@@ -26,7 +26,7 @@ El dispositivo presenta una interfaz organizada en tres zonas principales: repro
 |---|---|---|
 | **Reproducción** | Parlante | Canal de salida por donde se reproduce el audio. |
 | | Pantalla | Visualiza la información de los audios almacenados. |
-| | Botón reproducción / pausa | Permite iniciar y pausar la reproducción de los audios registrados. |
+| | Botón reproducción / Detener | Permite iniciar o detener la reproducción de los audios registrados. |
 | | Perilla de volumen | Regula el volumen general de reproducción. |
 | **Grabación** | Micrófono | Medio de entrada por donde se captura el sonido. |
 | | Botón GRABAR | Activa la captura de sonido durante 10 segundos. |
@@ -47,7 +47,7 @@ El dispositivo presenta una interfaz organizada en tres zonas principales: repro
 
 - Al encender el dispositivo, la pantalla muestra la información de los registros sonoros almacenados, incluyendo la cantidad de audios y sus representaciones gráficas.
 - Presionar el botón de reproducción para escuchar los audios acumulados.
-- Presionar nuevamente el botón de reproducción para pausar o reanudar el sonido.
+- Presionar nuevamente el botón de reproducción para detener
 - Girar la perilla de volumen para ajustar la intensidad sonora de la reproducción.
 
 ##### 03. Zona de grabación
@@ -139,13 +139,13 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 | FX / Modulación | Trémolo | hace que el volumen suba y baje de manera repetitiva siguiendo un ritmo constante, manteniendo el tono intacto mientras oscila solo su intensidad. | oscilación rápida y repetitiva del volumen. | hacer que el volumen suba y baje rápido todo el rato. |
 | FX / Modulación | Bit crushing | reduce la resolución y la calidad digital del sonido, perdiendo detalles limpios para generar una textura áspera, granulada y sucia. | baja la calidad del audio hasta volverlo áspero y pixelado. | queda el sonido roto, sucio y con poca calidad. |
 | FX / Modulación | Ring modulator | multiplica el sonido original por otra onda interna creando frecuencias nuevas y disonantes, haciendo que pierda su forma natural y tome un carácter metálico. | cruza el audio con otra señal para volverlo metálico y disonante. | vuelve el sonido metálico, robótico o raro. |
-| FX / Modulación | Velocidad | controla qué tan rápido o lento se reproduce el audio en el tiempo, lo que al cambiar el ritmo también suele alterar qué tan agudo o grave se escucha. | acelera o frena el tiempo de reproducción del audio. | poner el audio más rápido o más lento. |
+| FX / Modulación | Velocidad | controla qué tan rápido o lento se reproduce el audio en el tiempo, lo que al cambiar el ritmo también suele alterar qué tan agudo o grave se escucha. Al medio se puede escuchar a velocidad normal, luego dependiendo si el valor es mayor irá más rápido y si es menor irá más lento | acelera o frena el tiempo de reproducción del audio. | poner el audio más rápido o más lento. |
 | Niveles / Ganancia | Volumen de audio | regula la intensidad de un sonido o pista individual antes de juntarse con el resto, y luego se integrará con ese nivel de volumen a la mezcla de sonidos | controla qué tan fuerte suena una sola pista. | subirle o bajarle el volumen a un solo sonido sin tocar el resto. |
 | Niveles / Ganancia | Volumen general | regula la intensidad de salida de toda la mezcla, controlando el nivel final que escuchas al sumar todos los sonidos y efectos. | controla la fuerza final de todo el conjunto a la vez. | sube o baja el volumen general |
 
 ### Diagramas
 
-![](./imagenes/dis8645-2026-2-v02.png)
+![](./imagenes/dis8645-2026-2-esq.png)
 
 ![](./imagenes/dis8645-2026-2.png)
 
@@ -178,12 +178,12 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
   - Una vez que se guarda, se añade a los demás `audios` y forma un `conjuntoDeAudios`. Este es nuetro pescado cocinado, no se puede "_**des**cocinar_"
   -Todos los `audios` guardados se reproducen en nuestro `canvas`, es decir, nuestro lienzo que podemos reproducir en cualquier momento pero no editar. El equivalente a decir el tamño del plato
 
-- Ahora se inicia la máquina con el interruptor
+- Ahora se inicia la máquina con el `interruptorGeneral`, cuando esta apagada queda en estado suspensión y se bloquean todas las funciones
 
 ```cpp
 
 bool interruptorGeneral; // valor asociado a la lectura del switch o botón 
-bool funcionamientoMaquina; // depende del interruptorEncendido
+bool funcionamientoMaquina; // depende del interruptorGeneral
 // si es true la maquina realiza sus funciones con normalidad
 // si es false, la maquina debe tener un led encendido que indica que recibe corriente
 
@@ -194,31 +194,31 @@ funcionamientoMaquina = 1;}
 
 - Se consulta si hay `conjuntoDeAudios`
 
-- En caso de haber, se encienden 2 leds que indican la posibilidad de realizar 2 acciones (es decir que cada `led` es un indicador de uso de cada modo), estos corresponden a `reproduccion` y `grabacion`
+- En caso de haber se habilitan 2 modos y estos corresponden a `reproduccion` y `grabacion`
 
     - `reproduccion` permite escuchar el `conjuntoDeAudios`
 
-        - Al activar esta opción, se inhabilta el modo grabar mientras dure la reproducción (se apagan sus leds indicadores y los bótones dejar de ser leidos)
+        - Al activar esta opción, se inhabilta el modo grabar mientras dure la reproducción (los bótones dejar de ser leidos)
 
-        - Posee 2 botones, uno de `reproducción` y otro de `detener` (no confundir con `pausa`), este segundo detiene la reproducción del `conjuntoDeAudios` y deja seteado en el inicio el `canva`, de modo que si se vuelve a dar a reproducir se hará desde el segundo 0 
+        - Posee 1 boton de `reproducción`, que si se presiona una vez inicia el proceso y para cancelarlo se presiona nuevamente para `detener`
 
         - La reproducción de `audios` es siempre en bucle
         
-    - `grabacion` permite guardar sonidos de hasta un máximo de 10 segundos
+    - `grabacion` permite guardar sonidos de hasta un máximo de 30 segundos
 
         - Para grabar se presiona el boton asociado
 
-        - para detener la grabacion antes de los 10s se vuelve a presionar el botón. Esto inicia automáticamente el modo de `edición`
+        - para detener la grabacion antes de los 30s se vuelve a presionar el botón. Esto inicia automáticamente el modo de `edición`
 
         - Mientras esto ocurre se bloquea cualquier otro modo e inica la reproducción en bucle del sonido hasta que se guarde
 
-        - Además los leds asociados a los efectos empiezan a variar su brillo mediante PWM
+        - Además los leds asociados a los efectos prenden por un corto periodo de tiempo, de manera que indican que esta sección se habilitó
 
         - Estos efectos de sonido se dividen en 3 secciones con 3 modificadores cada una
 
         - Cada sección posee su potenciómetro deslizable que modifica los valores asociados
 
-        - Al seleccionar un efecto se mantiene oscilando el led, mientras que todos los demás se apagan
+        - Al seleccionar un efecto se mantiene oscilando el led
 
         - Para terminar con el efecto y guardar sus cambios se presiona el botón asociado o se selecciona otro efecto
 
@@ -234,37 +234,37 @@ funcionamientoMaquina = 1;}
 
 | class | Lugar      | Nombre |   |
 | ----- | ---------- | ------ | - |
-| Boton | HP4067 C0  | `fxAttack` | - |
-| Boton | HP4067 C1  | `fxRelease` | - |
-| Boton | HP4067 C2  | `fxHighPassF` | - |
-| Boton | HP4067 C3  | `fxPitching` | - |
-| Boton | HP4067 C4  | `fxReverb` | - |
-| Boton | HP4067 C5  | `fxTremolo` | - |
-| Boton | HP4067 C6  | `fxBitCrushing` | - |
-| Boton | HP4067 C7  | `fxRingModulator` | - |
-| Boton | HP4067 C8  | `fxVelocidad` | - |
-| Boton | HP4067 C9  | `guardadEfectos` | - |
-| Boton | HP4067 C10 | `botonGrabar` | - |
-| Boton | HP4067 C11 | `botonReproducir` | - |
-| Boton | HP4067 C12 | `botonEncendido` | - |
-| MultiplexorHP4067 | GPIO 14 | `botonesS0` | - |
-| MultiplexorHP4067 | GPIO 15 | `botonesS1` | - |
-| MultiplexorHP4067 | GPIO 10 | `botonesS2` | - |
-| MultiplexorHP4067 | GPIO 17 | `botonesS3` | - |
-| MultiplexorHP4067 | GPIO 18 | `botonesSignal` | - |
-| MultiplexorHP4067 | GND | `botonesEnable` | - |
-| Lucesita | 74HC595 Q0  | `fxAttack` | - |
-| Lucesita | 74HC595 Q1  | `fxRelease` | - |
-| Lucesita | 74HC595 Q2  | `fxHighPassF` | - |
-| Lucesita | 74HC595 Q3  | `fxPitching` | - |
-| Lucesita | 74HC595 Q4  | `fxReverb` | - |
-| Lucesita | 74HC595 Q5  | `fxTremolo` | - |
-| Lucesita | 74HC595 Q6  | `fxBitCrushing` | - |
-| Lucesita | 74HC595 Q7  | `fxRingModulator` | - |
-| Lucesita | 74HC595 Q8  | `fxVelocidad` | - |
-| Multiplexor74HC595 | GPIO 8 | `lucesitasSCHP` | - |
-| Multiplexor74HC595 | GPIO 7 | `lucesitasSTCP` | - |
-| Multiplexor74HC595 | GPIO 6 | `lucesitasDS` | - |
+| Boton | CD74HP4067 C0  | `fxAttack` | - |
+| Boton | CD74HP4067 C1  | `fxRelease` | - |
+| Boton | CD74HP4067 C2  | `fxHighPassF` | - |
+| Boton | CD74HP4067 C3  | `fxPitching` | - |
+| Boton | CD74HP4067 C4  | `fxReverb` | - |
+| Boton | CD74HP4067 C5  | `fxTremolo` | - |
+| Boton | CD74HP4067 C6  | `fxBitCrushing` | - |
+| Boton | CD74HP4067 C7  | `fxRingModulator` | - |
+| Boton | CD74HP4067 C8  | `fxVelocidad` | - |
+| Boton | CD74HP4067 C9  | `guardarEdicion` | - |
+| Boton | CD74HP4067 C10 | `botonGrabar` | - |
+| Boton | CD74HP4067 C11 | `botonReproducir` | - |
+| Boton | CD74HP4067 C12 | `SwitchEncendido` | - |
+| MultiplexorCD74HP4067 | GPIO 14 | `botonesS0` | - |
+| MultiplexorCD74HP4067 | GPIO 15 | `botonesS1` | - |
+| MultiplexorCD74HP4067 | GPIO 10 | `botonesS2` | - |
+| MultiplexorCD74HP4067 | GPIO 17 | `botonesS3` | - |
+| MultiplexorCD74HP4067 | GPIO 18 | `botonesSignal` | - |
+| MultiplexorCD74HP4067 | GND | `botonesEnable` | - |
+| Lucecita | 74HC595 Q0  | `fxAttack` | - |
+| Lucecita | 74HC595 Q1  | `fxRelease` | - |
+| Lucecita | 74HC595 Q2  | `fxHighPassF` | - |
+| Lucecita | 74HC595 Q3  | `fxPitching` | - |
+| Lucecita | 74HC595 Q4  | `fxReverb` | - |
+| Lucecita | 74HC595 Q5  | `fxTremolo` | - |
+| Lucecita | 74HC595 Q6  | `fxBitCrushing` | - |
+| Lucecita | 74HC595 Q7  | `fxRingModulator` | - |
+| Lucecita | 74HC595 2do Q0  | `fxVelocidad` | - |
+| Multiplexor74HC595 | GPIO 8 | `lucecitasSCHP` | - |
+| Multiplexor74HC595 | GPIO 7 | `lucecitasSTCP` | - |
+| Multiplexor74HC595 | GPIO 6 | `lucecitasDS` | - |
 | Perilla | 74HC4051 Q0 | `volumenGeneral` | - |
 | Perilla | 74HC4051 Q1 | `volumenEspecifico` | - |
 | Perilla | 74HC4051 Q2  | `fx6al8` | - |
@@ -306,6 +306,10 @@ Inicia presionando `botonGrabar`, el que solo detecta presionados y cambio de es
 
 Una vez que se detiene la grabación con el segundo _click_ automáticamente se inicia la edición del sonido grabado
 
+Se establece que el limite de audios guardados es 200
+
+En este modo quedan bloqueados cualquier otra interacción que no sea grabar, además que si se presiona grabar durante la reproducción, se detiene está y se inicia el modo grabar. 
+
 ##### Modo Editar
 
 Al entrar a esta sección el sonido grabado se reproduce en bucle para notar como los efectos interfieren en tiempo real, además el brillo de los leds subirá y disminuira una sola vez al inicio por 1.5s para indicar que es esta la sección en la que se debe trabajar. Para seleccionar alguno de estos efectos se seleccionará cualquier botón asociado, su led se encenderá y se bloquearan todos las opciones fuera de este modo. 
@@ -313,6 +317,10 @@ Al entrar a esta sección el sonido grabado se reproduce en bucle para notar com
 Con el efecto deseado listo a editar se cambiará el valor del potenciómetro deslizable y se oíra su intervención en el sonido de manera inmediata, al seleccionar el mismo efecto u otro el valor del pote se guardará automáticamente y como respuesta visual se tendrá su led asociado encendido de manera constante
 
 Una vez se hayan hecho los cambios deseados, se podrá presionar el botón de `guardarEdicion` lo que hace que el sónido editado ingrese a uno de los 60 puntos posibles en los que inicia a sonar con la mezcla / conjunto
+
+Siempre que se cambie de efecto o se salga con el botón guardar efectos se deberá guardar el valor asociado al efecto que se estaba editando
+
+Al reeditar un efecto, este ocurre con el valor actual de la slider
 
 <br>
 
@@ -326,7 +334,7 @@ Se considera ordenar el código en distintas clases, a continuación se listan a
 
 - Multiplexor (pensado en un multiplexor para optimizar la lecutra de perillas)
 
-- Lucesita (describen el funcionamiento de los distintos estados)
+- lucecita (describen el funcionamiento de los distintos estados)
 
 - [NombreEfecto] (se encarga de la complejidad de como debe modificar el `audio`)
 
@@ -339,8 +347,6 @@ Se considera ordenar el código en distintas clases, a continuación se listan a
 - Reproduccion (define al modo `reproduccion`)
 
 - Grabar (define al modo `grabar`)
-
-- Borrar (define al modo `borrar`)
 
 - Microfono (establece como se comunica el micrófono con el microcontrolador)
 
@@ -432,3 +438,110 @@ Este es un pedal de efectos hechos con componentes analógicos. El efecto que pr
 - https://youtube.com/shorts/euH0vpYYxks
 
 - https://electropeak.com/learn/74hc595-with-arduino-how-it-works-how-to-use-full-guide/
+
+## Comentarios Claude
+
+### v01
+
+Revisión de inconsistencias entre las secciones del README y el `diagram.json` de `codigos/proyecto-03-v02`, hecha antes de escribir el `main.cpp` para Wokwi (Raspberry Pi Pico SDK). En el código, la grabación y la reproducción de audio se reemplazan por mensajes en el Serial Monitor.
+
+El `diagram.json` actual coincide con la tabla de **Conexiones**: el switch de encendido va al C12 del CD74HC4067 y el INMP441 está en GPIO 19, 28 y 27. Las inconsistencias que siguen están dentro del propio README.
+
+#### Decisiones ya tomadas
+
+| # | Tema | Inconsistencia en el README | Decisión |
+| - | ---- | --------------------------- | -------- |
+| 1 | Duración de la grabación | "Sobre el proyecto" dice 30 s; la interfaz, la coreografía y el pseudocódigo dicen 10 s. | Máximo de 30 s. Se puede cortar antes con una segunda pulsación, siempre que hayan pasado al menos 0,5 s. |
+| 2 | Botón de reproducción | La interfaz y la coreografía dicen reproducir/pausar. "Sobre el proyecto" dice que no hay pausa. El pseudocódigo y el Modo Reproducir usan dos botones (`botonReproducir` y `botonDetener`), pero en las conexiones solo existe `botonReproducir` (C11). | Un solo botón que alterna: reproduce desde el segundo 0 en bucle y detiene volviendo al inicio. No hay pausa. |
+| 3 | Llenado de la mezcla | "Sobre el proyecto" dice que al ocupar los 60 puntos ya no se puede grabar; la sección Audio permite superponer varios audios en un mismo segmento. | El segmento se asigna al azar entre los 60, con superposición. El límite son **120 audios**; al llegar a 120 se bloquea la grabación. Este límite no aparece en el README. |
+| 4 | LEDs al seleccionar un efecto | La sección Luces dice que los efectos ya aplicados quedan encendidos fijos; el pseudocódigo dice que los demás se apagan. | Los aplicados quedan fijos, el seleccionado parpadea y un efecto aplicado se puede volver a seleccionar para reeditarlo. |
+| 5 | Tarjeta SD | Se usa para almacenar el `conjuntoDeAudios`, pero el Pico SDK de Wokwi no incluye una librería FAT. | No se usa. El conjunto vive en RAM y el guardado se informa por serial. |
+| 6 | DAC y amplificador | PCM5102A y PAM8302. | No se controlan sus pines. Todo lo que sonaría se informa por serial. |
+| 7 | Pantalla | — | Se implementa lo descrito en la sección Pantalla: presentación al encender, contador de audios, grilla de 60 segmentos y cuenta regresiva con barra durante la grabación. |
+
+#### Ambigüedades pendientes
+
+Estas afectan directamente el código:
+
+1. **Efectos que no calzan.** La tabla de *Modificadores de sonido* tiene 8 efectos más 2 volúmenes y no incluye High-pass. Las *Conexiones* tienen 9 botones de efecto e incluyen `fxHighPassF`, que no se describe en ningún lado.
+2. **Agrupación de los efectos.** La tabla agrupa en Envolventes (2), FX/Modulación (6) y Niveles (2). Las conexiones agrupan de a 3 por slider: `fx0al2` (Attack, Release, HighPass), `fx3al5` (Pitching, Reverb, Trémolo) y `fx6al8` (BitCrushing, RingModulator, Velocidad).
+3. **LEDs que no existen en el hardware.** El pseudocódigo pide un LED que indique que la máquina recibe corriente y 2 LEDs indicadores de modo (reproducción y grabación). No están en el BOM, en las conexiones ni en el diagrama.
+4. **Animación al entrar a edición.** Hay tres versiones:
+   - *Luces*: "se encienden progresivamente, aumentan su brillo y luego se apagan".
+   - *Modo Editar*: el brillo sube y baja una sola vez durante 1,5 s.
+   - *Pseudocódigo*: "empiezan a variar su brillo mediante PWM", sin decir que termine.
+
+   Además, los LEDs van por 74HC595, que no tiene PWM, así que el brillo habría que simularlo por software.
+5. **Textos de la pantalla.**
+   - No se dice cuál es "el nombre del proyecto" que aparece al encender.
+   - "Memoria disponible" no tiene unidad (¿audios restantes de 120? ¿porcentaje?).
+   - En *Modo Reproducir*, "El elemento de la pantalla muestra [...]" quedó incompleto.
+   - "La frecuencia con la que pueden ingresar cada audio" no se entiende.
+   - No se dice si la pantalla muestra algo distinto mientras se reproduce la mezcla.
+6. **Reproducir y grabar a la vez.** El pseudocódigo bloquea la grabación mientras se reproduce la mezcla, pero no se dice qué pasa con la mezcla durante la grabación y la edición: ¿se bloquea el botón de reproducir o se detiene la mezcla?
+7. **Apagar sin guardar.** No se dice qué pasa con un sonido que se está grabando o editando sin guardar si se apaga la máquina: ¿se descarta, se guarda solo o se bloquea el apagado?
+8. **Guardar con un efecto parpadeando.** No se dice si ese efecto se aplica con el valor actual del slider o se descarta.
+9. **Valor inicial al reeditar.** No se dice si un efecto reeditado parte del valor que tenía guardado o de la posición actual del slider.
+10. **Volumen específico.** No se dice si se puede ajustar en cualquier momento de la edición o solo de una forma particular, ni si se guarda junto al audio.
+
+Estas no cambian el código, pero conviene corregirlas en el README:
+
+11. **Nombres que no coinciden.**
+    - `guardadEfectos` (C9) en las conexiones, `guardarEdicion` en Modo Editar y "Botón guardar" en la interfaz.
+    - `interruptorGeneral`, `interruptorEncendido` y `botonEncendido`. Además está listado como clase `Boton`, pero en el diagrama es un slide switch.
+    - `Lucesita` / `Lucecita`.
+    - HP4067 / CD74HC4067.
+12. **"74HC595 Q8" no existe.** El 74HC595 tiene Q0 a Q7. `fxVelocidad` está en el Q0 del segundo 74HC595, encadenado desde el Q7S del primero.
+13. **Conexiones incompletas.** La tabla no incluye el LCK del PCM5102A, que en el diagrama va a GPIO 22. El PAM8302 no aparece en la tabla.
+14. **Cantidad de multiplexores.** El BOM indica 2 CD74HC4067, pero se usa uno solo (más un 74HC4051 para las perillas).
+15. **Placa distinta.** El README habla de una Raspberry Pi Pico 2 W y el diagrama de Wokwi usa `wokwi-pi-pico`, que es la Pico 1 (RP2040).
+16. **Modo Borrar.** La sección *Estructura* lista una clase `Borrar`, pero "Sobre el proyecto" dice que no se puede borrar.
+17. **Persistencia al apagar.** Se pide que el `conjuntoDeAudios` quede almacenado al apagar. Sin la SD, en Wokwi solo se conserva en RAM mientras dure la simulación.
+18. **Doble click en reproducir.** En *Modo Reproducir*, `botonReproducir` "ignora doble click, cuanto tiempo se presiona", y no queda claro qué comportamiento se busca.
+19. **Pausa en la interfaz.** La tabla de interfaz y la coreografía todavía dicen "reproducción / pausa", lo que contradice la decisión 2.
+
+### v02
+
+`codigos/proyecto-03-v02/main.cpp` ya está escrito y compila sin errores ni advertencias con el Pico SDK 2.3.1. No se ha probado en Wokwi. Usa `pico_stdlib`, `hardware_adc` y `hardware_i2c`.
+
+#### Decisiones nuevas
+
+| # | Tema | Decisión |
+| - | ---- | -------- |
+| 1 | Duración de la grabación | Máximo de 30 s. La cuenta regresiva de la pantalla va de 30 a 0. Un audio puede seguir sonando en los 2 segmentos siguientes. |
+| 2 | Límite de audios | 200, como dice *Modo Grabar* (reemplaza el 120 de la tabla de v01). |
+| 3 | Animación al entrar a edición | Los 9 LEDs se encienden fijos un momento y se apagan, sin PWM. |
+| 4 | Apagar sin guardar | El sonido que se estaba grabando o editando se descarta. El `conjuntoDeAudios` se conserva en RAM. |
+| 5 | Presentación | "grupo-01" durante 2 s. |
+| 6 | Memoria disponible | Porcentaje libre respecto de los 200 audios. |
+| 7 | Pantalla durante la reproducción | La vista general, con un marco en el segmento que está sonando. |
+| 8 | Volumen específico | Se mueve libremente durante la edición y su valor se guarda junto al audio. |
+| 9 | Audios que se pasan del ciclo | Lo que sobra después de 10:00 suena al inicio de la vuelta siguiente. |
+| 10 | Velocidad | De 45 a 55 es velocidad normal (1x). Bajo 45 va más lento, hasta 0,5x en 0; sobre 55 va más rápido, hasta 2x en 100. El serial muestra el valor, el texto (normal, más lento o más rápido) y el factor. |
+| 11 | Grabar durante la reproducción | Mientras se reproduce la mezcla se puede presionar grabar. La mezcla se detiene y vuelve al inicio, y empieza la grabación. Después de guardar, la máquina queda en el modo general sin reproducir. |
+
+#### Valores elegidos sin especificación (revisar)
+
+Estos valores no están definidos en el README. Son constantes al inicio de `main.cpp` y se pueden cambiar:
+
+- **Duración de la animación de entrada a edición:** 1,5 s, tomados de *Modo Editar*.
+- **Parpadeo del efecto en edición:** 250 ms encendido y 250 ms apagado.
+- **Anti-rebote de los botones:** 30 ms.
+- **Al apagar, la pantalla se apaga.** El README solo dice que "se bloquean todas las funciones".
+- **Al volver a encender, se muestra de nuevo la presentación de 2 s.**
+- **Grilla de la pantalla:** 12 × 5 segmentos. Cada audio suma un bloque de 2×2 píxeles, con un máximo visible de 12 por segmento; desde el audio 13 de un mismo segmento la celda ya no cambia. Un segmento vacío se ve como un punto.
+- **Primera vuelta de la mezcla:** lo que sobra de los audios de los últimos segmentos no suena al inicio, porque antes no había sonado nada.
+- **El volumen general se informa por serial cada vez que cambia**, en cualquier modo mientras la máquina está encendida.
+- **El switch de encendido (C12) en HIGH significa encendido.**
+- **Aleatoriedad:** un *xorshift* cuya semilla se mezcla con el momento exacto en que se presiona cada botón.
+
+#### Inconsistencias que siguen en el README
+
+1. La interfaz ("Botón GRABAR: durante 10 segundos"), la coreografía (cuenta regresiva de 10 segundos), *Pantalla* (cuenta regresiva de 10 a 0) y *Audio* ("cada nuevo audio grabado tiene una duración de 10 segundos") todavía dicen 10 s.
+2. *Sobre el proyecto* todavía dice que al ocupar los 60 puntos ya no se puede grabar, y no menciona el límite de 200.
+3. *Luces* (punto 3) y *Modo Editar* todavía describen el brillo subiendo y bajando, en vez de encenderse fijo y apagarse.
+4. La decisión 3 de la tabla de v01 todavía dice 120 audios.
+5. `fxHighPassF` sigue sin descripción en la tabla de *Modificadores de sonido*.
+6. En la interfaz, la zona de edición dice "3 perillas", pero son sliders.
+7. En la tabla de conexiones dice `CD74HP4067`; el nombre del integrado es CD74HC4067.
+8. El pseudocódigo todavía dice que al reproducir "se inhabilita el modo grabar mientras dure la reproducción", lo que contradice la decisión 11.

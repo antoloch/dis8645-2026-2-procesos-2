@@ -25,7 +25,7 @@ En esta entrega probamos la interacción en Wokwi y dejamos la carcasa para más
 
 Partimos de una pregunta: ¿qué puede tener a mano une infante de 3 a 4 años cuando se siente sole o extraña a alguien que le cuida? La Organización Mundial de la Salud (2025, p. 4) explica que la soledad puede aparecer cuando la conexión que una persona siente queda por debajo de la que desea o necesita. Imaginamos, por ejemplo, a une infante que juega en su pieza una tarde y echa de menos a su papá mientras su abuela le cuida.
 
-También revisamos el abandono infantil. En una guía de UNICEF Chile, Arriagada y Valdebenito (2011, p. 47) lo describen como una forma extrema de negligencia. La investigación sobre negligencia destaca la importancia de contar con personas que respondan de manera estable a las necesidades del infante (Center on the Developing Child at Harvard University, s. f.). Eso nos ayudó a precisar el punto de partida del dispositivo: ya existe un vínculo de cuidado y alguien cercano puede dejarle un mensaje para escuchar mientras juega, descansa o se prepara para dormir.
+También revisamos el abandono infantil. En una guía de UNICEF Chile, Arriagada y Valdebenito (2011, p. 47) lo describen como una forma extrema de negligencia. La investigación sobre negligencia destaca la importancia de contar con personas que respondan de manera estable a las necesidades del infante (Center on the Developing Child at Harvard University, s.f.). Eso nos ayudó a precisar el punto de partida del dispositivo: ya existe un vínculo de cuidado y alguien cercano puede dejarle un mensaje para escuchar mientras juega, descansa o se prepara para dormir.
 
 #### Usuario objetivo y contexto de uso
 
@@ -43,7 +43,7 @@ Pensamos en une infante que extraña a su papá o a otra persona que participa e
 
 #### ¿Qué aporta escuchar una voz conocida?
 
-Sesame Workshop (s. f.) propone dejar en cada hogar un retrato de la persona que está en el otro, para que el infante pueda mirarlo cuando la extrañe. Encontramos un ejemplo parecido en sonido: en un caso de acogimiento familiar, el equipo de Easterseals Vermont (2024) grabó a una mamá leyendo un cuento y reprodujo su voz durante el trayecto a la guardería después de las visitas. Eso nos inspiró a darle un botón propio al mensaje, junto a los de cuentos y música. Así, cada infante puede elegir escuchar directamente un saludo, una frase o un pedacito de canción grabado por una persona de confianza.
+Sesame Workshop (s.f.) propone dejar en cada hogar un retrato de la persona que está en el otro, para que el infante pueda mirarlo cuando la extrañe. Encontramos un ejemplo parecido en sonido: en un caso de acogimiento familiar, el equipo de Easterseals Vermont (2024) grabó a una mamá leyendo un cuento y reprodujo su voz durante el trayecto a la guardería después de las visitas. Eso nos inspiró a darle un botón propio al mensaje, junto a los de cuentos y música. Así, cada infante puede elegir escuchar directamente un saludo, una frase o un pedacito de canción grabado por una persona de confianza.
 
 En nuestro proyecto queda por explorar si la grabación puede dar una sensación de compañía en un momento cotidiano de soledad. Con el primer prototipo queremos comprobar si es fácil dejar, encontrar y reproducir el mensaje.
 
@@ -55,7 +55,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa que la pantalla confirme lo que la infancia acaba de hacer. Si aprieta el botón de cuentos, queremos que aparezca el mismo símbolo del botón cuando comienza la narración.
 
-![Yoto Player](./referentes_imagenes/01_yoto_player.png)
+![Yoto Player](./imagenes/01-yoto-player.png)
 
 *Yoto Newsroom, 2026. Imagen de prensa del Yoto Player 4th Gen y Yoto Mini 4th Gen.* [Yoto Newsroom](https://us.yotoplay.com/press/en-US/270385-yoto-launches-yoto-player-4th-gen-and-yoto-mini-4th-gen-its-biggest-hardware-upgrade-yet/).
 
@@ -65,9 +65,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La figura da una pista sobre lo que va a sonar antes de que empiece el audio. Queremos trasladar esa idea a los dibujos de los tres botones.
 
-![Toniebox con Pikachu](./referentes_imagenes/02_toniebox_pikachu.png)
+![Toniebox con Pikachu](./imagenes/02-toniebox-pikachu.png)
 
-*tonies, s. f. Imagen de producto de Toniebox 2 con figura de Pikachu.* [tonies](https://us.tonies.com/products/pokemon-pikachu-tonie).
+*tonies, s.f. Imagen de producto de Toniebox 2 con figura de Pikachu.* [tonies](https://us.tonies.com/products/pokemon-pikachu-tonie).
 
 #### 03. BIGmack — Un botón para un mensaje
 
@@ -75,9 +75,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** El dibujo está justo donde ocurre la acción. Aplicamos esa idea al botón del mensaje, cuyo símbolo estará en la superficie que se aprieta.
 
-![BIGmack](./referentes_imagenes/03_bigmack.jpg)
+![BIGmack](./imagenes/03-bigmack.jpg)
 
-*BoundlessAT, s. f. Fotografía de BIGmack, dispositivo de comunicación de un solo mensaje.* [BoundlessAT](https://www.boundlessat.com/Communication/Basic-Communicators/LITTLEmack-BIGmack-Communicators).
+*BoundlessAT, s.f. Fotografía de BIGmack, dispositivo de comunicación de un solo mensaje.* [BoundlessAT](https://www.boundlessat.com/Communication/Basic-Communicators/LITTLEmack-BIGmack-Communicators).
 
 #### 04. Lovebox — Dejar un mensaje para más tarde
 
@@ -85,9 +85,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa que preparar un mensaje y encontrarlo puedan ocurrir en momentos distintos. Alguien cercano puede grabar un saludo antes de salir y la infancia puede volver a escucharlo después.
 
-![Lovebox Photo Messenger](./referentes_imagenes/04_lovebox_photo_messenger.png)
+![Lovebox Photo Messenger](./imagenes/04-lovebox-photo-messenger.png)
 
-*Lovebox, s. f. Fotografía de Lovebox Photo Messenger.* [Lovebox](https://en.lovebox.love/products/lovebox-color-photo).
+*Lovebox, s.f. Fotografía de Lovebox Photo Messenger.* [Lovebox](https://en.lovebox.love/products/lovebox-color-photo).
 
 #### 05. Whispering Table — El lugar también forma parte de la escucha
 
@@ -95,7 +95,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La obra sitúa la escucha en un lugar reconocible y la activa con un gesto físico. Eso nos hizo mirar el velador como parte del uso del dispositivo.
 
-![Whispering Table](./referentes_imagenes/05_whispering_table.jpg)
+![Whispering Table](./imagenes/05-whispering-table.jpg)
 
 *TheGreenEyl, 2009. Fotografía de la instalación Whispering Table.* [TheGreenEyl](https://www.thegreeneyl.com/whispering-table).
 
@@ -105,9 +105,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Este referente nos ayudó a pensar qué grabar. Puede ser un saludo, una frase que se dicen siempre o parte de una canción, algo que la infancia pueda reconocer como propio de esa persona.
 
-![Under the Same Moon](./referentes_imagenes/06_under_the_same_moon.jpg)
+![Under the Same Moon](./imagenes/06-under-the-same-moon.jpg)
 
-*Hallmark, s. f. Imagen de producto de Under the Same Moon, libro grabable.* [Hallmark](https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/under-the-same-moon-recordable-storybook-1KOB1228.html).
+*Hallmark, s.f. Imagen de producto de Under the Same Moon, libro grabable.* [Hallmark](https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/under-the-same-moon-recordable-storybook-1KOB1228.html).
 
 #### 07. Matriz de voz — Mostrar que la máquina está grabando
 
@@ -115,7 +115,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** La luz permite ver que la máquina está captando la voz. En nuestro módulo, el LED encendido indicará que la grabación está en curso.
 
-![Voice Array](./referentes_imagenes/07_voice_array.jpg)
+![Voice Array](./imagenes/07-voice-array.jpg)
 
 *Rafael Lozano-Hemmer, 2011. Imagen de la instalación Voice Array.* [Atelier Lozano-Hemmer](https://www.lozano-hemmer.com/voice_array.php).
 
@@ -125,9 +125,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Grabar y escuchar son acciones distintas y cada una tiene su propio control. La persona cuidadora mantiene apretado el botón para grabar y lo suelta al terminar.
 
-![I Like Big Buttons](./referentes_imagenes/08_i_like_big_buttons.jpg)
+![I Like Big Buttons](./imagenes/08-i-like-big-buttons.jpg)
 
-*BrandNewNoise, s. f. Fotografía de I Like Big Buttons, grabadora de botones grandes.* [BrandNewNoise](https://www.brandnewnoise.com/products/i-like-big-buttons).
+*BrandNewNoise, s.f. Fotografía de I Like Big Buttons, grabadora de botones grandes.* [BrandNewNoise](https://www.brandnewnoise.com/products/i-like-big-buttons).
 
 #### 09. Wall-mounted CD Player — Una acción para empezar a escuchar
 
@@ -135,9 +135,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** El uso parte de un gesto concreto sobre el objeto. Para nuestros botones, eso se traduce en que la primera pulsación inicia un audio y la segunda permite pasar al siguiente.
 
-![Wall-mounted CD Player](./referentes_imagenes/09_wall_mounted_cd_player.jpg)
+![Wall-mounted CD Player](./imagenes/09-wall-mounted-cd-player.jpg)
 
-*Cooper Hewitt, Smithsonian Design Museum, s. f. Fotografía del reproductor de CD mural diseñado por Naoto Fukasawa para MUJI en 1999.* [Smithsonian Institution](https://www.si.edu/object/wall-mounted-cd-player%3Achndm_2013-35-1).
+*Cooper Hewitt, Smithsonian Design Museum, s.f. Fotografía del reproductor de CD mural diseñado por Naoto Fukasawa para MUJI en 1999.* [Smithsonian Institution](https://www.si.edu/object/wall-mounted-cd-player%3Achndm_2013-35-1).
 
 #### 10. Playdate — Dibujos legibles en una pantalla pequeña
 
@@ -145,11 +145,9 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 **Qué rescatamos.** Nos interesa cómo construye una identidad visual con pocos elementos. Para nuestros íconos queremos probar primero siluetas simples y comprobar que se distingan al tamaño real de la pantalla.
 
-![Playdate](./referentes_imagenes/10_playdate.png)
+![Playdate](./imagenes/10-playdate.png)
 
-*Panic, s. f. Fotografía de la consola Playdate.* [Panic](https://play.date/).
-
-
+*Panic, s.f. Fotografía de la consola Playdate.* [Panic](https://play.date/).
 
 ### Contenido y decisiones de diseño
 
@@ -169,7 +167,6 @@ Los cuentos se obtendrán desde bibliotecas de audiolibros o repositorios que pe
 
 Se desecha la organización de los contenidos según la hora del día. En un principio se consideró separar los cuentos entre día y noche, pero decidimos no continuar con esa idea porque los tres cuentos podrán utilizarse en cualquier contexto y no queremos limitar su reproducción a un horario específico. La biblioteca se organizará por categorías y no por momento del día.
 
-
 #### Personajes, colores y forma de la máquina
 
 Queremos que cada categoría tenga su propio personaje o icono. Para el diseño distinguimos dos pasos: reconocer el dibujo y entender qué activa el botón. Alguien puede ver un libro y decir «libro», pero la asociación con escuchar un cuento se aprende cuando presiona el botón y empieza a sonar. Por eso queremos mantener la misma relación entre el dibujo del botón, lo que aparece en pantalla y el audio que se activa. Los personajes todavía están por definir.
@@ -181,7 +178,6 @@ En el primer planteamiento habíamos descrito los botones como grandes, rígidos
 Al elegir la paleta, vamos a mirar qué tan bien se distingue cada control de la carcasa y de los demás botones, sobre todo con la luz que puede haber en la habitación a la hora de dormir. La paleta también va a definir cómo se ve y se siente el objeto, y eso sigue siendo una decisión de diseño.
 
 La carcasa tiene que quedar estable en el velador y proteger la pantalla, el parlante, la tarjeta SD y las conexiones. Los botones estarán integrados a la carcasa. Queremos que los cables y las piezas pequeñas queden fuera del alcance de les niñes durante el uso cotidiano.
-
 
 ### Funcionamiento
 
@@ -239,86 +235,71 @@ Finalmente agregamos un reposo por software después de tres minutos sin uso. La
 
 La entrega compiló en Wokwi y pudimos probar la pantalla, los símbolos, el LED, el contador de grabación y el bloqueo de pulsaciones simultáneas. Todavía falta implementar el audio real, el micrófono, la tarjeta SD y la detección física del módulo de grabación.
 
-
-
 #### Diagrama de flujo de usuario
 
 ```mermaid
-
+%%{ init : { "theme" : "redux-color", "flowchart" : { "curve" : "linear" }}}%%
+%%                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 flowchart TD
+%%==============================================================================
 
-A@{shape: circ, label: "Se enciende<br>el dispositivo"}-->B(Alguien presiona<br>un botón);
-
+A@{shape: circ, label: "Se enciende el dispositivo"}-->B(Alguien presiona un botón);
 B-->C(Elegir un cuento);
-
 B-->D(Elegir música);
-
-B-->E(Escuchar el<br>mensaje);
-
+B-->E(Escuchar el mensaje);
 B-->F(Grabar mensaje);
-
 C-->G(Suena un cuento);
-
 G--presionado de nuevo -->K(Pasa al siguiente)-->O;
-
 D-->H(Suena música);
-
 H--presionado de nuevo -->K(Pasa al siguiente);
-
 E-->I{¿Hay mensaje?};
-
-I--no -->M(Aparece una carita<br>triste en pantalla)-->O;
-
+I--no -->M(Aparece una carita triste en pantalla)-->O;
 I--sí -->N(Suena el mensaje)-->O;
-
 F-->J(Graba la voz);
-
-J--deja de presionar<br>o excede el tiempo -->L(Termina de grabar)-->O;
-
-O(3 minutos sin uso)-->P(Pantalla se apaga);
-
+J--deja de presionar o excede el tiempo -->L(Termina de grabar)-->O;
+O(3 minutos sin uso)-->P@{shape: dbl-circ, label: "Pantalla se apaga"};
 P-->B;
-
 ```
 
 #### Diagrama de flujo técnico
 
 ```mermaid
+%%{ init : { "theme" : "redux-color", "flowchart" : { "curve" : "linear" }}}%%
+%%                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 flowchart TD
+%%==============================================================================
 
-A@{shape: circ, label: "**Inicializar**<br>serial, botones<br>LED, pantalla"}-->B(Inicio de la vuelta);
+A@{shape: circ, label: "**Inicializar**<br>serial, botones, LED, pantalla"}-->B(Inicio de la vuelta);
 B-->C(<b>Leer botón grabar</b><br>aceptarPulsaciones);
-C-->D{¿no está grabando y<br>la pulsación de<br>grabar fue aceptada?};
+C-->D{¿no está grabando y la pulsación de grabar fue aceptada?};
 D--sí -->S(<b>iniciarGrabacion</b><br>detiene audio<br>LED on)-->H;
-D--no -->E{¿Está grabando y<br>soltaron el botón?};
+D--no -->E{¿Está grabando y soltaron el botón?};
 E--sí -->T(<b>terminarGrabacion</b><br>mensaje = true<br>LED off)-->H;
-E--no -->F{¿Está grabando y<br>llegó a 60s?};
+E--no -->F{¿Está grabando y llegó a 60s?};
 F--sí -->U(<b>Terminar grabación</b><br>avisoSoltar = true)-->H;
 F--no -->G{¿Sigue grabando?};
 G--sí -->V(actualizarConteo)-->H;
-G--no -->H{¿avisoSoltar y<br>el botón grabar<br>ya se soltó?};
+G--no -->H{¿avisoSoltar y el botón grabar ya se soltó?};
 H--sí -->W(Quitar aviso)-->I;
-H--no -->I(<b>Leer pines crudos</b><br>cuentos, música<br>y mensaje);
+H--no -->I(<b>Leer pines crudos</b><br>cuentos, música y mensaje);
 I-->J(Leer los 3 botones);
 J-->K{¿En reposo?};
-K--sí -->X{¿Algún botón<br>recién presionado?};
+K--sí -->X{¿Algún botón recién presionado?};
 X--sí -->Y(Despertar)-->R;
 X--no -->R;
-K--no -->L{¿Cuentos o música<br>fue aceptado?};
-L--sí -->Z("<b>cambiarA(categoria)</b>"<br>empieza, avanza,<br>o cambia)-->M;
+K--no -->L{¿Cuentos o música fue aceptado?};
+L--sí -->Z("<b>cambiarA(categoria)</b>"<br>empieza, avanza, o cambia)-->M;
 L--no -->M{¿Mensaje aceptado y<br>existe mensaje?};
 M--sí -->AA(Activar mensaje)-->N;
-M--no -->N{¿Mensaje aceptado y<br>no existe mensaje?};
-N--sí -->AB(<b>Carita triste</b><br>no cambia la<br>categoría)-->O;
+M--no -->N{¿Mensaje aceptado y no existe mensaje?};
+N--sí -->AB(<b>Carita triste</b><br>no cambia la categoría)-->O;
 N--no -->O(pantalla.actualizar);
-O-->P{¿Pulsación aceptada,<br>grabando o<br>audio activo?};
-P--sí -->AC(ultimoUso = ahora<br>reinicia el contador<br>de reposo)-->Q;
+O-->P{¿Pulsación aceptada, grabando o audio activo?};
+P--sí -->AC(<b>ultimoUso = ahora</b><br>reinicia el contador de reposo)-->Q;
 P--no -->Q{¿Pasaron 180 seg<br>sin uso?};
 Q--sí -->AD(<b>Entrar en reposo</b><br>dormido = true<br>apaga pantalla)-->R;
 Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
 ```
-
-
 
 ### Materiales y simulación
 
@@ -345,11 +326,9 @@ Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
 
 #### Circuito
 
-(https://wokwi.com/projects/481143276644147201).
+(<https://wokwi.com/projects/481143276644147201>)
 
 En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LED de grabación, el lector microSD, el modelo del PAM8403 y un buzzer que representa el parlante. El código usa GP2 para cuentos, GP3 para música, GP4 para mensaje, GP5 para grabar y GP6 para el LED. GP0 y GP1 se usan para el monitor serial UART0.
-
-
 
 #### Bibliotecas, clases y créditos
 
@@ -363,28 +342,31 @@ En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LE
 | `Pantallita` | Dibuja las vistas del dispositivo. `main.cpp` coordina las categorías y los estados. | `Pantallita.h` y `Pantallita.cpp`. |
 | `pam8403.chip.c` y `pam8403.chip.json` | Modelo del amplificador representado en el circuito. | Archivos del proyecto en Wokwi. |
 
-
-### Referencias
+### Bibliografía
 
 #### Investigación de contexto
 
-- Arriagada, P., & Valdebenito, L. (2011). Para reconstruir la vida de los niños y niñas: Guía para apoyar intervenciones psicosociales en emergencias y desastres. UNICEF. https://www.unicef.org/chile/media/1666/file
-- Center on the Developing Child at Harvard University. (s. f.). A guide to neglect. https://developingchild.harvard.edu/resource-guides/guide-neglect/
-- Easterseals Vermont. (2024, 31 de mayo). A sound that soothes. https://eastersealsvt.org/news-and-stories/a-sound-that-soothes/
-- Organización Mundial de la Salud. (2025). De la soledad a la conexión social: El camino hacia sociedades más saludables [Resumen del informe de la Comisión de la OMS sobre Conexión Social]. https://www.who.int/es/publications/m/item/from-loneliness-to-social-connection-summary
-- Sesame Workshop. (s. f.). Cuando los niños extrañan al otro padre. https://sesameworkshop.org/resources/cuando-los-ninos-extranan-al-otro-padre/
-- World Wide Web Consortium. (2025, 16 de septiembre). Understanding SC 1.4.1: Use of color (Level A). https://www.w3.org/WAI/WCAG22/Understanding/use-of-color
+- Arriagada, P., & Valdebenito, L. (2011). Para reconstruir la vida de los niños y niñas: Guía para apoyar intervenciones psicosociales en emergencias y desastres. UNICEF. <https://www.unicef.org/chile/media/1666/file>
+- Center on the Developing Child at Harvard University. (s.f.). A guide to neglect. <https://developingchild.harvard.edu/resource-guides/guide-neglect/>
+- Easterseals Vermont. (2024, 31 de mayo). A sound that soothes. <https://eastersealsvt.org/news-and-stories/a-sound-that-soothes/>
+- Organización Mundial de la Salud. (2025). De la soledad a la conexión social: El camino hacia sociedades más saludables [Resumen del informe de la Comisión de la OMS sobre Conexión Social]. <https://www.who.int/es/publications/m/item/from-loneliness-to-social-connection-summary>
+- Sesame Workshop. (s.f.). Cuando los niños extrañan al otro padre. <https://sesameworkshop.org/resources/cuando-los-ninos-extranan-al-otro-padre/>
+- World Wide Web Consortium. (2025, 16 de septiembre). Understanding SC 1.4.1: Use of color (Level A). <https://www.w3.org/WAI/WCAG22/Understanding/use-of-color>
 
 #### Referentes de diseño
 
-- AbleNet. (s. f.). BIGmack. https://www.ablenetinc.com/bigmack/
-- BrandNewNoise. (s. f.). I like big buttons. https://www.brandnewnoise.com/products/i-like-big-buttons
-- Cooper Hewitt, Smithsonian Design Museum. (s. f.). Wall-mounted CD player [Ficha de colección]. Smithsonian Institution. https://www.si.edu/object/wall-mountedcdplayer%3Achndm_2013-35-1
-- Hallmark. (s. f.). Recordable storybooks. https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/
-- Lovebox. (s. f.). Lovebox Photo Messenger. https://en.lovebox.love/products/lovebox-color-photo
-- Lozano-Hemmer, R. (2011). Voice array (Subsculpture 13) [Instalación interactiva]. Atelier Lozano-Hemmer. https://www.lozano-hemmer.com/voice_array.php
-- Panic. (s. f.). Playdate. https://play.date/
-- TheGreenEyl. (s. f.). Whispering table (Tischgeflüster). https://www.thegreeneyl.com/whispering-table
-- tonies. (s. f.). Pokémon: Pikachu Tonie. https://us.tonies.com/products/pokemon-pikachu-tonie
-- Upchurch, R. (2019, 26 de marzo). Instructions for how it works – BrandNewNoise by Richard Upchurch. BrandNewNoise. https://www.brandnewnoise.com/blogs/news/instructions-for-how-it-works-brandnewnoise-by-richard-upchurch
-- Yoto. (s. f.). Yoto Player 4th Gen. https://us.yotoplay.com/players/yoto-player-4
+- AbleNet. (s.f.). BIGmack. <https://www.ablenetinc.com/bigmack/>
+- Boundless Assistive Technology (s.f.). *LITTLEmack & BIGmack Communicators* [Fotografía]. BoundlessAT. <https://www.boundlessat.com/Communication/Basic-Communicators/LITTLEmack-BIGmack-Communicators>
+- BrandNewNoise. (s.f.). I LIKE BIG BUTTONS [Fotografía]. <https://www.brandnewnoise.com/products/i-like-big-buttons>
+- Cooper Hewitt, Smithsonian Design Museum. (s.f.). Wall-Mounted CD Player. Smithsonian Institution. <https://www.si.edu/object/wall-mountedcdplayer%3Achndm_2013-35-1>
+- Hallmark. (s.f.). Recordable storybooks. <https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/>
+- Hallmark. (s.f.). *Under the Same Moon Recordable Storybook* [Fotografía]. <https://www.hallmark.com/baby-and-kids/kids-books/recordable-storybooks/under-the-same-moon-recordable-storybook-1KOB1228.html>
+- Lovebox. (s.f.). Lovebox Photo Messenger. <https://en.lovebox.love/products/lovebox-color-photo>
+- Lovebox. (s.f.). Lovebox Photo Messenger [Fotografía]. <https://buy.lovebox.love/products/lovebox>
+- Lozano-Hemmer, R. (2011). Voice array (Subsculpture 13) [Instalación interactiva]. Atelier Lozano-Hemmer. <https://www.lozano-hemmer.com/voice_array.php>
+- Panic. (2022). Playdate. <https://play.date/>
+- TheGreenEyl. (s.f.). Whispering table (Tischgeflüster). <https://www.thegreeneyl.com/whispering-table>
+- tonies. (s.f.). *Pokémon: Pikachu Tonie*. <https://us.tonies.com/products/pokemon-pikachu-tonie>
+- Upchurch, R. (2019). Instructions for how it works – BrandNewNoise by Richard Upchurch. BrandNewNoise. <https://www.brandnewnoise.com/blogs/news/instructions-for-how-it-works-brandnewnoise-by-richard-upchurch>
+- Yoto. (s.f.). Yoto Player 4th Gen. <https://us.yotoplay.com/players/yoto-player-4>
+- Yoto. (2026). *Yoto 4th Gen* [Fotografía]. Yoto Newsroom. <https://us.yotoplay.com/press/en-US/270385-yoto-launches-yoto-player-4th-gen-and-yoto-mini-4th-gen-its-biggest-hardware-upgrade-yet/>
