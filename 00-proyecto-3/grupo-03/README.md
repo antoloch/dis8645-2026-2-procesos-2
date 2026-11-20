@@ -127,7 +127,7 @@ La máquina permite escuchar, silenciar y superponer los sonidos de los distinto
 
 ### Selección de especies, justificación, características y audio
 
-A partir del siguiente prompt, le pedimos pedí a Gemini y Claude que nos diera un listado de posibles especies, y así fuimos seleccionando según qué audio encontrábamos disponible en los recursos sonoros de biodiversidad que seleccionamos.
+A partir del siguiente prompt, le pedimos a Gemini y Claude que nos diera un listado de posibles especies, y así fuimos seleccionando según qué audio encontrábamos disponible en los recursos sonoros de biodiversidad que seleccionamos.
 
 - Museo Bioacústico (https://museobioacustico.org)
 - iNaturalist (https://www.inaturalist.org)
