@@ -334,6 +334,17 @@ Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
 
 En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LED de grabación, el lector microSD, el modelo del PAM8403 y un buzzer que representa el parlante. El código usa GP2 para cuentos, GP3 para música, GP4 para mensaje, GP5 para grabar y GP6 para el LED. GP0 y GP1 se usan para el monitor serial UART0.
 
+#### Carcasa
+
+![Carcasa principal con módulo de grabación separado](./imagenes/carcasa1.png)
+
+*Carcasa principal con pantalla, tres botones físicos, parlante y módulo separado para la grabación.*
+
+![Carcasa con módulo de grabación desmontable integrado](./imagenes/carcasa2.png)
+
+*Carcasa con el módulo de grabación integrado en el costado derecho y una unión visible para poder desmontarlo.*
+
+
 #### Bibliotecas, clases y créditos
 
 | Recurso | Función en el proyecto | Crédito o archivo |
