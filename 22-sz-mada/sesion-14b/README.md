@@ -34,4 +34,12 @@ Observaciones:
 
 El referente de Fieldtone – Weaver Handheld se parece al meme de hyperpigmentation :sob:
 
+![Engraving en Weaver Handheld](./imagenes/weaverhandheld.png)
+
+![Hyperpigmentation meme](./imagenes/hyperpigmentation.png)
+
+ngl si bien también me gusta la premisa de este proyecto, como que no me causa nada? No hay nada que me de curiosidad como para preguntar, solamente lo pienso como wow que cool.
+
+Actually, nevermind. Entiendo que cada perilla representa una especie (mamífero, ave, anfibio, insecto), pero ¿cómo diferencio entre norte, centro y sur? ¿Estará en la carcasa o en el desplegable?
+
 Preguntas:
