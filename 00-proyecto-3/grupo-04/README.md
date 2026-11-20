@@ -69,6 +69,8 @@ Con respecto al audio, queremos realizar una sensación auditiva tridimensional 
 
 ## Tabla de sonidos (ordenada por frecuencia, de grave a agudo)
 
+Un ser humano con audición sana suele escuchar sonidos en un rango aproximado de 20 Hz a 20.000 Hz (20 kHz).
+
 | Tipo | Frecuencia | N° | Sonido | Significado | Duración | Canal |
 |------|-----------:|:--:|--------|-------------|----------|-------|
 | Grave | 200 ↔ 300 Hz | 8 | Impacto | Tu nave recibió daño | 4 alternancias de 30 ms | Ambos |
