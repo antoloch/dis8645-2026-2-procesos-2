@@ -401,6 +401,27 @@ Finalmente tenemos una versión donde vemos conexiones y funcionamientos, por la
 
 ## Referentes
 
+### Brian Eno
+
+Brian Eno y Música Ambiental
+Los experimentos de Brian Eno con loops de cinta se remontan hasta el álbum colaborativo de 1973 (No Pussyfooting), con Robert Fripp, guitarrista de King Crimson. Para la grabación de (No Pussyfooting), Eno empleó un experimento temprano de bucle de cinta sonido-a-sonido, en el que conectaba la guitarra de Robert Fripp a dos gravadoras que luego se reintroducían entre sí.
+
+Las melodías de guitarra de Fripp se grababan y luego rebotaban entre las dos máquinas de cinta, creando largos y desvanecidos retardos que se acumulaban hasta crear un paisaje sonoro denso. La duración del retardo se controlaba por la distancia física entre las dos máquinas.
+
+https://www.youtube.com/watch?v=BLISCdzW4y8
+
+### The Disintegration Loops  William Basinski
+
+The Disintegration Loops es una obra del compositor estadounidense William Basinski publicada a partir de 2002.
+
+Basinski recuperó antiguas grabaciones musicales que había realizado en cintas magnéticas durante los años ochenta. Al intentar digitalizarlas en 2001, descubrió que las cintas se estaban deteriorando con cada reproducción: las partículas magnéticas se desprendían progresivamente, provocando pérdidas y alteraciones en el sonido.
+
+### The Avalanches
+
+El grupo recopila fragmentos de distintas fuentes sonoras: discos antiguos, voces, instrumentos, sonidos de animales y grabaciones ambientales. Luego selecciona pequeños fragmentos, los recorta, modifica y combina para construir nuevas composiciones.
+
+En Since I Left You se utilizaron miles de samples, creando una especie de collage sonoro donde grabaciones de distintas épocas y procedencias se relacionan para formar una nueva pieza musical.
+
 ### [Kaleidoloop](https://forum.critterandguitari.com/t/kaleidoloop-returns/10321)
 
 El Critter & Guitari Kaleidoloop es un sampler y looper portátil diseñado para grabar sonidos, crear bucles con estos y manipularlos en tiempo real. 
