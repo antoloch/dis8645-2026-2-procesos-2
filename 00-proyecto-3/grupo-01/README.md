@@ -156,7 +156,7 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 | 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/multi.webp) |
 | 8 | Potenciometros | 2 | $ | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
 | 9 | Luces led | 9 | $ |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
-| 10 | Slider | 3 | $17.700 | https://hubot.cl/producto/potenciometro-precision-deslizante-arduino-raspeberry-sku-524/ | |
+| 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | |
 | 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | |
 | 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | |
 | 13 | Lector SD Card | 1 | $2.500 | https://afel.cl/products/lector-micro-sd | |
