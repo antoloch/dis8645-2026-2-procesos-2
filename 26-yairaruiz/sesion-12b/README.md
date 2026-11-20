@@ -9,7 +9,7 @@ proyecto-03
 
 ## encargos
 
-leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar como aparece, intentar describir como suena, y su relación cultural (https://estefaniasoundscape.wordpress.com/wp-content/uploads/2017/10/nunca-vi-un-sonido_r-murray-schafer.pdf)
+leer el texto de schafer y escribir un párrafo en la bitácora donde describan un sonido que les llame su atención. Nombrar el sonido, y elaborar como aparece, intentar describir como suena, y su relación cultural 
 investigar el código del grupo 01
 revisar 1 obra de tristan perich y 1 de christine sun kim
 
