@@ -493,6 +493,18 @@ Es un pedal que crea un glitch aleatorio en el sonido y sirve también para hace
 
 Este es un pedal de efectos hechos con componentes analógicos. El efecto que produce es como el de pixelar el sonido, haciendo que este pierda nitidez. Nosotras rescatamos el efecto como tal y lo integramos a nuestra sección de edición de audio.
 
+### [OP-1 field](https://teenage.engineering/products/op-1)
+
+<br>
+
+El OP-1 field de Teenage Engineering es un sintetizador, sampler y caja de ritmos portátil que trabaja con la lógica de una grabadora de cinta de 4 pistas. Además, trae micrófono y parlante integrados, por lo que se puede grabar, intervenir y escuchar sin conectar nada más.
+
+Lo que rescatamos de este dispositivo es la grabación por capas, en la que cada nueva toma se suma a las anteriores en la cinta. Es muy parecido a como queremos que los audios se acumulen en nuestro `conjuntoDeAudios`. También nos interesó cómo su pantalla muestra de forma gráfica lo que está pasando con el sonido. A eso se suma que cada perilla tiene un color que se repite en la pantalla, lo que hace evidente qué parámetro se está modificando. Esto nos sirvió para pensar la relación entre nuestros sliders, los LEDs de cada efecto y la visualización de los audios acumulados.
+
+<img src="./imagenes/op-1.png" alt="" width="50%">
+
+<br>
+
 <img src="./imagenes/bit-crusher.webp" alt="" width="50%">
 
 <br>
