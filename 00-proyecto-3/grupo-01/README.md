@@ -149,6 +149,22 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 
 ![](./imagenes/dis8645-2026-2.png)
 
+### Proceso
+
+|   |   |   |   |
+| --- | --- | --- | --- |
+| <img src="./imagenes/drive/00.jpg" alt="00" width="100%"> | <img src="./imagenes/drive/01.jpg" alt="01" width="100%"> | <img src="./imagenes/drive/02.jpg" alt="02" width="100%"> | <img src="./imagenes/drive/03.jpg" alt="03" width="100%"> |
+| <img src="./imagenes/drive/04.jpg" alt="04" width="100%"> | <img src="./imagenes/drive/05.jpg" alt="05" width="100%"> | <img src="./imagenes/drive/06.jpg" alt="06" width="100%"> | <img src="./imagenes/drive/07.jpg" alt="07" width="100%"> |
+| <img src="./imagenes/drive/08.jpg" alt="08" width="100%"> | <img src="./imagenes/drive/09.jpg" alt="09" width="100%"> | <img src="./imagenes/drive/10.jpg" alt="10" width="100%"> | <img src="./imagenes/drive/11.jpg" alt="11" width="100%"> |
+| <img src="./imagenes/drive/12.jpg" alt="12" width="100%"> | <img src="./imagenes/drive/13.jpg" alt="13" width="100%"> | <img src="./imagenes/drive/14.jpg" alt="14" width="100%"> | <img src="./imagenes/drive/15.jpg" alt="15" width="100%"> |
+| <img src="./imagenes/drive/16.jpg" alt="16" width="100%"> | <img src="./imagenes/drive/17.jpg" alt="17" width="100%"> | <img src="./imagenes/drive/18.jpg" alt="18" width="100%"> | <img src="./imagenes/drive/19.jpg" alt="19" width="100%"> |
+| <img src="./imagenes/drive/20.jpg" alt="20" width="100%"> | <img src="./imagenes/drive/21.jpg" alt="21" width="100%"> | <img src="./imagenes/drive/22.jpg" alt="22" width="100%"> | <img src="./imagenes/drive/23.jpg" alt="23" width="100%"> |
+| <img src="./imagenes/drive/24.jpg" alt="24" width="100%"> | <img src="./imagenes/drive/25.jpg" alt="25" width="100%"> | <img src="./imagenes/drive/26.jpg" alt="26" width="100%"> | <img src="./imagenes/drive/27.jpg" alt="27" width="100%"> |
+| <img src="./imagenes/drive/28.jpg" alt="28" width="100%"> | <img src="./imagenes/drive/29.jpg" alt="29" width="100%"> | <img src="./imagenes/drive/30.jpg" alt="30" width="100%"> | <img src="./imagenes/drive/31.jpg" alt="31" width="100%"> |
+| <img src="./imagenes/drive/32.jpg" alt="32" width="100%"> | <img src="./imagenes/drive/33.jpg" alt="33" width="100%"> | <img src="./imagenes/drive/34.jpg" alt="34" width="100%"> | <img src="./imagenes/drive/35.jpg" alt="35" width="100%"> |
+| <img src="./imagenes/drive/36.jpg" alt="36" width="100%"> | <img src="./imagenes/drive/37.jpg" alt="37" width="100%"> |   |   |
+
+
 ### BOM
 
 | # | Item | Cant. | Valor | Link | Imagen |
