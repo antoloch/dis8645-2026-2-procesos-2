@@ -145,24 +145,24 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 
 ### BOM
 
-| # | Item                 | Cant. | Valor   | Link | Imagen |
+| # | Item | Cant. | Valor | Link | Imagen |
 | - | -------------------- | ----- | ------- | ---- | ------ |
-| 1 | Raspberry Pi Pico 2W | 01     | $14.990 | <https://mcielectronics.cl/shop/product/raspberry-pi-pico-2-w-con-headers/> | <img src="./imagenes/pi-pico-2w.png" alt="" width="100%"> |
+| 1 | Raspberry Pi Pico 2W | 01 | $14.990 | <https://mcielectronics.cl/shop/product/raspberry-pi-pico-2-w-con-headers/> | <img src="./imagenes/pi-pico-2w.png" alt="" width="100%"> |
 | 2 | Micrófono I2S INMP441 | 01 | $5.890<sup><b>1</b> | <https://www.mechatronicstore.cl/modulo-microfono-i2s-inmp441/> | <img src="./imagenes/microfono.jpg" alt="" width="100%"> |
 | 3 | PCM5102A decodificador DAC | 01 | $1.122<sup><b>2</b> | <https://es.aliexpress.com/item/1005006104038963.html> | ![](./imagenes/pcm.avif) |
 | 4 | Módulo PAM8302 | 01 | $720<sup><b>2</b> | https://es.aliexpress.com/item/1005007274382818.html | ![](./imagenes/amp.avif) |
 | 5 | Pantalla LCD Oled Azul y Amarillo 0,96 | 01 | $4.500 | https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96 | ![](./imagenes/pantalla.jpg)
 | 6 | Módulo Multiplexor CD74HC4067 | 02 | $2.000 | https://afel.cl/products/modulo-multiplexor-cd74hc4067 | ![](./imagenes/multi.webp) |
-| 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/multi.webp) |
-| 8 | Potenciometros | 2 | $2.330 | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
-| 9 | Luces led | 9 | $1.138 |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
-| 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | |
-| 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | |
-| 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | |
-| 13 | Lector SD Card | 1 | $1.000 | https://afel.cl/products/modulo-lector-tarjetas-sd | |
-| 14 | Parlante | 1 | $3.000 | https://afel.cl/products/mini-parlante-altavoz-de-3w | |
-| 15 | PCB perforada | 4 | $3.153 | https://es.aliexpress.com/item/1005012773468288.html| |
-| 16 | Pin Header 1 x20 | 2 | $500 | https://afel.cl/products/regleta-macho-hembra-pin-header | |
+| 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/botones.png) |
+| 8 | Potenciometros | 2 | $2.330 | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/potenciometro.png) |
+| 9 | Luces led | 9 | $1.138 |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/led.png) |
+| 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | ![](./imagenes/slider.png) |
+| 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | ![](./imagenes/registro.png) |
+| 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | ![](./imagenes/multiplexor2.png) |
+| 13 | Lector SD Card | 1 | $1.000 | https://afel.cl/products/modulo-lector-tarjetas-sd | ![](./imagenes/lector.png) |
+| 14 | Parlante | 1 | $3.000 | https://afel.cl/products/mini-parlante-altavoz-de-3w | ![](./imagenes/parlante.png) |
+| 15 | PCB perforada | 4 | $3.153 | https://es.aliexpress.com/item/1005012773468288.html| ![](./imagenes/pcb.png) |
+| 16 | Pin Header 1 x20 | 2 | $500 | https://afel.cl/products/regleta-macho-hembra-pin-header | ![](./imagenes/header.png) |
 
 ### pseudo - código
 
