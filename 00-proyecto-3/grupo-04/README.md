@@ -50,6 +50,34 @@ Con respecto al audio, queremos realizar una sensación auditiva tridimensional 
 
 ---
 
+## Registro Wokwi
+
+**Pantalla de inicio**
+
+![gif de pantalla de inicio](./imágenes/pantalla-inicio.gif)
+
+**Comenzar a jugar**
+
+![gif de pantalla de inicio del juego](./imágenes/pantalla-inicio-juego.gif)
+
+**Disparo suma puntos**
+
+![gif de disparo](./imágenes/pantalla-disparo.gif)
+
+**Subir de nivel**
+
+![gif de subida de nivel](./imágenes/pantalla-levelup.gif)
+
+**Menos una vida**
+
+![gif de perder una vida](./imágenes/pantalla-menos1-vida.gif)
+
+**Perdiste**
+
+![gif de pantalla al perder](./imágenes/pantalla-perdiste.gif)
+
+---
+
 ## Clases y código del proyecto
 
 | N.º | Clase | Qué hace |
