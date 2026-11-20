@@ -36,6 +36,10 @@ También se contempla una décima grabación sorpresa, integrada por el grupo, y
 | **Perilla de tono** | A la izquierda, más grave. Al centro, tono original. A la derecha, más agudo. Se puede ajustar antes de pulsar cualquier botón y el ajuste se aplica a la pista que empieza. |
 | **Tres botones juntos** | Reproducen la grabación sorpresa una vez, sin avanzar las secuencias. Para volver a activarla, se deben soltar los tres botones. |
 
+## ejemplo de sonidos a utilizar 
+- [lijadora](imagenes/lijadora.mp3)
+- [cierra-huincha](imagenes/cierra-huincha.mp3)
+
 ## diagrama 
 ![imagen](imagenes/diagramaa.jpeg)
 
