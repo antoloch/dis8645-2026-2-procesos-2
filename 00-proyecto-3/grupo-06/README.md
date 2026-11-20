@@ -517,6 +517,37 @@ Que rescatamos: Objeto pequeño, de madera, con parlante incorporado de 3 W.
 # Carcasa
 ![referente](./imagenes/prototipo-01.png)
 
+# Declaraciones IA
+
+<details>
+<summary><b>Prompt inicial: Problemas con el lenguaje del código</b></summary>
+
+Nuevamente caímos en el problema de tener el código en lenguaje Arduino-Pico, así que le consultamos a Claude lo siguiente:
+
+> "¿Está en lenguaje Arduino? Porque usaré Raspberry Pi Pico W y, cuando lo abro en Wokwi, sale un archivo base `sketch.ino` que no aparece si usara la Raspberry Pi Pico SDK. ¿A qué se debe eso? ¿Es lenguaje Arduino o se refiere a otra cosa? Tengo entendido que no debo ocupar el esquema Arduino, solo C++ Raspberry Pi Pico. Además, tenías razón con los personajes: están bien los que usaste, la descripción estaba desactualizada."
+
+</details>
+
+<details>
+<summary><b>Respuesta de Claude: Arduino vs. Pico SDK</b></summary>
+
+El lenguaje sigue siendo **C++** en ambos casos, pero cambian la API y el sistema de compilación.
+
+*¿Qué es cada cosa?*
+- **Arduino:** `sketch.ino` es el archivo principal de ese esquema y se compila como C++. Funciona sobre el núcleo *Arduino-Pico* (Earle Philhower), indicado por `"env": "arduino-community"` en el `diagram.json`. Usa funciones como `pinMode`, `digitalRead`, `analogRead`, `millis` y `Serial`, además de las librerías de Adafruit.
+- **Pico SDK:** El archivo principal es `main.cpp` (o `main.c`) y no existe `sketch.ino`. Usa `gpio_init`, `gpio_get`, `adc_read`, `printf` por USB/UART y `CMakeLists.txt` para compilar. Wokwi ofrece ambos esquemas para la Pico W, y por eso muestra archivos distintos según cuál elijas.
+
+*¿Qué se reutiliza y qué cambia al pasar a Pico SDK?*
+- **Se mantiene casi igual:** `Config.h`, `Personajes`, `Sistema` y la estructura de clases en `.h`/`.cpp` (solo cambiaría `Serial.print` por `printf`).
+- **Se reescribe:**
+  - *Botón:* pasa a `gpio_*` y a `time_us_32()` para medir los 2 s.
+  - *Perilla:* pasa a `adc_*`.
+  - *Audio:* usa `uart_*` para el DFPlayer.
+  - *Pantalla:* el SDK no incluye librería OLED, por lo que requiere escribir o integrar un driver SSD1306/SSD1309 sencillo.
+- **Se agrega:** `CMakeLists.txt` y los archivos de proyecto que exige Wokwi para el SDK, eliminando la configuración de Arduino en `diagram.json`.
+
+</details>
 
 # Bibliografia 
+
 (https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F37179%2F1%2FBCN__caracterizacion__Baby_Boomers__X__Millennials_y___Z__FINAL.pdf) 
