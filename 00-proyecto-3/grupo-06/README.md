@@ -13,10 +13,15 @@
 - Nacha Zamudio / [nachazamudio](https://github.com/nachazamudio)
 
 
-
-## Entregables
-
 # Una vida en sonidos 
+
+## Texto descriptivo del proyecto
+“Una vida en sonidos” es una máquina interactiva que recorre, a través del sonido, la vida promedio de una persona chilena, desde el llanto de una guagua hasta el final de la vejez. En un inicio, el usuario escoge un personaje entre cuatro opciones: Giliano, Ana María, Sofía y Nicolás, mientras una pantalla muestra la etapa en la que se encuentra.
+El usuario puede avanzar y retroceder por las etapas, y para cada ciclo se presenta un conjunto de botones que activan distintas capas sonoras (el hogar, la calle, la escuela o el trabajo y los hitos del país), de modo que cada persona construye su propia mezcla de recuerdos.
+
+Además, existen situaciones durante la interacción donde el audio se distorsiona, volviendo “borrosos” los recuerdos presentes en la vejez de algunos personajes. El proyecto busca generar una experiencia de nostalgia y reflexión sobre el paso del tiempo, combinando programación, electrónica y diseño sonoro.
+
+
 
 ## Lista de materiales (BOM)
 
@@ -218,23 +223,21 @@ flowchart TD
 
 </details>
 
-
-## Texto descriptivo del proyecto
-
-“Una vida en sonidos” es una máquina interactiva que recorre, a través del sonido, la vida promedio de una persona chilena, desde el llanto de una guagua hasta el final de la vejez. En un inicio, el usuario escoge un personaje entre cuatro opciones: Giuliano, Ana María, Nicole y Sofía, mientras una pantalla muestra la etapa en la que se encuentra.
-
-El usuario puede avanzar y retroceder por las etapas, y para cada ciclo se presenta un conjunto de botones que activan distintas capas sonoras (el hogar, la calle, la escuela o el trabajo y los hitos del país), de modo que cada persona construye su propia mezcla de recuerdos.
-
-Además, existen situaciones durante la interacción donde el audio se distorsiona, volviendo “borrosos” los recuerdos presentes en la vejez de algunos personajes.
-
-El proyecto busca generar una experiencia de nostalgia y reflexión sobre el paso del tiempo, combinando programación, electrónica y diseño sonoro.
-
 # Descripción total del proyecto
 
 ## 1.  Selección de personajes
 Los personajes fueron separados según las generaciones descritas en:
 
 Lampert, M. P. (2025). Baby Boomers, Generación X, Millennials y Generación Z: Caracterización generacional en trabajo, familia y tecnología. Biblioteca del Congreso Nacional de Chile, Asesoría Técnica Parlamentaria. [Obtiene Archivo](https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F37179%2F1%2FBCN__caracterizacion__Baby_Boomers__X__Millennials_y___Z__FINAL.pdf)
+
+Giliano (1956)
+
+Anita (1987)
+
+Sofía (2004) 
+
+Nicolás (2013) 
+
 
 Utilizamos 4 personajes para abarcar las distintas generaciones definidas por la demografía y el marketing conocidas como: “Baby Boomer”, “Millennials”, “Generación Z”, “Generación Alpha”, con la finalidad de alcanzar la nostalgia de más personas y dar a conocer también un poco de la época en la que vivieron estos personajes y sus estilos de vida.
 
@@ -246,7 +249,7 @@ Según esto, los personajes:
 
 - Sofía. 5 etapas (2004): Mujer, 22 años, nacida en Osorno pero se vino a Santiago para estudiar diseño. Tiene 3 hermanos y espera poder ser la primera en entrar a la universidad. Vive en Ñuñoa y trabaja part-time en una cafetería de especialidad en la misma comuna. Se traslada en bicicleta por Santiago. Tiene una gata llamada Kari. Sus papás no creen que pueda sobrevivir al ritmo de la ciudad. Le gustan los boleros y el animé.
 
-- Nicolás. 4 etapas (2015): 13 años. Vive en Maipú con su mamá y su hermana mayor. Solo le preocupa llegar a la casa a jugar play. Le gusta ver youtubers de minecraft, clash royal y fortnite. Tiene un perro, su mamá le dice que lo saque a pasear pero se le olvida por quedarse jugando play. Su mamá le paga para que ordene su pieza. Le gusta el trap argentino. 
+- Nicolás. 4 etapas (2013): 13 años. Vive en Maipú con su mamá y su hermana mayor. Solo le preocupa llegar a la casa a jugar play. Le gusta ver youtubers de minecraft, clash royal y fortnite. Tiene un perro, su mamá le dice que lo saque a pasear pero se le olvida por quedarse jugando play. Su mamá le paga para que ordene su pieza. Le gusta el trap argentino. 
 
 
 ## 2.   Perilla Línea de tiempo
@@ -274,10 +277,9 @@ Según esto, los personajes:
 - Si durante la interacción con uno de los personajes, el usuario desea cambiarlo, puede mantener presionado este botón y reiniciar la interacción.
 
  ## 7.  Botón Recordar
-- Para Giliano y Anita existe una intervención en el audio, el cual representa la nitidez de los recuerdos por el paso de los años, es decir, en la etapa de la vejez, es posible que el audio se distorsione, imitando un recuerdo borroso.   
-- Para recuperar la “nitidez” de la etapa se puede presionar el botón de “recordar”.
+- Para Giliano existe una intervención en el audio, el cual representa la nitidez de los recuerdos por el paso de los años, es decir, en la etapa de la vejez es posible que el audio se distorsione, imitando un recuerdo borroso.   
+- Para recuperar la “nitidez” de la etapa se puede presionar el botón de “recordar”. 
 - Creemos que la memoria se pierde de a poco, sin darnos cuenta se va y  “vuelve” gracias a factores externos que activan los recuerdos “escondidos” en la mente, por eso decidimos tener un botón que influya directamente en el audio para representar esta acción.
-
 
  ## 8.  El final (sólo con Giliano)
 - Ciclo de la vida: el latido se hace lento, hay un silencio, y vuelve el llanto de guagua (otra vida empieza). Es decir, al finalizar el audio de la última etapa de Giliano, se vuelve al inicio (primer rango de vida), escuchando nuevamente el primer llanto. 
@@ -335,9 +337,6 @@ Sofía (2004) 5 etapas, llega  a la juventud
 //Y el audio está distorsionado
 //Se presiona el botón, toque corto
 //Y se recupera la claridad/nitidez del sonido
-//En el caso de Anita 
-//El audio se distorsiona
-//Llegando al final de la adultez
 
 
 //Botón 4
@@ -410,7 +409,7 @@ Sofía (2004) 5 etapas, llega  a la juventud
 //Controlado por una Perilla
 ```
 # Esqueleto en wokwi
-https://wokwi.com/projects/480888554413867009 
+https://wokwi.com/projects/481175847766925313
 
 # REFERENTES 
 
@@ -514,6 +513,10 @@ Se vendió desde 2010, con 16 teclas de arce reales, y trae un parlante incorpor
 Que rescatamos: Objeto pequeño, de madera, con parlante incorporado de 3 W.
 
 ![referente](./imagenes/referente-10.jpeg)
+
+# Carcasa
+![referente](./imagenes/prototipo-01.png)
+
 
 # Bibliografia 
 (https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio%2F10221%2F37179%2F1%2FBCN__caracterizacion__Baby_Boomers__X__Millennials_y___Z__FINAL.pdf) 
