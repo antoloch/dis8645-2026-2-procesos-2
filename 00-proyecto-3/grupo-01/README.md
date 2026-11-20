@@ -154,8 +154,8 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 | 5 | Pantalla LCD Oled Azul y Amarillo 0,96 | 01 | $4.500 | https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96 | ![](./imagenes/pantalla.jpg)
 | 6 | Módulo Multiplexor CD74HC4067 | 02 | $2.000 | https://afel.cl/products/modulo-multiplexor-cd74hc4067 | ![](./imagenes/multi.webp) |
 | 7 | Botones | 12 | $1.500 | https://afel.cl/products/kit-boton-tactil-6x6x5-interruptor-5-unidades | ![](./imagenes/multi.webp) |
-| 8 | Potenciometros | 2 | $ | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
-| 9 | Luces led | 9 | $ |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
+| 8 | Potenciometros | 2 | $2.330 | https://es.aliexpress.com/item/1005009244496972.html | ![](./imagenes/multi.webp) |
+| 9 | Luces led | 9 | $1.138 |https://es.aliexpress.com/item/1005003144912658.html | ![](./imagenes/multi.webp) |
 | 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | |
 | 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | |
 | 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | |
