@@ -52,7 +52,17 @@ Lo que más me llama la atención, es el sonido que hace cuando cae en los techo
 
 ---
 
-- Revisar una obra de Tristan Perich y una de Christine Sun Kim
+- Revisar una obra de Tristan Perich
+
+[*Microtonal Wall*](https://www.moma.org/interactives/exhibitions/2013/soundings/artists/10/works/) (2011) de Tristan Perich es una instalación formada por más de mil parlantes diminutos dispuestos en una pared. Cada uno emite una onda de sonido electrónico simple, afinada a una frecuencia ligeramente distinta a la de los parlantes adyacentes. Juntos, producen un sonido continuo que cambia según dónde se pare quien está escuchando.
+
+Me pareció interesante que una pieza hecha con unidades pequeñas (en tamaño, no cantidad) termine sientiéndose casi orgánica. Desde lejos la pared suena como una sola masa, pero al acercarse uno puede distinguir pequeñas diferencias entre el sonido de cada parlante. Lo que más me gustó, es que el recorrido de quien visite funcione como parte de la composición porque nadie va a escuchar lo mismo, ya que la posición del oyente en la sala es parte escencial de este obra
+
+- y una de Christine Sun Kim
+
+[*Degrees of My Deaf Rage in the Art World*](https://whitney.org/media/61551) (2018) de Christine Sun Kim es un dibujo en carboncillo que presenta seis gráficos circulares. Cada gráfico está etiquetado con distintos niveles de frustración y va acompañado de una breve frase que describe una situación capaz de provocar "rabia sorda" (deaf rage) en el artista.
+
+Me llamó la atención el contraste entre la "frialdad" del formato (carboncillo, pintura al óleo, papel) y la carga emocional del contenido. Uno lee el data como algo objetivo e incuestionable, así que sirve para darle legitimidad a experiencias que generalmente se descartan como exageraciones.
 
 ---
 
