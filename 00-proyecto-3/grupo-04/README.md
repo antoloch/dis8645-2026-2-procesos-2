@@ -42,7 +42,7 @@ Este tipo de juego fue elegido a partir de la simplicidad de juego y la jugabili
 
 A partir de nuestro proyecto 2, nos interesó seguir trabajando en máquinas que interactúan con el usuario además de minimizar el uso de pantallas reduciendo a 1 o menos. Por ello, nos guiamos por la línea de la audición, que pasa cuando el ser humano solo debe seguir pasos a través de este sentido además del tacto. 
 
-Esto nos llevó a reflexionar sobre las obras de Christine Sun Kim y como ella vive en un mundo donde solo le guía la visión y el tacto, pero no la audición ¿qué pasa si tu no logras vez que hay a tu alrededor pero debes esquivarlo de todas formas para no morir? Es por eso que nació este juego, con el fin de llevar al humano a entender cuando se limita un sentido. 
+Esto nos llevó a reflexionar sobre las obras de Christine Sun Kim y como ella vive en un mundo donde solo le guía la visión y el tacto, pero no la audición ¿qué pasa si tu no logras ver que hay a tu alrededor pero debes esquivarlo de todas formas para no morir? Es por eso que nació este juego, con el fin de llevar al humano a entender cuando se limita un sentido. 
 
 Es por esto que como grupo nos limitamos al uso de una sola pantalla la cual entrega información relevante para el jugador (ya sea para saber cuando inicia el juego, cuando está en pausa, instrucciones, cuántas vidas tiene, en qué nivel va, y animaciones), mas no lo ayuda a visualizar de dónde viene el sonido, lo que hace el juego más desafiante.
 
@@ -54,9 +54,9 @@ Con respecto al audio, queremos realizar una sensación auditiva tridimensional 
 
 | N.º | Clase | Qué hace |
 |:---:|---|---|
-| 1 | **Boton** | Lee un pulsador con antirrebote de 30 ms y avisa una sola vez por pulsación. Se usa para disparo, inicio/pausa/reanudar y el interruptor. |
+| 1 | **Boton** | Lee cuando lo pulsan y avisa una sola vez por pulsación. Se usa para disparo, inicio/pausa/reanudar y el interruptor dip switch (encendido/apagado). |
 | 2 | **Perilla** | Lee el potenciómetro con el ADC y entrega el volumen de 0 a 100 %. |
-| 3 | **Inclinacion** | Lee el MPU6050: si lo inclinas a un lado, la nave pasa a ese lado (izquierda o derecha). |
+| 3 | **Inclinacion** | Lee el sensor giroscopio: al inclinarlo en el eje X, la nave se mueve hacia ese lado (izquierda o derecha). |
 | 4 | **Pantalla** | Maneja la LCD 2004: vidas, nivel, puntos y las animaciones de inicio, level up y game over. |
 | 5 | **MotorAudio** | Reproduce los 14 sonidos por el canal izquierdo, derecho o ambos, sin bloquear el juego. En el físico los envía por I2S al Pico Audio Pack. |
 | 6 | **Nave** | Guarda el sector, las vidas (máx. 3) y los puntos, y da una vida extra cada 100 puntos. |
@@ -76,21 +76,21 @@ Los números entre paréntesis son los pines físicos de la Pico (1 a 40).
 | Botón disparo | Terminal 1 / terminal 2 | GP2 (pin 4) / GND |
 | Botón inicio | Terminal 1 / terminal 2 | GP3 (pin 5) / GND |
 | Interruptor | Dos terminales | En serie con el positivo, entre TP4056 y boost |
-| (Para el interruptor) | Cable fijo | GP4 (pin 6) a GND |
-| Potenciómetro | Extremo 1 / centro / extremo 3 | 3V3 (pin 36) / GP26 (pin 31) / AGND (pin 33) |
-| MPU6050 | VCC / GND | 3V3 (pin 36) / GND |
-| MPU6050 | SDA / SCL | GP6 (pin 9) / GP7 (pin 10) |
-| Convertidor de nivel | LV / HV / GND | 3V3 / 5 V del boost / GND |
-| Convertidor de nivel | LV1 / LV2 | GP6 / GP7 |
+| (Para el interruptor dip switch) | Cable fijo | GP4 (pin 6) a GND |
+| Potenciómetro (volumen) | Extremo 1 / centro / extremo 3 | 3V3 (pin 36) / GP26 (pin 31) / AGND (pin 33) |
+| sensor giroscopio | VCC / GND | 3V3 (pin 36) / GND |
+| sensor giroscopio | SDA / SCL | GP6 (pin 9) / GP7 (pin 10) |
+| Convertidor (traductor) protege a la pico de los 5v de la pantalla | LV / HV / GND | 3V3 / 5 V del boost / GND |
+| Convertidor (traductor) | LV1 / LV2 | GP6 / GP7 |
 | LCD 2004 | VCC / GND | 5 V del boost / GND |
 | LCD 2004 | SDA / SCL | HV1 / HV2 del convertidor |
-| Pico Audio Pack | Datos / BCK / LRCK | GP9 (pin 12) / GP10 (pin 14) / GP11 (pin 15) |
+| Pico Audio Pack (salida y amplificador audio estéreo) | Datos / BCK / LRCK | GP9 (pin 12) / GP10 (pin 14) / GP11 (pin 15) |
 | Pico Audio Pack | Mute | GP22 (pin 29), por verificar |
 | Pico Audio Pack | 3V3 / GND | 3V3 (pin 36) / GND, alimentación por verificar |
 | Audífonos | Jack 3,5 mm | Salida de audífonos del Audio Pack (interruptor de ganancia en bajo) |
-| LiPo | + / − | B+ / B− del TP4056 |
-| TP4056 | OUT+ / OUT− | Interruptor, luego boost (IN+ / IN−) |
-| Boost | OUT 5 V | VSYS (pin 39), LCD y convertidor de nivel |
+| Bateria LiPo | + / − | B+ / B− del TP4056 |
+| Módulo cargador | OUT+ / OUT− | Interruptor, luego boost (IN+ / IN−) |
+| Boost (sube el 3,7 V de la Lipo a 5V para LCD | OUT 5 V | VSYS (pin 39), LCD y convertidor de nivel |
 | Boost | GND | GND común de todo |
 
 ---
@@ -103,7 +103,7 @@ Los números entre paréntesis son los pines físicos de la Pico (1 a 40).
 
 ## Esquemáticos
 
-blabla
+![esquemático en kicad de proyecto 03](./imagenes/esquematico-proyecto03.jpg)
 
 ---
 
