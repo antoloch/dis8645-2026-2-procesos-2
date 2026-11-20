@@ -159,7 +159,7 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 | 10 | Slider | 3 | $1.973 | https://es.aliexpress.com/item/1005010380785910.html | |
 | 11 | 74HC595 | 2 | $4.000 | https://afel.cl/products/pack-5-chips-74hc595-shift-registers | |
 | 12 | 74HC4051 | 1 | $2.300 | https://www.mechatronicstore.cl/multiplexor-analogico-cjmcu-4051-8-canales/ | |
-| 13 | Lector SD Card | 1 | $2.500 | https://afel.cl/products/lector-micro-sd | |
+| 13 | Lector SD Card | 1 | $1.000 | https://afel.cl/products/modulo-lector-tarjetas-sd | |
 | 14 | Parlante | 1 | $3.000 | https://afel.cl/products/mini-parlante-altavoz-de-3w | |
 | 15 | PCB perforada | 4 | $3.153 | https://es.aliexpress.com/item/1005012773468288.html| |
 | 16 | Pin Header 1 x20 | 2 | $500 | https://afel.cl/products/regleta-macho-hembra-pin-header | |
