@@ -220,3 +220,15 @@ flowchart TB
 ## encargos
 
 ## lectura
+
+Se plantea que el arte moderno buscó romper con las formas tradicionales de creación y cuestionar la sociedad y que muchas de estas expresiones terminaron siendo absorbidas por el sistema capitalista y transformadas en productos de consumo.
+
+Explica distintas formas de superar los límites del arte: mientras el dadaísmo buscaba eliminarlo, el surrealismo intentaba integrarlo a la vida cotidiana.
+
+También critica cómo el capitalismo convierte la cultura y el conocimiento en mercancías, haciendo que incluso las propuestas más revolucionarias pierdan su capacidad de cuestionar el sistema.
+
+Me parece interesante cómo las propuestas que nacen para cuestionar el sistema pueden terminar convirtiéndose en parte de él. Esto me hace pensar en cómo muchas tendencias artísticas y visuales pierden su sentido inicial cuando son absorbidas por el consumo y el mercado.
+
+1. "El dadaísmo quiso suprimir el arte sin realizarlo; el surrealismo quiso realizar el arte sin suprimirlo"
+
+2. "La cultura es la esfera general del conocimiento y de las representaciones de lo vivido"
