@@ -127,7 +127,12 @@ La máquina permite escuchar, silenciar y superponer los sonidos de los distinto
 
 ### Selección de especies, justificación, características y audio
 
-A partir de este prompt, le pedimos pedí a Gemini y Claude que nos diera un listado de posibles especies y fuimos verificando según qué audio encontrábamos disponibles.
+A partir del siguiente prompt, le pedimos pedí a Gemini y Claude que nos diera un listado de posibles especies, y así fuimos seleccionando según qué audio encontrábamos disponible en los recursos sonoros de biodiversidad que seleccionamos.
+
+- Museo Bioacústico (https://museobioacustico.org)
+- iNaturalist (https://www.inaturalist.org)
+- ONG Ranita de Darwin – Cantos de Anfibios (https://www.ranitadedarwin.org/cantos)
+- Xeno-canto (xeno-canto.org)
 
 > “Necesito seleccionar especies de fauna nativa o endémica de Chile que estén clasificadas en estado de amenaza (En Peligro Crítico, En Peligro o Vulnerable según el MMA de Chile) para un proyecto de divulgación sobre biodiversidad. Dame 5 opciones de especies para cada cruce entre las siguientes categorías y zonas del país:
 >
@@ -272,6 +277,19 @@ flowchart TB
 
 ### BOM
 
+| Componente | Especificación | Cantidad | Precio (CLP) | Dónde comprar |
+|---|---|---:|---:|---|
+| Multiplexor I2C | Módulo Multiplexor CD74HC4067 (16 canales) | 1 | $2.000 | [Afel](https://afel.cl/products/modulo-multiplexor-cd74hc4067?_pos=1&_sid=10698f577&_ss=r) |
+| Parlante | 8 Ω – 1 W | 1 | $3.290 | [Mechatronic Store](https://www.mechatronicstore.cl/altavoz-8-ohm-1w/) |
+| Amplificador | MAX98357A – I2S Class-D Mono Amplifier | 1 | $1.114 | [AliExpress](https://es.aliexpress.com/item/1005007629020891.html?invitationCode=NmNJM3JLWWZZS1FMUFFMQmtCMGZzc1ViQXIxOG1yRmxHY3ZrcTc2TzFsU2VQemFTZUJrNWVWT0s1MU1hdTAyWg&srcSns=sns_Copy&spreadType=socialShare&social_params=22243417448&bizType=ProductDetail&spreadCode=NmNJM3JLWWZZS1FMUFFMQmtCMGZzc1ViQXIxOG1yRmxHY3ZrcTc2TzFsU2VQemFTZUJrNWVWT0s1MU1hdTAyWg&aff_fcid=b2fb14cd2e1c4e359da75f150cac31ce-1795048981407-09999-_mOqQo0f&tt=MG&aff_fsk=_mOqQo0f&aff_platform=default&sk=_mOqQo0f&aff_trace_key=b2fb14cd2e1c4e359da75f150cac31ce-1795048981407-09999-_mOqQo0f&shareId=22243417448&businessType=ProductDetail&platform=AE&terminal_id=a4e6610a1d834a91a02e63493c836ef4&afSmartRedirect=y) |
+| Potenciómetro | B100K – 100 kΩ | 8 | $500 | [Afel](https://afel.cl/products/potenciometro-100k-ohm?_pos=7&_sid=9e0d7b4a3&_ss=r) |
+| Cable Dupont | Emisor-receptor (pack 20 u.) | 1 pack | $1.000 | [Afel](https://afel.cl/products/pack-20-cables-de-conexion-macho-hembra?_pos=10&_sid=aaf1449e0&_ss=r) |
+| Cable Dupont | Receptor-receptor (pack 20 u.) | 1 pack | $1.000 | [Afel](https://afel.cl/products/pack-20-cables-de-conexion-hembra-hembra?_pos=9&_sid=aaf1449e0&_ss=r) |
+| Cable Dupont | Emisor-emisor (pack 20 u.) | 1 pack | $1.000 | [Afel](https://afel.cl/products/pack-20-cables-de-conexion-macho-macho?_pos=8&_sid=3f3b26861&_ss=r) |
+| Botón | Táctil 12 × 12 × 7,3 mm | 1 | $100 | [Afel](https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=699a10ff2&_ss=r) |
+| Módulo micro SD | Lector de tarjeta micro SD | 1 | $2.500 | [Afel](https://afel.cl/products/lector-micro-sd?variant=45125228363928&country=CL&currency=CLP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&utm_term=&utm_campaign=@+Smart+Shopping&utm_source=adwords&utm_medium=ppc&hsa_acc=1808722794&hsa_cam=18405560573&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=17613659948&gbraid=0AAAAADBMsFTN_gh9R6uq0a2pF9xf_kgnV&gclid=Cj0KCQiAtvXXBhC2ARIsAJc8SUSguyj6IVfNbUJedOtDKN_4iNUrlwUZ9uejr6jYonCG1e7MDeGT9PIaAifsEALw_wcB) |
+| Raspberry Pi Pico 2 W | Microcontrolador RP2350 – Wi-Fi / Bluetooth | 1 | $16.990 | [Mechatronic Store](https://www.mechatronicstore.cl/raspberry-pi-pico-2-w-raspberry-pi-rp2350-chip/?srsltid=AYCX9vLHVZO-tqr38lJI7R4GWZtZJnGg0Fjlj3rPMl8QFogm7r1N2Y4Z) |
+
 ### Pseudocódigo
 
 ```cpp
@@ -377,6 +395,11 @@ funcion revisarDensidad(categoria):
     posicion = leerPerillaDensidad(categoria)
     densidadActual[categoria] = convertirADensidad(posicion)    // de 0 a 100
 ```
+<details>
+<summary> Prompt pseudocódigo </summary>
+  
+> "Necesito un pseudocódigo en camelCase, solo con la lógica (sin pines, ni conexiones) para una maquina sonora. Esta tiene 4 categorías (mamíferos, aves, anfibios e insectos) con 3 especies cada una, y cada especie tiene un audio. Los controles son 4 perillas para elegir la especie de cada categoría, 4 perillas para definir la probabilidad de sonar de cada categoría de menos a más (0 a 100 %), 1 perilla de tempo que acelera o calma el pulso general y 1 botón de encendido y apagado. Al encenderlo suena un efecto que indica que la máquina está activa, y al apagarlo suena otro efecto y queda en reposo. La máquina funciona por pulsos generales, iguales para las 4 categorías, y en cada pulso cada categoría sortea un número al azar: si es menor que su probabilidad, suena la especie elegida; si la probabilidad es 0, la categoría permanece en silencio. Organiza el pseudocódigo en datos, programa principal, encendido y apagado, pulso general y controles, con comentarios breves en las partes importantes."
+</details>
 
 ### Wokwi
 El simulador se trabajó con IA para hacer pruebas de las conexiones que necesitabamos.
@@ -384,9 +407,9 @@ El simulador se trabajó con IA para hacer pruebas de las conexiones que necesit
 Prompt:
 > "Para este examen vamos a trabajar con C++. Necesito desarrollar un código de prueba para controlar 8 potenciómetros y un botón de encendido/apagado. Los primeros 4 potenciómetros serán para seleccionar especies. Cada uno tendrá 3 rangos de valores, correspondientes a Especie 01, Especie 02 y Especie 03, dependiendo de cuánto se gire. Los otros 4 potenciómetros controlarán el volumen de cada uno de los selectores, de forma independiente. Además, necesitamos un botón que permita encender y apagar todo el sistema, deteniendo la reproducción de los sonidos cuando esté apagado. La idea es probar primero esta lógica de funcionamiento en C++, utilizando sonidos de prueba y dejando el código preparado para integrar posteriormente los audios definitivos."
 
+![conexiones](./imagenes/conexiones.png)
+
 https://wokwi.com/projects/480943431055838209
-
-
 
 
 # Bibliografía
