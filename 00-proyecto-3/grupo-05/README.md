@@ -54,7 +54,7 @@ El instrumento es un mapa abstraído de Santiago de Chile hecho de cobre, con 4 
 
 1. **Encender.** Al mover el switch a ON, la máquina se prepara y enciende un LED verde si todo funciona bien. El instrumento queda en silencio.
 2. **Tocar.** La persona toca con el dedo un punto de una línea de cobre, o el punto República. El dedo actúa como conductor.
-3. **Detectar el punto.** Cada línea tiene detrás una *escalera de resistencias* (resistor ladder): varias resistencias iguales conectadas una tras otra. Funciona como una escalera cuyas escalas tienen números distintos. Cada punto de cobre está conectado a un peldaño diferente, y cuando alguien lo toca, la Raspberry Pi Pico 2 W lee ese número con una entrada analógica y sabe qué punto fue. Por ejemplo, el punto 1 entrega un valor bajo y el punto 5 uno alto. El punto República funciona igual, pero con su propia entrada.
+3. **Detectar el punto.** Cada línea tiene detrás una *escalera de resistencias* (resistor ladder): varias resistencias iguales conectadas una tras otra. Funciona como una escalera cuyas escalas tienen números distintos. Cada punto de cobre está conectado a un peldaño diferente, y cuando alguien lo toca, la Raspberry Pi Pico 2 W lee ese número con una entrada analógica y sabe qué punto fue. Por ejemplo, el punto 1 entrega un valor bajo y el punto 5 uno alto. 
 
 ![dibujo explicativo del resistor ladder](./imagenes/dibujo.jpeg)
 
