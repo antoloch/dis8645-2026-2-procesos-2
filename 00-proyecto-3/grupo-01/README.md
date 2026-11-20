@@ -19,22 +19,108 @@ Dentro del funcionamiento interno, este dispositivo es controlado por una Raspbe
 
 ### Interfaz
 
-![](./imagenes/estructura.png)
+El dispositivo presenta una interfaz organizada en tres zonas principales: reproducción, grabación y edición, dispuestas de izquierda a derecha para establecer un recorrido visual y facilitar la identificación de sus funciones.
 
-La interfaz se organiza en tres zonas principales: reproducción, grabación y edición. La zona de reproducción se ubica a la izquierda e incorpora una pantalla para visualizar los datos del sonido, un parlante y los botones Play y Stop. Se decide incorporar una perilla de volumen en el lateral, ya que, al enfrentarse a la máquina, el usuario encontrará esta primera sección. Por ello, se considera importante disponer de este control cerca del botón Play, facilitando el ajuste del volumen durante la reproducción.
+![](./imagenes/interfaz-coreografia.png)
 
-La zona de grabación se dispone al centro y contiene un micrófono y un botón para iniciar la captura de audio. Finalmente, la zona de edición se ubica a la derecha y reúne perillas deslizantes para modificar los efectos, acompañadas de indicadores luminosos de colores que permiten identificar visualmente sus rangos e intensidades. En el lateral de esta sección se incorpora otra perilla para ajustar el volumen del audio antes de guardarlo.
+| Zona | Elemento | Función |
+|---|---|---|
+| **Reproducción** | Parlante | Canal de salida por donde se reproduce el audio. |
+| | Pantalla | Visualiza la información de los audios almacenados. |
+| | Botón reproducción / pausa | Permite iniciar y pausar la reproducción de los audios registrados. |
+| | Perilla de volumen | Regula el volumen general de reproducción. |
+| **Grabación** | Micrófono | Medio de entrada por donde se captura el sonido. |
+| | Botón GRABAR | Activa la captura de sonido durante 10 segundos. |
+| | Pantalla | Muestra la cuenta regresiva de grabación. |
+| **Edición** | 9 botones de efectos | Permiten seleccionar los nueve efectos disponibles. |
+| | 3 perillas | Una por sección, permiten modificar los parámetros de los efectos seleccionados. |
+| | 9 luces LED | Indican el estado de cada efecto: disponible, en edición o aplicado. |
+| | Control de volumen | Regula el volumen específico del audio grabado. |
+| | Botón guardar | Almacena el audio modificado junto con los registros anteriores. |
 
-Con esta distribución se busca generar una lectura intuitiva de izquierda a derecha, como una guía de pasos que orienta al usuario a través de las distintas acciones: reproducir, grabar y editar. De esta manera, se diferencian las funciones, se facilita la lectura de los controles y se hace más intuitiva la interacción con el dispositivo.
+#### Coreografía
 
-### Posibilidades dentro del aspecto de audio
+##### 01. Encendido del dispositivo
 
-El tiempo máximo de grabación por cada audio es de 30 segundos.
+- Activar el interruptor tipo *switch* para iniciar el sistema. La pantalla muestra el nombre del proyecto como presentación inicial.
 
-Cada 10 segundos se da la orden de reproducir un audio.
+##### 02. Zona de reproducción
 
-Son 60 posibilidades donde podría iniciar un audio.
+- Al encender el dispositivo, la pantalla muestra la información de los registros sonoros almacenados, incluyendo la cantidad de audios y sus representaciones gráficas.
+- Presionar el botón de reproducción para escuchar los audios acumulados.
+- Presionar nuevamente el botón de reproducción para pausar o reanudar el sonido.
+- Girar la perilla de volumen para ajustar la intensidad sonora de la reproducción.
 
+##### 03. Zona de grabación
+
+- Presionar una vez el botón grabar para activar el micrófono e iniciar la captura de un nuevo sonido.
+- La pantalla muestra una cuenta regresiva de 10 segundos, durante los cuales el micrófono captura el sonido del entorno.
+- Al finalizar la cuenta regresiva, el registro queda almacenado temporalmente y disponible para su posterior edición.
+
+##### 04. zona de edición
+
+- Una vez finalizada la grabación, se habilitan los controles de edición para intervenir el nuevo audio.
+- Seleccionar uno de los nueve efectos disponibles, distribuidos en tres secciones.
+- Girar la perilla asociada a la sección correspondiente para modificar el parámetro del efecto y escuchar la transformación del sonido.
+- Repetir el procedimiento con otros efectos para acumular progresivamente modificaciones sobre el audio.
+- Ajustar el volumen específico del audio grabado mediante el control correspondiente.
+- Una vez finalizada la edición, presionar el botón GUARDAR para almacenar el audio intervenido.
+- El dispositivo incorpora el audio modificado junto con los audios anteriores, dejándolo disponible para su reproducción.
+
+#### Pantalla 
+
+##### **1. zona de reproducción**
+
+La pantalla presenta una visualización de píxeles luminosos que se van iluminando progresivamente a medida que se guardan nuevos audios, representando visualmente la acumulación de registros.
+
+En la parte superior se visualiza un contador numérico con la cantidad de audios guardados y la memoria disponible del dispositivo.
+
+##### **2. zona de grabación**
+
+Al iniciar la grabación, la pantalla muestra una cuenta regresiva de 10 a 0 segundos. En la parte superior, una barra de progreso disminuye progresivamente para indicar el tiempo restante de captura.
+
+Al finalizar la grabación, la pantalla vuelve a mostrar la visualización general de los audios acumulados.
+
+##### **3. zona de edición**
+
+Durante la edición, la pantalla mantiene visible la visualización de los píxeles correspondientes a los audios almacenados.
+
+Una vez finalizada la intervención y presionado el botón *guardar*, se incorpora una nueva agrupación de píxeles a la visualización general, actualizando el contador de audios acumulados.
+
+#### Audio 
+
+1. **Duración total**: el dispositivo cuenta con un ciclo de reproducción de 10 minutos, dividido en 60 segmentos de 10 segundos cada uno.
+
+2. **Ingreso del audio**: cada nuevo audio grabado tiene una duración de 10 segundos.
+
+3. **Distribución aleatoria**: al guardar un audio, el sistema le asigna aleatoriamente uno de los 60 segmentos disponibles. Esta distribución permite generar espacios vacíos entre los registros.
+
+4. **Superposición**: si un segmento ya contiene uno o más audios, el nuevo registro puede incorporarse al mismo espacio, reproduciéndose simultáneamente con los anteriores.
+
+5. **Espacios vacíos**: los segmentos que no contienen audios permanecen en silencio, generando pausas dentro de la composición sonora.
+
+6. **Reproducción**: el dispositivo recorre los 60 segmentos durante los 10 minutos, reproduciendo los audios según su distribución y respetando los espacios de silencio.
+
+7. **Loop**: al finalizar los 10 minutos, el ciclo vuelve a comenzar, conservando la distribución aleatoria de los audios almacenados.
+   
+#### Luces 
+
+1. **Distribución:** el dispositivo cuenta con nueve luces LED, distribuidas en tres secciones de tres luces cada una. Cada luz corresponde a uno de los nueve efectos disponibles y está asociada a un botón.
+
+2. **Estado inicial:** al encender el dispositivo, las nueve luces permanecen apagadas.
+
+3. **Activación de la zona:** al finalizar la grabación, las nueve luces se encienden progresivamente, aumentan su brillo y luego se apagan, indicando que la zona de edición está disponible.
+
+4. **Selección del efecto:** al presionar uno de los nueve botones, se activa la luz correspondiente y comienza a parpadear.
+
+5. **Modificación del efecto:** mientras la luz parpadea, se modifica el sonido mediante la perilla asociada a la sección.
+
+6. **Confirmación:** al presionar nuevamente el botón del efecto, la luz deja de parpadear y permanece encendida, indicando que la modificación fue aplicada.
+
+7. **Selección de otro efecto:** al seleccionar otro botón, su luz comienza a parpadear, mientras las luces de los efectos anteriores permanecen encendidas de forma fija.
+
+8. **Finalización:** al terminar la edición, las luces encendidas permiten identificar los efectos que fueron aplicados al audio.
+   
 <br>
 
 #### Modificadores de sonido

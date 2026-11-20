@@ -77,16 +77,65 @@ Soundlapse se organiza en tres líneas de investigación: detección de fauna, c
 
 ### Biodiversidad sonora de Chile
 
-Existen diversos recursos en Chile que recopilan archivo sonoros de especies:
+Existen diversos recursos en Chile que recopilan archivo sonoros de especies, los que utilizamos fueron los siguientes:
 
 - **Museo Bioacústico** (https://museobioacustico.org): corporación sin fines de lucro e interdisciplinaria dedicada a la investigación, educación y divulgación científica del patrimonio acústico natural de Chile, promoviendo la conservación de sus ecosistemas mediante el acceso abierto a registros y experiencias sonoras.
-- **Consejo ecológico de Molina: Paisaje Sonoro del Parque Nacional Radal Siete Tazas** (https://www.consejoecologicodemolina.cl/materiales/paisaje-sonoro): archivo sonoro desarrollado por una organización comunitaria de conservación ambiental (fundada en 1991), que recopila y pone a disposición grabaciones de la biodiversidad y paisajes acústicos característicos del bosque maulino en el Parque Nacional Radal Siete Tazas.
-- **Universo sonoro de las aves** (https://www.sonidosdeaves.cl): repositorio digital de divulgación que articula registros acústicos, fotografía y fichas descriptivas de aves presentes en Chile. Proyecto desarrollado por Felipe Otondo (dirección), Gabriel Morales (registros sonoros), Paula Marín (diseño de contenidos) y Carlos Knopel (desarrollo web).
+  
+- **iNaturalist** (https://www.inaturalist.org): plataforma global de ciencia ciudadana y red social de naturalistas dedicada al registro, identificación y mapeo colaborativo de la biodiversidad. Permite recopilar, geolocalizar y validar observaciones visuales y acústicas aportadas por usuarios e investigadores, generando datos abiertos para el estudio y conservación de especies en Chile y el mundo. (Iniciativa conjunta de la Academia de Ciencias de California y National Geographic Society). 
+
+- **ONG Ranita de Darwin – Cantos de Anfibios** (https://www.ranitadedarwin.org/cantos): archivo digital de divulgación científica y educación ambiental dedicado a la recopilación de vocalizaciones de anfibios nativos de Chile. Desarrollado por la organización sin fines de lucro Ranita de Darwin, el recurso pone a disposición registros sonoros abiertos acompañados de información ecológica para promover el conocimiento, la valoración y la conservación de los anfibios amenazados del país.
 
 Recursos internacionales:
 
 - **Xeno-canto** (xeno-canto.org): base de datos colaborativa de acceso abierto dedicada a vocalizaciones de aves a nivel mundial. Permite filtrar registros por país y especie (nativa o endémica), ofreciendo descarga de audios junto con metadatos de geolocalización, fecha, hora y tipo de licencia.
-- **Macaulay Library** (Cornell Lab of Ornithology) (https://www.macaulaylibrary.org): archivo científico multimedia de historia natural que preserva registros de audio, video y fotografía sobre el comportamiento de aves, anfibios, peces y mamíferos. Su misión es facilitar la recopilación y conservación de este material, promoviendo su uso en investigación científica, educación, conservación y artes.
+
+### Selección de especies, justificación, características y audio
+
+A partir de este prompt, le pedí a Gemini y Claude que me dieran un listado de posibles especies y fui verificando.
+> “Necesito seleccionar especies de fauna nativa o endémica de Chile que estén clasificadas en estado de amenaza (En Peligro Crítico, En Peligro o Vulnerable según el MMA de Chile) para un proyecto de divulgación sobre biodiversidad. Dame 5 opciones de especies para cada cruce entre las siguientes categorías y zonas del país:
+>
+> Mamíferos: Norte / Centro / Sur
+>
+> Aves: Norte / Centro / Sur
+> 
+> Anfibios: Norte / Centro / Sur
+> 
+> Insectos: Norte / Centro / Sur
+> 
+> Criterios de selección y formato: prioriza especies que emitan sonidos, cantos o vocalizaciones reconocibles (especialmente en aves, anfibios e insectos). Indica para cada especie: nombre común, nombre científico, origen (endémica o nativa), categoría de conservación exacta, una breve referencia de su hábitat, de su vocalización y cómo actúa como bio indicador."
+
+#### Mamíferos
+
+| Zona | Nombre común | Nombre científico | Origen | Estado MMA | Hábitat, vocalización, rol bioindicador | Audio |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Norte | Ballena Azul | *Balaenoptera musculus* | Nativa | CR | Aguas oceánicas y zonas de surgencia costera (Chañaral); emite pulsos de muy baja frecuencia (infrasonidos). Indica productividad marina (krill) y baja contaminación acústica submarina. | [Escuchar](https://museobioacustico.org/especie/83e7b118-57f7-4e1b-81a4-0e19717e31dc) |
+| Centro | Zorro culpeo | *Lycalopex culpaeus* | Nativa | VU (Zona Central) | Matorral y bosque esclerófilo; se comunica con aullidos y ladridos profundos. Indica equilibrio en las poblaciones de roedores nativos. | [Escuchar](https://xeno-canto.org/species/Lycalopex-culpaeus) |
+| Sur | Zorro chilote | *Lycalopex fulvipes* | Endémica | EN | Bosque húmedo del sur. Indica bosques conservados | [Escuchar](https://xeno-canto.org/species/Lycalopex-fulvipes) |
+
+#### Aves
+
+| Zona | Nombre común | Nombre científico | Origen | Estado MMA | Hábitat, vocalización, rol bioindicador | Audio |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Norte | Gaviotín chico | *Sternula lorata* | Nativa | EN | Playas arenosas y dunas costeras; emite llamadas estridentes y nasales en vuelo. Indica playas libres de tránsito vehicular, perros y perturbación humana. | [Escuchar](https://xeno-canto.org/species/Sternula-lorata) |
+| Centro | Hued-hued Castaño | *Pteroptochos castaneus* | Nativa | VU | Sotobosque húmedo y denso de bosques caducifolios y esclerófilos de transición de la Zona Centro-Sur (desde O'Higgins hasta el Biobío); emite un canto territorial profundo y resonante. Indica cobertura vegetal continua, quebradas húmedas con abundante hojarasca y baja fragmentación del bosque nativo. | [Escuchar](https://museobioacustico.org/especie/edc219c6-fa79-4b8f-8f5a-58077907969e) |
+| Sur | Fardela Blanca | *Ardenna creatopus* | Nativa | EN | Aguas pelágicas e islas (nidifica en Isla Mocha y Juan Fernández); emite llamadas nocturnas nasales en colonias. Indica productividad marina y ausencia de depredadores introducidos o contaminación lumínica en sus islas. | [Escuchar](https://museobioacustico.org/especie/3c863387-d180-4f8e-922b-ffcdb0a98d79) |
+
+
+#### Anfibios
+
+| Zona | Nombre común | Nombre científico | Origen | Estado MMA | Hábitat, vocalización, rol bioindicador | Audio |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Norte | Sapo de Atacama | *Rhinella atacamensis* | Endémica | VU | Oasis, aguadas y quebradas costeras (desde Antofagasta a Coquimbo); emite un trino grave y continuo. Indica calidad del agua y conservación de humedales en zonas áridas. | [Escuchar](https://soundcloud.com/anfibios-de-chile/rhinella-arunco) |
+| Centro | Sapito de cuatro ojos | *Pleurodema thaul* | Nativa | VU (poblaciones norte-centro) | Estero, charcos temporales y humedales desde Antofagasta hacia el sur; canto melódico y aflautado (*"pui-pui"*) fácil de hallar en archivos de audio. Indica disponibilidad de agua estacional y micro humedales sanos. | [Escuchar](https://xeno-canto.org/species/Pleurodema-thaul) |
+| Sur | Ranita de Darwin | *Rhinoderma darwinii* | Nativa | EN | Requiere bosques templados lluviosos maduros y de alta humedad, por lo que su presencia funciona como un "termómetro" biológico (especie centinela) que certifica la buena salud y madurez del bosque nativo. | [Escuchar](https://www.ranitadedarwin.org/cantos) |
+
+#### Insectos
+
+| | Nombre común | Nombre científico | Origen | Estado MMA | Hábitat, vocalización, rol bioindicador | Audio |
+|---|---|---|---|---|---|---|
+| Norte | Moscardón o Abejorro nativo | *Bombus dahlbomii* | Nativa | EN | Llega hasta Coquimbo en su límite norte; zumbido grave y muy fácil de encontrar grabado. Indica estado de polinizadores nativos frente a especies invasoras (*B. terrestris*). | [Escuchar](https://www.youtube.com/watch?v=9bTr3HQUSP4)|
+| Centro | Madre de la culebra | *Acanthinodera cumingii* | Endémica | VU | Bosque esclerófilo y caducifolio; emite un chillido estridente por estridulación al ser perturbada y un zumbido pesado al volar. Indica bosques con árboles maduros y madera en descomposición. | [Escuchar](https://www.inaturalist.org/observations/66860221) |
+| Sur | Abeja Negra | *Centris nigerrima* | Nativa | VU | Bosques templados y matorrales (hasta Los Lagos); emite un zumbido grave al polinizar por vibración. Indica salud de la flora nativa, suelos sin compactar para nidificar y baja presión de especies invasoras. | [Escuchar](https://museobioacustico.org/especie/2c219b00-b16d-4a85-bee8-a56df40cd652) |
 
 
 ## bibliografía
