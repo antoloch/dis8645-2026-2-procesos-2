@@ -8,13 +8,36 @@
 
 ## sobre el proyecto
 
-Nuestra máquina es un instrumento que no es musical ¿o sí? sin la intervención de quien la usa no produce nada, pero lo que resulta sea música o ruido depende de quien lo escucha. Nuestro proyecto recorre 3 etapas de interacción: captura, edición y reproducción del sonido. En la fase de captura, se incorpora un botón y un micrófono el cuál está articulado para que la persona pueda grabar su voz, disponiendo de un máximo de 30 segundos por grabación.
+El proyecto consiste en el diseño de un dispositivo sonoro interactivo que permite capturar sonidos del entorno, buscando que la voz sea uno de sus principales registros, para transformarlos mediante distintos efectos y modulaciones. Cada grabación puede ser intervenida y almacenada de forma aleatoria, generando una superposición de capturas. De esta manera, cada nuevo registro se incorpora a los anteriores, transformando progresivamente el sonido bajo una lógica de acumulación y edición irreversible.
 
-En la etapa de edición, cada grabación utiliza una lógica de edición irreversible. El dispositivo tiene una sección física de edición con efectos y modulaciones, controlables con deslizadores, perillas y botones. Al terminar una grabación, esta queda repitiéndose en bucle disponible para ser editada y solo a esta se le podrán aplicar los efectos. Una vez que ya se hayan hecho los cambios y almacenado a la mezcla de sonidos, ya no se podrán realizar más modificaciones.
+A través de este proceso, el dispositivo explora cómo un sonido puede transformar sus características originales hasta volverse irreconocible, dando origen a nuevas composiciones, texturas sonoras o ruidos. La experiencia depende de la participación del usuario, quien interviene en la transformación de los registros y descubre cómo estos cambios modifican su percepción e interpretación. Así, el proyecto busca indagar en cómo un sonido puede cambiar su significado y qué recuerdos o sensaciones puede evocar, incluso cuando su origen deja de ser identificable.
 
-En la etapa de reproducción las grabaciones se acumulan en una mezcla de unos diez minutos, dividida en 60 puntos de inicio, uno cada 10 segundos. Cada nueva grabación se ubica en uno de esos puntos y como puede durar hasta 30 segundos, se superpone con las que suenan cerca de ella. La lógica irreversible que se incorpora para cada audio individual, también aplica para la mezcla de sonidos, de esta manera solo se puede reproducir desde el principio o detener por completo: no se puede pausar ni avanzar a un punto específico. Tampoco se puede borrar. Una vez que los 60 puntos de inicio hayan sido totalmente ocupados, la máquina ya no permite grabar más, solo reproducir la mezcla final. El sonido sale por un altavoz con una perilla de volumen, y una pantalla muestra una abstracción gráfica de cuán saturada está la mezcla.
+#### ¿Qué es el sonido, la música y el ruido?
 
-Dentro del funcionamiento interno, este dispositivo es controlado por una Raspberry Pi Pico 2 W, la cual se encarga de gestionar las entradas y salidas de la interfaz física correspondientes a las conexiones con perillas, sliders, botones, leds, altavoz y pantalla, y también gestiona el procesamiento del sonido y su manipulación. Para asegurar un rendimiento continuo y evitar las limitaciones de memoria de la Raspi al trabajar con audios muy largos o con muchas capas, el sistema integra un módulo de tarjeta SD, que permite almacenar y reproducir el conjunto de sonidos grabados de manera fluida.
+Para desarrollar esta investigación, es necesario considerar qué entendemos por sonido, música y ruido, y cómo estos conceptos se relacionan entre sí. A partir de los textos Nunca vi un sonido, de R. Murray Schafer, y El sonido, la música y el ruido, de Federico Miyara, podemos abordar el sonido desde su relación con el entorno, la comunicación y la percepción.
+
+##### R. Murray Schafer – Nunca vi un sonido
+
+Schafer plantea que el sonido forma parte de toda nuestra experiencia del mundo. Cada sonido es único, ocurre en un momento determinado y desaparece, ya que no puede repetirse de manera exactamente idéntica. También destaca que el sonido nos permite reconocer nuestro entorno, incluso aquello que permanece fuera de nuestro campo visual.
+
+##### Federico Miyara – El sonido, la música y el ruido
+
+Miyara plantea que el sonido hace posible el lenguaje formal o simbólico y, por lo tanto, la comunicación entre los seres humanos. Además, permite adquirir información contextual o ambiental sobre el medio en el que nos encontramos.
+
+El autor también plantea que la música es una forma de hacer arte con el sonido. Para comprender esta relación, propone tres componentes generales del arte: estético, semántico y evocativo.
+
+Federico Miyara plantea que el ruido es un sonido no deseado o que interfiere con alguna actividad. Su percepción depende de quien lo escucha y del contexto en que se presenta. Para explicar esta idea, propone una situación en la que dos personas conversan mientras, al fondo, otras dos mantienen una conversación. Es probable que cada grupo perciba la conversación del otro como ruido, ya que interfiere con su propia comunicación. De esta manera, un mismo sonido puede ser información para quien lo produce o escucha intencionalmente, y ruido para quien lo percibe como una interferencia.
+
+##### Componente semántico
+
+Se relaciona con el significado del sonido y su capacidad de comunicar. Una obra puede transmitir ideas o representar algo, aunque su interpretación puede ser ambigua y variar entre quienes la escuchan.
+
+Desde esta perspectiva, surge una interrogante: **¿cuándo un sonido deja de representar aquello que lo originó y comienza a significar algo diferente?**
+
+A partir de estas ideas, comprendemos que el significado de un sonido está relacionado con su origen, pero también con la forma en que se transforma y es percibido. Una grabación puede comenzar siendo reconocible y estar asociada a una voz, un movimiento, el silencio o el ambiente; sin embargo, a medida que se modifica y se acumula con otros registros, puede perder las características que permiten identificar su procedencia y adquirir nuevos significados.
+
+Desde esta perspectiva, entendemos el dispositivo como un medio de exploración en el que cada persona construye su propia interpretación a partir de las transformaciones y el nivel de acumulación alcanzado. Así, un sonido puede dejar de representar aquello que lo originó y comenzar a percibirse como música, ruido, una textura o una nueva composición sonora.
+
 
 ### Interfaz
 
@@ -148,6 +171,22 @@ Una vez finalizada la intervención y presionado el botón *guardar*, se incorpo
 ![](./imagenes/dis8645-2026-2-esq.png)
 
 ![](./imagenes/dis8645-2026-2.png)
+
+### Proceso
+
+|   |   |   |   |
+| --- | --- | --- | --- |
+| <img src="./imagenes/drive/00.jpg" alt="00" width="100%"> | <img src="./imagenes/drive/01.jpg" alt="01" width="100%"> | <img src="./imagenes/drive/02.jpg" alt="02" width="100%"> | <img src="./imagenes/drive/03.jpg" alt="03" width="100%"> |
+| <img src="./imagenes/drive/04.jpg" alt="04" width="100%"> | <img src="./imagenes/drive/05.jpg" alt="05" width="100%"> | <img src="./imagenes/drive/06.jpg" alt="06" width="100%"> | <img src="./imagenes/drive/07.jpg" alt="07" width="100%"> |
+| <img src="./imagenes/drive/08.jpg" alt="08" width="100%"> | <img src="./imagenes/drive/09.jpg" alt="09" width="100%"> | <img src="./imagenes/drive/10.jpg" alt="10" width="100%"> | <img src="./imagenes/drive/11.jpg" alt="11" width="100%"> |
+| <img src="./imagenes/drive/12.jpg" alt="12" width="100%"> | <img src="./imagenes/drive/13.jpg" alt="13" width="100%"> | <img src="./imagenes/drive/14.jpg" alt="14" width="100%"> | <img src="./imagenes/drive/15.jpg" alt="15" width="100%"> |
+| <img src="./imagenes/drive/16.jpg" alt="16" width="100%"> | <img src="./imagenes/drive/17.jpg" alt="17" width="100%"> | <img src="./imagenes/drive/18.jpg" alt="18" width="100%"> | <img src="./imagenes/drive/19.jpg" alt="19" width="100%"> |
+| <img src="./imagenes/drive/20.jpg" alt="20" width="100%"> | <img src="./imagenes/drive/21.jpg" alt="21" width="100%"> | <img src="./imagenes/drive/22.jpg" alt="22" width="100%"> | <img src="./imagenes/drive/23.jpg" alt="23" width="100%"> |
+| <img src="./imagenes/drive/24.jpg" alt="24" width="100%"> | <img src="./imagenes/drive/25.jpg" alt="25" width="100%"> | <img src="./imagenes/drive/26.jpg" alt="26" width="100%"> | <img src="./imagenes/drive/27.jpg" alt="27" width="100%"> |
+| <img src="./imagenes/drive/28.jpg" alt="28" width="100%"> | <img src="./imagenes/drive/29.jpg" alt="29" width="100%"> | <img src="./imagenes/drive/30.jpg" alt="30" width="100%"> | <img src="./imagenes/drive/31.jpg" alt="31" width="100%"> |
+| <img src="./imagenes/drive/32.jpg" alt="32" width="100%"> | <img src="./imagenes/drive/33.jpg" alt="33" width="100%"> | <img src="./imagenes/drive/34.jpg" alt="34" width="100%"> | <img src="./imagenes/drive/35.jpg" alt="35" width="100%"> |
+| <img src="./imagenes/drive/36.jpg" alt="36" width="100%"> | <img src="./imagenes/drive/37.jpg" alt="37" width="100%"> |   |   |
+
 
 ### BOM
 
@@ -377,6 +416,27 @@ Finalmente tenemos una versión donde vemos conexiones y funcionamientos, por la
 <br>
 
 ## Referentes
+
+### Brian Eno
+
+Brian Eno y Música Ambiental
+Los experimentos de Brian Eno con loops de cinta se remontan hasta el álbum colaborativo de 1973 (No Pussyfooting), con Robert Fripp, guitarrista de King Crimson. Para la grabación de (No Pussyfooting), Eno empleó un experimento temprano de bucle de cinta sonido-a-sonido, en el que conectaba la guitarra de Robert Fripp a dos gravadoras que luego se reintroducían entre sí.
+
+Las melodías de guitarra de Fripp se grababan y luego rebotaban entre las dos máquinas de cinta, creando largos y desvanecidos retardos que se acumulaban hasta crear un paisaje sonoro denso. La duración del retardo se controlaba por la distancia física entre las dos máquinas.
+
+https://www.youtube.com/watch?v=BLISCdzW4y8
+
+### The Disintegration Loops  William Basinski
+
+The Disintegration Loops es una obra del compositor estadounidense William Basinski publicada a partir de 2002.
+
+Basinski recuperó antiguas grabaciones musicales que había realizado en cintas magnéticas durante los años ochenta. Al intentar digitalizarlas en 2001, descubrió que las cintas se estaban deteriorando con cada reproducción: las partículas magnéticas se desprendían progresivamente, provocando pérdidas y alteraciones en el sonido.
+
+### The Avalanches
+
+El grupo recopila fragmentos de distintas fuentes sonoras: discos antiguos, voces, instrumentos, sonidos de animales y grabaciones ambientales. Luego selecciona pequeños fragmentos, los recorta, modifica y combina para construir nuevas composiciones.
+
+En Since I Left You se utilizaron miles de samples, creando una especie de collage sonoro donde grabaciones de distintas épocas y procedencias se relacionan para formar una nueva pieza musical.
 
 ### [Kaleidoloop](https://forum.critterandguitari.com/t/kaleidoloop-returns/10321)
 
