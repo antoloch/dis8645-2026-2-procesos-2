@@ -5,15 +5,15 @@
 
 *Integrantes*
 
-☆ Vanessa García / <https://github.com/vanessagarciaM>
+☆ Vanessa García / [*vanessagarciaM*](https://github.com/vanessagarciaM)
 
-☆ Isidora Pérez / <https://github.com/isipm08>
+☆ Isidora Pérez / [*isipm08*](https://github.com/isipm08)
 
-☆ Narely Riquelme / <https://github.com/Narelyriquelme>
+☆ Narely Riquelme / [*Narelyriquelme*](https://github.com/Narelyriquelme)
 
-☆ Angel Sabogal / <https://github.com/angel-udp>
+☆ Angel Sabogal / [*angel-udp*](https://github.com/angel-udp)
 
-# 9dB
+# *9dB*
 
 ## sobre el proyecto
 
@@ -103,7 +103,7 @@ FIN
 |Pack 20 Cables de Conexión Macho Hembra|x|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-hembra?_pos=1&_sid=bff72fae6&_ss=r>
 |Potenciómetro B100k|2|$500|<https://afel.cl/products/potenciometro-10k-ohm>|
 |Cable micro usb |1| $x|<https://www.masterg.cl/mgcamic/p?idsku=6>|
-|Almacenamiento (Tarjeta MicroSD) | 1 | $x | x |
+|Almacenamiento (Tarjeta MicroSD) | 1 | $x | [pendiente]|
 |Botones| 3 | $300 | <https://afel.cl/products/boton-tactil-tapa-12x12x7-3-interruptor?_pos=1&_sid=2ce280b32&_ss=r> |
 
 ## referentes
@@ -126,4 +126,12 @@ World Listening Project es una iniciativa que promueve la escucha activa y la va
 
 World Listening Project. (s.f). About us. https://www.worldlisteningproject.org/
 
-## bibliografía 
+**Rock-ola**
+Uno de nuestros referentes en el ámbito de carcasa serían las rockcolas, inspirarnos en su evolución en el tiempo y cómo estas se han mantenido a lo largo de los años, realizar una carcasa representativa para estas, colores, iluminación y botones. Donde sea intuitivo el toque de botones y perillas.
+
+Wikipedia contributors. (2026, 9 junio). Rock-Ola. Wikipedia. https://en.wikipedia.org/wiki/Rock-Ola
+
+**Máquina de arcade**
+Nuestro segundo referente en el ámbito de carcasa serían las máquinas de arcade, las cuales visualmente generan interactividad, esa sensación de presionar botones y descubrir lo que sucede, contar con perillas y botones reguladores dentro de nuestra interacción.
+
+colaboradores de Wikipedia. (2026b, septiembre 25). Máquina de arcade. Wikipedia, la Enciclopedia Libre. https://es.wikipedia.org/wiki/M%C3%A1quina_de_arcade
