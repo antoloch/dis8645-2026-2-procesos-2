@@ -2,6 +2,9 @@
 
 ![imagenes](./imagenes/lissajous.gif)
 
+<h1 align="center">Lenguaje que existe solo cuando nos encontramos</h1>
+
+
 ## Integrantes
 + ***Antonia Loch*** @antoloch
 + ***Anaís Marchausen*** @anaisbmg
@@ -141,7 +144,7 @@ se borrar la figura
 ```
 
 ## Esquemático 
-
+![imagenes](./imagenes/proyecto3esquematico.jpg)
 ## Uso de IA
 | Etapa | Prompt Utilizado | Avance / Resultado en el Proyecto |
 | :--- | :--- | :--- |
@@ -177,4 +180,65 @@ se borrar la figura
 
 ## Referentes 
 
++ Curvas de Lissajous
+
+**Link:** https://es.wikipedia.org/wiki/Curva_de_Lissajous 
+
+Las curvas de Lissajous fueron de los primeros referentes que encontramos porque nos ayudaron a entender cómo dos señales pueden relacionarse para crear una forma nueva. Nos interesó que la figura no depende de una sola frecuencia, sino de la interacción entre ambas. Esto se relaciona directamente con nuestro proyecto, ya que cada persona aporta una parte del resultado y la visualización solo aparece cuando ambas participan.
+
++ Láser + Espejo + Sonido
+
+**Link: https://youtu.be/C-V1uXeyGmg?si=dsXwtyofgX1jrGiM** 
+
+nos ayudó a visualizar sonido gracias a las vibraciones, explica cómo se puede y el porqué del movimiento en la proyección. Nos ayudó a entender sobre los tonos, frecuencias y hablar de la sobreposición de estas, para que nos entregan figuras ordenadas con un sentido y que la unión tienen un sentido con una exposición 
+
++ Lissajous Figures - Laser - Piano
+
+**Link:** https://youtu.be/yOYVDm3Ymuk?si=HR7XLBtlrlzw7FyZ  
+
+Este video nos ayudó a entender que diferentes notas e intervalos generan distintas figuras. Nos hizo pensar que podíamos crear nuestros propios sonidos y transformarlos en visualizaciones. 
+
++ Vector Synthesis
+
+**Link:** https://share.google/iI3kdTm036BZOQZqz 
+
+La síntesis vectorial nos interesó porque trabaja directamente con señales para crear imágenes. Más que el resultado visual, nos llamó la atención la idea de que sonido e imagen pueden nacer de un mismo proceso. 
+
++ OP-1 Field – Teenage Engineering 
+
+**Link:** https://www.musicchile.cl/sintetizador-op-1-field-teenage-engineering 
+
+Este sintetizador se transformó en un referente importante para el proyecto después de que Aaron nos lo mostrara. Nos pareció increíble porque reúne sonido, interacción física y experimentación en un mismo objeto. 
+
++ Critter & Guitari (Organelle y EYESY)
+
+**Link:** https://youtu.be/xIxchxVhVI0?si=ctZjDbj2sgfmBtbf 
+
+Nos interesó especialmente cómo trabajan la relación entre sonido e imagen en tiempo real. Ver cómo una señal sonora puede transformarse inmediatamente en una visualización nos ayudó a imaginar cómo se podría representar el encuentro entre dos personas a través de formas que cambian constantemente.
+
++ Dato Musical Instruments
+
+**Link:** https://dato.mu/ 
+
+Este referente fue importante porque pone el foco en las personas y no en la técnica. Sus instrumentos están pensados para jugar, experimentar y compartir con otros. Esa mirada se acerca mucho a lo que buscamos, ya que el sonido en nuestro proyecto funciona como una excusa para relacionarse, conversar y crear algo junto a otra persona.
+
++ Mordax DATA
+
+**Link:** https://foundsound.com.au/products/16538?variant=37615298511045 
+
+Mordax DATA nos sirvió para entender distintas formas de visualizar señales electrónicas y sonoras. Nos mostró que detrás de cada sonido existe una información que puede observarse gráficamente. Esto nos ayudó a pensar cómo convertir las señales generadas por los usuarios en figuras visuales que representen su interacción.
+
++ Norman McLaren – Directed (1951)
+
+**Link:** https://youtu.be/Y2ULu_sni-M?si=k7xZ3ZsbuNGYBudZ 
+
+Nos interesó la manera en que McLaren trabaja con elementos abstractos para generar ritmo, movimiento y comunicación. Nos hizo pensar que no siempre es necesario utilizar palabras para generar una experiencia significativa. En nuestro proyecto ocurre algo parecido: las personas comienzan relacionándose a través del sonido, la acción y la observación antes de llegar a una conversación.
+
 ## Bibliografia
++ Bresenham, J. E. (1965). Algorithm for computer control of a digital plotter. IBM Systems Journal, 4(1), 25–30. https://doi.org/10.1147/sj.41.0025
++ Helmholtz, H. L. F. (1895). On the sensations of tone as a physiological basis for the theory of music (A. J. Ellis, Trad.; 3.ª ed.). Longmans, Green, and Co.
++ Lissajous, J. A. (1857). Mémoire sur l'étude optique des mouvements vibratoires [Memoria sobre el estudio óptico de los movimientos vibratorios]. Annales de Chimie et de Physique, 51(3), 147–231.
++ Raspberry Pi Ltd. (2023). RP2040 Datasheet: A microcontroller by Raspberry Pi. https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf
++ Raspberry Pi Ltd. (2023). Raspberry Pi Pico C/C++ SDK: Libraries and tools for C/C++ development on RP2040 microcontrollers. https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf
++ Solomon Systech Limited. (2008). SSD1306: 128 x 64 Dot Matrix OLED/PLED Segment/Common Driver with Controller (Rev. 1.1). https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
++ Wokwi. (2024). Wokwi: Online Electronics Simulator (Raspberry Pi Pico & SSD1306 Documentation). https://docs.wokwi.com/
