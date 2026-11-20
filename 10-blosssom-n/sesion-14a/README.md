@@ -33,7 +33,8 @@ Los botones deberían ser grandes y distinguirse por su posición, símbolo y fo
 
 ## encargos
 
-## lectura
+
+
 ## lectura
 
 págs. 144–149
