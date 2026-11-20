@@ -126,4 +126,16 @@ World Listening Project es una iniciativa que promueve la escucha activa y la va
 
 World Listening Project. (s.f). About us. https://www.worldlisteningproject.org/
 
+**Adafruit Audio FX Sound Board**
+
+Adafruit Audio FX Sound Board es un dispositivo que permite reproducir sonidos mediante botones físicos. Incluye una función para cambiar al siguiente sonido con cada pulsación y volver al primero cuando termina la secuencia.
+
+Lady Ada. (2014, 23 de septiembre). Adafruit Audio FX Sound Board. Adafruit Learning System. https://learn.adafruit.com/adafruit-audio-fx-sound-board
+
+**Mixkit**
+
+Es una biblioteca de sonidos gratuitos, como pasos, puertas, campanas, ambientes escolares y lugares públicos. No requiere registro ni atribución para los efectos cubiertos por su licencia gratuita
+
+Mixkit. (s. f.). Free sound effects. https://mixkit.co/free-sound-effects/
+
 ## bibliografía 
