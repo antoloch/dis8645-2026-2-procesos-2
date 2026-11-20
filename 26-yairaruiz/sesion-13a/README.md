@@ -100,3 +100,14 @@ flowchart TD
 ## encargos
 
 ## lectura
+
+En este capítulo, Debord explica cómo la cultura y el arte se han separado de la vida social, convirtiéndose en objetos de contemplación y consumo dentro del capitalismo.
+- La cultura busca recuperar una unidad social que se ha perdido, pero para lograrlo debe superar su condición de esfera separada.
+- La innovación permite transformar la cultura, mientras que la tradición mantiene las formas del pasado.
+- El arte pierde su función como lenguaje común de la sociedad y se convierte en una producción individual y separada.
+- Debord plantea que es necesario recuperar la comunicación colectiva a través de experiencias compartidas y no solamente mediante obras artísticas.
+- El capitalismo transforma el arte del pasado en una colección de recuerdos que pueden ser exhibidos y consumidos, pero que han perdido su contexto original.
+
+- 1. “La cultura es el lugar donde se busca la unidad perdida”.
+
+- 2. “La afirmación independiente es el comienzo de su disolución”.
