@@ -297,15 +297,6 @@ Según esto, los personajes:
 | Adultez | 30–59 | Trabajo estable, familia, hijos |
 | Vejez | 60–80 | Jubilación, cuerpo, memoria |
 
-- Según esto, los personajes:
-  
-Giliano (1956) Tiene todas las etapas
-
-Ana María (1972) 6 etapas, llega a la adultez
-
-Nicole (1987) 6 etapas, llega a la adultez
-
-Sofía (2004) 5 etapas, llega  a la juventud        
 
 # Pseudocódigo
 
