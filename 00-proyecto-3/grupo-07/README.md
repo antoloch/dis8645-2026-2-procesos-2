@@ -338,11 +338,11 @@ En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LE
 
 ![Carcasa principal con módulo de grabación separado](./imagenes/carcasa1.png)
 
-*Carcasa principal con pantalla, tres botones físicos, parlante y módulo separado para la grabación.*
+*Carcasa principal con pantalla, tres botones físicos, parlante y módulo separado para la grabación. Modelo generado por IA (Chat GPT)*
 
 ![Carcasa con módulo de grabación desmontable integrado](./imagenes/carcasa2.png)
 
-*Carcasa con el módulo de grabación integrado en el costado derecho y una unión visible para poder desmontarlo.*
+*Carcasa con el módulo de grabación integrado en el costado derecho y una unión visible para poder desmontarlo. Modelo generado por IA (Chat GPT)*
 
 
 #### Bibliotecas, clases y créditos
