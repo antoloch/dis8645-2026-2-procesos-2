@@ -433,12 +433,6 @@ Este es un pedal de efectos hechos con componentes analógicos. El efecto que pr
 
 <br>
 
-## Bibliografía
-
-- https://youtube.com/shorts/euH0vpYYxks
-
-- https://electropeak.com/learn/74hc595-with-arduino-how-it-works-how-to-use-full-guide/
-
 ## Comentarios Claude
 
 ### v01
@@ -545,3 +539,19 @@ Estos valores no están definidos en el README. Son constantes al inicio de `mai
 6. En la interfaz, la zona de edición dice "3 perillas", pero son sliders.
 7. En la tabla de conexiones dice `CD74HP4067`; el nombre del integrado es CD74HC4067.
 8. El pseudocódigo todavía dice que al reproducir "se inhabilita el modo grabar mientras dure la reproducción", lo que contradice la decisión 11.
+
+## Bibliografía
+
+* Analogue Media Technologies. (2025, 18 de marzo). *C-20 black audio cassettes*. https://www.duplication.com/c-20-black-audio-cassettes.html
+* chrisk. (2024, 29 de febrero). *Kaleidoloop returns!* [Publicación en foro]. Critter & Guitari Forum. https://forum.critterandguitari.com/t/kaleidoloop-returns/10321
+* @creative-stuff. (s.f.). *Inexpensive preamp with mic (updated)* [Video]. YouTube. https://youtube.com/shorts/euH0vpYYxks
+* Hologram Electronics. (s.f.). *Microcosm: Granular looper & glitch pedal*. https://www.hologramelectronics.com/pages/microcosm
+* The King of Gear. (s.f.). *TKOG Mini Glitch stutter/looper*. Electric Mojo Guitars. https://electricmojoguitars.com/products/tkog-mini-glitch
+* Mad Valley. (s.f.). *Staggered light performance on the OP-1 and Hologram Microcosm* [Video]. YouTube. https://www.youtube.com/watch?v=8vhdkyEW5As
+* Miyara, F. (2001, marzo-abril). El sonido, la música y el ruido. *Tecnopolitan*. https://www.fceia.unr.edu.ar/acustica/biblio/sonmurui.pdf
+* Real Academia Española. (s.f.). Audio. En *Diccionario de la lengua española* (23.ª ed., versión 23.8.1 en línea). Recuperado el 20 de noviembre de 2026, de https://dle.rae.es/audio
+* Schafer, R. M. (s.f.). *Nunca vi un sonido* [Documento PDF]. https://estefaniasoundscape.wordpress.com/wp-content/uploads/2017/10/nunca-vi-un-sonido_r-murray-schafer.pdf
+* Shojaei, A. M. (2023, 15 de abril). *74HC595 with Arduino: How it works & how to use [Full guide]*. ElectroPeak. https://electropeak.com/learn/74hc595-with-arduino-how-it-works-how-to-use-full-guide/
+* Sonido. (s.f.). En *Wikipedia*. Recuperado el 20 de noviembre de 2026, de https://es.wikipedia.org/wiki/Sonido
+* Techinn. (s.f.). *Teenage Engineering sintetizador OP-1 field*. Tradeinn. https://www.tradeinn.com/techinn/es/teenage-engineering-sintetizador-op-1-field/143706579/p
+* Turbulent Audio. (s.f.). *NYQUIST bitcrusher*. NotPedals. https://notpedals.com/products/nyquist
