@@ -116,90 +116,66 @@ FIN
 
 ## referentes
 
-**Sound Diaries**
+### Sound Diaries
 
 Sound Diaries es un proyecto que se dedica a explorar y registrar los sonidos de la vida cotidiana, como objetos, acciones y espacios que muchas veces pasan desapercibidos. Busca reconocer el valor cultural y significativo de estos sonidos que pueden parecer insignificantes. Este referente nos inspira a explorar y grabar sonidos cotidianos para utilizarlos como material en la creación de nuestra propia colección sonora.
 
 Sound Diares. (s.f). About Sound Diares. <https://www.sound-diaries.co.uk/>
 
-**Freesound**
+### Freesound
 
 Freesound es una plataforma colaborativa que funciona como una biblioteca de sonidos, donde las personas pueden compartir, buscar y descargar grabaciones de distintas fuentes. Los audios se organizan mediante etiquetas y descripciones que facilitan su búsqueda. Este referente nos entrega una idea de cómo organizar nuestros sonidos por categorías y construir una biblioteca sonora interactiva que permita descubrir e identificar cada grabación.
 
 Freesound. (s.f). Frequently asked questions. <https://freesound.org/help/faq/#what-is-this-site-anyway>
 
-**World Listening Project**
+### World Listening Project
 
 World Listening Project es una iniciativa que promueve la escucha activa y la valoración del entorno sonoro. Busca generar conciencia sobre los sonidos que nos rodean y cómo estos forman parte de nuestra relación con los espacios y la vida cotidiana. Este referente nos inspira a invitar a las personas a descubrir sonidos ambientales y cotidianos, prestando atención a sus diferencias, variaciones y características a través de la escucha.
 
 World Listening Project. (s.f). About us. <https://www.worldlisteningproject.org/>
 
-**Adafruit Audio FX Sound Board**
+### Adafruit Audio FX Sound Board
 
 Adafruit Audio FX Sound Board es un dispositivo que permite reproducir sonidos mediante botones físicos. Incluye una función para cambiar al siguiente sonido con cada pulsación y volver al primero cuando termina la secuencia.
 
 Lady Ada. (2014, 23 de septiembre). Adafruit Audio FX Sound Board. Adafruit Learning System. <https://learn.adafruit.com/adafruit-audio-fx-sound-board>
 
-**Mixkit**
+### Mixkit
 
 Es una biblioteca de sonidos gratuitos, como pasos, puertas, campanas, ambientes escolares y lugares públicos. No requiere registro ni atribución para los efectos cubiertos por su licencia gratuita
 
 Mixkit. (s. f.). Free sound effects. <https://mixkit.co/free-sound-effects/>
 
-**Teenage Engineering PO-33 K.O!**
+### Teenage Engineering PO-33 K.O!
 
 El PO-33 K.O! es un micro sampler de bolsillo que asigna audios a botones individuales para dispararlos al instante e incorpora perillas para alterar su tono y volumen. Este referente nos sirve a nivel funcional como modelo de interacción directa, inspirándonos en la dinámica de presionar un botón para reproducir un sonido guardado y modificar su tono o volumen de forma inmediata.
 
 Teenage Engineering. (s.f.). PO-33 K.O! guide. <https://teenage.engineering/guides/po-33/en>
 
-**Roland AIRA Compact P-6**
+### Roland AIRA Compact P-6
 
 El Roland AIRA Compact P-6 es un sampler compacto diseñado para organizar muestras precargadas en pads táctiles y manipular su reproducción mediante controles giratorios. Este referente aporta a la lógica funcional de nuestro proyecto, mostrándonos cómo estructurar un sistema donde los sonidos almacenados se activan por botones y se transforman sonoramente al instante con perillas.
 
 Roland. (s.f.). P-6 Creative Sampler. <https://www.roland.com/es-es/products/p-6/>
 
-**Korg Volca Sample**
+### Korg Volca Sample
 
 El Korg Volca Sample es un reproductor de muestras compacto con memoria interna de sonidos precargados, botones para activar cada pista y perillas para controlar su tono y volumen. Este referente es clave porque pudimos tocarlo e interactuar con él en clases, comprobando en la práctica la respuesta táctil de un sistema que reproduce audios ya guardados sin necesidad de grabar en el momento.
 
 Korg. (s.f.). volca sample - Digital Sample Sequencer. <https://www.korg.com/cl/products/dj/volca_sample/index.php>
 
-**Adafruit Audio FX Sound Board**
+### Adafruit Audio FX Sound Board
 
 Adafruit Audio FX Sound Board es un dispositivo que permite reproducir sonidos mediante botones físicos. Incluye una función para cambiar al siguiente sonido con cada pulsación y volver al primero cuando termina la secuencia.
 
 Lady Ada. (2014, 23 de septiembre). Adafruit Audio FX Sound Board. Adafruit Learning System. <https://learn.adafruit.com/adafruit-audio-fx-sound-board>
 
-**Mixkit**
-
-Es una biblioteca de sonidos gratuitos, como pasos, puertas, campanas, ambientes escolares y lugares públicos. No requiere registro ni atribución para los efectos cubiertos por su licencia gratuita
-
-Mixkit. (s. f.). Free sound effects. <https://mixkit.co/free-sound-effects/>
-
-**Teenage Engineering PO-33 K.O!**
-
-El PO-33 K.O! es un micro sampler de bolsillo que asigna audios a botones individuales para dispararlos al instante e incorpora perillas para alterar su tono y volumen. Este referente nos sirve a nivel funcional como modelo de interacción directa, inspirándonos en la dinámica de presionar un botón para reproducir un sonido guardado y modificar su tono o volumen de forma inmediata.
-
-Teenage Engineering. (s.f.). PO-33 K.O! guide. <https://teenage.engineering/guides/po-33/en>
-
-**Roland AIRA Compact P-6**
-
-El Roland AIRA Compact P-6 es un sampler compacto diseñado para organizar muestras precargadas en pads táctiles y manipular su reproducción mediante controles giratorios. Este referente aporta a la lógica funcional de nuestro proyecto, mostrándonos cómo estructurar un sistema donde los sonidos almacenados se activan por botones y se transforman sonoramente al instante con perillas.
-
-Roland. (s.f.). P-6 Creative Sampler. <https://www.roland.com/es-es/products/p-6/>
-
-**Korg Volca Sample**
-
-El Korg Volca Sample es un reproductor de muestras compacto con memoria interna de sonidos precargados, botones para activar cada pista y perillas para controlar su tono y volumen. Este referente es clave porque pudimos tocarlo e interactuar con él en clases, comprobando en la práctica la respuesta táctil de un sistema que reproduce audios ya guardados sin necesidad de grabar en el momento.
-
-Korg. (s.f.). volca sample - Digital Sample Sequencer. <https://www.korg.com/cl/products/dj/volca_sample/index.php>
-
-**Rock-ola**
+### Rock-ola
 Uno de nuestros referentes en el ámbito de carcasa serían las rockcolas, inspirarnos en su evolución en el tiempo y cómo estas se han mantenido a lo largo de los años, realizar una carcasa representativa para estas, colores, iluminación y botones. Donde sea intuitivo el toque de botones y perillas.
 
 Wikipedia contributors. (2026, 9 junio). Rock-Ola. Wikipedia. <https://en.wikipedia.org/wiki/Rock-Ola>
 
-**Máquina de arcade**
+### Máquina de arcade
 Nuestro segundo referente en el ámbito de carcasa serían las máquinas de arcade, las cuales visualmente generan interactividad, esa sensación de presionar botones y descubrir lo que sucede, contar con perillas y botones reguladores dentro de nuestra interacción.
 
 colaboradores de Wikipedia. (2026b, septiembre 25). Máquina de arcade. Wikipedia, la Enciclopedia Libre. <https://es.wikipedia.org/wiki/M%C3%A1quina_de_arcade>

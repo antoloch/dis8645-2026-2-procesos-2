@@ -1,7 +1,16 @@
 # sesion-14a
 
 ## apuntes sesión
+- hay que hacer un ensayo sobre el tiempo y lo valioso de este
+- escrito en google docs pq es mas real lo que escribimos
 
+- avances:
+- se definieron los personajes
+- se arreglaron unos detalles de wokwi
+- estuve avanzando en el readme del grupo 06
+- con la belen empezamos a investigar referentes de proyecto (10)
+- un referente que me llamo mucho la atención es este "The Forty Part Motet (2001)"
+- 
 ## encargos
 
 ## lectura
