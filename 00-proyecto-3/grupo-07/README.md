@@ -11,13 +11,13 @@
 
 ### Dispositivo sonoro para acompañar a infancias
 
-El proyecto consiste en un dispositivo sonoro pensado para acompañar a infancias de 3 a 4 años durante momentos específicos del día, especialmente cuando están en su habitación, descansando o preparándose para dormir. En esta primera versión el dispositivo no será portátil, sino que permanecerá en un lugar fijo, como un velador.
+El proyecto consiste en un dispositivo sonoro pensado para acompañar a infancias de 3 a 4 años durante momentos específicos del día, especialmente cuando están en su habitación, descansando o preparándose para dormir. El dispositivo está pensado para permanecer en un lugar fijo, como un velador.
 
-El dispositivo tendrá tres botones físicos principales. Uno permitirá reproducir cuentos, otro permitirá reproducir música y el tercero permitirá escuchar un mensaje grabado por el cuidador. Al presionar uno de los botones se iniciará la reproducción de un audio de esa categoría. En cuentos y música, si se vuelve a presionar el mismo botón, se podrá cambiar al siguiente contenido disponible.
+El prototipo tiene tres botones físicos principales: uno para cuentos, otro para música y un tercero para el mensaje grabado por el cuidador. Al presionar uno de los botones en Wokwi, el sistema activa la categoría correspondiente. En cuentos y música, volver a presionar el mismo botón permite pasar al siguiente contenido en la simulación. Cuando se implemente el audio real, cada botón iniciará la reproducción de un audio de su categoría.
 
-La interfaz no dependerá solamente de que la infancia sepa leer, dado que los contenidos serán sonoros. Cada botón tendrá un personaje o icono asociado a su categoría, y la pantalla podrá reforzar esta relación mostrando qué acción se está realizando. De esta manera, el dispositivo también puede ayudar a relacionar un botón físico con un símbolo y con una respuesta sonora concreta.
+La interfaz no depende de que la infancia sepa leer: los botones permiten seleccionar una categoría sin navegar por un menú y la pantalla muestra la acción que se realiza mediante símbolos provisorios. Cada botón tendrá un personaje o ícono asociado a su categoría. La idea es mantener la misma relación entre el botón físico, el símbolo en pantalla y la respuesta sonora, que todavía está pendiente de implementar.
 
-En esta entrega probamos la interacción en Wokwi y dejamos la carcasa para más adelante. El profe nos sugirió dejar una sola categoría además del mensaje. Para el examen todavía tenemos que decidir si nos quedamos con cuentos y mensaje. Por ahora mantenemos las tres categorías en la simulación y seguimos con la selección de los audios pendiente.
+En esta entrega probamos la interacción en Wokwi y dejamos la carcasa para más adelante. La sugerencia del profe es dejar una sola categoría además del mensaje. Para el examen todavía tenemos que decidir si nos quedamos con cuentos y mensaje. Por ahora mantenemos las tres categorías en la simulación y la selección de los audios sigue pendiente.
 
 ### Investigación y contexto de uso
 
@@ -25,25 +25,25 @@ En esta entrega probamos la interacción en Wokwi y dejamos la carcasa para más
 
 Partimos de una pregunta: ¿qué puede tener a mano une infante de 3 a 4 años cuando se siente sole o extraña a alguien que le cuida? La Organización Mundial de la Salud (2025, p. 4) explica que la soledad puede aparecer cuando la conexión que una persona siente queda por debajo de la que desea o necesita. Imaginamos, por ejemplo, a une infante que juega en su pieza una tarde y echa de menos a su papá mientras su abuela le cuida.
 
-También revisamos el abandono infantil. En una guía de UNICEF Chile, Arriagada y Valdebenito (2011, p. 47) lo describen como una forma extrema de negligencia. La investigación sobre negligencia destaca la importancia de contar con personas que respondan de manera estable a las necesidades del infante (Center on the Developing Child at Harvard University, s.f.). Eso nos ayudó a precisar el punto de partida del dispositivo: ya existe un vínculo de cuidado y alguien cercano puede dejarle un mensaje para escuchar mientras juega, descansa o se prepara para dormir.
+También revisamos el abandono infantil. En una guía de UNICEF Chile, Arriagada y Valdebenito (2011, p. 47) lo describen como una forma extrema de negligencia. La investigación sobre negligencia destaca la importancia de contar con personas que respondan de manera estable a las necesidades del infante (Center on the Developing Child at Harvard University, s.f.). Eso nos ayuda a precisar el punto de partida del dispositivo: ya existe un vínculo de cuidado y la propuesta busca que alguien cercano pueda dejarle un mensaje para escuchar mientras juega, descansa o se prepara para dormir.
 
 #### Usuario objetivo y contexto de uso
 
-El público objetivo corresponde a infancias de 3 a 4 años que puedan necesitar acompañamiento durante momentos de soledad, miedo o incertidumbre dentro de su habitación.
+El público objetivo corresponde a infancias de 3 a 4 años que pueden necesitar acompañamiento durante momentos de soledad, miedo o incertidumbre dentro de su habitación.
 
-El dispositivo estará pensado para utilizarse en un contexto doméstico y fijo. El cuidador podrá dejarlo preparado en el velador y la infancia podrá escoger entre cuentos, música o el mensaje grabado sin tener que utilizar un celular ni navegar por un menú complejo.
+El dispositivo está pensado para utilizarse en un contexto doméstico y fijo. En el uso previsto, el cuidador lo deja preparado en el velador y la infancia escoge entre cuentos, música o el mensaje grabado sin tener que utilizar un celular ni navegar por un menú complejo.
 
-No se asumirá que la infancia sabe leer o que comprende una interfaz basada únicamente en texto. Por eso, las categorías se diferenciarán mediante personajes, iconos y respuestas de audio. La pantalla podrá mostrar información de apoyo, pero la acción principal deberá poder entenderse a partir de los botones físicos.
+No asumimos que la infancia sabe leer o que comprende una interfaz basada únicamente en texto. En la simulación, las categorías se distinguen por sus botones y por las señales visuales de la pantalla. Los personajes definitivos y las respuestas de audio todavía están pendientes. La pantalla sirve de apoyo, pero la acción principal se tiene que entender a partir de los botones físicos.
 
 Nos enfocamos en los 3 a 4 años porque en esa etapa ya aparecen habilidades que podemos aprovechar. A los 3 años, muches niñes pueden reconocer qué está pasando en una imagen. A los 4, muches pueden anticipar qué viene en un cuento que ya conocen o inventar situaciones con personajes durante el juego. Como estas habilidades se desarrollan a ritmos distintos, queremos que la interacción se pueda entender a través de señales que se puedan ver, tocar y escuchar.
 
 #### Por qué incluimos una voz familiar
 
-Pensamos en une infante que extraña a su papá o a otra persona que participa en su cuidado cotidiano. Queremos que pueda elegir escuchar un saludo que esa persona le dejó. Nuestra hipótesis es que volver a oír una voz conocida puede darle una sensación de compañía en ese momento.
+Pensamos en une infante que extraña a una persona que participa en su cuidado cotidiano. Queremos que pueda elegir escuchar un saludo que esa persona le dejó. Nuestra hipótesis es que volver a oír una voz conocida puede darle una sensación de compañía en ese momento.
 
 #### ¿Qué aporta escuchar una voz conocida?
 
-Sesame Workshop (s.f.) propone dejar en cada hogar un retrato de la persona que está en el otro, para que el infante pueda mirarlo cuando la extrañe. Encontramos un ejemplo parecido en sonido: en un caso de acogimiento familiar, el equipo de Easterseals Vermont (2024) grabó a una mamá leyendo un cuento y reprodujo su voz durante el trayecto a la guardería después de las visitas. Eso nos inspiró a darle un botón propio al mensaje, junto a los de cuentos y música. Así, cada infante puede elegir escuchar directamente un saludo, una frase o un pedacito de canción grabado por una persona de confianza.
+Sesame Workshop (s.f.) propone dejar en cada hogar un retrato de la persona que está en el otro, para que el infante pueda mirarlo cuando la extrañe. Encontramos un ejemplo parecido en sonido: Easterseals Vermont (2024) describe un caso de acogimiento familiar en el que su equipo graba a una mamá leyendo un cuento y reproduce su voz durante el trayecto a la guardería después de las visitas. Ese caso inspira la decisión de darle un botón propio al mensaje, junto a los de cuentos y música. Cuando el audio esté implementado, cada infante podrá elegir escuchar directamente un saludo, una frase o un pedacito de canción grabado por una persona de confianza.
 
 En nuestro proyecto queda por explorar si la grabación puede dar una sensación de compañía en un momento cotidiano de soledad. Con el primer prototipo queremos comprobar si es fácil dejar, encontrar y reproducir el mensaje.
 
@@ -149,6 +149,7 @@ En nuestro proyecto queda por explorar si la grabación puede dar una sensación
 
 *Panic, s.f. Fotografía de la consola Playdate.* [Panic](https://play.date/).
 
+
 ### Contenido y decisiones de diseño
 
 #### Contenido y alcance inicial
@@ -159,23 +160,24 @@ La biblioteca inicial estará compuesta por:
 - cuatro piezas de música infantil de una duración máxima de un minuto
 - un mensaje grabado por el cuidador de una duración máxima de un minuto
 
-Para los cuentos, vamos a fijarnos en si se puede seguir la historia solo escuchándola. Nos interesa que se entienda quién es el personaje, qué le pasa, qué hace y cómo termina la historia. Por eso, al revisar cada versión, nos vamos a preguntar si la narración cuenta lo necesario o si para entenderla habría que estar mirando el libro.
+Para seleccionar los cuentos, queremos evaluar si se puede seguir la historia solo escuchándola. Nos interesa que se entienda quién es el personaje, qué le pasa, qué hace y cómo termina la historia. Por eso, el criterio al revisar cada versión es si la narración cuenta lo necesario o si para entenderla hay que estar mirando el libro.
 
-Para la música, consideraremos qué se puede reconocer y seguir al escucharla. Si una canción tiene letra, nos vamos a fijar en las palabras del estribillo y en si la acción o la idea principal se entiende. Si es instrumental, nos interesa si hay un ritmo o una melodía que vuelva a aparecer. Una canción puede ser fácil de tararear aunque parte de la letra todavía sea difícil de comprender.
+Para seleccionar la música, consideraremos
++qué se puede reconocer y seguir al escucharla. Si una canción tiene letra, nos fijamos en las palabras del estribillo y en si la acción o la idea principal se entiende. Si es instrumental, nos interesa si hay un ritmo o una melodía que vuelve a aparecer. Una canción puede ser fácil de tararear aunque parte de la letra todavía sea difícil de comprender.
 
 Los cuentos se obtendrán desde bibliotecas de audiolibros o repositorios que permitan su uso gratuito y que tengan una licencia compatible con el proyecto. La música infantil deberá cumplir con la misma condición. Para cada audio se registrará el título, autor o intérprete, fuente y tipo de licencia.
 
-Se desecha la organización de los contenidos según la hora del día. En un principio se consideró separar los cuentos entre día y noche, pero decidimos no continuar con esa idea porque los tres cuentos podrán utilizarse en cualquier contexto y no queremos limitar su reproducción a un horario específico. La biblioteca se organizará por categorías y no por momento del día.
+Descartamos la organización de los contenidos según la hora del día. El planteamiento inicial separa los cuentos entre día y noche, pero la propuesta actual no limita su reproducción a un horario específico: los tres cuentos se podrán escuchar en cualquier momento. En la simulación, los contenidos se organizan por categoría y no por momento del día.
 
 #### Personajes, colores y forma de la máquina
 
-Queremos que cada categoría tenga su propio personaje o icono. Para el diseño distinguimos dos pasos: reconocer el dibujo y entender qué activa el botón. Alguien puede ver un libro y decir «libro», pero la asociación con escuchar un cuento se aprende cuando presiona el botón y empieza a sonar. Por eso queremos mantener la misma relación entre el dibujo del botón, lo que aparece en pantalla y el audio que se activa. Los personajes todavía están por definir.
+Queremos que cada categoría tenga su propio ícono. Para el diseño distinguimos dos pasos: reconocer el dibujo y entender qué activa el botón. Alguien puede ver un libro y decir «libro», pero la asociación con escuchar un cuento se aprende cuando presiona el botón y empieza a sonar. Por eso queremos mantener la misma relación entre el dibujo del botón, lo que aparece en pantalla y el audio que se activa. Los personajes todavía están por definir.
 
-Tomamos como referencia la pauta del World Wide Web Consortium (2025) de acompañar el color con otras señales visuales. Cada botón tendrá un símbolo propio y una posición fija, además de un color. Para elegir la paleta, revisaremos cuánto se distingue el dibujo sobre el botón y el botón sobre la carcasa, tanto con luz natural como con luz más baja.
+Tomamos como referencia la pauta del World Wide Web Consortium (2025) de acompañar el color con otras señales visuales. En el prototipo, cada botón ocupa una posición fija. Los botones de la versión física tendrán, además, un símbolo y un color propios. Para elegir la paleta, revisaremos cuánto se distingue el dibujo sobre el botón y el botón sobre la carcasa, tanto con luz natural como con luz más baja.
 
-En el primer planteamiento habíamos descrito los botones como grandes, rígidos y resistentes a golpes. La nota más reciente propone botones blandos al tacto y resistentes al uso. Queremos distinguirlos por forma, posición y símbolo, y considerar el relieve para reconocerlos al tacto. Queda por definir la materialidad, el tamaño, la separación y la fuerza necesaria para presionarlos sin mover la máquina.
+El primer planteamiento describe botones grandes, rígidos y resistentes a golpes. La nota más reciente propone botones blandos al tacto y resistentes al uso. Queremos distinguirlos por forma, posición y símbolo, y considerar el relieve para reconocerlos al tacto. Queda por definir la materialidad, el tamaño, la separación y la fuerza necesaria para presionarlos sin mover la máquina.
 
-Al elegir la paleta, vamos a mirar qué tan bien se distingue cada control de la carcasa y de los demás botones, sobre todo con la luz que puede haber en la habitación a la hora de dormir. La paleta también va a definir cómo se ve y se siente el objeto, y eso sigue siendo una decisión de diseño.
+Al elegir la paleta, revisaremos qué tan bien se distingue cada control de la carcasa y de los demás botones, sobre todo con la luz que puede haber en la habitación a la hora de dormir. La paleta también definirá cómo se ve y se siente el objeto, y eso sigue siendo una decisión de diseño.
 
 La carcasa tiene que quedar estable en el velador y proteger la pantalla, el parlante, la tarjeta SD y las conexiones. Los botones estarán integrados a la carcasa. Queremos que los cables y las piezas pequeñas queden fuera del alcance de les niñes durante el uso cotidiano.
 
@@ -183,59 +185,61 @@ La carcasa tiene que quedar estable en el velador y proteger la pantalla, el par
 
 #### Funcionamiento principal
 
-El dispositivo permanecerá instalado en un lugar fijo y será utilizado principalmente por la infancia. Tendrá tres botones físicos asociados a cuentos, música y mensajes del cuidador.
+El dispositivo está pensado para permanecer en un lugar fijo y para que lo use principalmente la infancia. El prototipo de Wokwi tiene tres botones asociados a cuentos, música y mensajes del cuidador.
 
-Al presionar el botón de cuentos, se reproducirá uno de los tres cuentos disponibles. Una nueva presión sobre el mismo botón cambiará al siguiente cuento. Lo mismo ocurrirá con las piezas de música, que estarán organizadas en una categoría independiente.
+Al presionar el botón de cuentos, el programa selecciona uno de los tres cuentos en la simulación. Una nueva pulsación válida sobre el mismo botón cambia al siguiente. Lo mismo ocurre con las piezas de música, que están organizadas en una categoría independiente. La reproducción de audio real todavía no está implementada.
 
 Cada botón de cuentos, música y mensaje acepta una pulsación con el filtro de rebote de más de 50 ms y espera al menos 3 segundos desde esa pulsación aceptada para contar otra. Cada botón lleva su propio tiempo. Los toques dentro de la espera se ignoran, no quedan pendientes ni reinician los 3 segundos. Mantener el botón apretado cuenta una sola vez; para aceptar otra pulsación hay que soltar y volver a presionar después de la espera. El primer toque al encender está disponible sin esperar. No usamos doble clic ni pulsaciones largas para pausar o detener. El botón de grabación es otra instancia de la misma clase, con el filtro de rebote y sin la espera extra de 3 segundos.
 
-El tercer botón permite escuchar el único mensaje de la persona cuidadora. Si se vuelve a presionar mientras el mensaje suena, no hace nada: no lo reinicia, pausa ni deja una repetición pendiente. El mensaje continúa hasta terminar, salvo que se elija cuentos o música; en ese caso se interrumpe y cambia a la categoría elegida. Cuando termina, una nueva pulsación válida permite escucharlo otra vez desde el principio. Esto evita que los toques repetidos hagan escuchar solo el comienzo del mensaje. En la versión física, el mensaje queda en la tarjeta SD y solo se reemplaza cuando una grabación nueva se guarda correctamente. Si falla la grabación o el guardado, se conserva el anterior. No se borra después de un día ni por tiempo. En el primer código esto se representa mediante mensajes de simulación.
+El tercer botón activa la reproducción simulada del único mensaje de la persona cuidadora. Si se vuelve a presionar mientras el mensaje está activo, no hace nada: no lo reinicia, pausa ni deja una repetición pendiente. El mensaje sigue activo hasta terminar, salvo que se elija cuentos o música; en ese caso se interrumpe y cambia a la categoría elegida. Cuando termina, una nueva pulsación válida permite activarlo otra vez desde el principio. Esta lógica evita que los toques repetidos reinicien el mensaje una y otra vez. En la versión física, el mensaje quedará en la tarjeta SD y solo se reemplazará cuando una grabación nueva se guarde correctamente. Si falla la grabación o el guardado, se conservará el anterior. No se borrará después de un día ni por tiempo. En el primer código ejecutable, la grabación y el guardado se representan mediante mensajes de simulación.
 
-La pantalla acompañará la interacción mostrando la categoría seleccionada, el contenido que se está reproduciendo y estados como “grabando”, “mensaje guardado” o “error”. La navegación no dependerá de la pantalla, ya que los botones deberán ser comprensibles por sí mismos.
+La pantalla acompaña la interacción mostrando la categoría seleccionada y los estados implementados en la simulación. La indicación del contenido que efectivamente suena y los avisos de guardado o error asociados a un archivo real quedan pendientes. La navegación no depende de la pantalla: la selección se hace directamente con los botones físicos, que tienen que ser comprensibles por sí mismos.
 
 #### Sistema de grabación
 
-La grabación estará destinada al cuidador y no al uso cotidiano de la infancia. El sistema almacenará un solo mensaje a la vez y la función de grabación estará ubicada en un módulo separado del dispositivo principal. Este módulo incluirá el micrófono y el botón para comenzar y terminar la grabación, y se conectará mediante conectores JST.
+La grabación está destinada al cuidador y no al uso cotidiano de la infancia. El programa contempla un solo mensaje a la vez. En la versión física, la función de grabación estará ubicada en un módulo separado del dispositivo principal. Este módulo incluirá el micrófono y el botón para comenzar y terminar la grabación, y se conectará mediante conectores JST.
 
-La persona cuidadora mantiene presionado el botón para grabar y lo suelta para terminar, con un máximo de un minuto. El LED se enciende mientras graba y se apaga al terminar. Si llega al minuto, no empieza otra grabación hasta soltar y volver a presionar. En la versión física, solo se confirma «mensaje guardado» si el archivo se guarda bien; si falla, se muestra el error y se conserva el mensaje anterior. En el Wokwi actual no hay micrófono conectado: por ahora probamos el botón, el tiempo y el LED y representamos la grabación con mensajes, sin confirmar que se captura voz o se guarda un archivo real. Mientras se mantiene presionado el botón, la pantalla muestra «grabando...», el conteo de segundos transcurridos hasta 60 y las indicaciones «puedes grabar máximo 60 segundos» y «suelta el botón para guardar tu mensaje». El conteo usa el tiempo transcurrido de la raspi y se detiene al soltar o llegar al minuto. En el código actual de Wokwi, esta visualización ya está implementada como parte de la simulación. En Wokwi se identifica como simulación, sin confirmar captura de voz ni guardado real.
+En Wokwi, la persona cuidadora mantiene presionado el botón para iniciar la grabación simulada y lo suelta para terminar, con un máximo de un minuto. El LED se enciende durante la grabación simulada y se apaga al terminar. Si el conteo llega al minuto, no empieza otra grabación hasta soltar y volver a presionar. En la versión física, solo se confirmará «mensaje guardado» si el archivo se guarda bien; si falla, se mostrará el error y se conservará el mensaje anterior. En el Wokwi actual no hay micrófono conectado: por ahora probamos el botón, el tiempo y el LED y representamos la grabación con mensajes, sin capturar voz ni guardar un archivo real. Mientras se mantiene presionado el botón, la pantalla muestra «grabando…», el conteo de segundos transcurridos hasta 60 y las indicaciones «puedes grabar máximo 60 segundos» y «suelta el botón para guardar tu mensaje». El conteo usa el tiempo transcurrido de la raspi y se detiene al soltar o llegar al minuto. En el código actual de Wokwi, esta visualización ya está implementada como parte de la simulación y no confirma captura de voz ni guardado real.
 
 La separación física del módulo funcionará como una restricción para que la infancia no pueda iniciar una grabación ni eliminar accidentalmente el mensaje del cuidador.
 
 #### Revisión del módulo de grabación
 
-Como el dispositivo ya no será portátil, debemos revisar si el módulo desmontable sigue siendo la forma más cómoda para el cuidador. La persona que graba será más alta que la infancia y podría necesitar acercar el módulo a su posición sin mover todo el dispositivo del velador.
+Como el dispositivo ya no es portátil, debemos revisar si el módulo desmontable sigue siendo la forma más cómoda para el cuidador. La persona que graba es más alta que la infancia y puede necesitar acercar el módulo a su posición sin mover todo el dispositivo del velador.
 
-La conexión y la forma del módulo se resuelven al desarrollar la carcasa. En la versión física el sistema debe reconocer si el módulo está unido y permitir grabar solo cuando está conectado. Si se separa durante la grabación, debe cancelarla sin reemplazar el mensaje anterior. Esto sigue siendo un requisito, aunque en esta entrega no hacemos carcasa ni implementamos la detección física del módulo; se mantiene declarado en el código.
+La conexión y la forma del módulo se resolverán al desarrollar la carcasa. En la versión física el sistema deberá reconocer si el módulo está unido y permitir grabar solo cuando está conectado. Si se separa durante la grabación, deberá cancelarla sin reemplazar el mensaje anterior. Esto sigue siendo un requisito, aunque en esta entrega no hacemos carcasa ni implementamos la detección física del módulo; se mantiene declarado en el código.
 
 ### Proceso de código y pruebas
 
 #### Código 1 y 2: declaraciones
 
-El primer código fue muy preliminar. Ordenamos las entradas, salidas y estados que tendría el dispositivo, pero todavía no estaban definidos los pines ni había un programa ejecutable.
+El primer código es preliminar. Ordena las entradas, salidas y estados del dispositivo, pero todavía no define los pines ni contiene un programa ejecutable.
 
-En el segundo código tomamos decisiones más concretas: tres cuentos de hasta cinco minutos, cuatro piezas de música de hasta un minuto y un mensaje de la persona cuidadora de hasta un minuto. También definimos que cada categoría tendría su propia posición, que el mensaje se reemplazaría solo si una nueva grabación se guardaba correctamente y que los contenidos podrían escucharse a cualquier hora. Todavía quedaban por resolver los tiempos entre pulsaciones, los botones presionados al mismo tiempo y la forma de detener los audios.
+En el segundo código tomamos decisiones más concretas: tres cuentos de hasta cinco minutos, cuatro piezas de música de hasta un minuto y un mensaje de la persona cuidadora de hasta un minuto. También definimos una posición propia para cada categoría, el reemplazo del mensaje solo si la grabación nueva se guarda correctamente y la posibilidad de escuchar los contenidos a cualquier hora. Esta versión todavía no resuelve los tiempos entre pulsaciones, los botones presionados al mismo tiempo ni la forma de detener los audios.
 
 #### Código 3: primera prueba ejecutable
 
-En esta versión empezamos a trabajar en C++ con el Pico SDK y Wokwi. El `main` coordinaba las categorías, los estados y la grabación simulada.
+En esta versión empezamos a trabajar en C++ con el Pico SDK y Wokwi. El `main` coordina las categorías, los estados y la grabación simulada.
 
-Usamos `BotonGrupo1` para los botones de cuentos, música, mensaje y grabación. Los botones de categorías tenían filtro de rebote y una espera de tres segundos entre pulsaciones aceptadas. El botón de grabación usaba la misma clase, pero sin esa espera adicional.
+Usamos `BotonGrupo1` para los botones de cuentos, música, mensaje y grabación. Los botones de categorías tienen filtro de rebote y una espera de tres segundos entre pulsaciones aceptadas. El botón de grabación usa la misma clase, pero sin esa espera adicional.
 
-También incorporamos `Lucecita` para controlar el LED. Al mantener presionado el botón de grabación, el LED se encendía y comenzaba un conteo de hasta un minuto. Al soltar el botón, la grabación terminaba. Todavía no se capturaba voz ni se guardaban archivos: todo se representaba mediante mensajes en el monitor serial.
+También incorporamos `Lucecita` para controlar el LED. Al mantener presionado el botón de grabación, el LED se enciende y comienza un conteo de hasta un minuto. Al soltar el botón, termina la grabación simulada. No se captura voz ni se guardan archivos: todo se representa mediante mensajes en el monitor serial.
 
 #### Código 4: pantalla y correcciones
 
-En la cuarta versión integramos la clase `Pantallita`, usando la biblioteca ILI934X. Así el `main` quedó encargado de coordinar y la pantalla de mostrar los estados.
+En la cuarta versión integramos la clase `Pantallita`, usando la biblioteca ILI934X. El `main` coordina las acciones y la pantalla muestra los estados.
 
-Agregamos una pantalla inicial, símbolos provisorios para cuentos y música, una carita cuando no existe mensaje, un corazón mientras el mensaje está activo y un contador durante la grabación.
+Agregamos una pantalla inicial, símbolos provisorios para cuentos y música, una carita cuando no existe mensaje, un corazón mientras el mensaje está activo y un contador durante la grabación simulada.
 
-También corregimos las pulsaciones simultáneas: si se presionan varios botones de categoría, ninguno ejecuta una acción. Además, el botón del mensaje no lo reinicia mientras está sonando, mientras que cuentos y música sí pueden interrumpirlo.
+También corregimos las pulsaciones simultáneas: si se presionan varios botones de categoría, ninguno ejecuta una acción. Además, el botón del mensaje no lo reinicia mientras está activo, mientras que cuentos y música sí pueden interrumpirlo.
 
 Finalmente agregamos un reposo por software después de tres minutos sin uso. La pantalla se apaga, pero la placa sigue encendida. La primera pulsación solo despierta el dispositivo y hay que volver a presionar para realizar una acción.
 
-La entrega compiló en Wokwi y pudimos probar la pantalla, los símbolos, el LED, el contador de grabación y el bloqueo de pulsaciones simultáneas. Todavía falta implementar el audio real, el micrófono, la tarjeta SD y la detección física del módulo de grabación.
+La entrega compila en Wokwi y permite probar la pantalla, los símbolos, el LED, el contador de grabación y el bloqueo de pulsaciones simultáneas. Todavía falta implementar el audio real, el micrófono, el almacenamiento en la tarjeta SD y la detección física del módulo de grabación.
 
 #### Diagrama de flujo de usuario
+
+El diagrama muestra el uso previsto del dispositivo. En Wokwi, los pasos que implican reproducir audio o grabar voz se representan mediante estados simulados.
 
 ```mermaid
 %%{ init : { "theme" : "redux-color", "flowchart" : { "curve" : "linear" }}}%%
@@ -308,7 +312,7 @@ Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
 | Componente | Cantidad | Precio unitario | Proveedor |
 | --- | ---: | ---: | --- |
 | Raspberry Pi Pico 2 W | 1 | $0 | Universidad |
-| Pantalla TFT LCD Touch 3,5" SPI 480x320 | 1 | $14.000 | Afel |
+| Pantalla TFT LCD Touch 3,5” SPI 480x320 | 1 | $14.000 | Afel |
 | Mini parlante 3 W / 4 Ω | 1 | $3.000 | Afel |
 | Amplificador PAM8403 2x3 W | 1 | $1.000 | Afel |
 | Botón táctil con tapa 12x12x7,3 mm | 5 | $100 | Afel |
@@ -321,14 +325,25 @@ Q--no -->R@{shape: dbl-circ, label: "Fin de la vuelta"}-->B;
 | Cable USB | 1 | 0 | PROPIO |
 | **Total sin la tarjeta microSD** | | **$32.490** | |
 
-- eliminamos la batería y el power bank porque el dispositivo ya no será portátil y permanecerá instalado en un lugar fijo.
-- La pantalla elegida incluye función touch, pero para el proyecto la vamos a usar como pantalla de visualización. De los 5 pulsadores del BOM, 4 son para uso y 1 es repuesto por precaución; de los 2 LED, 1 indica grabación y 1 es repuesto.
+- Eliminamos la batería y el power bank porque el dispositivo no es portátil y está pensado para permanecer instalado en un lugar fijo.
+- La pantalla elegida incluye función touch, pero en el proyecto funciona solo como pantalla de visualización. De los 5 pulsadores del BOM, 4 son para uso y 1 es repuesto por precaución; de los 2 LED, 1 indica grabación y 1 es repuesto.
 
 #### Circuito
 
 (<https://wokwi.com/projects/481143276644147201>)
 
 En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LED de grabación, el lector microSD, el modelo del PAM8403 y un buzzer que representa el parlante. El código usa GP2 para cuentos, GP3 para música, GP4 para mensaje, GP5 para grabar y GP6 para el LED. GP0 y GP1 se usan para el monitor serial UART0.
+
+#### Carcasa
+
+![Carcasa principal con módulo de grabación separado](./imagenes/carcasa1.png)
+
+*Carcasa principal con pantalla, tres botones físicos, parlante y módulo separado para la grabación. Modelo generado por IA (Chat GPT)*
+
+![Carcasa con módulo de grabación desmontable integrado](./imagenes/carcasa2.png)
+
+*Carcasa con el módulo de grabación integrado en el costado derecho y una unión visible para poder desmontarlo. Modelo generado por IA (Chat GPT)*
+
 
 #### Bibliotecas, clases y créditos
 
@@ -367,6 +382,6 @@ En el circuito se ven la Pico 2 W, la pantalla ILI9341, cuatro pulsadores, el LE
 - Panic. (2022). Playdate. <https://play.date/>
 - TheGreenEyl. (s.f.). Whispering table (Tischgeflüster). <https://www.thegreeneyl.com/whispering-table>
 - tonies. (s.f.). *Pokémon: Pikachu Tonie*. <https://us.tonies.com/products/pokemon-pikachu-tonie>
-- Upchurch, R. (2019). Instructions for how it works – BrandNewNoise by Richard Upchurch. BrandNewNoise. <https://www.brandnewnoise.com/blogs/news/instructions-for-how-it-works-brandnewnoise-by-richard-upchurch>
+- Upchurch, R. (2019). Instructions for how it works – BrandNewNoise by Richard Upchurch. BrandNewNoise. <https://www.brandnewnoise.com/blogs/news/instructions-for-how-it-works-by-richard-upchurch>
 - Yoto. (s.f.). Yoto Player 4th Gen. <https://us.yotoplay.com/players/yoto-player-4>
 - Yoto. (2026). *Yoto 4th Gen* [Fotografía]. Yoto Newsroom. <https://us.yotoplay.com/press/en-US/270385-yoto-launches-yoto-player-4th-gen-and-yoto-mini-4th-gen-its-biggest-hardware-upgrade-yet/>
