@@ -409,7 +409,7 @@ Sofía (2004) 5 etapas, llega  a la juventud
 //Controlado por una Perilla
 ```
 # Esqueleto en wokwi
-https://wokwi.com/projects/480888554413867009 
+https://wokwi.com/projects/481175847766925313
 
 # REFERENTES 
 
@@ -514,6 +514,8 @@ Que rescatamos: Objeto pequeño, de madera, con parlante incorporado de 3 W.
 
 ![referente](./imagenes/referente-10.jpeg)
 
+# Carcasa
+![referente](./imagenes/prototipo-01.png)
 
 
 # Bibliografia 
