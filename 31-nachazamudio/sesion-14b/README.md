@@ -3,7 +3,10 @@
 ## apuntes sesión
 
 Hoy presentamos avances del proyecto. 
-correcciones y comentarios: 
+Correcciones y comentarios:  
+
+Trabajos de nuestros compañeritos: 
+
 
 ## encargos
 
