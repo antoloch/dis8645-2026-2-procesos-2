@@ -86,5 +86,15 @@ FIN
 
 ## lectura
 
+páginas leídas: 90 a la 102
 
+> en estas páginas llamó mi  atención ver cómo los poetas experimentales usaban la máquina de escribir y el enfoque de hazlo tú mismo  para romper lo que se daba por sentado y jugar con los límites físicos del medio, como la tinta, la cinta gastada, el rodillo o el espacio de las letras. también habla de paso de la poesía concreta limpia a la sucia, donde se busca ensuciar y complicar la lectura a propósito para que la forma se vuelva parte del mensaje y nos haga mirar el soporte en vez de leer de corrido.
+
+**cita 1**
+
+“Con la práctica poética planteada como algo que "arroja la sintaxis establecida a un estado de agitación", en la medida en que da cuenta de lo normalmente invisible —lo que se da por sentado y que, sin embargo, define lo que se puede decir—, la poesía concreta sucia, asintáctica y no representacional, es poesía mediática activista por excelencia.” (Emerson, p.92)
+
+**cita 2**
+
+“Como dice McLuhan, no puedes hacer que el nuevo medio haga el trabajo viejo. La información en un poema nuevo no puede ser la misma que la información en un poema viejo... Lo que me interesa ahora es que la nueva poesía no va a ser poesía para leer. Va a ser para mirar... Quiero decir, el libro, la cultura impresa, se acabó.” (Emerson, p.98) 
 
