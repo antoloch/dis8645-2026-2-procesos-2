@@ -68,3 +68,14 @@ Preguntas de otra gente:
 ---
 
 Byte es con mayúscula, bit es con minúscula
+
+---
+
+Mientras escribía el ensayo sobre el tiempo, me encontré esta cita del filósofo Byung-Chul Han que me gustó demasiado, pero no la pude usar porque era muy larga y tendría que recortar mucho de mis pensamientos para poder siquiera añadir el párrafo final:
+
+La sociedad de trabajo y rendimiento no es ninguna sociedad libre. Produce nuevas obligaciones. La dialéctica del amo y el esclavo no conduce finalmente a aquella sociedad en la que todo aquel que sea apto para el ocio es un ser libre, sino más bien a una sociedad de trabajo, en la que el amo mismo se ha convertido en esclavo del trabajo. En esta sociedad de obligación, cada cual lleva consigo su campo de trabajos forzados. Y lo particular de este último consiste en que allí se es prisionero y celador, víctima y verdugo, a la vez. (p. 31)
+
+Han, B. C. (2012).
+*La sociedad del cansancio*.
+(A. Saratxaga Arregi, Trans.).
+Herder Editorial.
