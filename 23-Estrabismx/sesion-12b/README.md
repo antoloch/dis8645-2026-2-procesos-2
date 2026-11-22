@@ -1,8 +1,6 @@
-# sesion-11b
+# sesion-12b
 
 ## apuntes sesión
-
-Revisamos y hablamos de la solemne 2
 
 ### Referencias para proyecto-03
 

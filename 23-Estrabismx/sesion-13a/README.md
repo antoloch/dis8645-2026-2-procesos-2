@@ -52,8 +52,16 @@ funcionamientoMaquina = 1;}
 
 2. Se consulta si hay "conjuntoDeAudios" 
 
-3. 
+3. ...
 
 ## encargos
 
 ## lectura
+
+Continuando con el capitulo de la _wawa Manchester_. Entendí lo siguiente sobre el contexto en el que nació esta máquina:
+
+Como se ha visto en todos los otros capitulos, las máquinas computacionales tienen su origen en calcular, por que la vida se basa en eso practicamente xd. Es por ello que despues de la 2da GM, el problema con las máquinas no era que fueran lentas o les faltara capacidad, era la optimización del tiempo. Por ejemplo la ENIAC debía recablearse para poder la tarea.
+
+Desde esta base nace la necesidad de poder cambiar las funciones, tocando lo menos posible el hardware de la máquina.
+
+En este contexto y en la Universidad de Mánchester, Frederic Calland, Tom Kilburn y Geoff Tootill desarrollaron una solución aprovechando componentes de radar sobrantes de guerra, los cuales estaban en desuso por el fin de esta, el elemento que fue la joya de la corona fue el tubo Williams-Kilburn. En esta investigación descubrieron que un tubo CRT común podía alamcenar electricidad en su pantalla durante una fracción de segundo, si se refrescaba constantemente funcionaba como una memoria electrónica
