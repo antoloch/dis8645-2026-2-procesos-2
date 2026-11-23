@@ -43,3 +43,17 @@ La idea es que el usuario pueda elegir las especies y modificar las condiciones 
 ## encargos
 
 ## lectura
+
+### Sangre negra, Paula Carrasco 
+
+Libro que me leí la semana pasada: 
+
+Ya me había encontrado antes con su escritura en Algo temporal y ahora, con Sangre negra, vuelvo a rendirme ante su manera de escribir, en el tacto y el cariño con el que construye a sus personajes, que hace que estos dejen de ser simples personajes cuando una termina de leer sus historias. Ambas novelas comparten algo que me gusta muchísimo: ese tono de thriller, pero de un thriller que se siente profundamente cotidiano. Que no necesita de grandes acontecimientos para inquietarnos, porque encuentra en las relaciones humanas, en sus contradicciones y en todo aquello que preferimos no decir, suficiente material para mantenernos con la sensación de que hay gato encerrado.
+ 
+Y quizás no es tan extraño si pensamos en que Paula también es psicóloga y que, como ella misma agradece, parte de su escritura se nutre de las experiencias que ha conocido a través de sus pacientes. Me parece preciosa esa capacidad de recoger algo de lo cotidiano, de las complejidades que muchas veces pasan desapercibidas en la vida de las personas y transformarlo en ficción. No porque esas vidas necesiten ser extraordinarias para convertirse en literatura sino porque quizás nunca fueron tan simples como parecían. De esta manera el libro me mantiene con la sensación de que hay algo escondido. De que algo no termina de calzar, de que nos falta una parte de la historia, incluso cuando creemos que ya entendimos todo. Me encanta esa capacidad que tiene de hacernos desconfiar de lo que estamos leyendo, de llevarnos a sacar nuestras propias conclusiones para después obligarnos a cuestionarlas. 
+ 
+Pero creo que lo que más me gusta de Paula es cómo construye a sus personajes. Porque una sabe que hay cosas que no están bien, decisiones que no corresponden, acciones que duelen, pero que tampoco parecen lo suficientemente malas como para juzgarlas con tanta facilidad, y qué difícil es eso, porque una termina entendiendo cosas que quizás no debería justificar (y que tampoco quiere justificar), pero ¿cómo no hacerlo cuando conocemos todo lo que hay detrás?
+
+Me gusta esa incomodidad de no saber muy bien de qué lado ponerse. De querer a personajes con los que no necesariamente estamos de acuerdo, de sentir pena por quienes también han hecho daño, de comprender sin perdonar del todo. Porque al final las personas tampoco somos tan fáciles de separar entre buenas y malas, y Paula parece entenderlo muy bien.
+
+Y creo que ahí está una de las cosas más bonitas de su escritura: en que no nos entrega personajes para juzgarlos, sino para conocerlos. Aunque conocerlos tampoco signifique que tengamos que estar de acuerdo con ellos.
