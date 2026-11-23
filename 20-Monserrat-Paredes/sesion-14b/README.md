@@ -2,7 +2,35 @@
 
 ## apuntes sesión
 
-## PROYECTO 03 – Videojuego de nave por sonido (versión física portátil)
+Presentar proyecto-03
+
+Documento de google sobre el tiempo → <https://docs.google.com/document/d/1sypus6ZvVz7lHq5YcEqVzASbmHK05lBOpeybLViu8UI/edit?tab=t.0#heading=h.sjclanj7cy8k>
+
+
+Referencias: Rosa ayuda a explicar por qué sentimos que el tiempo no alcanza; Sharma cuestionar por qué no todos tenemos las mismas condiciones para vivir y administrar ese tiempo.
+
+Hartmut Rosa
+
+Sociólogo y teórico social alemán, nacido en 1965. Es profesor de sociología en la Universidad Friedrich Schiller de Jena.
+
+Su investigación se centra en la aceleración social: cómo la sociedad moderna funciona cada vez más rápido y cómo esto afecta nuestra vida cotidiana. Rosa explica que vivimos bajo exigencias de hacer más cosas en menos tiempo, lo que puede generar presión, estrés y la sensación de que las horas no alcanzan.
+
+PDF → <https://acceleratedclassroom.wordpress.com/wp-content/uploads/2011/03/social-acceleration.pdf>
+
+
+Sarah Sharma
+
+Académica canadiense, profesora de teoría de medios en la Universidad de Toronto. Investiga la relación entre el tiempo, la tecnología, el trabajo y las desigualdades sociales.
+
+Su trabajo cuestiona la idea de que todas las personas viven el tiempo de la misma manera. Plantea que las experiencias temporales están condicionadas por las relaciones de poder, el trabajo y las distintas posiciones que ocupamos en la sociedad.
+
+PDF → <https://api.pageplace.de/preview/DT0400.9780822378334_A35629120/preview-9780822378334_A35629120.pdf?ut>
+
+
+---
+
+
+## PROYECTO 03 – Videojuego de nave 
 
 ## 1. Las 10 clases
 
@@ -67,7 +95,6 @@ Los números entre paréntesis son los pines físicos de la Pico (1 a 40).
 | TP4056 | OUT+ / OUT− | Interruptor, luego boost (IN+ / IN−) |
 | Boost | OUT 5 V | VSYS (pin 39), LCD y convertidor de nivel |
 | Boost | GND | GND común de todo |
-
 
 
 ## encargos

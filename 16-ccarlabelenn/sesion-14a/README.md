@@ -873,8 +873,7 @@ int main(void) {
 ```
 > seguiremos probando códigos para perfeccionar la muestra. 
 ## encargos
-pondré acá el link de mi documento;)
 
 # el tiempo para mi 
-<>
+<https://docs.google.com/document/d/1WA7PEXJ8ot-VD-x5DBP0bUAyzAGR-Rw1q2d97i85CNc/edit?usp=sharing>
 ## lectura
