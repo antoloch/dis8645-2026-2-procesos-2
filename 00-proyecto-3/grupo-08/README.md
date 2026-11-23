@@ -98,6 +98,7 @@ FIN
 
 <https://wokwi.com/projects/480948910221458433>
 
+<https://wokwi.com/projects/480948910221458433> wokwi final
 ## bom
 
 |Componente|Cantidad|Precio|Link|

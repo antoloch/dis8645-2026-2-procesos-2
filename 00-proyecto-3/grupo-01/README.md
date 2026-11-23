@@ -271,6 +271,8 @@ funcionamientoMaquina = 1;}
 
 #### Conexiones
 
+[Esquematico alpha](./esquematicos/v01/sin-nombre/sin-nombre.pdf)
+
 | class | Lugar      | Nombre |   |
 | ----- | ---------- | ------ | - |
 | Boton | CD74HP4067 C0  | `fxAttack` | - |
@@ -413,6 +415,8 @@ https://wokwi.com/projects/481142445555191809
 
 Finalmente tenemos una versión donde vemos conexiones y funcionamientos, por la imposibilidad de representar la lógica pensada para el sónido se utilizará el `Serial Monitor` para representar lo que ocurre en cada sección y proceso, es importante mencionar que se tuvieron que realizar algunos IC para poder representar funcionamientos, tales como el INMP441, que corresponde a un micrófono
 
+![](./imagenes/image.png)
+
 <br>
 
 ## Referentes
@@ -504,6 +508,20 @@ Lo que rescatamos de este dispositivo es la grabación por capas, en la que cada
 <img src="./imagenes/bit-crusher.webp" alt="" width="50%">
 
 <br>
+
+### [Iam Noise](https://www.instagram.com/i.am_noise/)
+
+Cuenta de instagram dedicada a realizar disitintas intervenciones a cassette, mediante las cuales explora el concepto de ruido, algo fundamental para nuestro trabajo, sumado a la experimentación de distintos formatos
+
+[![](./imagenes/sc26.png)](https://www.instagram.com/p/DfIXCBJxZp6/)
+
+Video que recomendamos
+
+### Mr tape (Modris Skaistkalns)
+
+El trabajo como dj de Modris Skaistkalns se basó en adaptar magnetófonos soviéticos de bobina abierta para mezclar, cortar y hacer scratch como si fueran tornamesas. Esto fue debiddo a su contexto, ya que en Letonia conseeguir vinilos occidentales era bastante complejo por el frío clima político (guerra fría). Esto nos habla de como con menos se puede hacer más y que la innovación viene acompañada de limitaciones
+
+https://www.youtube.com/watch?v=7Xuy0GAsnNQ
 
 ## Comentarios Claude
 
