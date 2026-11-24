@@ -630,6 +630,145 @@ Estos valores no están definidos en el README. Son constantes al inicio de `mai
 7. En la tabla de conexiones dice `CD74HP4067`; el nombre del integrado es CD74HC4067.
 8. El pseudocódigo todavía dice que al reproducir "se inhabilita el modo grabar mientras dure la reproducción", lo que contradice la decisión 11.
 
+### v03 — revisión de factibilidad
+
+Revisión de si el dispositivo descrito en el README se puede construir con el BOM actual y en el tiempo que queda. Se basa en el README, en el firmware más avanzado en hardware real (`codigos/50n1d0-v08`, con la variante con SD en `codigos/proyecto-03-v01`), en la simulación lógica (`codigos/proyecto-03-v02`) y en el script `convertir-raw`.
+
+#### Veredicto
+
+**Es factible, con ajustes.** La interfaz (botones, LEDs, sliders, pantalla) y la reproducción con efectos ya están resueltas o tienen poco riesgo. Lo que todavía no existe y concentra el riesgo es la **cadena de audio completa**: grabar con el micrófono, guardar en la SD, aplicar los efectos sobre lo grabado y reproducir la mezcla acumulada. Ninguna versión del código graba sonido todavía.
+
+#### Estado actual
+
+| Parte | Estado | Dónde |
+| ----- | ------ | ----- |
+| Lógica de modos, LEDs, botones, pantalla | Simulada, solo con mensajes en el Serial Monitor | `proyecto-03-v02` (Wokwi) |
+| Salida de audio I2S con volumen | Funciona en hardware | `50n1d0-v08` (`Ampli`) |
+| Velocidad (0,5x a 2x con interpolación) | Funciona en hardware | `50n1d0-v08` (`Velocidad`) |
+| Filtro pasa bajos / pasa altos | Funciona en hardware | `50n1d0-v08` (`Tono`) |
+| Lectura de audio desde la SD por bloques | Escrita, con FatFs en SPI1 | `proyecto-03-v01` (`LectorSD`) |
+| Grabación con el INMP441 | **No existe** (en Wokwi es un chip simulado) | — |
+| Escritura en la SD | **No existe** | — |
+| Mezcla de varios audios a la vez | **No existe** (el `Ampli` reproduce un solo sonido) | — |
+| Attack, Release, Pitching, Reverb, Trémolo, Bit crushing, Ring modulator | **No existen** en hardware | — |
+| Pantalla OLED en hardware | **No existe** (solo en Wokwi) | — |
+| Integración de todo en un mismo firmware | **No existe** | — |
+
+#### Memoria: el punto más crítico
+
+Con el formato que ya usa el firmware (11.025 Hz, 16 bits, mono) cada segundo de audio ocupa **22.050 bytes (~21,5 KB)**.
+
+| Qué | Tamaño | ¿Dónde cabe? |
+| --- | ------ | ------------ |
+| 1 grabación de 10 s | ~220 KB | En la RAM de la Pico 2 W (520 KB), pero deja poco margen. No cabe en una Pico 1 (264 KB). |
+| 1 grabación de 30 s | ~660 KB | **No cabe en RAM.** Hay que grabarla directo a la SD y editarla leyéndola desde ahí. |
+| 200 grabaciones de 30 s guardadas por separado | ~132 MB | Solo en la SD. |
+| Mezcla completa de 10 min ya mezclada en un solo archivo | ~13,2 MB | En la SD, sin problema. La flash de la Pico 2 W es de 4 MB. |
+
+**Consecuencias:**
+
+1. La decisión de 30 s de v02 obliga a grabar y editar en *streaming* desde la SD. Volver a **10 s** (lo que todavía dice la mayor parte del README) permite tener la grabación completa en RAM mientras se edita, y simplifica mucho el loop de edición. Se recomienda volver a 10 s.
+2. La tarjeta SD deja de ser opcional: es la única forma de cumplir "el `conjuntoDeAudios` debe quedar almacenado" al apagar. Falta la tarjeta microSD en el BOM.
+
+#### Reproducción de la mezcla: mezclar al guardar, no al reproducir
+
+Si los 200 audios se guardan como archivos separados y se mezclan en el momento de reproducir, con audios de 30 s repartidos al azar entre 60 segmentos habría en promedio **~10 audios sonando a la vez** y en algunos segmentos 20 o más. Leer 20 archivos distintos de la SD al mismo tiempo por SPI (~440 KB/s con saltos entre archivos) probablemente produzca cortes.
+
+**Recomendación:** al presionar `guardarEdicion`, aplicar los efectos al audio y **sumarlo de una vez a un único archivo maestro de 10 minutos** en la SD. La reproducción solo lee ese archivo, que es un único flujo de 21,5 KB/s, algo trivial para la SD. Esto además calza con el concepto del README: el pescado cocinado no se puede "descocinar", y la mezcla queda de verdad irreversible. Guardar sería leer, sumar y reescribir ~220 KB (10 s) o ~660 KB (30 s), lo que tarda alrededor de 1 a 2 s. Se puede usar ese tiempo para la animación de guardado.
+
+Al sumar 200 audios de 16 bits la señal se va a saturar. Hay dos caminos y es una decisión de diseño, no técnica:
+
+- Bajar el nivel de cada audio nuevo antes de sumarlo (por ejemplo, proporcional a cuántos audios ya hay en ese segmento) para que la mezcla siga limpia.
+- Aplicar una saturación suave (*soft clipping*) y dejar que la acumulación se vuelva ruido, que es coherente con la pregunta del proyecto.
+
+En cualquier caso hay que limitar la suma (como ya hace `Ampli::actualizar()`) para que no se desborde y suene como chasquidos digitales.
+
+Junto al archivo maestro hay que guardar un archivo pequeño con la cantidad de audios y qué segmentos están ocupados, para reconstruir la pantalla al encender.
+
+#### Micrófono INMP441
+
+- La librería `pico_audio_i2s` de pico-extras que ya usa el proyecto **solo sirve para salida**. Para el micrófono hace falta un programa PIO de entrada I2S aparte (hay ejemplos públicos para RP2040/RP2350). La Pico 2 W tiene 3 bloques PIO con 4 máquinas cada uno, así que alcanza para micrófono y DAC al mismo tiempo.
+- El INMP441 entrega 24 bits en una palabra de 32. Hay que desplazarlo a 16 bits, quitar el offset DC y aplicar ganancia (la voz a unos 30 cm suele quedar baja). La idea de `ganancia` por sonido que ya existe en `Audio.h` sirve, pero calculada al terminar la grabación.
+- 11.025 Hz está dentro del rango de muestreo del INMP441. El audio queda con un ancho de banda de ~5,5 kHz: la voz se entiende pero suena lo-fi, lo que es coherente con el proyecto.
+- Micrófono y parlante van en la misma caja. Como la mezcla se detiene al grabar (decisión 11 de v02), no hay riesgo de acople. Hay que mantenerlo así.
+
+#### Efectos: costo de procesamiento
+
+El RP2350 corre a 150 MHz con FPU de precisión simple. A 11.025 Hz hay **~13.600 ciclos por muestra**, suficiente para encadenar los 9 efectos en tiempo real sobre un solo audio.
+
+| Efecto | Dificultad | Comentario |
+| ------ | ---------- | ---------- |
+| Attack / Release | Baja | En un audio de 10 s grabado, son un *fade in* y un *fade out*. Hay que definir el rango en segundos de cada slider. |
+| Trémolo | Baja | Multiplicar por una onda lenta. |
+| Bit crushing | Baja | Reducir bits y/o repetir muestras. |
+| Ring modulator | Baja | Multiplicar por una senoidal. |
+| High-pass | Hecho | Es el lado brillante de `Tono`. Sigue sin estar en la tabla de *Modificadores*. |
+| Velocidad | Hecho | `Velocidad`. Al bajar a 0,5x un audio de 10 s dura 20 s y ocupa 2 segmentos: el archivo maestro lo resuelve solo. |
+| Reverb | Media | Un reverb tipo Schroeder (4 combs + 2 all-pass) usa unos 30 a 60 KB de RAM a esta frecuencia. Cabe en la Pico 2 W junto a una grabación de 10 s, pero no junto a una de 30 s en RAM. |
+| Pitching sin cambiar la duración | **Alta** | Es el único efecto realmente difícil (requiere un *pitch shifter* granular o similar). Si no hay tiempo, conviene reemplazarlo o fusionarlo con Velocidad, que ya cambia el tono. |
+
+Se recomienda que los efectos tengan una sola implementación que sirva para dos cosas: escuchar en tiempo real durante la edición y procesar el audio completo al guardar. Así lo que se escucha es exactamente lo que se guarda.
+
+#### Pantalla y tiempos del loop principal
+
+- Enviar un cuadro completo a la OLED de 128×64 por I2C a 400 kHz toma ~23 a 25 ms. El `Ampli` trabaja con buffers de 256 muestras (~23 ms cada uno) y el `while` de `main.cpp` tiene que alimentarlos sin pausa. Una actualización de pantalla bloqueante puede cortar el audio.
+- **Recomendación:** pasar el audio al **segundo núcleo** (`multicore_launch_core1`) y dejar en el primero los botones, los LEDs y la pantalla. Otra opción es actualizar solo las zonas que cambian de la pantalla. Esto conviene decidirlo antes de integrar todo.
+- La OLED amarilla y azul tiene las primeras 16 filas en amarillo, lo que calza con poner el contador y la memoria arriba y la grilla de 60 segmentos abajo.
+
+#### Pines (tabla de *Conexiones* con la Pico 2 W)
+
+- SD en GPIO 2 (SCK), 3 (MOSI) y 16 (MISO): los tres son pines válidos de **SPI0**; el CS (GPIO 9) es por software. Funciona, pero no coincide con `LectorSD` de `proyecto-03-v01`, que usa **SPI1 en 8 a 11**. Esos pines chocan con `lucecitasSCHP` (8), `botonesS2` (10) y `perillaS2` (11). Hay que elegir una sola asignación.
+- DAC en GPIO 20 (DIN), 21 (BCK) y 22 (LCK): BCK y LCK son consecutivos, como exige `pico_audio_i2s`. Funciona. El LCK sigue sin estar en la tabla.
+- Micrófono en GPIO 27 y 28: funciona con PIO, pero ocupa 2 de los 3 pines con ADC. Como las perillas pasan por el 74HC4051 a GPIO 26 no hay conflicto en el diseño final. Sí lo hay con `50n1d0-v08`, que usa 26, 27 y 28 como potenciómetros directos.
+- Pantalla en GPIO 4 y 5: I2C0 válido.
+- GPIO 23, 24, 25 y 29 los usa el chip inalámbrico de la Pico 2 W; la tabla no los ocupa. Bien.
+- En total caben todos los pines; no hace falta otro microcontrolador.
+
+#### Hardware y BOM
+
+1. **Amplificador distinto en código y BOM.** `50n1d0-v08` está escrito para un **MAX98357A** (DAC + amplificador I2S en una sola placa). El BOM y las conexiones dicen PCM5102A + PAM8302. Si el MAX98357A ya funciona, simplifica el circuito y reemplaza dos placas. Hay que decidir uno y actualizar el BOM.
+2. **Brillo de los LEDs sin PWM.** El 74HC595 no tiene PWM, pero sí tiene el pin **OE** (activo en bajo). Si se conecta OE a un GPIO con PWM, se controla el brillo de los 9 LEDs a la vez. Eso permite hacer la animación de "aumentan su brillo y luego se apagan" de *Luces* sin simularla por software.
+3. **Resistencias de los botones.** `BotonGrupo1` necesita pull-down externa. Con el CD74HC4067 basta **una sola resistencia de pull-down en el pin SIG**, no una por botón.
+4. **Faltan en el BOM:** tarjeta microSD, switch de encendido, resistencias de los LEDs y del pull-down, cables, alimentación (cable USB o batería con su cargador) y la carcasa.
+5. **Cantidades.** El kit de botones trae 5 unidades a $1.500; para 12 botones hacen falta 3 kits. El BOM lista 2 CD74HC4067 y se usa uno (ya señalado en v01). Conviene aclarar si la columna *Valor* es por unidad o total. La suma de la columna tal como está da **~$50.116**.
+6. **Módulo SD.** Muchos módulos lectores de SD baratos traen un regulador a 3,3 V y conversor de nivel pensados para 5 V. Si se alimentan con los 3,3 V de la Pico pueden fallar. Hay que alimentarlo desde VBUS (5 V) o confirmar que el módulo comprado acepta 3,3 V.
+7. **Consumo.** El parlante de 3 W con el amplificador puede pedir picos de 0,5 a 0,8 A a 5 V. Por USB de un computador puede quedar justo; conviene un cargador de pared de al menos 1 A.
+8. **Envíos.** Los componentes de AliExpress (DAC, amplificador, sliders, potenciómetros, LEDs, PCB) suelen tardar de 2 a 6 semanas en llegar a Chile. Si todavía no están comprados, es el principal riesgo de calendario. Las alternativas son afel.cl o mechatronicstore.cl.
+
+#### Apagado y persistencia
+
+- El switch se lee como una entrada (C12 del multiplexor), así que la Pico sigue encendida en "suspensión". Eso es bueno: permite terminar de escribir en la SD antes de "apagar".
+- Si en algún momento el switch corta la alimentación de verdad, apagar durante una escritura puede **corromper la tarjeta**. Hay que cerrar el archivo (`f_close` / `f_sync`) apenas termine cada guardado y no escribir nada fuera de ese momento.
+
+#### Aleatoriedad
+
+La Pico 2 W tiene generador de números aleatorios por hardware. `get_rand_32()` de la librería `pico_rand` del SDK reemplaza al *xorshift* de v02 sin necesidad de semilla.
+
+#### Riesgos ordenados
+
+| # | Riesgo | Impacto | Mitigación |
+| - | ------ | ------- | ---------- |
+| 1 | Grabación con INMP441 aún no probada | Sin esto no hay proyecto | Probarla **ya**, aislada: grabar 10 s y reproducirlos por el ampli. |
+| 2 | 30 s no caben en RAM | Edición en tiempo real compleja | Volver a 10 s. |
+| 3 | Mezclar muchos audios al reproducir | Cortes de audio | Archivo maestro de 10 min mezclado al guardar. |
+| 4 | Escritura en SD sin probar | No se guarda nada | Probar escritura junto a la lectura que ya existe. |
+| 5 | Pantalla bloquea el audio | Cortes de audio | Audio en el núcleo 1. |
+| 6 | Pitching sin cambiar duración | Efecto incompleto | Dejarlo para el final o reemplazarlo. |
+| 7 | Compras internacionales | Atraso | Comprar local lo que falte. |
+| 8 | Integrar v08, la SD y la lógica de v02 | Trabajo no estimado | Partir de `50n1d0-v08` e ir sumando de a una pieza. |
+
+#### Orden de trabajo sugerido
+
+1. Grabar 10 s con el INMP441 a RAM y reproducirlos por el ampli (sin efectos ni SD).
+2. Guardar esa grabación en la SD y volver a leerla después de reiniciar.
+3. Crear el archivo maestro de 10 min: guardar = sumar en un segmento al azar; reproducir = leer el maestro en loop.
+4. Pasar la lógica de modos de `proyecto-03-v02` (botones por multiplexor, LEDs por 74HC595, sliders por 74HC4051) al firmware real.
+5. Agregar los efectos de a uno, primero los de dificultad baja.
+6. Pantalla OLED.
+7. Reverb y Pitching al final.
+
+Si los pasos 1 a 3 funcionan, el proyecto es viable. Lo demás es interfaz y efectos, donde el grupo ya demostró avance.
+
 ## Bibliografía
 
 * Analogue Media Technologies. (2025, 18 de marzo). *C-20 black audio cassettes*. https://www.duplication.com/c-20-black-audio-cassettes.html
