@@ -2,7 +2,7 @@
 
 ## apuntes sesión
 
-## Pendientes y apuntes del proyecto
+### Pendientes y apuntes del proyecto
 
 - **Descripción:** medio check / falta desarrollo conceptual.
 - **Profundizar desarrollo técnico (pseudocódigo):** medio check.
@@ -11,37 +11,37 @@
 - **Definir efectos:** medio check.
 - **Muestra física / demostración:** por definir (veremos).
 
-## Audio
+### Audio
 
 - El tiempo máximo de grabación por cada audio es de 30 segundos.
 - Cada 10 segundos se da la orden de reproducir un audio.
 - Existen 60 posibilidades en las que podría ubicarse un audio.
 
-## General
+### General
 
 - Volumen general.
 - Volumen individual de cada audio.
 - División por secciones.
 
-### Filtros y envolventes
+#### Filtros y envolventes
 
 - Pasa alto.
 - Attack.
 - Decay.
 
-### FX base
+#### FX base
 
 - Reverb.
 - Velocidad.
 - Pitching.
 
-### FX avanzado
+#### FX avanzado
 
 - Trémolo.
 - Bit crushing.
 - Ring modulator.
 
-## Desarrollo conceptual
+### Desarrollo conceptual
 
 Se encontró el siguiente texto de referencia:
 
@@ -73,7 +73,7 @@ reconocerse es su contenido semántico (es decir, relativo a su significado) y c
 - Música.
 - Ruido.
 
-## Interfaz y visualización de datos
+### Interfaz y visualización de datos
 
 **Posibles elementos que puede mostrar la pantalla:**
 
@@ -92,8 +92,7 @@ reconocerse es su contenido semántico (es decir, relativo a su significado) y c
 
 ¿Cómo funciona la interfaz en la zona de edición y cómo se relacionan los botones, las perillas y las luces?
 
-### Simulación
-
+### Interfaz efectos 
 
 1. Encender el dispositivo.
    Todas las luces LED comienzan apagadas.
