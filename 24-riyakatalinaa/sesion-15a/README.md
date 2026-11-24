@@ -8,6 +8,16 @@ martes 2026-11-24
 - tomar todo el README y pasárselo a claude o IA, preguntar por factibilidad, tarjeta interna, viabilidad
 - subir la factibilidad que dio la IA al discord
 
+
+### decisiones para llevar acabo el examen
+-  color de filamento para carcasa (blanco o azul transparente/ambos filamento PLA)
+-  audífonos con entrada jack, no es un componente
+-  cambiar potenciometro de B10k por uno de B100k (todos los grupos usara el mismo)
+-  cambiar switch mini por uno mas grande
+-  **Pico Audio Pack (Pimoroni PIM544)** ya que no se encuentra en ninguna de las tiendas, alternativa utilizar **PCM5102**
+-  el proyecto no es necesario que sea inalambrico
+
+
 ## encargos
 
 ## lectura
