@@ -55,6 +55,14 @@ El BOM suma unos CLP $63.000 sin contar audífonos, cables ni soldador. El Pico 
  
  ---
 
+### comentarios profes
+
+grupo-04:
+- sacar batería y todos modulos de carga, no es necesario inalámbrico por ahora
+- modulo para salida de audífono PCM5102A
+- revisar el MPU6050 en vez del giroscopio
+- 100k a los potenciómetros, todos ocuparemos los mismos
+
 ### decisiones para llevar acabo el examen
 -  color de filamento para carcasa (blanco o azul transparente/ambos filamento PLA)
 -  audífonos con entrada jack, no es un componente
