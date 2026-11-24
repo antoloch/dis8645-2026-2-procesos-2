@@ -4,7 +4,7 @@
 
 ## apuntes sesión
 
-Avanzamos con el boom of materials ya en el Exel entregado por los profes para que nos trageran los materiales faltantes para realizar nuestro proyecto y logramos obtener 2 dfplayer que nos los facilitó el ayudante del curso, Sebastián con algunas indicaciones sobre el como nos serviria tenerlo en caso de que se nos llene la memoria de las raspberry pi, por lo demás fuimos avanzando en grupo con el proyecto.
+Avanzamos con el BOM-Materiales ya en el Exel entregado por los profes para que nos trageran los materiales faltantes para realizar nuestro proyecto y logramos obtener 2 dfplayer que nos los facilitó el ayudante del curso, Sebastián con algunas indicaciones sobre el como nos serviria tenerlo en caso de que se nos llene la memoria de las raspberry pi, por lo demás fuimos avanzando en grupo con el proyecto.
 
 ## encargos
 
