@@ -86,3 +86,5 @@ importante diagrama de flujo:
 ## encargos
 
 ## lectura
+
+no leí porque no tuve tiempo con la práctica y emprendimiento :c
