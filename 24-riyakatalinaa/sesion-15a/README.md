@@ -4,6 +4,10 @@ martes 2026-11-24
 
 ## apuntes sesión
 
+- hacer listado de materiales excel 
+- tomar todo el README y pasárselo a claude o IA, preguntar por factibilidad, tarjeta interna, viabilidad
+- subir la factibilidad que dio la IA al discord
+
 ## encargos
 
 ## lectura
