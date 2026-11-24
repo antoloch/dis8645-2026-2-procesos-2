@@ -1,6 +1,9 @@
 # sesion-14a
 
 ## apuntes sesión
+
+Estaba probando si funcionaban los diagramas de flujo
+
 ## Diagramas de flujo
 
 <details>
