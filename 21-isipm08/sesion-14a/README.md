@@ -91,3 +91,27 @@ FIN
 - me encuentro aún en el capítulo 7 llamado "Logo´s Roots: Piaget and AI", terminé este capítulo.
 
 *apuntes lectura*
+- en este apunte quise realizar otro método de apunte
+
+En las finales de este capítulo se plantea en cómo los niños aprenden matemáticas y como estos sistemas de computación y programación son capaces de transformar la educación en un aspecto positivo, cuestionando también los métodos tradicionales de la enseñanza.
+
+**paradoja matemática**
+- contradicción en la educación
+- los métodos escolares regularmente dificultan el aprendizaje natural de los niños para aprender conocimientos matemáticos
+- critica a la enseñanza con reglas, procedimiento rígidos y ejercicios repetitivos
+- limitar creatividad, exploración y comprensión por parte de los estudiantes
+
+**importancia computadores para el aprendizaje**
+- herramientas que hacen que los niños puedan explorar, experimentar y construir sus propios conocimientos
+- superar dificultades cognitivas entre el pensamiento mediante la intuición y el matemático
+- trabajar conceptos complejos de forma concreta y accesible
+- favorecer pensamiento lógico, creatividad, autonomía
+
+**aprendizaje basado en experiencias personales**
+- personas construyen sus conocimientos a partir de sus experiencias, cultura y entorno
+- educación tradicional aplica solo un método de enseñanza y no abarca que todos aprendemos de distintas maneras, generando así experiencias negativas y creer que no hay capacidades
+
+**aprendizaje mediante exploración**
+- aprendizaje mediante la participación activa para la construcción de conocimiento
+- oportunidad para equivocarse, investigar, solucionar, relacionar
+- errores forman parte del aprendizaje
