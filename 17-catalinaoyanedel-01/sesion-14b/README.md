@@ -21,5 +21,8 @@ como nos recomendaron volver a leer a Haraway encontré estos textos que creo qu
 - [This Is What Extinction Sounds Like](https://www.youtube.com/watch?v=KnpsMG0PWRY)
 
 ## encargos
+ensayo, perdón lo tarde, pensé que no lo podía entregar después y lo había dejado a medias:
+
+https://docs.google.com/document/d/17IkLYFDg8YneaVzEMD-BZZIPNv8BFZjbIcnIrhFzqzI/edit?tab=t.0
 
 ## lectura
