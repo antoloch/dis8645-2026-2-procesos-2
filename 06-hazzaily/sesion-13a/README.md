@@ -87,4 +87,4 @@ importante diagrama de flujo:
 
 ## lectura
 
-no leí porque no tuve tiempo con la práctica y emprendimiento.
+no leí porque no tuve tiempo con la práctica y emprendimiento :c
